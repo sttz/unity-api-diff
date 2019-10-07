@@ -1,0 +1,22 @@
+using System;
+using UnityEngine;
+
+namespace UnityEngine.Rendering
+{
+
+public struct ShaderKeywordSet
+{
+    public void Disable(Rendering.ShaderKeyword keyword);
+    public void Enable(Rendering.ShaderKeyword keyword);
+    public Rendering.ShaderKeyword[] GetShaderKeywords();
+    public bool IsEnabled(Rendering.ShaderKeyword keyword);
+
+    public struct <m_Bits>__FixedBuffer0
+    {
+        public uint FixedElementField;
+
+    }
+
+}
+
+}
