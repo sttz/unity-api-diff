@@ -1,0 +1,45 @@
+using System;
+using UnityEngine;
+
+namespace UnityEngine.Rendering
+{
+
+public class SupportedRenderingFeatures
+{
+    static public Rendering.SupportedRenderingFeatures active { get; set; }
+
+    public LightmapMixedBakeModes defaultMixedLightingModes { get; set; }
+    public bool editableMaterialRenderQueue { get; set; }
+    public bool enlighten { get; set; }
+    public LightmapBakeType lightmapBakeTypes { get; set; }
+    public LightmapsMode lightmapsModes { get; set; }
+    public bool lightProbeProxyVolumes { get; set; }
+    public LightmapMixedBakeModes mixedLightingModes { get; set; }
+    public bool motionVectors { get; set; }
+    public bool overridesEnvironmentLighting { get; set; }
+    public bool overridesFog { get; set; }
+    public bool overridesOtherLightingSettings { get; set; }
+    public bool receiveShadows { get; set; }
+    public ReflectionProbeModes reflectionProbeModes { get; set; }
+    public bool reflectionProbes { get; set; }
+    public bool rendererPriority { get; set; }
+
+    public SupportedRenderingFeatures();
+
+    public enum ReflectionProbeModes
+    {
+        None = 0,
+        Rotation = 1,
+    }
+
+    public enum LightmapMixedBakeModes
+    {
+        None = 0,
+        IndirectOnly = 1,
+        Subtractive = 2,
+        Shadowmask = 4,
+    }
+
+}
+
+}
