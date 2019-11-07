@@ -2,7 +2,7 @@
 
 This repository contains the decompiled public API of Unity 3D to allow comparing the API between Unity versions.
 
-**This project is experimental.** The API decompilation is still work in progress and there might be incorrect or missing information. For now, the project only contains major releases and the main UnityEngine assembly. Issue reports and feature requests welcome.
+**This project is experimental.** The API decompilation is still work in progress and there might be incorrect or missing information. For now, the project only contains major releases and the main UnityEngine and UnityEditor assemblies. Issue reports and feature requests welcome.
 
 Use the table below to compare the API of two Unity versions.
 
