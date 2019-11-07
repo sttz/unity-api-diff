@@ -29,6 +29,7 @@ public struct NativeArray<T> : IDisposable, System.Collections.Generic.IEnumerab
     public void CopyTo(T[] array);
     public void CopyTo(Unity.Collections.NativeArray<T> array);
     public void Dispose();
+    public Unity.Jobs.JobHandle Dispose(Unity.Jobs.JobHandle inputDeps);
     public bool Equals(Unity.Collections.NativeArray<T> other);
     public bool Equals(object obj);
     public Enumerator<T> GetEnumerator();
