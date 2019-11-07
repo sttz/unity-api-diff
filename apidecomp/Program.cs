@@ -33,7 +33,13 @@ class Program
             Environment.Exit(2);
         }
 
-        var module = ModuleDefinition.ReadModule(path);
+        var resolver = new DefaultAssemblyResolver();
+        resolver.AddSearchDirectory(Path.GetDirectoryName(path));
+
+        var config = new ReaderParameters();
+        config.AssemblyResolver = resolver;
+
+        var module = ModuleDefinition.ReadModule(path, config);
         Console.WriteLine($"Opened module {module.Name}");
 
         var types = module.Types
