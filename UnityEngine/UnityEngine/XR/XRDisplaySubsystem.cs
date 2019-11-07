@@ -13,6 +13,8 @@ public class XRDisplaySubsystem : IntegratedSubsystem<XR.XRDisplaySubsystemDescr
     public bool displayOpaque { get; }
     public ReprojectionMode reprojectionMode { get; set; }
     public bool singlePassRenderingDisabled { get; set; }
+    public TextureLayout supportedTextureLayouts { get; }
+    public TextureLayout textureLayout { set; }
 
     public XRDisplaySubsystem();
 
@@ -31,6 +33,13 @@ public class XRDisplaySubsystem : IntegratedSubsystem<XR.XRDisplaySubsystemDescr
     public bool TryGetDroppedFrameCount(out int droppedFrameCount);
     public bool TryGetFramePresentCount(out int framePresentCount);
     public bool TryGetMotionToPhoton(out float motionToPhoton);
+
+    public enum TextureLayout
+    {
+        Texture2DArray = 1,
+        SingleTexture2D = 2,
+        SeparateTexture2Ds = 4,
+    }
 
     public enum ReprojectionMode
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public struct Quaternion : IEquatable<Quaternion>
+public struct Quaternion : IEquatable<Quaternion>, IFormattable
 {
     static public float kEpsilon = 1E-06;
 
@@ -62,6 +62,7 @@ public struct Quaternion : IEquatable<Quaternion>
     public Vector3 ToEulerAngles();
     public string ToString();
     public string ToString(string format);
+    public string ToString(string format, IFormatProvider formatProvider);
 
 }
 

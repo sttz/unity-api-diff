@@ -4,7 +4,7 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public struct Vector3Int : IEquatable<Vector3Int>
+public struct Vector3Int : IEquatable<Vector3Int>, IFormattable
 {
     static public Vector3Int down { get; }
     static public Vector3Int left { get; }
@@ -38,6 +38,7 @@ public struct Vector3Int : IEquatable<Vector3Int>
     public void Set(int x, int y, int z);
     public string ToString();
     public string ToString(string format);
+    public string ToString(string format, IFormatProvider formatProvider);
 
 }
 

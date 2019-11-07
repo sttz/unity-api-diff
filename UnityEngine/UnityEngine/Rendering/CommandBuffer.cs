@@ -132,8 +132,16 @@ public class CommandBuffer : IDisposable
     public void RequestAsyncReadbackIntoNativeArray(Unity.Collections.NativeArray<T> output, Texture src, int mipIndex, int x, int width, int y, int height, int z, int depth, TextureFormat dstFormat, Action<Rendering.AsyncGPUReadbackRequest> callback);
     public void RequestAsyncReadbackIntoNativeArray(Unity.Collections.NativeArray<T> output, Texture src, int mipIndex, int x, int width, int y, int height, int z, int depth, Experimental.Rendering.GraphicsFormat dstFormat, Action<Rendering.AsyncGPUReadbackRequest> callback);
     public void ResolveAntiAliasedSurface(RenderTexture rt, RenderTexture target = null);
+    public void SetComputeBufferCounterValue(ComputeBuffer buffer, uint counterValue);
+    public void SetComputeBufferData(ComputeBuffer buffer, Array data);
+    public void SetComputeBufferData(ComputeBuffer buffer, System.Collections.Generic.List<T> data);
+    public void SetComputeBufferData(ComputeBuffer buffer, Unity.Collections.NativeArray<T> data);
+    public void SetComputeBufferData(ComputeBuffer buffer, Array data, int managedBufferStartIndex, int graphicsBufferStartIndex, int count);
+    public void SetComputeBufferData(ComputeBuffer buffer, System.Collections.Generic.List<T> data, int managedBufferStartIndex, int graphicsBufferStartIndex, int count);
+    public void SetComputeBufferData(ComputeBuffer buffer, Unity.Collections.NativeArray<T> data, int nativeBufferStartIndex, int graphicsBufferStartIndex, int count);
     public void SetComputeBufferParam(ComputeShader computeShader, int kernelIndex, int nameID, ComputeBuffer buffer);
     public void SetComputeBufferParam(ComputeShader computeShader, int kernelIndex, string name, ComputeBuffer buffer);
+    public void SetComputeConstantBufferParam(ComputeShader computeShader, int nameID, ComputeBuffer buffer, int offset, int size);
     public void SetComputeFloatParam(ComputeShader computeShader, int nameID, float val);
     public void SetComputeFloatParam(ComputeShader computeShader, string name, float val);
     public void SetComputeFloatParams(ComputeShader computeShader, string name, float[] values);

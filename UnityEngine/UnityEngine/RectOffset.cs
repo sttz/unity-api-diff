@@ -4,7 +4,7 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public class RectOffset
+public class RectOffset : IFormattable
 {
     public int bottom { get; set; }
     public int horizontal { get; }
@@ -19,6 +19,8 @@ public class RectOffset
     public Rect Add(Rect rect);
     public Rect Remove(Rect rect);
     public string ToString();
+    public string ToString(string format);
+    public string ToString(string format, IFormatProvider formatProvider);
 
 }
 

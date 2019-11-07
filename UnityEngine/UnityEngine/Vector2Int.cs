@@ -4,7 +4,7 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public struct Vector2Int : IEquatable<Vector2Int>
+public struct Vector2Int : IEquatable<Vector2Int>, IFormattable
 {
     static public Vector2Int down { get; }
     static public Vector2Int left { get; }
@@ -36,6 +36,8 @@ public struct Vector2Int : IEquatable<Vector2Int>
     public void Scale(Vector2Int scale);
     public void Set(int x, int y);
     public string ToString();
+    public string ToString(string format);
+    public string ToString(string format, IFormatProvider formatProvider);
 
 }
 

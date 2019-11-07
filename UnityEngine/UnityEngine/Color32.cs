@@ -4,7 +4,7 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public struct Color32
+public struct Color32 : IFormattable
 {
     static public Color32 Lerp(Color32 a, Color32 b, float t);
     static public Color32 LerpUnclamped(Color32 a, Color32 b, float t);
@@ -20,6 +20,7 @@ public struct Color32
 
     public string ToString();
     public string ToString(string format);
+    public string ToString(string format, IFormatProvider formatProvider);
 
 }
 

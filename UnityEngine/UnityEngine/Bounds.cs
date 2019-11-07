@@ -4,7 +4,7 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public struct Bounds : IEquatable<Bounds>
+public struct Bounds : IEquatable<Bounds>, IFormattable
 {
     public Vector3 center { get; set; }
     public Vector3 extents { get; set; }
@@ -30,6 +30,7 @@ public struct Bounds : IEquatable<Bounds>
     public float SqrDistance(Vector3 point);
     public string ToString();
     public string ToString(string format);
+    public string ToString(string format, IFormatProvider formatProvider);
 
 }
 

@@ -54,8 +54,10 @@ public sealed class GameObject : Object
     public Component GetComponentInChildren(Type type);
     public T GetComponentInChildren();
     public T GetComponentInChildren(bool includeInactive);
+    public Component GetComponentInParent(Type type, bool includeInactive);
     public Component GetComponentInParent(Type type);
     public T GetComponentInParent();
+    public T GetComponentInParent(bool includeInactive);
     public Component[] GetComponents(Type type);
     public T[] GetComponents();
     public void GetComponents(Type type, System.Collections.Generic.List<Component> results);

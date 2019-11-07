@@ -6,16 +6,22 @@ namespace UnityEngine
 
 public sealed class ComputeShader : Object
 {
+    public string[] shaderKeywords { get; set; }
+
+    public void DisableKeyword(string keyword);
     public void Dispatch(int kernelIndex, int threadGroupsX, int threadGroupsY, int threadGroupsZ);
     public void DispatchIndirect(int kernelIndex, ComputeBuffer argsBuffer, uint argsOffset);
     public void DispatchIndirect(int kernelIndex, ComputeBuffer argsBuffer);
+    public void EnableKeyword(string keyword);
     public int FindKernel(string name);
     public void GetKernelThreadGroupSizes(int kernelIndex, out uint x, out uint y, out uint z);
     public bool HasKernel(string name);
+    public bool IsKeywordEnabled(string keyword);
     public void SetBool(string name, bool val);
     public void SetBool(int nameID, bool val);
     public void SetBuffer(int kernelIndex, int nameID, ComputeBuffer buffer);
     public void SetBuffer(int kernelIndex, string name, ComputeBuffer buffer);
+    public void SetConstantBuffer(int nameID, ComputeBuffer buffer, int offset, int size);
     public void SetFloat(int nameID, float val);
     public void SetFloat(string name, float val);
     public void SetFloats(string name, float[] values);

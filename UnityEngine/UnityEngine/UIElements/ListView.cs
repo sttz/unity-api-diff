@@ -7,6 +7,7 @@ namespace UnityEngine.UIElements
 public class ListView : UIElements.BindableElement
 {
     static public string borderUssClassName;
+    static public string itemAlternativeBackgroundUssClassName;
     static public string itemSelectedVariantUssClassName;
     static public string itemUssClassName;
     static public string ussClassName;
@@ -18,24 +19,31 @@ public class ListView : UIElements.BindableElement
     public Func<UIElements.VisualElement> makeItem { get; set; }
     public float resolvedItemHeight { get; }
     public int selectedIndex { get; set; }
+    public System.Collections.Generic.IEnumerable<int> selectedIndices { get; }
     public object selectedItem { get; }
+    public System.Collections.Generic.IEnumerable<object> selectedItems { get; }
     public UIElements.SelectionType selectionType { get; set; }
+    public UIElements.AlternatingRowBackground showAlternatingRowBackgrounds { get; set; }
     public bool showBorder { get; set; }
 
     public event Action<object> onItemChosen;
+    public event Action<System.Collections.Generic.IEnumerable<object>> onItemsChosen;
+    public event Action<System.Collections.Generic.IEnumerable<object>> onSelectionChange;
     public event Action<System.Collections.Generic.List<object>> onSelectionChanged;
 
     public ListView();
     public ListView(System.Collections.IList itemsSource, int itemHeight, Func<UIElements.VisualElement> makeItem, Action<UIElements.VisualElement, int> bindItem);
 
-    protected void AddToSelection(int index);
-    protected void ClearSelection();
+    public void AddToSelection(int index);
+    public void ClearSelection();
     public void OnKeyDown(UIElements.KeyDownEvent evt);
     public void Refresh();
-    protected void RemoveFromSelection(int index);
+    public void RemoveFromSelection(int index);
     public void ScrollTo(UIElements.VisualElement visualElement);
     public void ScrollToItem(int index);
-    protected void SetSelection(int index);
+    public void SetSelection(int index);
+    public void SetSelection(System.Collections.Generic.IEnumerable<int> indices);
+    public void SetSelectionWithoutNotify(System.Collections.Generic.IEnumerable<int> indices);
 
     public class UxmlFactory : UIElements.UxmlFactory<UIElements.ListView, UxmlTraits>
     {

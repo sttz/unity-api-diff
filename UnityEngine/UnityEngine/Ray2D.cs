@@ -4,7 +4,7 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public struct Ray2D
+public struct Ray2D : IFormattable
 {
     public Vector2 direction { get; set; }
     public Vector2 origin { get; set; }
@@ -14,6 +14,7 @@ public struct Ray2D
     public Vector2 GetPoint(float distance);
     public string ToString();
     public string ToString(string format);
+    public string ToString(string format, IFormatProvider formatProvider);
 
 }
 

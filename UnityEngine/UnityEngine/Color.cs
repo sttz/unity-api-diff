@@ -4,7 +4,7 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public struct Color : IEquatable<Color>
+public struct Color : IEquatable<Color>, IFormattable
 {
     static public Color black { get; }
     static public Color blue { get; }
@@ -43,6 +43,7 @@ public struct Color : IEquatable<Color>
     public int GetHashCode();
     public string ToString();
     public string ToString(string format);
+    public string ToString(string format, IFormatProvider formatProvider);
 
 }
 

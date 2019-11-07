@@ -4,7 +4,7 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public struct Matrix4x4 : IEquatable<Matrix4x4>
+public struct Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
 {
     static public Matrix4x4 identity { get; }
     static public Matrix4x4 zero { get; }
@@ -65,6 +65,7 @@ public struct Matrix4x4 : IEquatable<Matrix4x4>
     public void SetTRS(Vector3 pos, Quaternion q, Vector3 s);
     public string ToString();
     public string ToString(string format);
+    public string ToString(string format, IFormatProvider formatProvider);
     public Plane TransformPlane(Plane plane);
     public bool ValidTRS();
 

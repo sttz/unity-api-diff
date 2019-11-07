@@ -4,7 +4,7 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public struct Plane
+public struct Plane : IFormattable
 {
     static public Plane Translate(Plane plane, Vector3 translation);
 
@@ -26,6 +26,7 @@ public struct Plane
     public void SetNormalAndPosition(Vector3 inNormal, Vector3 inPoint);
     public string ToString();
     public string ToString(string format);
+    public string ToString(string format, IFormatProvider formatProvider);
     public void Translate(Vector3 translation);
 
 }

@@ -87,6 +87,7 @@ public class VisualElement : UIElements.Focusable, UIElements.ITransform, UIElem
     public class UxmlTraits : UIElements.UxmlTraits
     {
         protected UIElements.UxmlStringAttributeDescription m_Name;
+        protected UIElements.UxmlEnumAttributeDescription<UIElements.PickingMode> m_PickingMode;
 
         protected UIElements.UxmlBoolAttributeDescription focusable { get; set; }
         protected UIElements.UxmlIntAttributeDescription focusIndex { get; set; }

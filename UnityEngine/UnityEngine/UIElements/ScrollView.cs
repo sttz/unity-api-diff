@@ -7,14 +7,20 @@ namespace UnityEngine.UIElements
 public class ScrollView : UIElements.VisualElement
 {
     static public string contentUssClassName;
+    static public string hContentVariantUssClassName;
     static public string horizontalVariantUssClassName;
     static public string hScrollerUssClassName;
+    static public string hViewportVariantUssClassName;
     static public string scrollVariantUssClassName;
     static public string ussClassName;
+    static public string vContentVariantUssClassName;
     static public string verticalHorizontalVariantUssClassName;
     static public string verticalVariantUssClassName;
+    static public string vhContentVariantUssClassName;
+    static public string vhViewportVariantUssClassName;
     static public string viewportUssClassName;
     static public string vScrollerUssClassName;
+    static public string vViewportVariantUssClassName;
 
     public UIElements.VisualElement contentContainer { get; }
     public UIElements.VisualElement contentViewport { get; private set; }

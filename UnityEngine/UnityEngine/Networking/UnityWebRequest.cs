@@ -68,6 +68,7 @@ public class UnityWebRequest : IDisposable
     public string method { get; set; }
     public int redirectLimit { get; set; }
     public long responseCode { get; }
+    public Result result { get; }
     public int timeout { get; set; }
     public ulong uploadedBytes { get; }
     public Networking.UploadHandler uploadHandler { get; set; }
@@ -92,6 +93,15 @@ public class UnityWebRequest : IDisposable
     public AsyncOperation Send();
     public Networking.UnityWebRequestAsyncOperation SendWebRequest();
     public void SetRequestHeader(string name, string value);
+
+    public enum Result
+    {
+        InProgress = 0,
+        Success = 1,
+        ConnectionError = 2,
+        ProtocolError = 3,
+        DataProcessingError = 4,
+    }
 
 }
 

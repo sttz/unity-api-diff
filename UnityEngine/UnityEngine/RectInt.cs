@@ -4,7 +4,7 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public struct RectInt : IEquatable<RectInt>
+public struct RectInt : IEquatable<RectInt>, IFormattable
 {
     public PositionEnumerator allPositionsWithin { get; }
     public Vector2 center { get; }
@@ -30,6 +30,8 @@ public struct RectInt : IEquatable<RectInt>
     public bool Overlaps(RectInt other);
     public void SetMinMax(Vector2Int minPosition, Vector2Int maxPosition);
     public string ToString();
+    public string ToString(string format);
+    public string ToString(string format, IFormatProvider formatProvider);
 
     public struct PositionEnumerator : System.Collections.Generic.IEnumerator<Vector2Int>, System.Collections.IEnumerator, IDisposable
     {

@@ -15,6 +15,7 @@ public static class ProfilerUnsafeUtility
     static public ushort CategoryLightning = 13;
     static public ushort CategoryLoading = 15;
     static public ushort CategoryNetwork = 14;
+    static public ushort CategoryOther = 16;
     static public ushort CategoryParticles = 12;
     static public ushort CategoryPhysics = 5;
     static public ushort CategoryRender = 0;

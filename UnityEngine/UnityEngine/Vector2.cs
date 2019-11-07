@@ -4,7 +4,7 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public struct Vector2 : IEquatable<Vector2>
+public struct Vector2 : IEquatable<Vector2>, IFormattable
 {
     static public float kEpsilon = 1E-05;
     static public float kEpsilonNormalSqrt = 1E-15;
@@ -55,6 +55,7 @@ public struct Vector2 : IEquatable<Vector2>
     public float SqrMagnitude();
     public string ToString();
     public string ToString(string format);
+    public string ToString(string format, IFormatProvider formatProvider);
 
 }
 

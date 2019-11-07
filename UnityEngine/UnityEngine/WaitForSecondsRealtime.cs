@@ -11,6 +11,8 @@ public class WaitForSecondsRealtime : CustomYieldInstruction
 
     public WaitForSecondsRealtime(float time);
 
+    public void Reset();
+
 }
 
 }

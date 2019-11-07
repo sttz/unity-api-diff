@@ -4,7 +4,7 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public struct Rect : IEquatable<Rect>
+public struct Rect : IEquatable<Rect>, IFormattable
 {
     static public Rect zero { get; }
 
@@ -45,6 +45,7 @@ public struct Rect : IEquatable<Rect>
     public void Set(float x, float y, float width, float height);
     public string ToString();
     public string ToString(string format);
+    public string ToString(string format, IFormatProvider formatProvider);
 
 }
 

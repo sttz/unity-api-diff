@@ -64,6 +64,7 @@ public static class CommonUsages
     static public XR.InputFeatureUsage<XR.InputTrackingState> trackingState;
     static public XR.InputFeatureUsage<float> trigger;
     static public XR.InputFeatureUsage<bool> triggerButton;
+    static public XR.InputFeatureUsage<bool> userPresence;
 
 }
 

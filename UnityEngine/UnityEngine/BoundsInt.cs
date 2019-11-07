@@ -4,7 +4,7 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public struct BoundsInt : IEquatable<BoundsInt>
+public struct BoundsInt : IEquatable<BoundsInt>, IFormattable
 {
     public PositionEnumerator allPositionsWithin { get; }
     public Vector3 center { get; }
@@ -32,6 +32,8 @@ public struct BoundsInt : IEquatable<BoundsInt>
     public int GetHashCode();
     public void SetMinMax(Vector3Int minPosition, Vector3Int maxPosition);
     public string ToString();
+    public string ToString(string format);
+    public string ToString(string format, IFormatProvider formatProvider);
 
     public struct PositionEnumerator : System.Collections.Generic.IEnumerator<Vector3Int>, System.Collections.IEnumerator, IDisposable
     {
