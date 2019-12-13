@@ -654,6 +654,7 @@ public sealed class PlayerSettings : Object
             Russian = 9,
             ACB = 10,
             OFLC = 11,
+            IARCGeneric = 12,
         }
 
         public enum SupportedNpadStyle

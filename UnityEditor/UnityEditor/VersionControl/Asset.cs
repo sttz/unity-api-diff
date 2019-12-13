@@ -47,6 +47,7 @@ public class Asset
         MetaFile = 32768,
         MovedLocal = 65536,
         MovedRemote = 131072,
+        Unversioned = 262144,
     }
 
 }

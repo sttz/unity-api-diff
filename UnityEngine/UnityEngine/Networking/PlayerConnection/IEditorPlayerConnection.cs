@@ -11,6 +11,7 @@ public interface IEditorPlayerConnection
     public void RegisterConnection(Events.UnityAction<int> callback);
     public void RegisterDisconnection(Events.UnityAction<int> callback);
     public void Send(Guid messageId, byte[] data);
+    public bool TrySend(Guid messageId, byte[] data);
     public void Unregister(Guid messageId, Events.UnityAction<Networking.PlayerConnection.MessageEventArgs> callback);
 
 }
