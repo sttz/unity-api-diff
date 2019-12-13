@@ -7,6 +7,7 @@ namespace UnityEditor.Experimental.GraphView
 public abstract class GraphView : UIElements.VisualElement, UnityEditor.Experimental.GraphView.ISelection
 {
     static public void CalculateFrameTransform(Rect rectToFit, Rect clientRect, int border, out Vector3 frameTranslation, out Vector3 frameScaling);
+    static public void CollectElements(System.Collections.Generic.IEnumerable<UnityEditor.Experimental.GraphView.GraphElement> elements, System.Collections.Generic.HashSet<UnityEditor.Experimental.GraphView.GraphElement> collectedElementSet, Func<UnityEditor.Experimental.GraphView.GraphElement, bool> conditionFunc);
 
     public UIElements.UQueryState<UnityEditor.Experimental.GraphView.Port> ports;
 
@@ -28,6 +29,7 @@ public abstract class GraphView : UIElements.VisualElement, UnityEditor.Experime
     public float minScale { get; }
     public Action<UnityEditor.Experimental.GraphView.NodeCreationContext> nodeCreationRequest { get; set; }
     public UIElements.UQueryState<UnityEditor.Experimental.GraphView.Node> nodes { get; private set; }
+    public UnityEditor.Experimental.GraphView.PlacematContainer placematContainer { get; }
     public float referenceScale { get; }
     public float scale { get; }
     public float scaleStep { get; }
@@ -49,6 +51,7 @@ public abstract class GraphView : UIElements.VisualElement, UnityEditor.Experime
     public Rect CalculateRectToFitAll(UIElements.VisualElement container);
     protected bool CanPasteSerializedData(string data);
     public void ClearSelection();
+    protected UnityEditor.Experimental.GraphView.PlacematContainer CreatePlacematContainer();
     public void DeleteElements(System.Collections.Generic.IEnumerable<UnityEditor.Experimental.GraphView.GraphElement> elementsToRemove);
     public UnityEditor.Experimental.GraphView.EventPropagation DeleteSelection();
     protected void DeleteSelectionOperation(string operationName, AskUser askUser);
@@ -67,6 +70,7 @@ public abstract class GraphView : UIElements.VisualElement, UnityEditor.Experime
     public UnityEditor.Experimental.GraphView.GraphElement GetElementByGuid(string guid);
     public UnityEditor.Experimental.GraphView.Node GetNodeByGuid(string guid);
     public UnityEditor.Experimental.GraphView.Port GetPortByGuid(string guid);
+    public bool GetPortCenterOverride(UnityEditor.Experimental.GraphView.Port port, out Vector2 overriddenPosition);
     public void ReleaseBlackboard(UnityEditor.Experimental.GraphView.Blackboard toRelease);
     public void RemoveElement(UnityEditor.Experimental.GraphView.GraphElement graphElement);
     public void RemoveFromSelection(UnityEditor.Experimental.GraphView.ISelectable selectable);
@@ -76,6 +80,12 @@ public abstract class GraphView : UIElements.VisualElement, UnityEditor.Experime
     protected void UnserializeAndPasteOperation(string operationName, string data);
     public void UpdateViewTransform(Vector3 newPosition, Vector3 newScale);
     protected void ValidateTransform();
+
+    public class Layer : UIElements.VisualElement
+    {
+        public Layer();
+
+    }
 
     public delegate UnityEditor.Experimental.GraphView.GraphViewChange GraphViewChanged(UnityEditor.Experimental.GraphView.GraphViewChange graphViewChange);
 

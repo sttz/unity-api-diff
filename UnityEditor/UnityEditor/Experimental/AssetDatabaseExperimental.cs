@@ -17,11 +17,15 @@ public sealed class AssetDatabaseExperimental
     static public bool GetArtifactPaths(Hash128 hash, out string paths);
     static public Type[] GetAvailableImporterTypes(string path);
     static public string GetCacheServerAddress();
+    static public bool GetCacheServerEnableDownload();
+    static public bool GetCacheServerEnableUpload();
+    static public string GetCacheServerNamespacePrefix();
     static public ushort GetCacheServerPort();
     static public Type GetImporterOverride(string path);
     static public UnityEditor.Experimental.OnDemandProgress GetOnDemandArtifactProgress(string guid);
     static public UnityEditor.Experimental.OnDemandProgress GetOnDemandArtifactProgress(string guid, Type importerType);
     static public bool IsAssetImportWorkerProcess();
+    static public bool IsCacheServerEnabled();
     static public bool IsConnectedToCacheServer();
     static public void ReconnectToCacheServer();
     static public void RefreshCacheServerNamespacePrefix();

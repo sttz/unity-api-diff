@@ -28,6 +28,7 @@ public sealed class Cubemap : Texture
     public void Apply();
     public void ClearRequestedMipmapLevel();
     public Color GetPixel(CubemapFace face, int x, int y);
+    public Unity.Collections.NativeArray<T> GetPixelData(int mipLevel, CubemapFace face);
     public Color[] GetPixels(CubemapFace face, int miplevel);
     public Color[] GetPixels(CubemapFace face);
     public bool IsRequestedMipmapLevelLoaded();

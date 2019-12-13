@@ -27,6 +27,8 @@ public sealed class Tilemap : GridLayout
     public void ClearAllTiles();
     public void CompressBounds();
     public bool ContainsTile(Tilemaps.TileBase tileAsset);
+    public void DeleteCells(Vector3Int position, Vector3Int deleteCells);
+    public void DeleteCells(Vector3Int position, int numColumns, int numRows, int numLayers);
     public void EditorPreviewBoxFill(Vector3Int position, Object tile, int startX, int startY, int endX, int endY);
     public void EditorPreviewFloodFill(Vector3Int position, Tilemaps.TileBase tile);
     public void FloodFill(Vector3Int position, Tilemaps.TileBase tile);
@@ -41,6 +43,7 @@ public sealed class Tilemap : GridLayout
     public Tilemaps.TileFlags GetEditorPreviewTileFlags(Vector3Int position);
     public Matrix4x4 GetEditorPreviewTransformMatrix(Vector3Int position);
     public GameObject GetInstantiatedObject(Vector3Int position);
+    public GameObject GetObjectToInstantiate(Vector3Int position);
     public Sprite GetSprite(Vector3Int position);
     public Tilemaps.TileBase GetTile(Vector3Int position);
     public T GetTile(Vector3Int position);
@@ -51,6 +54,8 @@ public sealed class Tilemap : GridLayout
     public int GetUsedTilesNonAlloc(Tilemaps.TileBase[] usedTiles);
     public bool HasEditorPreviewTile(Vector3Int position);
     public bool HasTile(Vector3Int position);
+    public void InsertCells(Vector3Int position, Vector3Int insertCells);
+    public void InsertCells(Vector3Int position, int numColumns, int numRows, int numLayers);
     public void RefreshAllTiles();
     public void RefreshTile(Vector3Int position);
     public void RemoveTileFlags(Vector3Int position, Tilemaps.TileFlags flags);

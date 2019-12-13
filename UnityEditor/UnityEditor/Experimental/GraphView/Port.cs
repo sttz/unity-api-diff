@@ -12,6 +12,7 @@ public class Port : UnityEditor.Experimental.GraphView.GraphElement
     protected UIElements.VisualElement m_ConnectorBoxCap;
     protected UIElements.Label m_ConnectorText;
     protected UnityEditor.Experimental.GraphView.EdgeConnector m_EdgeConnector;
+    protected UnityEditor.Experimental.GraphView.GraphView m_GraphView;
 
     public Capacity capacity { get; private set; }
     public bool collapsed { get; }
@@ -27,6 +28,7 @@ public class Port : UnityEditor.Experimental.GraphView.GraphElement
     public Color portColor { get; set; }
     public string portName { get; set; }
     public Type portType { get; set; }
+    public bool showInMiniMap { get; }
     public object source { get; set; }
     public string visualClass { get; set; }
 

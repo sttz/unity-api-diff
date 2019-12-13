@@ -11,6 +11,7 @@ public static class UnsafeUtility
     static public void CopyObjectAddressToPtr(object target, void dstPtr);
     static public void CopyPtrToStructure(void ptr, out T& output);
     static public void CopyStructureToPtr(T& input, void ptr);
+    static public bool EnumEquals(T lhs, T rhs);
     static public int EnumToInt(T enumValue);
     static public void Free(void memory, Unity.Collections.Allocator allocator);
     static public int GetFieldOffset(System.Reflection.FieldInfo field);

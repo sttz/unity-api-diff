@@ -11,7 +11,10 @@ public abstract class Stage : ScriptableObject
 
     protected Stage();
 
-    protected void CloseStage();
+    public T FindComponentOfType();
+    public T[] FindComponentsOfType();
+    public ulong GetCombinedSceneCullingMaskForCamera();
+    protected void OnCloseStage();
     protected void OnDisable();
     protected void OnEnable();
 

@@ -11,7 +11,9 @@ public class MeshWriteData
     public int vertexCount { get; }
 
     public void SetAllIndices(ushort[] indices);
+    public void SetAllIndices(Unity.Collections.NativeSlice<ushort> indices);
     public void SetAllVertices(UIElements.Vertex[] vertices);
+    public void SetAllVertices(Unity.Collections.NativeSlice<UIElements.Vertex> vertices);
     public void SetNextIndex(ushort index);
     public void SetNextVertex(UIElements.Vertex vertex);
 

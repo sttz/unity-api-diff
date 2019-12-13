@@ -85,14 +85,9 @@ public class Graphics
     static public void DrawMeshInstanced(Mesh mesh, int submeshIndex, Material material, System.Collections.Generic.List<Matrix4x4> matrices, MaterialPropertyBlock properties, Rendering.ShadowCastingMode castShadows, bool receiveShadows, int layer, Camera camera);
     static public void DrawMeshInstanced(Mesh mesh, int submeshIndex, Material material, System.Collections.Generic.List<Matrix4x4> matrices, MaterialPropertyBlock properties, Rendering.ShadowCastingMode castShadows, bool receiveShadows, int layer, Camera camera, Rendering.LightProbeUsage lightProbeUsage);
     static public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, Bounds bounds, ComputeBuffer bufferWithArgs, int argsOffset, MaterialPropertyBlock properties, Rendering.ShadowCastingMode castShadows, bool receiveShadows, int layer, Camera camera, Rendering.LightProbeUsage lightProbeUsage, LightProbeProxyVolume lightProbeProxyVolume);
-    static public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, Bounds bounds, ComputeBuffer bufferWithArgs);
-    static public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, Bounds bounds, ComputeBuffer bufferWithArgs, int argsOffset);
-    static public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, Bounds bounds, ComputeBuffer bufferWithArgs, int argsOffset, MaterialPropertyBlock properties);
-    static public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, Bounds bounds, ComputeBuffer bufferWithArgs, int argsOffset, MaterialPropertyBlock properties, Rendering.ShadowCastingMode castShadows);
-    static public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, Bounds bounds, ComputeBuffer bufferWithArgs, int argsOffset, MaterialPropertyBlock properties, Rendering.ShadowCastingMode castShadows, bool receiveShadows);
-    static public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, Bounds bounds, ComputeBuffer bufferWithArgs, int argsOffset, MaterialPropertyBlock properties, Rendering.ShadowCastingMode castShadows, bool receiveShadows, int layer);
-    static public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, Bounds bounds, ComputeBuffer bufferWithArgs, int argsOffset, MaterialPropertyBlock properties, Rendering.ShadowCastingMode castShadows, bool receiveShadows, int layer, Camera camera);
-    static public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, Bounds bounds, ComputeBuffer bufferWithArgs, int argsOffset, MaterialPropertyBlock properties, Rendering.ShadowCastingMode castShadows, bool receiveShadows, int layer, Camera camera, Rendering.LightProbeUsage lightProbeUsage);
+    static public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, Bounds bounds, GraphicsBuffer bufferWithArgs, int argsOffset, MaterialPropertyBlock properties, Rendering.ShadowCastingMode castShadows, bool receiveShadows, int layer, Camera camera, Rendering.LightProbeUsage lightProbeUsage, LightProbeProxyVolume lightProbeProxyVolume);
+    static public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, Bounds bounds, ComputeBuffer bufferWithArgs, int argsOffset = 0, MaterialPropertyBlock properties = null, Rendering.ShadowCastingMode castShadows = 1, bool receiveShadows = true, int layer = 0, Camera camera = null, Rendering.LightProbeUsage lightProbeUsage = 1);
+    static public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, Bounds bounds, GraphicsBuffer bufferWithArgs, int argsOffset = 0, MaterialPropertyBlock properties = null, Rendering.ShadowCastingMode castShadows = 1, bool receiveShadows = true, int layer = 0, Camera camera = null, Rendering.LightProbeUsage lightProbeUsage = 1);
     static public void DrawMeshInstancedProcedural(Mesh mesh, int submeshIndex, Material material, Bounds bounds, int count, MaterialPropertyBlock properties = null, Rendering.ShadowCastingMode castShadows = 1, bool receiveShadows = true, int layer = 0, Camera camera = null, Rendering.LightProbeUsage lightProbeUsage = 1, LightProbeProxyVolume lightProbeProxyVolume = null);
     static public void DrawMeshNow(Mesh mesh, Vector3 position, Quaternion rotation, int materialIndex);
     static public void DrawMeshNow(Mesh mesh, Matrix4x4 matrix, int materialIndex);
@@ -106,6 +101,8 @@ public class Graphics
     static public void DrawProceduralIndirect(MeshTopology topology, ComputeBuffer bufferWithArgs, int argsOffset = 0);
     static public void DrawProceduralIndirectNow(MeshTopology topology, ComputeBuffer bufferWithArgs, int argsOffset = 0);
     static public void DrawProceduralIndirectNow(MeshTopology topology, GraphicsBuffer indexBuffer, ComputeBuffer bufferWithArgs, int argsOffset = 0);
+    static public void DrawProceduralIndirectNow(MeshTopology topology, GraphicsBuffer bufferWithArgs, int argsOffset = 0);
+    static public void DrawProceduralIndirectNow(MeshTopology topology, GraphicsBuffer indexBuffer, GraphicsBuffer bufferWithArgs, int argsOffset = 0);
     static public void DrawProceduralNow(MeshTopology topology, int vertexCount, int instanceCount = 1);
     static public void DrawProceduralNow(MeshTopology topology, GraphicsBuffer indexBuffer, int indexCount, int instanceCount = 1);
     static public void DrawTexture(Rect screenRect, Texture texture, Rect sourceRect, int leftBorder, int rightBorder, int topBorder, int bottomBorder, Color color, Material mat, int pass);
@@ -124,7 +121,9 @@ public class Graphics
     static public void ExecuteCommandBufferAsync(Rendering.CommandBuffer buffer, Rendering.ComputeQueueType queueType);
     static public void SetRandomWriteTarget(int index, RenderTexture uav);
     static public void SetRandomWriteTarget(int index, ComputeBuffer uav, bool preserveCounterValue);
+    static public void SetRandomWriteTarget(int index, GraphicsBuffer uav, bool preserveCounterValue);
     static public void SetRandomWriteTarget(int index, ComputeBuffer uav);
+    static public void SetRandomWriteTarget(int index, GraphicsBuffer uav);
     static public void SetRenderTarget(RenderTexture rt, int mipLevel, CubemapFace face, int depthSlice);
     static public void SetRenderTarget(RenderBuffer colorBuffer, RenderBuffer depthBuffer, int mipLevel, CubemapFace face, int depthSlice);
     static public void SetRenderTarget(RenderBuffer[] colorBuffers, RenderBuffer depthBuffer);

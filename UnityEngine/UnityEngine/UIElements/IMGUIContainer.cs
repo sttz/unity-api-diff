@@ -10,6 +10,7 @@ public class IMGUIContainer : UIElements.VisualElement, IDisposable
 
     public bool canGrabFocus { get; }
     public UIElements.ContextType contextType { get; set; }
+    public bool cullingEnabled { get; set; }
     public Action onGUIHandler { get; set; }
 
     public IMGUIContainer();

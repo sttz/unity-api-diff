@@ -64,6 +64,7 @@ public class EditorWindow : ScriptableObject
     public void Show(bool immediateDisplay);
     public void ShowAsDropDown(Rect buttonRect, Vector2 windowSize);
     public void ShowAuxWindow();
+    public void ShowModal();
     public void ShowModalUtility();
     public void ShowNotification(GUIContent notification);
     public void ShowNotification(GUIContent notification, double fadeoutWait);

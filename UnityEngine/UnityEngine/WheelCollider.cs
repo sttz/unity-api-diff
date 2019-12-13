@@ -19,6 +19,7 @@ public class WheelCollider : Collider
     public float sprungMass { get; }
     public float steerAngle { get; set; }
     public float suspensionDistance { get; set; }
+    public bool suspensionExpansionLimited { get; set; }
     public JointSpring suspensionSpring { get; set; }
     public float wheelDampingRate { get; set; }
 

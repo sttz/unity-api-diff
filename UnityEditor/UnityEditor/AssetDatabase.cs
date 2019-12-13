@@ -15,6 +15,7 @@ public sealed class AssetDatabase
 
     static public void AddObjectToAsset(Object objectToAdd, string path);
     static public void AddObjectToAsset(Object objectToAdd, Object assetObject);
+    static public void AllowAutoRefresh();
     static public string AssetPathToGUID(string path);
     static public void ClearLabels(Object obj);
     static public bool Contains(Object obj);
@@ -23,6 +24,7 @@ public sealed class AssetDatabase
     static public void CreateAsset(Object asset, string path);
     static public string CreateFolder(string parentFolder, string newFolderName);
     static public bool DeleteAsset(string path);
+    static public void DisallowAutoRefresh();
     static public void ExportPackage(string assetPathName, string fileName);
     static public void ExportPackage(string assetPathName, string fileName, UnityEditor.ExportPackageOptions flags);
     static public void ExportPackage(string[] assetPathNames, string fileName);

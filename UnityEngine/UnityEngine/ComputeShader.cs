@@ -12,6 +12,8 @@ public sealed class ComputeShader : Object
     public void Dispatch(int kernelIndex, int threadGroupsX, int threadGroupsY, int threadGroupsZ);
     public void DispatchIndirect(int kernelIndex, ComputeBuffer argsBuffer, uint argsOffset);
     public void DispatchIndirect(int kernelIndex, ComputeBuffer argsBuffer);
+    public void DispatchIndirect(int kernelIndex, GraphicsBuffer argsBuffer, uint argsOffset);
+    public void DispatchIndirect(int kernelIndex, GraphicsBuffer argsBuffer);
     public void EnableKeyword(string keyword);
     public int FindKernel(string name);
     public void GetKernelThreadGroupSizes(int kernelIndex, out uint x, out uint y, out uint z);
@@ -20,7 +22,9 @@ public sealed class ComputeShader : Object
     public void SetBool(string name, bool val);
     public void SetBool(int nameID, bool val);
     public void SetBuffer(int kernelIndex, int nameID, ComputeBuffer buffer);
+    public void SetBuffer(int kernelIndex, int nameID, GraphicsBuffer buffer);
     public void SetBuffer(int kernelIndex, string name, ComputeBuffer buffer);
+    public void SetBuffer(int kernelIndex, string name, GraphicsBuffer buffer);
     public void SetConstantBuffer(int nameID, ComputeBuffer buffer, int offset, int size);
     public void SetFloat(int nameID, float val);
     public void SetFloat(string name, float val);

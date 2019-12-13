@@ -11,6 +11,7 @@ public struct CurveFilterOptions
     public float positionError;
     public float rotationError;
     public float scaleError;
+    public bool unrollRotation;
 
 }
 

@@ -22,6 +22,7 @@ public sealed class Texture2DArray : Texture
     public void Apply(bool updateMipmaps, bool makeNoLongerReadable);
     public void Apply(bool updateMipmaps);
     public void Apply();
+    public Unity.Collections.NativeArray<T> GetPixelData(int mipLevel, int element);
     public Color[] GetPixels(int arrayElement, int miplevel);
     public Color[] GetPixels(int arrayElement);
     public Color32[] GetPixels32(int arrayElement, int miplevel);

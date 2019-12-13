@@ -46,6 +46,7 @@ public class EditorUserBuildSettings : Object
     static public bool switchCreateSolutionFile { get; set; }
     static public bool switchEnableDebugPad { get; set; }
     static public bool switchEnableHeapInspector { get; set; }
+    static public bool switchHTCSScriptDebugging { get; set; }
     static public bool switchNVNDrawValidation { get; set; }
     static public bool switchNVNDrawValidation_Heavy { get; set; }
     static public bool switchNVNDrawValidation_Light { get; set; }

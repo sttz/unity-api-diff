@@ -10,6 +10,7 @@ public abstract class GraphElement : UIElements.VisualElement, UnityEditor.Exper
     public Color elementTypeColor { get; set; }
     public int layer { get; set; }
     public bool selected { get; set; }
+    public bool showInMiniMap { get; set; }
     public string title { get; set; }
 
     protected GraphElement();
@@ -18,6 +19,7 @@ public abstract class GraphElement : UIElements.VisualElement, UnityEditor.Exper
     public Rect GetPosition();
     public bool HitTest(Vector2 localPoint);
     public bool IsAscendable();
+    public bool IsCopiable();
     public bool IsDroppable();
     public bool IsMovable();
     public bool IsRenamable();

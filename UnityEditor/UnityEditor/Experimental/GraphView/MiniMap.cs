@@ -6,6 +6,7 @@ namespace UnityEditor.Experimental.GraphView
 
 public class MiniMap : UnityEditor.Experimental.GraphView.GraphElement
 {
+    protected Color m_SelectedChildrenColor;
     public Action<string> zoomFactorTextChanged;
 
     public bool anchored { get; set; }

@@ -17,6 +17,7 @@ public sealed class Preset : Object
     static public bool SetAsDefault(UnityEditor.Presets.Preset preset);
     static public bool SetDefaultPresetsForType(UnityEditor.Presets.PresetType type, UnityEditor.Presets.DefaultPreset[] presets);
 
+    public string[] excludedProperties { get; set; }
     public UnityEditor.PropertyModification[] PropertyModifications { get; }
 
     public Preset(Object source);

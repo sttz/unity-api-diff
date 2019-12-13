@@ -14,6 +14,7 @@ public struct ManipulatorActivationFilter : IEquatable<UIElements.ManipulatorAct
     public bool Equals(UIElements.ManipulatorActivationFilter other);
     public int GetHashCode();
     public bool Matches(UIElements.IMouseEvent e);
+    public bool Matches(UIElements.IPointerEvent e);
 
 }
 

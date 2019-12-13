@@ -58,6 +58,7 @@ public sealed class EditorStyles
 
     static public GUIStyle ApplyUSS(GUIStyle style, string ussStyleRuleName, string ussInPlaceStyleOverride = null);
     static public GUIStyle FromUSS(string ussStyleRuleName, string ussInPlaceStyleOverride = null);
+    static public GUIStyle FromUSS(GUIStyle baseStyle, string ussStyleRuleName, string ussInPlaceStyleOverride = null);
 
     public EditorStyles();
 

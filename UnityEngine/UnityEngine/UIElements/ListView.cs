@@ -7,7 +7,9 @@ namespace UnityEngine.UIElements
 public class ListView : UIElements.BindableElement
 {
     static public string borderUssClassName;
+    static public string dragHoverBarUssClassName;
     static public string itemAlternativeBackgroundUssClassName;
+    static public string itemDragHoverUssClassName;
     static public string itemSelectedVariantUssClassName;
     static public string itemUssClassName;
     static public string ussClassName;
@@ -17,6 +19,7 @@ public class ListView : UIElements.BindableElement
     public int itemHeight { get; set; }
     public System.Collections.IList itemsSource { get; set; }
     public Func<UIElements.VisualElement> makeItem { get; set; }
+    public bool reorderable { get; set; }
     public float resolvedItemHeight { get; }
     public int selectedIndex { get; set; }
     public System.Collections.Generic.IEnumerable<int> selectedIndices { get; }

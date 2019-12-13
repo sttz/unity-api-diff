@@ -219,10 +219,13 @@ public sealed class EditorGUI
     static public void ObjectField(Rect position, UnityEditor.SerializedProperty property, GUIContent label);
     static public void ObjectField(Rect position, UnityEditor.SerializedProperty property, Type objType);
     static public void ObjectField(Rect position, UnityEditor.SerializedProperty property, Type objType, GUIContent label);
+    static public Object ObjectField(Rect position, Object obj, Type objType, Object targetBeingEdited);
     static public Object ObjectField(Rect position, Object obj, Type objType, bool allowSceneObjects);
     static public Object ObjectField(Rect position, Object obj, Type objType);
+    static public Object ObjectField(Rect position, string label, Object obj, Type objType, Object targetBeingEdited);
     static public Object ObjectField(Rect position, string label, Object obj, Type objType, bool allowSceneObjects);
     static public Object ObjectField(Rect position, string label, Object obj, Type objType);
+    static public Object ObjectField(Rect position, GUIContent label, Object obj, Type objType, Object targetBeingEdited);
     static public Object ObjectField(Rect position, GUIContent label, Object obj, Type objType, bool allowSceneObjects);
     static public Object ObjectField(Rect position, GUIContent label, Object obj, Type objType);
     static public string PasswordField(Rect position, string password);

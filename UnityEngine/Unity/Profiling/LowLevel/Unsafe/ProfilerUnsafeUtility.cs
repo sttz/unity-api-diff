@@ -25,9 +25,12 @@ public static class ProfilerUnsafeUtility
 
     static public void BeginSample(IntPtr markerPtr);
     static public void BeginSampleWithMetadata(IntPtr markerPtr, int metadataCount, void metadata);
+    static public void CreateCounterValue(out IntPtr counterPtr, string name, ushort categoryId, Unity.Profiling.LowLevel.MarkerFlags flags, byte dataType, byte dataUnit, int dataSize, Unity.Profiling.ProfilerCounterOptions counterOptions);
     static public IntPtr CreateMarker(string name, ushort categoryId, Unity.Profiling.LowLevel.MarkerFlags flags, int metadataCount);
     static public void EndSample(IntPtr markerPtr);
-    static public void SetMarkerMetadata(IntPtr markerPtr, int index, Unity.Profiling.LowLevel.ProfilerMarkerDataType type, string name);
+    static public void FlushCounterValue(void counterValuePtr);
+    static public void SetMarkerMetadata(IntPtr markerPtr, int index, string name, byte type, byte unit);
+    static public void SingleSampleWithMetadata(IntPtr markerPtr, int metadataCount, void metadata);
 
 }
 

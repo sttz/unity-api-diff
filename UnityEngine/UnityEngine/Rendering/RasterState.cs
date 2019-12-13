@@ -8,6 +8,7 @@ public struct RasterState : IEquatable<Rendering.RasterState>
 {
     static public Rendering.RasterState defaultValue;
 
+    public bool conservative { get; set; }
     public Rendering.CullMode cullingMode { get; set; }
     public bool depthClip { get; set; }
     public float offsetFactor { get; set; }

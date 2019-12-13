@@ -16,6 +16,7 @@ public class Edge : UnityEditor.Experimental.GraphView.GraphElement
     public UnityEditor.Experimental.GraphView.Port output { get; set; }
     protected Vector2[] PointsAndTangents { get; }
     public Color selectedColor { get; }
+    public bool showInMiniMap { get; }
 
     public Edge();
 

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace UnityEngine.Experimental.Networking.PlayerConnection
+namespace UnityEngine.Networking.PlayerConnection
 {
 
 public enum ConnectionTarget

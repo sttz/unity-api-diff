@@ -10,6 +10,8 @@ public sealed class Recorder
 
     public long elapsedNanoseconds { get; }
     public bool enabled { get; set; }
+    public long gpuElapsedNanoseconds { get; }
+    public int gpuSampleBlockCount { get; }
     public bool isValid { get; }
     public int sampleBlockCount { get; }
 

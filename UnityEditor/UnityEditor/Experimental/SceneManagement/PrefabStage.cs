@@ -20,8 +20,9 @@ public sealed class PrefabStage : UnityEditor.SceneManagement.PreviewSceneStage
     public GameObject prefabContentsRoot { get; }
 
     public void ClearDirtiness();
-    protected void CloseStage();
+    public ulong GetCombinedSceneCullingMaskForCamera();
     public bool IsPartOfPrefabContents(GameObject gameObject);
+    protected void OnCloseStage();
     protected void OnDisable();
     protected void OnEnable();
 

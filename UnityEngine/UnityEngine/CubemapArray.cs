@@ -20,6 +20,7 @@ public sealed class CubemapArray : Texture
     public void Apply(bool updateMipmaps, bool makeNoLongerReadable);
     public void Apply(bool updateMipmaps);
     public void Apply();
+    public Unity.Collections.NativeArray<T> GetPixelData(int mipLevel, CubemapFace face, int element);
     public Color[] GetPixels(CubemapFace face, int arrayElement, int miplevel);
     public Color[] GetPixels(CubemapFace face, int arrayElement);
     public Color32[] GetPixels32(CubemapFace face, int arrayElement, int miplevel);

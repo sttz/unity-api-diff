@@ -55,10 +55,14 @@ public sealed class MaterialPropertyBlock
     public void GetVectorArray(int nameID, System.Collections.Generic.List<Vector4> values);
     public void SetBuffer(string name, ComputeBuffer value);
     public void SetBuffer(int nameID, ComputeBuffer value);
+    public void SetBuffer(string name, GraphicsBuffer value);
+    public void SetBuffer(int nameID, GraphicsBuffer value);
     public void SetColor(string name, Color value);
     public void SetColor(int nameID, Color value);
     public void SetConstantBuffer(string name, ComputeBuffer value, int offset, int size);
     public void SetConstantBuffer(int nameID, ComputeBuffer value, int offset, int size);
+    public void SetConstantBuffer(string name, GraphicsBuffer value, int offset, int size);
+    public void SetConstantBuffer(int nameID, GraphicsBuffer value, int offset, int size);
     public void SetFloat(string name, float value);
     public void SetFloat(int nameID, float value);
     public void SetFloatArray(string name, System.Collections.Generic.List<float> values);

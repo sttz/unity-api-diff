@@ -15,8 +15,12 @@ public class BatchRendererGroup : IDisposable
     public Unity.Collections.NativeArray<Matrix4x4> GetBatchMatrixArray(int batchIndex, int propertyName);
     public Unity.Collections.NativeArray<float> GetBatchScalarArray(int batchIndex, string propertyName);
     public Unity.Collections.NativeArray<float> GetBatchScalarArray(int batchIndex, int propertyName);
+    public Unity.Collections.NativeArray<int> GetBatchScalarArrayInt(int batchIndex, string propertyName);
+    public Unity.Collections.NativeArray<int> GetBatchScalarArrayInt(int batchIndex, int propertyName);
     public Unity.Collections.NativeArray<Vector4> GetBatchVectorArray(int batchIndex, string propertyName);
     public Unity.Collections.NativeArray<Vector4> GetBatchVectorArray(int batchIndex, int propertyName);
+    public Unity.Collections.NativeArray<int> GetBatchVectorArrayInt(int batchIndex, string propertyName);
+    public Unity.Collections.NativeArray<int> GetBatchVectorArrayInt(int batchIndex, int propertyName);
     public int GetNumBatches();
     public void RemoveBatch(int index);
     public void SetBatchBounds(int batchIndex, Bounds bounds);

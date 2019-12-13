@@ -36,12 +36,15 @@ public static class ProfilerDriver
     static public int[] GetAvailableProfilers();
     static public string GetConnectionIdentifier(int guid);
     static public string GetFormattedStatisticsValue(int frame, int identifier);
+    static public UnityEditorInternal.GpuProfilingStatisticsAvailabilityStates GetGpuStatisticsAvailabilityState(int frame);
+    static public void GetGpuStatisticsAvailabilityStates(int firstFrame, out UnityEditorInternal.GpuProfilingStatisticsAvailabilityStates[] buffer);
     static public string[] GetGraphStatisticsPropertiesForArea(Profiling.ProfilerArea area);
     static public UnityEditor.Profiling.HierarchyFrameDataView GetHierarchyFrameDataView(int frameIndex, int threadIndex, ViewModes viewMode, int sortColumn, bool sortAscending);
     static public int GetNextFrameIndex(int frame);
     static public string GetOverviewText(Profiling.ProfilerArea profilerArea, int frame);
     static public int GetPreviousFrameIndex(int frame);
     static public UnityEditor.Profiling.RawFrameDataView GetRawFrameDataView(int frameIndex, int threadIndex);
+    static public void GetStatisticsAvailable(Profiling.ProfilerArea profilerArea, int firstFrame, out int[] buffer);
     static public void GetStatisticsAvailable(Profiling.ProfilerArea profilerArea, int firstFrame, out bool[] buffer);
     static public int GetStatisticsIdentifier(string propertyName);
     static public int GetStatisticsIdentifierForArea(Profiling.ProfilerArea profilerArea, string propertyName);
@@ -60,6 +63,7 @@ public static class ProfilerDriver
     static public void SetAreaEnabled(Profiling.ProfilerArea area, bool enabled);
     static public void SetAudioCaptureFlags(int flags);
     static public void SetAutoInstrumentedAssemblies(UnityEditorInternal.InstrumentedAssemblyTypes fullname);
+    static public void SetMarkerFiltering(string name);
 
 }
 

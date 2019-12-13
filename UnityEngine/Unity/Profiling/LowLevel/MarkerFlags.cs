@@ -12,6 +12,7 @@ public enum MarkerFlags : ushort
     ScriptDeepProfiler = 64,
     AvailabilityEditor = 4,
     Warning = 16,
+    Counter = 128,
 }
 
 }

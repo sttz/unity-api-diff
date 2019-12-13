@@ -11,7 +11,7 @@ public abstract class PreviewSceneStage : UnityEditor.SceneManagement.Stage
 
     protected PreviewSceneStage();
 
-    protected void CloseStage();
+    protected void OnCloseStage();
 
 }
 

@@ -14,6 +14,7 @@ public sealed class RectTransformUtility
     static public Rect PixelAdjustRect(RectTransform rectTransform, Canvas canvas);
     static public bool RectangleContainsScreenPoint(RectTransform rect, Vector2 screenPoint);
     static public bool RectangleContainsScreenPoint(RectTransform rect, Vector2 screenPoint, Camera cam);
+    static public bool RectangleContainsScreenPoint(RectTransform rect, Vector2 screenPoint, Camera cam, Vector4 offset);
     static public bool ScreenPointToLocalPointInRectangle(RectTransform rect, Vector2 screenPoint, Camera cam, out Vector2 localPoint);
     static public Ray ScreenPointToRay(Camera cam, Vector2 screenPos);
     static public bool ScreenPointToWorldPointInRectangle(RectTransform rect, Vector2 screenPoint, Camera cam, out Vector3 worldPoint);

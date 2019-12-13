@@ -29,6 +29,7 @@ public sealed class SystemInfo
     static public bool hasDynamicUniformArrayIndexingInFragmentShaders { get; }
     static public bool hasHiddenSurfaceRemovalOnGPU { get; }
     static public bool hasMipMaxLevel { get; }
+    static public HDRDisplaySupportFlags hdrDisplaySupportFlags { get; }
     static public int maxComputeBufferInputsCompute { get; }
     static public int maxComputeBufferInputsDomain { get; }
     static public int maxComputeBufferInputsFragment { get; }
@@ -60,9 +61,11 @@ public sealed class SystemInfo
     static public bool supportsAsyncGPUReadback { get; }
     static public bool supportsAudio { get; }
     static public bool supportsComputeShaders { get; }
+    static public bool supportsConservativeRaster { get; }
     static public bool supportsCubemapArrayTextures { get; }
     static public bool supportsGeometryShaders { get; }
     static public bool supportsGPUFence { get; }
+    static public bool supportsGpuRecorder { get; }
     static public bool supportsGraphicsFence { get; }
     static public bool supportsGyroscope { get; }
     static public bool supportsHardwareQuadTopology { get; }

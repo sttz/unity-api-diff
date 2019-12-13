@@ -46,6 +46,7 @@ public sealed class Texture2D : Texture
     public Color GetPixel(int x, int y, int mipLevel);
     public Color GetPixelBilinear(float u, float v);
     public Color GetPixelBilinear(float u, float v, int mipLevel);
+    public Unity.Collections.NativeArray<T> GetPixelData(int mipLevel);
     public Color[] GetPixels(int x, int y, int blockWidth, int blockHeight, int miplevel);
     public Color[] GetPixels(int x, int y, int blockWidth, int blockHeight);
     public Color[] GetPixels(int miplevel);

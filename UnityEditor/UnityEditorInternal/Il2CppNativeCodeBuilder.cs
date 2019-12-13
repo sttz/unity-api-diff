@@ -7,6 +7,7 @@ namespace UnityEditorInternal
 public abstract class Il2CppNativeCodeBuilder
 {
     public System.Collections.Generic.IEnumerable<string> AdditionalIl2CPPArguments { get; }
+    public string BaselibLibraryDirectory { get; }
     public string CacheDirectory { get; }
     public string CompilerArchitecture { get; }
     public string CompilerFlags { get; }
@@ -16,7 +17,7 @@ public abstract class Il2CppNativeCodeBuilder
     public string PluginPath { get; }
     public bool SetsUpEnvironment { get; }
 
-    protected Il2CppNativeCodeBuilder();
+    public Il2CppNativeCodeBuilder(string baselibLibraryDirectory);
 
     public System.Collections.Generic.IEnumerable<string> ConvertIncludesToFullPaths(System.Collections.Generic.IEnumerable<string> relativeIncludePaths);
     public string ConvertOutputFileToFullPath(string outputFileRelativePath);

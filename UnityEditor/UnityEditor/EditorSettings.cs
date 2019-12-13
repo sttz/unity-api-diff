@@ -6,7 +6,7 @@ namespace UnityEditor
 
 public sealed class EditorSettings : Object
 {
-    static public UnityEditor.AssetPipelineMode assetPipelineMode { get; set; }
+    static public UnityEditor.AssetPipelineMode assetPipelineMode { get; }
     static public bool asyncShaderCompilation { get; set; }
     static public bool cacheServerEnableDownload { get; set; }
     static public bool cacheServerEnableUpload { get; set; }
@@ -30,6 +30,7 @@ public sealed class EditorSettings : Object
     static public string projectGenerationRootNamespace { get; set; }
     static public string[] projectGenerationUserExtensions { get; set; }
     static public UnityEditor.SerializationMode serializationMode { get; set; }
+    static public bool serializeInlineMappingsOnOneLine { get; set; }
     static public UnityEditor.SpritePackerMode spritePackerMode { get; set; }
     static public int spritePackerPaddingPower { get; set; }
     static public string unityRemoteCompression { get; set; }

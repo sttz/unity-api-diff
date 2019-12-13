@@ -14,7 +14,9 @@ public sealed class RayTracingShader : Object
     public void SetBool(string name, bool val);
     public void SetBool(int nameID, bool val);
     public void SetBuffer(int nameID, ComputeBuffer buffer);
+    public void SetBuffer(int nameID, GraphicsBuffer buffer);
     public void SetBuffer(string resourceName, ComputeBuffer buffer);
+    public void SetBuffer(string resourceName, GraphicsBuffer buffer);
     public void SetFloat(int nameID, float val);
     public void SetFloat(string name, float val);
     public void SetFloats(string name, float[] values);

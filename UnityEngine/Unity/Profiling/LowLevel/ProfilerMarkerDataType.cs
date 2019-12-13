@@ -13,6 +13,7 @@ public enum ProfilerMarkerDataType : byte
     Float = 6,
     Double = 7,
     String16 = 9,
+    Blob8 = 11,
 }
 
 }

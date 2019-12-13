@@ -34,6 +34,10 @@ public class VisualEffect : Behaviour
     public Matrix4x4 GetMatrix4x4(string name);
     public Mesh GetMesh(int nameID);
     public Mesh GetMesh(string name);
+    public VFX.VFXParticleSystemInfo GetParticleSystemInfo(int nameID);
+    public VFX.VFXParticleSystemInfo GetParticleSystemInfo(string name);
+    public void GetParticleSystemNames(System.Collections.Generic.List<string> names);
+    public void GetSystemNames(System.Collections.Generic.List<string> names);
     public Texture GetTexture(int nameID);
     public Texture GetTexture(string name);
     public Rendering.TextureDimension GetTextureDimension(int nameID);
@@ -60,6 +64,8 @@ public class VisualEffect : Behaviour
     public bool HasMatrix4x4(string name);
     public bool HasMesh(int nameID);
     public bool HasMesh(string name);
+    public bool HasSystem(int nameID);
+    public bool HasSystem(string name);
     public bool HasTexture(int nameID);
     public bool HasTexture(string name);
     public bool HasUInt(int nameID);

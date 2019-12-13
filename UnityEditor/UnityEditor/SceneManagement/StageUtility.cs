@@ -6,8 +6,12 @@ namespace UnityEditor.SceneManagement
 
 public static class StageUtility
 {
+    static public UnityEditor.SceneManagement.Stage GetCurrentStage();
     static public UnityEditor.SceneManagement.StageHandle GetCurrentStageHandle();
+    static public UnityEditor.SceneManagement.MainStage GetMainStage();
     static public UnityEditor.SceneManagement.StageHandle GetMainStageHandle();
+    static public UnityEditor.SceneManagement.Stage GetStage(GameObject gameObject);
+    static public UnityEditor.SceneManagement.Stage GetStage(SceneManagement.Scene scene);
     static public UnityEditor.SceneManagement.StageHandle GetStageHandle(GameObject gameObject);
     static public UnityEditor.SceneManagement.StageHandle GetStageHandle(SceneManagement.Scene scene);
     static public void GoBackToPreviousStage();

@@ -14,6 +14,7 @@ public enum Capabilities
     Droppable = 32,
     Ascendable = 64,
     Renamable = 128,
+    Copiable = 256,
 }
 
 }

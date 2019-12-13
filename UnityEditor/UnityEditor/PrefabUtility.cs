@@ -91,6 +91,17 @@ public sealed class PrefabUtility
 
     public delegate void PrefabInstanceUpdated(GameObject instance);
 
+    public struct EditPrefabContentsScope : IDisposable
+    {
+        public string assetPath;
+        public GameObject prefabContentsRoot;
+
+        public EditPrefabContentsScope(string assetPath);
+
+        public void Dispose();
+
+    }
+
 }
 
 }

@@ -100,6 +100,7 @@ public class SceneView : UnityEditor.SearchableEditorWindow, UnityEditor.IHasCus
         public bool showMaterialUpdate;
         public bool showParticleSystems;
         public bool showSkybox;
+        public bool showVisualEffectGraphs;
 
         public bool allEnabled { get; }
 

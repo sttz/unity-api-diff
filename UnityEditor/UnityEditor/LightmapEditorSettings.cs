@@ -43,7 +43,6 @@ public static class LightmapEditorSettings
     static public float lastUsedResolution { get; set; }
     static public Lightmapper lightmapper { get; set; }
     static public LightmapsMode lightmapsMode { get; set; }
-    static public float lightProbeSampleCountMultiplier { get; set; }
     static public bool lockAtlas { get; set; }
     static public int maxAtlasHeight { get; set; }
     static public int maxAtlasSize { get; set; }

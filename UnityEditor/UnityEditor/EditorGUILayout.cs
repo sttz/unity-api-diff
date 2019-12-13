@@ -200,10 +200,13 @@ public sealed class EditorGUILayout
     static public void MinMaxSlider(string label, float minValue, float maxValue, float minLimit, float maxLimit, GUILayoutOption[] options);
     static public void MinMaxSlider(GUIContent label, float minValue, float maxValue, float minLimit, float maxLimit, GUILayoutOption[] options);
     static public Object ObjectField(Object obj, Type objType, GUILayoutOption[] options);
+    static public Object ObjectField(Object obj, Type objType, Object targetBeingEdited, GUILayoutOption[] options);
     static public Object ObjectField(Object obj, Type objType, bool allowSceneObjects, GUILayoutOption[] options);
     static public Object ObjectField(string label, Object obj, Type objType, GUILayoutOption[] options);
+    static public Object ObjectField(string label, Object obj, Type objType, Object targetBeingEdited, GUILayoutOption[] options);
     static public Object ObjectField(string label, Object obj, Type objType, bool allowSceneObjects, GUILayoutOption[] options);
     static public Object ObjectField(GUIContent label, Object obj, Type objType, GUILayoutOption[] options);
+    static public Object ObjectField(GUIContent label, Object obj, Type objType, Object targetBeingEdited, GUILayoutOption[] options);
     static public Object ObjectField(GUIContent label, Object obj, Type objType, bool allowSceneObjects, GUILayoutOption[] options);
     static public void ObjectField(UnityEditor.SerializedProperty property, GUILayoutOption[] options);
     static public void ObjectField(UnityEditor.SerializedProperty property, GUIContent label, GUILayoutOption[] options);

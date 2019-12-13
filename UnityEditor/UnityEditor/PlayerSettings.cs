@@ -152,6 +152,7 @@ public sealed class PlayerSettings : Object
     static public bool GetUseDefaultGraphicsAPIs(UnityEditor.BuildTarget platform);
     static public string[] GetVirtualRealitySDKs(UnityEditor.BuildTargetGroup targetGroup);
     static public bool GetVirtualRealitySupported(UnityEditor.BuildTargetGroup targetGroup);
+    static public bool GetVirtualTexturingSupportEnabled();
     static public bool GetWsaHolographicRemotingEnabled();
     static public bool HasAspectRatio(UnityEditor.AspectRatio aspectRatio);
     static public void SetAdditionalIl2CppArgs(string additionalArgs);
@@ -183,6 +184,7 @@ public sealed class PlayerSettings : Object
     static public void SetUseDefaultGraphicsAPIs(UnityEditor.BuildTarget platform, bool automatic);
     static public void SetVirtualRealitySDKs(UnityEditor.BuildTargetGroup targetGroup, string[] sdks);
     static public void SetVirtualRealitySupported(UnityEditor.BuildTargetGroup targetGroup, bool value);
+    static public void SetVirtualTexturingSupportEnabled(bool enabled);
     static public void SetWsaHolographicRemotingEnabled(bool enabled);
 
     public class Android
@@ -612,6 +614,7 @@ public sealed class PlayerSettings : Object
             Russian = 9,
             ACB = 10,
             OFLC = 11,
+            IARCGeneric = 12,
         }
 
         public enum SupportedNpadStyle

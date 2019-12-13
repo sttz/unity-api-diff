@@ -11,6 +11,7 @@ public enum SpritePackerMode
     AlwaysOn = 2,
     BuildTimeOnlyAtlas = 3,
     AlwaysOnAtlas = 4,
+    SpriteAtlasV2 = 5,
 }
 
 }

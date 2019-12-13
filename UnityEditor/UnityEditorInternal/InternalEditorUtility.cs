@@ -66,7 +66,10 @@ public class InternalEditorUtility
     static public Vector4 GetSpriteOuterUV(Sprite sprite, bool getAtlasData);
     static public Type GetTypeWithoutLoadingObject(int instanceID);
     static public string GetUnityBuildBranch();
+    static public string GetUnityBuildHash();
     static public string GetUnityCopyright();
+    static public string GetUnityDisplayVersion();
+    static public string GetUnityDisplayVersionVerbose();
     static public int GetUnityRevision();
     static public Version GetUnityVersion();
     static public int GetUnityVersionDate();

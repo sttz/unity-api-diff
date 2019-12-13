@@ -23,6 +23,7 @@ public sealed class Texture3D : Texture
     public Color GetPixel(int x, int y, int z, int mipLevel);
     public Color GetPixelBilinear(float u, float v, float w);
     public Color GetPixelBilinear(float u, float v, float w, int mipLevel);
+    public Unity.Collections.NativeArray<T> GetPixelData(int mipLevel);
     public Color[] GetPixels(int miplevel);
     public Color[] GetPixels();
     public Color32[] GetPixels32(int miplevel);

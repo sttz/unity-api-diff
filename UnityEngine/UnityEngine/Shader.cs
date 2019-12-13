@@ -41,9 +41,14 @@ public sealed class Shader : Object
     static public int PropertyToID(string name);
     static public void SetGlobalBuffer(string name, ComputeBuffer value);
     static public void SetGlobalBuffer(int nameID, ComputeBuffer value);
+    static public void SetGlobalBuffer(string name, GraphicsBuffer value);
+    static public void SetGlobalBuffer(int nameID, GraphicsBuffer value);
     static public void SetGlobalColor(string name, Color value);
     static public void SetGlobalColor(int nameID, Color value);
+    static public void SetGlobalConstantBuffer(string name, ComputeBuffer value, int offset, int size);
     static public void SetGlobalConstantBuffer(int nameID, ComputeBuffer value, int offset, int size);
+    static public void SetGlobalConstantBuffer(string name, GraphicsBuffer value, int offset, int size);
+    static public void SetGlobalConstantBuffer(int nameID, GraphicsBuffer value, int offset, int size);
     static public void SetGlobalFloat(string name, float value);
     static public void SetGlobalFloat(int nameID, float value);
     static public void SetGlobalFloatArray(string name, System.Collections.Generic.List<float> values);
@@ -79,6 +84,7 @@ public sealed class Shader : Object
 
     public Rendering.ShaderTagId FindPassTagValue(int passIndex, Rendering.ShaderTagId tagName);
     public int FindPropertyIndex(string propertyName);
+    public string FindTextureStack(int propertyIndex);
     public Shader GetDependency(string name);
     public string[] GetPropertyAttributes(int propertyIndex);
     public int GetPropertyCount();

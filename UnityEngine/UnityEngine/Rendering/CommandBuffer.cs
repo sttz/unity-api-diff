@@ -12,6 +12,7 @@ public class CommandBuffer : IDisposable
     public CommandBuffer();
 
     public void BeginSample(string name);
+    public void BeginSample(Profiling.CustomSampler sampler);
     public void Blit(Texture source, Rendering.RenderTargetIdentifier dest);
     public void Blit(Texture source, Rendering.RenderTargetIdentifier dest, Vector2 scale, Vector2 offset);
     public void Blit(Texture source, Rendering.RenderTargetIdentifier dest, Material mat);
@@ -31,6 +32,9 @@ public class CommandBuffer : IDisposable
     public void ConvertTexture(Rendering.RenderTargetIdentifier src, Rendering.RenderTargetIdentifier dst);
     public void ConvertTexture(Rendering.RenderTargetIdentifier src, int srcElement, Rendering.RenderTargetIdentifier dst, int dstElement);
     public void CopyCounterValue(ComputeBuffer src, ComputeBuffer dst, uint dstOffsetBytes);
+    public void CopyCounterValue(GraphicsBuffer src, ComputeBuffer dst, uint dstOffsetBytes);
+    public void CopyCounterValue(ComputeBuffer src, GraphicsBuffer dst, uint dstOffsetBytes);
+    public void CopyCounterValue(GraphicsBuffer src, GraphicsBuffer dst, uint dstOffsetBytes);
     public void CopyTexture(Rendering.RenderTargetIdentifier src, Rendering.RenderTargetIdentifier dst);
     public void CopyTexture(Rendering.RenderTargetIdentifier src, int srcElement, Rendering.RenderTargetIdentifier dst, int dstElement);
     public void CopyTexture(Rendering.RenderTargetIdentifier src, int srcElement, int srcMip, Rendering.RenderTargetIdentifier dst, int dstElement, int dstMip);
@@ -44,6 +48,7 @@ public class CommandBuffer : IDisposable
     public void DisableShaderKeyword(string keyword);
     public void DispatchCompute(ComputeShader computeShader, int kernelIndex, int threadGroupsX, int threadGroupsY, int threadGroupsZ);
     public void DispatchCompute(ComputeShader computeShader, int kernelIndex, ComputeBuffer indirectBuffer, uint argsOffset);
+    public void DispatchCompute(ComputeShader computeShader, int kernelIndex, GraphicsBuffer indirectBuffer, uint argsOffset);
     public void DispatchRays(Experimental.Rendering.RayTracingShader rayTracingShader, string rayGenName, uint width, uint height, uint depth, Camera camera = null);
     public void Dispose();
     public void DrawMesh(Mesh mesh, Matrix4x4 matrix, Material material, int submeshIndex, int shaderPass, MaterialPropertyBlock properties);
@@ -56,6 +61,9 @@ public class CommandBuffer : IDisposable
     public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, int shaderPass, ComputeBuffer bufferWithArgs, int argsOffset, MaterialPropertyBlock properties);
     public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, int shaderPass, ComputeBuffer bufferWithArgs, int argsOffset);
     public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, int shaderPass, ComputeBuffer bufferWithArgs);
+    public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, int shaderPass, GraphicsBuffer bufferWithArgs, int argsOffset, MaterialPropertyBlock properties);
+    public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, int shaderPass, GraphicsBuffer bufferWithArgs, int argsOffset);
+    public void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, int shaderPass, GraphicsBuffer bufferWithArgs);
     public void DrawMeshInstancedProcedural(Mesh mesh, int submeshIndex, Material material, int shaderPass, int count, MaterialPropertyBlock properties = null);
     public void DrawOcclusionMesh(RectInt normalizedCamViewport);
     public void DrawProcedural(Matrix4x4 matrix, Material material, int shaderPass, MeshTopology topology, int vertexCount, int instanceCount, MaterialPropertyBlock properties);
@@ -70,12 +78,19 @@ public class CommandBuffer : IDisposable
     public void DrawProceduralIndirect(GraphicsBuffer indexBuffer, Matrix4x4 matrix, Material material, int shaderPass, MeshTopology topology, ComputeBuffer bufferWithArgs, int argsOffset, MaterialPropertyBlock properties);
     public void DrawProceduralIndirect(GraphicsBuffer indexBuffer, Matrix4x4 matrix, Material material, int shaderPass, MeshTopology topology, ComputeBuffer bufferWithArgs, int argsOffset);
     public void DrawProceduralIndirect(GraphicsBuffer indexBuffer, Matrix4x4 matrix, Material material, int shaderPass, MeshTopology topology, ComputeBuffer bufferWithArgs);
+    public void DrawProceduralIndirect(Matrix4x4 matrix, Material material, int shaderPass, MeshTopology topology, GraphicsBuffer bufferWithArgs, int argsOffset, MaterialPropertyBlock properties);
+    public void DrawProceduralIndirect(Matrix4x4 matrix, Material material, int shaderPass, MeshTopology topology, GraphicsBuffer bufferWithArgs, int argsOffset);
+    public void DrawProceduralIndirect(Matrix4x4 matrix, Material material, int shaderPass, MeshTopology topology, GraphicsBuffer bufferWithArgs);
+    public void DrawProceduralIndirect(GraphicsBuffer indexBuffer, Matrix4x4 matrix, Material material, int shaderPass, MeshTopology topology, GraphicsBuffer bufferWithArgs, int argsOffset, MaterialPropertyBlock properties);
+    public void DrawProceduralIndirect(GraphicsBuffer indexBuffer, Matrix4x4 matrix, Material material, int shaderPass, MeshTopology topology, GraphicsBuffer bufferWithArgs, int argsOffset);
+    public void DrawProceduralIndirect(GraphicsBuffer indexBuffer, Matrix4x4 matrix, Material material, int shaderPass, MeshTopology topology, GraphicsBuffer bufferWithArgs);
     public void DrawRenderer(Renderer renderer, Material material, int submeshIndex, int shaderPass);
     public void DrawRenderer(Renderer renderer, Material material, int submeshIndex);
     public void DrawRenderer(Renderer renderer, Material material);
     public void EnableScissorRect(Rect scissor);
     public void EnableShaderKeyword(string keyword);
     public void EndSample(string name);
+    public void EndSample(Profiling.CustomSampler sampler);
     public void GenerateMips(RenderTexture rt);
     public void GetTemporaryRT(int nameID, int width, int height, int depthBuffer, FilterMode filter, Experimental.Rendering.GraphicsFormat format, int antiAliasing, bool enableRandomWrite, RenderTextureMemoryless memorylessMode, bool useDynamicScale);
     public void GetTemporaryRT(int nameID, int width, int height, int depthBuffer, FilterMode filter, Experimental.Rendering.GraphicsFormat format, int antiAliasing, bool enableRandomWrite, RenderTextureMemoryless memorylessMode);
@@ -111,10 +126,13 @@ public class CommandBuffer : IDisposable
     public void IssuePluginCustomTextureUpdateV2(IntPtr callback, Texture targetTexture, uint userData);
     public void IssuePluginEvent(IntPtr callback, int eventID);
     public void IssuePluginEventAndData(IntPtr callback, int eventID, IntPtr data);
+    public void ProcessVTFeedback(Rendering.RenderTargetIdentifier rt, IntPtr resolver, int slice, int x, int width, int y, int height, int mip);
     public void Release();
     public void ReleaseTemporaryRT(int nameID);
     public void RequestAsyncReadback(ComputeBuffer src, Action<Rendering.AsyncGPUReadbackRequest> callback);
+    public void RequestAsyncReadback(GraphicsBuffer src, Action<Rendering.AsyncGPUReadbackRequest> callback);
     public void RequestAsyncReadback(ComputeBuffer src, int size, int offset, Action<Rendering.AsyncGPUReadbackRequest> callback);
+    public void RequestAsyncReadback(GraphicsBuffer src, int size, int offset, Action<Rendering.AsyncGPUReadbackRequest> callback);
     public void RequestAsyncReadback(Texture src, Action<Rendering.AsyncGPUReadbackRequest> callback);
     public void RequestAsyncReadback(Texture src, int mipIndex, Action<Rendering.AsyncGPUReadbackRequest> callback);
     public void RequestAsyncReadback(Texture src, int mipIndex, TextureFormat dstFormat, Action<Rendering.AsyncGPUReadbackRequest> callback);
@@ -124,6 +142,8 @@ public class CommandBuffer : IDisposable
     public void RequestAsyncReadback(Texture src, int mipIndex, int x, int width, int y, int height, int z, int depth, Experimental.Rendering.GraphicsFormat dstFormat, Action<Rendering.AsyncGPUReadbackRequest> callback);
     public void RequestAsyncReadbackIntoNativeArray(Unity.Collections.NativeArray<T> output, ComputeBuffer src, Action<Rendering.AsyncGPUReadbackRequest> callback);
     public void RequestAsyncReadbackIntoNativeArray(Unity.Collections.NativeArray<T> output, ComputeBuffer src, int size, int offset, Action<Rendering.AsyncGPUReadbackRequest> callback);
+    public void RequestAsyncReadbackIntoNativeArray(Unity.Collections.NativeArray<T> output, GraphicsBuffer src, Action<Rendering.AsyncGPUReadbackRequest> callback);
+    public void RequestAsyncReadbackIntoNativeArray(Unity.Collections.NativeArray<T> output, GraphicsBuffer src, int size, int offset, Action<Rendering.AsyncGPUReadbackRequest> callback);
     public void RequestAsyncReadbackIntoNativeArray(Unity.Collections.NativeArray<T> output, Texture src, Action<Rendering.AsyncGPUReadbackRequest> callback);
     public void RequestAsyncReadbackIntoNativeArray(Unity.Collections.NativeArray<T> output, Texture src, int mipIndex, Action<Rendering.AsyncGPUReadbackRequest> callback);
     public void RequestAsyncReadbackIntoNativeArray(Unity.Collections.NativeArray<T> output, Texture src, int mipIndex, TextureFormat dstFormat, Action<Rendering.AsyncGPUReadbackRequest> callback);
@@ -141,6 +161,8 @@ public class CommandBuffer : IDisposable
     public void SetComputeBufferData(ComputeBuffer buffer, Unity.Collections.NativeArray<T> data, int nativeBufferStartIndex, int graphicsBufferStartIndex, int count);
     public void SetComputeBufferParam(ComputeShader computeShader, int kernelIndex, int nameID, ComputeBuffer buffer);
     public void SetComputeBufferParam(ComputeShader computeShader, int kernelIndex, string name, ComputeBuffer buffer);
+    public void SetComputeBufferParam(ComputeShader computeShader, int kernelIndex, int nameID, GraphicsBuffer buffer);
+    public void SetComputeBufferParam(ComputeShader computeShader, int kernelIndex, string name, GraphicsBuffer buffer);
     public void SetComputeConstantBufferParam(ComputeShader computeShader, int nameID, ComputeBuffer buffer, int offset, int size);
     public void SetComputeFloatParam(ComputeShader computeShader, int nameID, float val);
     public void SetComputeFloatParam(ComputeShader computeShader, string name, float val);
@@ -165,11 +187,16 @@ public class CommandBuffer : IDisposable
     public void SetComputeVectorParam(ComputeShader computeShader, int nameID, Vector4 val);
     public void SetComputeVectorParam(ComputeShader computeShader, string name, Vector4 val);
     public void SetExecutionFlags(Rendering.CommandBufferExecutionFlags flags);
-    public void SetGlobalBuffer(int nameID, ComputeBuffer value);
     public void SetGlobalBuffer(string name, ComputeBuffer value);
+    public void SetGlobalBuffer(int nameID, ComputeBuffer value);
+    public void SetGlobalBuffer(string name, GraphicsBuffer value);
+    public void SetGlobalBuffer(int nameID, GraphicsBuffer value);
     public void SetGlobalColor(int nameID, Color value);
     public void SetGlobalColor(string name, Color value);
     public void SetGlobalConstantBuffer(ComputeBuffer buffer, int nameID, int offset, int size);
+    public void SetGlobalConstantBuffer(ComputeBuffer buffer, string name, int offset, int size);
+    public void SetGlobalConstantBuffer(GraphicsBuffer buffer, int nameID, int offset, int size);
+    public void SetGlobalConstantBuffer(GraphicsBuffer buffer, string name, int offset, int size);
     public void SetGlobalDepthBias(float bias, float slopeBias);
     public void SetGlobalFloat(int nameID, float value);
     public void SetGlobalFloat(string name, float value);
@@ -201,6 +228,8 @@ public class CommandBuffer : IDisposable
     public void SetRandomWriteTarget(int index, Rendering.RenderTargetIdentifier rt);
     public void SetRandomWriteTarget(int index, ComputeBuffer buffer, bool preserveCounterValue);
     public void SetRandomWriteTarget(int index, ComputeBuffer buffer);
+    public void SetRandomWriteTarget(int index, GraphicsBuffer buffer, bool preserveCounterValue);
+    public void SetRandomWriteTarget(int index, GraphicsBuffer buffer);
     public void SetRayTracingAccelerationStructure(Experimental.Rendering.RayTracingShader rayTracingShader, string name, Experimental.Rendering.RayTracingAccelerationStructure rayTracingAccelerationStructure);
     public void SetRayTracingAccelerationStructure(Experimental.Rendering.RayTracingShader rayTracingShader, int nameID, Experimental.Rendering.RayTracingAccelerationStructure rayTracingAccelerationStructure);
     public void SetRayTracingBufferParam(Experimental.Rendering.RayTracingShader rayTracingShader, string name, ComputeBuffer buffer);

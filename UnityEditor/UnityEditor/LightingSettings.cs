@@ -39,6 +39,7 @@ public sealed class LightingSettings : Object
     public int lightmapPadding { get; set; }
     public Lightmapper lightmapper { get; set; }
     public float lightmapResolution { get; set; }
+    public float lightProbeSampleCountMultiplier { get; set; }
     public MixedLightingMode mixedBakeMode { get; set; }
     public bool prioritizeView { get; set; }
     public bool realtimeEnvironmentLighting { get; set; }
@@ -73,6 +74,7 @@ public sealed class LightingSettings : Object
         None = 0,
         Optix = 1,
         OpenImage = 2,
+        RadeonPro = 3,
     }
 
     public enum FilterType

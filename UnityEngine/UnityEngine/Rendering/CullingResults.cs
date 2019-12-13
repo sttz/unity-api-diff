@@ -19,6 +19,7 @@ public struct CullingResults : IEquatable<Rendering.CullingResults>
     public bool Equals(Rendering.CullingResults other);
     public bool Equals(object obj);
     public void FillLightAndReflectionProbeIndices(ComputeBuffer computeBuffer);
+    public void FillLightAndReflectionProbeIndices(GraphicsBuffer buffer);
     public int GetHashCode();
     public Unity.Collections.NativeArray<int> GetLightIndexMap(Unity.Collections.Allocator allocator);
     public Unity.Collections.NativeArray<int> GetReflectionProbeIndexMap(Unity.Collections.Allocator allocator);

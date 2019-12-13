@@ -49,6 +49,7 @@ public enum DrawCameraMode
     BakedUVOverlap = 32,
     TextureStreaming = 33,
     BakedLightmapCulling = 34,
+    GIContributorsReceivers = 35,
 }
 
 }

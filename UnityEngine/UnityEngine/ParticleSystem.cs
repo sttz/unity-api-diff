@@ -72,6 +72,8 @@ public sealed class ParticleSystem : Component
     public int GetParticles(out Particle[] particles, int size, int offset);
     public int GetParticles(out Particle[] particles, int size);
     public int GetParticles(out Particle[] particles);
+    public PlaybackState GetPlaybackState();
+    public Trails GetTrails();
     public bool IsAlive(bool withChildren);
     public bool IsAlive();
     public void Pause(bool withChildren);
@@ -82,6 +84,8 @@ public sealed class ParticleSystem : Component
     public void SetParticles(out Particle[] particles, int size, int offset);
     public void SetParticles(out Particle[] particles, int size);
     public void SetParticles(out Particle[] particles);
+    public void SetPlaybackState(PlaybackState playbackState);
+    public void SetTrails(Trails trailData);
     public void Simulate(float t, bool withChildren, bool restart, bool fixedTimeStep);
     public void Simulate(float t, bool withChildren, bool restart);
     public void Simulate(float t, bool withChildren);
@@ -398,6 +402,14 @@ public sealed class ParticleSystem : Component
         public void ResetStartSize();
         public void ResetVelocity();
 
+    }
+
+    public struct PlaybackState
+    {
+    }
+
+    public struct Trails
+    {
     }
 
     public struct VelocityOverLifetimeModule

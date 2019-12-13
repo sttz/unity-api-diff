@@ -9,6 +9,7 @@ public sealed class Gizmos
     static public Color color { get; set; }
     static public Texture exposure { get; set; }
     static public Matrix4x4 matrix { get; set; }
+    static public float probeSize { get; }
 
     static public void DrawCube(Vector3 center, Vector3 size);
     static public void DrawFrustum(Vector3 center, float fov, float maxRange, float minRange, float aspect);

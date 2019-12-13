@@ -18,6 +18,8 @@ public class SupportedRenderingFeatures
     public bool motionVectors { get; set; }
     public bool overridesEnvironmentLighting { get; set; }
     public bool overridesFog { get; set; }
+    public bool overridesLODBias { get; set; }
+    public bool overridesMaximumLODLevel { get; set; }
     public bool overridesOtherLightingSettings { get; set; }
     public bool receiveShadows { get; set; }
     public ReflectionProbeModes reflectionProbeModes { get; set; }

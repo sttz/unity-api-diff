@@ -6,15 +6,17 @@ namespace UnityEngine.XR
 
 public class XRDisplaySubsystem : IntegratedSubsystem<XR.XRDisplaySubsystemDescriptor>
 {
-    static public event Action<bool> displayFocusChanged;
-
     public bool contentProtectionEnabled { get; set; }
     public bool disableLegacyRenderer { get; set; }
     public bool displayOpaque { get; }
     public ReprojectionMode reprojectionMode { get; set; }
+    public float scaleOfAllRenderTargets { get; set; }
+    public float scaleOfAllViewports { get; set; }
     public bool singlePassRenderingDisabled { get; set; }
     public TextureLayout supportedTextureLayouts { get; }
-    public TextureLayout textureLayout { set; }
+    public TextureLayout textureLayout { get; set; }
+
+    public event Action<bool> displayFocusChanged;
 
     public XRDisplaySubsystem();
 
