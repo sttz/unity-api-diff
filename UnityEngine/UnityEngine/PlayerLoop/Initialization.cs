@@ -10,6 +10,10 @@ public struct Initialization
     {
     }
 
+    public struct DirectorSampleTime
+    {
+    }
+
     public struct AsyncUploadTimeSlicedUpdate
     {
     }

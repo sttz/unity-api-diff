@@ -27,8 +27,6 @@ public sealed class AssetDatabaseExperimental
     static public void RefreshCacheServerNamespacePrefix();
     static public void RefreshConnectionToCacheServer();
     static public void RegisterCustomDependency(string dependency, Hash128 hashOfValue);
-    static public void ReimportAssets(string[] assets);
-    static public long RemoveArtifacts(string[] assets);
     static public void SetImporterOverride(string path);
     static public uint UnregisterCustomDependencyPrefixFilter(string prefixFilter);
 

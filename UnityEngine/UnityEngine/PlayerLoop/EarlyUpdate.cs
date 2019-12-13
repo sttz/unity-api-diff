@@ -114,10 +114,6 @@ public struct EarlyUpdate
     {
     }
 
-    public struct DirectorSampleTime
-    {
-    }
-
     public struct PhysicsResetInterpolatedTransformPosition
     {
     }
