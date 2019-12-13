@@ -10,6 +10,7 @@ public struct NativeProfilerTimeline_InitializeArgs
     public IntPtr guiStyle;
     public float lineHeight;
     public float nonSelectedAlpha;
+    public UnityEditorInternal.ProfilerColorDescriptor[] profilerColorDescriptors;
     public float textFadeOutWidth;
     public float textFadeStartWidth;
 
