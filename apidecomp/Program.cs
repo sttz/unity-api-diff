@@ -1,21 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using Mono.Cecil;
 
 namespace apidiff
 {
 
-/// <summary>
-/// Extract the public API of a C# assembly, to make changes
-/// to the API easily diffable.
-/// </summary>
 class Program
 {
     // -------- CLI --------
-
-    const string Indent = "    ";
 
     static void Main(string[] args)
     {
@@ -27,537 +18,52 @@ class Program
         var path = args[0];
         var outputPath = args[1];
 
-        if (!File.Exists(path)) {
-            Console.WriteLine($"Could not find assembly at path: {path}");
+        if (!Directory.Exists(path)) {
+            Console.WriteLine($"Path is not a directory: {path}");
             PrintHelp();
             Environment.Exit(2);
         }
 
-        var resolver = new DefaultAssemblyResolver();
-        resolver.AddSearchDirectory(Path.GetDirectoryName(path));
-
-        var config = new ReaderParameters();
-        config.AssemblyResolver = resolver;
-
-        var module = ModuleDefinition.ReadModule(path, config);
-        Console.WriteLine($"Opened module {module.Name}");
-
-        var types = module.Types
-            .Where(t => t.IsPublic)
-            .OrderBy(t => t.Name)
-            .ToList();
-
-        Console.WriteLine($"Found {types.Count} public root types");
-
-        var moduleOutputPath = Path.Combine(outputPath, Path.GetFileNameWithoutExtension(module.Name));
-        if (!Directory.Exists(moduleOutputPath)) {
-            Directory.CreateDirectory(moduleOutputPath);
+        var editorPath = Path.Combine(path, "UnityEditor.dll");
+        if (!File.Exists(editorPath)) {
+            Console.WriteLine($"Could not find UnityEditor.dll assembly at path: {path}");
+            PrintHelp();
+            Environment.Exit(3);
         }
 
-        foreach (var type in types) {
-            WriteType(type, 0, moduleOutputPath);
+        var enginePaths = Directory.GetFiles(path, "UnityEngine*.dll");
+        if (enginePaths.Length == 0) {
+            Console.WriteLine($"Could not find UnityEngine assemblies at path: {path}");
+            PrintHelp();
+            Environment.Exit(3);
+        }
+
+        if (Directory.Exists(outputPath)) {
+            var contents = Directory.GetDirectories(outputPath);
+            foreach (var dir in contents) {
+                if (Path.GetFileName(dir).StartsWith(".")) continue;
+                Directory.Delete(dir, true);
+            }
+        }
+
+        Directory.CreateDirectory(outputPath);
+
+        Console.WriteLine("");
+        ApiWriter.WriteApi(editorPath, outputPath);
+
+        foreach (var assembly in enginePaths) {
+            Console.WriteLine($"");
+            ApiWriter.WriteApi(assembly, outputPath);
         }
     }
 
     static void PrintHelp()
     {
         Console.WriteLine("Public API Printer");
-        Console.WriteLine("usage: apidecomp PATH_TO_ASSEMBLY OUTPUT_PATH");
+        Console.WriteLine("usage: apidecomp PATH_TO_ASSEMBLIES OUTPUT_PATH");
     }
 
-    // -------- Main Types --------
-
-    static void WriteType(TypeDefinition type, int indent, string basePath)
-    {
-        var namespacePath = Path.Combine(basePath, type.Namespace.Replace(".", "/"));
-        if (!Directory.Exists(namespacePath)) {
-            Directory.CreateDirectory(namespacePath);
-        }
-
-        var filename = RemoveGenericSuffix(type.Name);
-        if (type.HasGenericParameters) {
-            filename += "<" + string.Join(", ", type.GenericParameters.Select(p => FormatTypeName(p))) + ">";
-        }
-        filename += ".cs";
-
-        var filePath = Path.Combine(namespacePath, filename);
-        if (File.Exists(filePath)) {
-            Console.WriteLine($"WARNING File already exists: {filePath}");
-        }
-
-        using (var stream = File.Open(filePath, FileMode.Create, FileAccess.Write)) {
-            using (var output = new StreamWriter(stream)) {
-                WriteIndent(indent, output);
-                output.WriteLine("using System;");
-                WriteIndent(indent, output);
-                output.WriteLine("using UnityEngine;");
-
-                output.WriteLine();
-
-                WriteIndent(indent, output);
-                output.Write("namespace ");
-                output.WriteLine(type.Namespace);
-
-                WriteIndent(indent, output);
-                output.WriteLine("{");
-
-                output.WriteLine();
-
-                WriteType(type, indent, output);
-
-                output.WriteLine();
-
-                WriteIndent(indent, output);
-                output.WriteLine("}");
-            }
-        }
-    }
-
-    static void WriteType(TypeDefinition type, int indent, TextWriter output)
-    {
-        if (type.IsEnum) {
-            WriteEnum(type, indent, output);
-        } else if (type.BaseType != null && type.BaseType.FullName == "System.MulticastDelegate") {
-            WriteDelegate(type, indent, output);
-        } else if (type.IsClass || type.IsValueType || type.IsInterface) {
-            WriteClassStructOrInterface(type, indent, output);
-        }
-    }
-
-    static void WriteClassStructOrInterface(TypeDefinition type, int indent, TextWriter output)
-    {
-        WriteIndent(indent, output);
-
-        output.Write(FormatTypeAccess(type));
-        
-        if (type.IsSealed && type.IsAbstract) output.Write(" static");
-        else if (type.IsSealed && !type.IsValueType) output.Write(" sealed");
-        else if (type.IsAbstract && !type.IsInterface) output.Write(" abstract");
-        
-        if (type.IsValueType) output.Write(" struct");
-        else if (type.IsClass) output.Write(" class");
-        else if (type.IsInterface) output.Write(" interface");
-        else throw new Exception("Type not a class, struct or interface.");
-
-        output.Write(" " + FormatTypeName(type, forceNoNamespace: true));
-
-        var hasBaseType = type.BaseType != null && type.BaseType.FullName != "System.Object" && type.BaseType.FullName != "System.ValueType";
-        if (hasBaseType || type.HasInterfaces) {
-            var extends = type.Interfaces.Select(i => i.InterfaceType);
-            if (hasBaseType) extends = extends.Prepend(type.BaseType);
-            output.Write(" : " + string.Join(", ", extends.Select(t => FormatTypeName(t))));
-        }
-
-        output.WriteLine();
-
-        WriteIndent(indent, output);
-        output.WriteLine("{");
-
-        var fields = type.Fields
-            .Where(f => (f.IsPublic || f.IsFamily) && !f.IsSpecialName)
-            .OrderBy(f => f.Name);
-        var props = type.Properties
-            .Where(p => { var a = GetMoreAccessibleAccessor(p); return a.IsPublic || a.IsFamily; })
-            .OrderBy(p => p.Name);
-        var events = type.Events
-            .Where(e => e.AddMethod.IsPublic || e.AddMethod.IsFamily)
-            .OrderBy(e => e.Name);
-        var methods = type.Methods
-            .Where(m => (m.IsPublic || m.IsFamily) && (!m.IsSpecialName || m.IsConstructor) && m.Name != "Finalize")
-            .OrderBy(m => m.Name);
-
-        WriteMembers(fields.Where(m => m.IsStatic), WriteField, indent, output);
-        WriteMembers(props.Where(m => GetMoreAccessibleAccessor(m).IsStatic), WriteProperty, indent, output);
-        WriteMembers(events.Where(m => m.AddMethod.IsStatic), WriteEvent, indent, output);
-        WriteMembers(methods.Where(m => m.IsStatic), WriteMethod, indent, output);
-
-        WriteMembers(fields.Where(m => !m.IsStatic), WriteField, indent, output);
-        WriteMembers(props.Where(m => !GetMoreAccessibleAccessor(m).IsStatic), WriteProperty, indent, output);
-        WriteMembers(events.Where(m => !m.AddMethod.IsStatic), WriteEvent, indent, output);
-
-        WriteMembers(methods.Where(m => !m.IsStatic && m.IsConstructor), WriteMethod, indent, output);
-        WriteMembers(methods.Where(m => !m.IsStatic && !m.IsConstructor), WriteMethod, indent, output);
-
-        foreach (var nested in type.NestedTypes) {
-            if (!nested.IsNestedPublic && !nested.IsNestedFamily) continue;
-            WriteType(nested, indent + 1, output);
-            output.WriteLine();
-        }
-
-        WriteIndent(indent, output);
-        output.WriteLine("}");
-    }
-
-    static void WriteMembers<T>(IEnumerable<T> members, Action<T, TextWriter> writer, int indent, TextWriter output)
-    {
-        if (members.Any()) {
-            foreach (var member in members) {
-                WriteIndent(indent + 1, output);
-                writer(member, output);
-            }
-            output.WriteLine();
-        }
-    }
-
-    static void WriteEnum(TypeDefinition type, int indent, TextWriter output)
-    {
-        WriteIndent(indent, output);
-
-        output.Write(FormatTypeAccess(type));
-        output.Write(" enum");
-        output.Write(" " + type.Name);
-
-        var valueField = type.Fields.FirstOrDefault(f => !f.IsStatic);
-        if (valueField != null && valueField.FieldType.FullName != "System.Int32") {
-            output.Write(" : " + FormatTypeName(valueField.FieldType));
-        }
-
-        output.WriteLine();
-
-        WriteIndent(indent, output);
-        output.WriteLine("{");
-
-        foreach (var field in type.Fields) {
-            if (!field.IsStatic) continue;
-            WriteIndent(indent + 1, output);
-            output.WriteLine(field.Name + " = " + FormatConstant(field.Constant) + ",");
-        }
-
-        WriteIndent(indent, output);
-        output.WriteLine("}");
-    }
-
-    static void WriteDelegate(TypeDefinition type, int indent, TextWriter output)
-    {
-        WriteIndent(indent, output);
-
-        output.Write(FormatTypeAccess(type));
-        output.Write(" delegate");
-
-        var invoke = type.Methods.FirstOrDefault(m => m.Name == "Invoke");
-        output.Write(" " + FormatTypeName(invoke.ReturnType));
-
-        output.Write(" " + type.Name);
-
-        output.Write("(" + string.Join(", ", invoke.Parameters.Select(FormatParameter)) + ")");
-
-        output.WriteLine(";");
-    }
-
-    // -------- Members --------
-
-    static void WriteField(FieldDefinition field, TextWriter output)
-    {
-        if (field.IsStatic)
-            output.Write("static ");
-
-        if (field.IsPublic) {
-            output.Write("public ");
-        } else if (field.IsAssembly) {
-            output.Write("internal ");
-        } else if (field.IsFamily) {
-            output.Write("protected ");
-        } else if (field.IsFamilyOrAssembly) {
-            output.Write("protected internal ");
-        }
-
-        output.Write(FormatTypeName(field.FieldType) + " ");
-        output.Write(field.Name);
-
-        if (field.HasConstant) {
-            output.Write(" = " + FormatConstant(field.Constant));
-        }
-
-        output.WriteLine(";");
-    }
-
-    static void WriteProperty(PropertyDefinition property, TextWriter output)
-    {
-        var eitherMethod = property.GetMethod ?? property.SetMethod;
-        var otherMethod = eitherMethod == property.SetMethod ? null : property.SetMethod;
-
-        if (eitherMethod.IsStatic)
-            output.Write("static ");
-
-        string mainAccess;
-        if (otherMethod == null) {
-            mainAccess = FormatMethodAccess(eitherMethod);
-        } else {
-            mainAccess = FormatMethodAccess(GetMoreAccessibleAccessor(property));
-        }
-         output.Write(mainAccess + " ");
-
-         output.Write(FormatTypeName(property.PropertyType) + " ");
-
-        if (property.Name == "Item" && property.HasParameters) {
-             output.Write("this[" + string.Join(", ", property.Parameters.Select(FormatParameter)) + "]");
-        } else {
-             output.Write(property.Name);
-        }
-
-        output.Write(" { ");
-
-        if (property.GetMethod != null) {
-            var access = FormatMethodAccess(property.GetMethod);
-            if (access != mainAccess) output.Write(access + " ");
-            output.Write("get; ");
-        }
-        if (property.SetMethod != null) {
-            var access = FormatMethodAccess(property.SetMethod);
-            if (access != mainAccess)  output.Write(access + " ");
-             output.Write("set; ");
-        }
-
-        output.Write("}");
-
-        if (property.HasConstant) {
-            output.Write(" = " + FormatConstant(property.Constant));
-        }
-
-        output.WriteLine();
-    }
-
-    static void WriteEvent(EventDefinition ev, TextWriter output)
-    {
-        var method = ev.AddMethod;
-
-        if (method.IsStatic)
-            output.Write("static ");
-
-        if (method.IsPublic) {
-            output.Write("public ");
-        } else if (method.IsAssembly) {
-            output.Write("internal ");
-        } else if (method.IsFamily) {
-            output.Write("protected ");
-        } else if (method.IsFamilyOrAssembly) {
-            output.Write("protected internal ");
-        } else if (method.IsFamilyAndAssembly) {
-            output.Write("private protected ");
-        } else {
-            output.Write("private ");
-        }
-
-        output.Write("event ");
-
-        output.Write(FormatTypeName(ev.EventType) + " ");
-
-        output.WriteLine(ev.Name + ";");
-    }
-
-    static void WriteMethod(MethodDefinition method, TextWriter output)
-    {
-        if (method.IsStatic)
-            output.Write("static ");
-
-        output.Write(FormatMethodAccess(method) + " ");
-
-        if (method.Name == ".ctor") {
-            output.Write(RemoveGenericSuffix(method.DeclaringType.Name));
-        } else {
-            output.Write(FormatTypeName(method.ReturnType) + " ");
-            output.Write(method.Name);
-        }
-
-        output.WriteLine("(" + string.Join(", ", method.Parameters.Select(FormatParameter)) + ");");
-    }
-
-    // -------- Helpers --------
-
-    static void WriteIndent(int indent, TextWriter output)
-    {
-        for (int i = 0; i < indent; i++) {
-            output.Write(Indent);
-        }
-    }
-
-    static string FormatTypeAccess(TypeDefinition type)
-    {
-        if (type.IsPublic || type.IsNestedPublic) {
-            return "public";
-        } else if (type.IsNestedAssembly) {
-            return "internal";
-        } else if (type.IsNestedFamily) {
-            return "protected";
-        } else if (type.IsNestedFamilyOrAssembly) {
-            return "protected internal";
-        } else if (type.IsNestedFamilyAndAssembly) {
-            return "private protected";
-        } else {
-            return "private";
-        }
-    }
-
-    static string RemoveGenericSuffix(string name)
-    {
-        var apo = name.LastIndexOf('`');
-        if (apo >= 0) {
-            return name.Substring(0, apo);
-        } else {
-            return name;
-        }
-    }
-
-    static string FormatTypeName(TypeReference type, bool forceNoNamespace = false)
-    {
-        var resolved = type.Resolve() ?? type;
-
-        string name;
-        if (type.IsArray) {
-            name = type.Name;
-        } else {
-            name = resolved.Name;
-        }
-
-        if (resolved.Namespace == "System") {
-            switch (resolved.Name) {
-                case "Void":
-                    name = name.Replace("Void", "void");
-                    break;
-                case "Object":
-                    name = name.Replace("Object", "object");
-                    break;
-                case "Boolean":
-                    name = name.Replace("Boolean", "bool");
-                    break;
-                case "Int16":
-                    name = name.Replace("Int16", "short");
-                    break;
-                case "UInt16":
-                    name = name.Replace("UInt16", "ushort");
-                    break;
-                case "Int32":
-                    name = name.Replace("Int32", "int");
-                    break;
-                case "UInt32":
-                    name = name.Replace("UInt32", "uint");
-                    break;
-                case "Int64":
-                    name = name.Replace("Int64", "long");
-                    break;
-                case "UInt64":
-                    name = name.Replace("UInt64", "ulong");
-                    break;
-                case "Single":
-                    name = name.Replace("Single", "float");
-                    break;
-                case "Double":
-                    name = name.Replace("Double", "double");
-                    break;
-                case "Decimal":
-                    name = name.Replace("Decimal", "decimal");
-                    break;
-                case "Byte":
-                    name = name.Replace("Byte", "byte");
-                    break;
-                case "SByte":
-                    name = name.Replace("SByte", "sbyte");
-                    break;
-                case "String":
-                    name = name.Replace("String", "string");
-                    break;
-                case "Char":
-                    name = name.Replace("Char", "char");
-                    break;
-            }
-        }
-
-        if (!forceNoNamespace && resolved.Namespace != "" && resolved.Namespace != "System" && resolved.Namespace != "UnityEngine") {
-            if (resolved.Namespace.StartsWith("UnityEngine.")) {
-                name = resolved.Namespace.Substring(12) + "." + name;
-            } else {
-                name = resolved.Namespace + "." + name;
-            }
-        }
-
-        if (resolved.GenericParameters.Count > 0) {
-            name = RemoveGenericSuffix(name);
-            if (type is GenericInstanceType instanceType) {
-                name += "<" + string.Join(", ", instanceType.GenericArguments.Select(p => FormatTypeName(p))) + ">";
-            } else {
-                name += "<" + string.Join(", ", resolved.GenericParameters.Select(p => FormatTypeName(p))) + ">";
-            }
-        }
-
-        return name;
-    }
-
-    static string FormatConstant(object constant)
-    {
-        if (constant == null) {
-            return "null";
-        } else if (constant is string) {
-            return $"\"{constant}\"";
-        } else if (constant is bool) {
-            return ((bool)constant ? "true" : "false");
-        } else {
-            return constant.ToString();
-        }
-    }
-
-    static MethodDefinition GetMoreAccessibleAccessor(PropertyDefinition property)
-    {
-        if (property.GetMethod == null) {
-            return property.SetMethod;
-        } else if (property.SetMethod == null) {
-            return property.GetMethod;
-        }
-
-        var getAccess = GetAccessRank(property.GetMethod);
-        var setAccess = GetAccessRank(property.SetMethod);
-        return getAccess < setAccess ? property.GetMethod : property.SetMethod;
-    }
-
-    static int GetAccessRank(MethodDefinition method)
-    {
-        if (method.IsPublic) {
-            return 1;
-        } else if (method.IsAssembly) {
-            return 2;
-        } else if (method.IsFamily) {
-            return 2;
-        } else if (method.IsFamilyOrAssembly) {
-            return 2;
-        } else if (method.IsFamilyAndAssembly) {
-            return 3;
-        } else {
-            return 3;
-        }
-    }
-
-    static string FormatMethodAccess(MethodDefinition method)
-    {
-        if (method.IsPublic) {
-            return "public";
-        } else if (method.IsAssembly) {
-            return "internal";
-        } else if (method.IsFamily) {
-            return "protected";
-        } else if (method.IsFamilyOrAssembly) {
-            return "protected internal";
-        } else if (method.IsFamilyAndAssembly) {
-            return "private protected";
-        } else {
-            return "private";
-        }
-    }
-
-    static string FormatParameter(ParameterDefinition param)
-    {
-        var name = "";
-
-        if (param.IsIn && param.IsOut) name += "ref ";
-        else if (param.IsIn) name += "in ";
-        else if (param.IsOut) name += "out ";
-
-        name += FormatTypeName(param.ParameterType) + " " + param.Name;
-        
-        if (param.HasConstant) {
-            name += " = " + FormatConstant(param.Constant);
-        }
-        
-        return name;
-    }
+    
 }
 
 }
