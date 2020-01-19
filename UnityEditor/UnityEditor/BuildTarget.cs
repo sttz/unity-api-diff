@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -6,6 +8,10 @@ namespace UnityEditor
 
 public enum BuildTarget
 {
+    NoTarget = -2,
+    iPhone = -1,
+    BB10 = -1,
+    MetroPlayer = -1,
     StandaloneOSX = 2,
     StandaloneOSXUniversal = 3,
     StandaloneOSXIntel = 4,
@@ -37,10 +43,6 @@ public enum BuildTarget
     Switch = 38,
     Lumin = 39,
     BJM = 40,
-    iPhone = -1,
-    BB10 = -1,
-    MetroPlayer = -1,
-    NoTarget = -2,
 }
 
 }

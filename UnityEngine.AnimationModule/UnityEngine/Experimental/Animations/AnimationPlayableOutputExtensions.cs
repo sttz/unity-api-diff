@@ -1,0 +1,16 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace UnityEngine.Experimental.Animations
+{
+
+public static class AnimationPlayableOutputExtensions
+{
+    static public Experimental.Animations.AnimationStreamSource GetAnimationStreamSource(Animations.AnimationPlayableOutput output);
+    static public void SetAnimationStreamSource(Animations.AnimationPlayableOutput output, Experimental.Animations.AnimationStreamSource streamSource);
+
+}
+
+}

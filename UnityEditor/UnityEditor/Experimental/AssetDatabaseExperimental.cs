@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental
@@ -22,13 +24,6 @@ public sealed class AssetDatabaseExperimental
 
         public void ResetDeltas();
 
-        public struct Counter
-        {
-            public int delta;
-            public int total;
-
-        }
-
         public struct CacheServerCounters
         {
             public Counter artifactFilesDownloaded;
@@ -47,6 +42,13 @@ public sealed class AssetDatabaseExperimental
             public Counter reliabilityChecks;
             public Counter resolveReplies;
             public Counter resolveRequests;
+
+        }
+
+        public struct Counter
+        {
+            public int delta;
+            public int total;
 
         }
 

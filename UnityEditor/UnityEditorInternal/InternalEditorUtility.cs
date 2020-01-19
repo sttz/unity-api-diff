@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditorInternal
@@ -59,7 +61,7 @@ public class InternalEditorUtility
     static public int[] GetLicenseFlags();
     static public string GetLicenseInfo();
     static public Object GetLoadedObjectFromInstanceID(int instanceID);
-    static public System.Collections.Generic.List<int> GetNewSelection(int clickedInstanceID, System.Collections.Generic.List<int> allInstanceIDs, System.Collections.Generic.List<int> selectedInstanceIDs, int lastClickedInstanceID, bool keepMultiSelection, bool useShiftAsActionKey, bool allowMultiSelection);
+    static public List<int> GetNewSelection(int clickedInstanceID, List<int> allInstanceIDs, List<int> selectedInstanceIDs, int lastClickedInstanceID, bool keepMultiSelection, bool useShiftAsActionKey, bool allowMultiSelection);
     static public string GetNoDiffToolsDetectedMessage();
     static public Object GetObjectFromInstanceID(int instanceID);
     static public Camera[] GetSceneViewCameras();
@@ -92,8 +94,8 @@ public class InternalEditorUtility
     static public Object[] LoadSerializedFileAndForget(string path);
     static public void OnGameViewFocus(bool focus);
     static public void OpenEditorConsole();
-    static public bool OpenFileAtLineExternal(string filename, int line, int column);
     static public bool OpenFileAtLineExternal(string filename, int line);
+    static public bool OpenFileAtLineExternal(string filename, int line, int column);
     static public void OpenPlayerConsole();
     static public Color32 PassAndReturnColor32(Color32 c);
     static public Vector2 PassAndReturnVector2(Vector2 v);
@@ -126,8 +128,8 @@ public class InternalEditorUtility
     static public string TextAreaForDocBrowser(Rect position, string text, GUIStyle style);
     static public string TextifyEvent(Event evt);
     static public Bounds TransformBounds(Bounds b, Transform t);
-    static public bool TryOpenErrorFileFromConsole(string path, int line, int column);
     static public bool TryOpenErrorFileFromConsole(string path, int line);
+    static public bool TryOpenErrorFileFromConsole(string path, int line, int column);
     static public ulong VerifyCacheServerIntegrity();
 
     public InternalEditorUtility();

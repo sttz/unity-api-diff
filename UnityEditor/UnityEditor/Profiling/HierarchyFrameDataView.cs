@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Profiling
@@ -33,23 +35,23 @@ public class HierarchyFrameDataView : IDisposable
 
     public void Dispose();
     public bool Equals(object obj);
-    public Unity.Collections.NativeArray<T> GetFrameMetaData(Guid id, int tag);
-    public Unity.Collections.NativeArray<T> GetFrameMetaData(Guid id, int tag, int index);
+    public Unity.Collections.NativeArray<T> GetFrameMetaData<T>(Guid id, int tag);
+    public Unity.Collections.NativeArray<T> GetFrameMetaData<T>(Guid id, int tag, int index);
     public int GetFrameMetaDataCount(Guid id, int tag);
     public int GetHashCode();
-    public void GetItemAncestors(int id, System.Collections.Generic.List<int> outAncestors);
-    public void GetItemChildren(int id, System.Collections.Generic.List<int> outChildren);
+    public void GetItemAncestors(int id, List<int> outAncestors);
+    public void GetItemChildren(int id, List<int> outChildren);
     public string GetItemColumnData(int id, int column);
     public float GetItemColumnDataAsSingle(int id, int column);
     public int GetItemDepth(int id);
-    public void GetItemDescendantsThatHaveChildren(int id, System.Collections.Generic.List<int> outChildren);
+    public void GetItemDescendantsThatHaveChildren(int id, List<int> outChildren);
     public int GetItemInstanceID(int id);
     public int GetItemMarkerID(int id);
-    public void GetItemMarkerIDPath(int id, System.Collections.Generic.List<int> outFullIdPath);
-    public void GetItemMergedSamplesColumnData(int id, int column, System.Collections.Generic.List<string> outStrings);
-    public void GetItemMergedSamplesColumnDataAsFloats(int id, int column, System.Collections.Generic.List<float> outValues);
+    public void GetItemMarkerIDPath(int id, List<int> outFullIdPath);
+    public void GetItemMergedSamplesColumnData(int id, int column, List<string> outStrings);
+    public void GetItemMergedSamplesColumnDataAsFloats(int id, int column, List<float> outValues);
     public int GetItemMergedSamplesCount(int id);
-    public void GetItemMergedSamplesInstanceID(int id, System.Collections.Generic.List<int> outInstanceIds);
+    public void GetItemMergedSamplesInstanceID(int id, List<int> outInstanceIds);
     public string GetItemName(int id);
     public string GetItemPath(int id);
     public int GetRootItemID();

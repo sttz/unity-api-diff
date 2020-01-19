@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -15,8 +17,8 @@ public struct ShaderMessage : IEquatable<UnityEditor.ShaderMessage>
 
     public ShaderMessage(string msg, UnityEditor.Rendering.ShaderCompilerMessageSeverity sev = 0);
 
-    public bool Equals(UnityEditor.ShaderMessage other);
     public bool Equals(object obj);
+    public bool Equals(UnityEditor.ShaderMessage other);
     public int GetHashCode();
 
 }

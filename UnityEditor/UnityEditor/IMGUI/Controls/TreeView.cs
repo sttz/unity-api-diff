@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.IMGUI.Controls
@@ -6,10 +8,10 @@ namespace UnityEditor.IMGUI.Controls
 
 public abstract class TreeView
 {
-    static protected System.Collections.Generic.List<UnityEditor.IMGUI.Controls.TreeViewItem> CreateChildListForCollapsedParent();
-    static protected bool IsChildListForACollapsedParent(System.Collections.Generic.IList<UnityEditor.IMGUI.Controls.TreeViewItem> childList);
+    static protected List<UnityEditor.IMGUI.Controls.TreeViewItem> CreateChildListForCollapsedParent();
+    static protected bool IsChildListForACollapsedParent(IList<UnityEditor.IMGUI.Controls.TreeViewItem> childList);
     static protected void SetupDepthsFromParentsAndChildren(UnityEditor.IMGUI.Controls.TreeViewItem root);
-    static protected void SetupParentsAndChildrenFromDepths(UnityEditor.IMGUI.Controls.TreeViewItem root, System.Collections.Generic.IList<UnityEditor.IMGUI.Controls.TreeViewItem> rows);
+    static protected void SetupParentsAndChildrenFromDepths(UnityEditor.IMGUI.Controls.TreeViewItem root, IList<UnityEditor.IMGUI.Controls.TreeViewItem> rows);
 
     protected float baseIndent { get; set; }
     protected float cellMargin { get; set; }
@@ -40,13 +42,13 @@ public abstract class TreeView
     public TreeView(UnityEditor.IMGUI.Controls.TreeViewState state);
     public TreeView(UnityEditor.IMGUI.Controls.TreeViewState state, UnityEditor.IMGUI.Controls.MultiColumnHeader multiColumnHeader);
 
-    protected void AddExpandedRows(UnityEditor.IMGUI.Controls.TreeViewItem root, System.Collections.Generic.IList<UnityEditor.IMGUI.Controls.TreeViewItem> rows);
+    protected void AddExpandedRows(UnityEditor.IMGUI.Controls.TreeViewItem root, IList<UnityEditor.IMGUI.Controls.TreeViewItem> rows);
     protected void AfterRowsGUI();
     protected void BeforeRowsGUI();
     public bool BeginRename(UnityEditor.IMGUI.Controls.TreeViewItem item);
     public bool BeginRename(UnityEditor.IMGUI.Controls.TreeViewItem item, float delay);
     protected UnityEditor.IMGUI.Controls.TreeViewItem BuildRoot();
-    protected System.Collections.Generic.IList<UnityEditor.IMGUI.Controls.TreeViewItem> BuildRows(UnityEditor.IMGUI.Controls.TreeViewItem root);
+    protected IList<UnityEditor.IMGUI.Controls.TreeViewItem> BuildRows(UnityEditor.IMGUI.Controls.TreeViewItem root);
     protected bool CanBeParent(UnityEditor.IMGUI.Controls.TreeViewItem item);
     protected bool CanChangeExpandedState(UnityEditor.IMGUI.Controls.TreeViewItem item);
     protected bool CanMultiSelect(UnityEditor.IMGUI.Controls.TreeViewItem item);
@@ -63,20 +65,20 @@ public abstract class TreeView
     public void ExpandAll();
     protected void ExpandedStateChanged();
     protected UnityEditor.IMGUI.Controls.TreeViewItem FindItem(int id, UnityEditor.IMGUI.Controls.TreeViewItem searchFromThisItem);
-    protected System.Collections.Generic.IList<UnityEditor.IMGUI.Controls.TreeViewItem> FindRows(System.Collections.Generic.IList<int> ids);
+    protected IList<UnityEditor.IMGUI.Controls.TreeViewItem> FindRows(IList<int> ids);
     public void FrameItem(int id);
-    protected System.Collections.Generic.IList<int> GetAncestors(int id);
+    protected IList<int> GetAncestors(int id);
     protected Rect GetCellRectForTreeFoldouts(Rect rowRect);
     protected float GetContentIndent(UnityEditor.IMGUI.Controls.TreeViewItem item);
     protected float GetCustomRowHeight(int row, UnityEditor.IMGUI.Controls.TreeViewItem item);
-    protected System.Collections.Generic.IList<int> GetDescendantsThatHaveChildren(int id);
-    public System.Collections.Generic.IList<int> GetExpanded();
+    protected IList<int> GetDescendantsThatHaveChildren(int id);
+    public IList<int> GetExpanded();
     protected void GetFirstAndLastVisibleRows(out int firstRowVisible, out int lastRowVisible);
     protected float GetFoldoutIndent(UnityEditor.IMGUI.Controls.TreeViewItem item);
     protected Rect GetRenameRect(Rect rowRect, int row, UnityEditor.IMGUI.Controls.TreeViewItem item);
     protected Rect GetRowRect(int row);
-    public System.Collections.Generic.IList<UnityEditor.IMGUI.Controls.TreeViewItem> GetRows();
-    public System.Collections.Generic.IList<int> GetSelection();
+    public IList<UnityEditor.IMGUI.Controls.TreeViewItem> GetRows();
+    public IList<int> GetSelection();
     protected UnityEditor.DragAndDropVisualMode HandleDragAndDrop(DragAndDropArgs args);
     public bool HasFocus();
     public bool HasSelection();
@@ -91,75 +93,24 @@ public abstract class TreeView
     protected void RowGUI(RowGUIArgs args);
     protected void SearchChanged(string newSearch);
     public void SelectAllRows();
-    protected void SelectionChanged(System.Collections.Generic.IList<int> selectedIds);
+    protected void SelectionChanged(IList<int> selectedIds);
     protected void SelectionClick(UnityEditor.IMGUI.Controls.TreeViewItem item, bool keepMultiSelection);
+    public void SetExpanded(IList<int> ids);
     public bool SetExpanded(int id, bool expanded);
-    public void SetExpanded(System.Collections.Generic.IList<int> ids);
     public void SetExpandedRecursive(int id, bool expanded);
     public void SetFocus();
     public void SetFocusAndEnsureSelectedItem();
-    public void SetSelection(System.Collections.Generic.IList<int> selectedIDs);
-    public void SetSelection(System.Collections.Generic.IList<int> selectedIDs, UnityEditor.IMGUI.Controls.TreeViewSelectionOptions options);
+    public void SetSelection(IList<int> selectedIDs);
+    public void SetSelection(IList<int> selectedIDs, UnityEditor.IMGUI.Controls.TreeViewSelectionOptions options);
     protected void SetupDragAndDrop(SetupDragAndDropArgs args);
     protected void SingleClickedItem(int id);
-    protected System.Collections.Generic.IList<int> SortItemIDsInRowOrder(System.Collections.Generic.IList<int> ids);
-
-    public delegate bool DoFoldoutCallback(Rect position, bool expandedState, GUIStyle style);
-
-    public delegate System.Collections.Generic.List<int> GetNewSelectionFunction(UnityEditor.IMGUI.Controls.TreeViewItem clickedItem, bool keepMultiSelection, bool useActionKeyAsShift);
-
-    protected struct RowGUIArgs
-    {
-        public bool focused;
-        public bool isRenaming;
-        public UnityEditor.IMGUI.Controls.TreeViewItem item;
-        public string label;
-        public int row;
-        public Rect rowRect;
-        public bool selected;
-
-        public Rect GetCellRect(int visibleColumnIndex);
-        public int GetColumn(int visibleColumnIndex);
-        public int GetNumVisibleColumns();
-
-    }
-
-    protected struct DragAndDropArgs
-    {
-        public DragAndDropPosition dragAndDropPosition;
-        public int insertAtIndex;
-        public UnityEditor.IMGUI.Controls.TreeViewItem parentItem;
-        public bool performDrop;
-
-    }
-
-    protected struct SetupDragAndDropArgs
-    {
-        public System.Collections.Generic.IList<int> draggedItemIDs;
-
-    }
+    protected IList<int> SortItemIDsInRowOrder(IList<int> ids);
 
     protected struct CanStartDragArgs
     {
         public UnityEditor.IMGUI.Controls.TreeViewItem draggedItem;
-        public System.Collections.Generic.IList<int> draggedItemIDs;
+        public IList<int> draggedItemIDs;
 
-    }
-
-    protected struct RenameEndedArgs
-    {
-        public bool acceptedRename;
-        public int itemID;
-        public string newName;
-        public string originalName;
-
-    }
-
-    protected enum DragAndDropPosition
-    {
-        UponItem = 0,
-        BetweenItems = 1,
-        OutsideItems = 2,
     }
 
     public static class DefaultGUI
@@ -181,6 +132,57 @@ public abstract class TreeView
         static public GUIStyle foldoutLabel;
         static public GUIStyle label;
         static public GUIStyle labelRightAligned;
+
+    }
+
+    public delegate bool DoFoldoutCallback(Rect position, bool expandedState, GUIStyle style);
+
+    protected struct DragAndDropArgs
+    {
+        public DragAndDropPosition dragAndDropPosition;
+        public int insertAtIndex;
+        public UnityEditor.IMGUI.Controls.TreeViewItem parentItem;
+        public bool performDrop;
+
+    }
+
+    protected enum DragAndDropPosition
+    {
+        UponItem = 0,
+        BetweenItems = 1,
+        OutsideItems = 2,
+    }
+
+    public delegate List<int> GetNewSelectionFunction(UnityEditor.IMGUI.Controls.TreeViewItem clickedItem, bool keepMultiSelection, bool useActionKeyAsShift);
+
+    protected struct RenameEndedArgs
+    {
+        public bool acceptedRename;
+        public int itemID;
+        public string newName;
+        public string originalName;
+
+    }
+
+    protected struct RowGUIArgs
+    {
+        public bool focused;
+        public bool isRenaming;
+        public UnityEditor.IMGUI.Controls.TreeViewItem item;
+        public string label;
+        public int row;
+        public Rect rowRect;
+        public bool selected;
+
+        public Rect GetCellRect(int visibleColumnIndex);
+        public int GetColumn(int visibleColumnIndex);
+        public int GetNumVisibleColumns();
+
+    }
+
+    protected struct SetupDragAndDropArgs
+    {
+        public IList<int> draggedItemIDs;
 
     }
 

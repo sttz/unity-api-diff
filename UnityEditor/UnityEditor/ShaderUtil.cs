@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -14,8 +16,8 @@ public sealed class ShaderUtil
     static public void ClearShaderErrors(Shader s);
     static public void ClearShaderMessages(Shader s);
     static public void CompilePass(Material material, int pass, bool forceSync = false);
-    static public Shader CreateShaderAsset(string source, bool compileInitialShaderVariants);
     static public Shader CreateShaderAsset(string source);
+    static public Shader CreateShaderAsset(string source, bool compileInitialShaderVariants);
     static public UnityEditor.ShaderInfo[] GetAllShaderInfo();
     static public int GetComputeShaderMessageCount(ComputeShader s);
     static public UnityEditor.ShaderMessage[] GetComputeShaderMessages(ComputeShader s);
@@ -35,19 +37,10 @@ public sealed class ShaderUtil
     static public void RestoreAsyncCompilation(Rendering.CommandBuffer cmd);
     static public void SetAsyncCompilation(Rendering.CommandBuffer cmd, bool allow);
     static public bool ShaderHasError(Shader shader);
-    static public void UpdateShaderAsset(Shader shader, string source, bool compileInitialShaderVariants);
     static public void UpdateShaderAsset(Shader shader, string source);
+    static public void UpdateShaderAsset(Shader shader, string source, bool compileInitialShaderVariants);
 
     public ShaderUtil();
-
-    public enum ShaderPropertyType
-    {
-        Color = 0,
-        Vector = 1,
-        Float = 2,
-        Range = 3,
-        TexEnv = 4,
-    }
 
     public enum ShaderPropertyTexDim
     {
@@ -56,6 +49,15 @@ public sealed class ShaderUtil
         TexDim3D = 3,
         TexDimCUBE = 4,
         TexDimAny = 6,
+    }
+
+    public enum ShaderPropertyType
+    {
+        Color = 0,
+        Vector = 1,
+        Float = 2,
+        Range = 3,
+        TexEnv = 4,
     }
 
 }

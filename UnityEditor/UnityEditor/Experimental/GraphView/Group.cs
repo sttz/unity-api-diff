@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental.GraphView
@@ -12,8 +14,8 @@ public class Group : UnityEditor.Experimental.GraphView.Scope
 
     public bool AcceptsElement(UnityEditor.Experimental.GraphView.GraphElement element, string reasonWhyNotAccepted);
     public void FocusTitleTextField();
-    protected void OnElementsAdded(System.Collections.Generic.IEnumerable<UnityEditor.Experimental.GraphView.GraphElement> elements);
-    protected void OnElementsRemoved(System.Collections.Generic.IEnumerable<UnityEditor.Experimental.GraphView.GraphElement> elements);
+    protected void OnElementsAdded(IEnumerable<UnityEditor.Experimental.GraphView.GraphElement> elements);
+    protected void OnElementsRemoved(IEnumerable<UnityEditor.Experimental.GraphView.GraphElement> elements);
     protected void OnGroupRenamed(string oldName, string newName);
 
 }

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -13,8 +15,8 @@ public class EditorBuildSettingsScene : IComparable
     public string path { get; set; }
 
     public EditorBuildSettingsScene();
-    public EditorBuildSettingsScene(string path, bool enabled);
     public EditorBuildSettingsScene(UnityEditor.GUID guid, bool enabled);
+    public EditorBuildSettingsScene(string path, bool enabled);
 
     public int CompareTo(object obj);
 

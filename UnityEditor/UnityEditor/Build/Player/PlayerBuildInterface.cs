@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Build.Player
@@ -6,7 +8,7 @@ namespace UnityEditor.Build.Player
 
 public static class PlayerBuildInterface
 {
-    static public Func<System.Collections.Generic.IEnumerable<string>> ExtraTypesProvider;
+    static public Func<IEnumerable<string>> ExtraTypesProvider;
 
     static public UnityEditor.Build.Player.ScriptCompilationResult CompilePlayerScripts(UnityEditor.Build.Player.ScriptCompilationSettings input, string outputFolder);
 

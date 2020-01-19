@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -26,6 +28,20 @@ public sealed class MaterialProperty
     public void ReadFromMaterialPropertyBlock(MaterialPropertyBlock block);
     public void WriteToMaterialPropertyBlock(MaterialPropertyBlock materialblock, int changedPropertyMask);
 
+    public delegate bool ApplyPropertyCallback(UnityEditor.MaterialProperty prop, int changeMask, object previousValue);
+
+    public enum PropFlags
+    {
+        None = 0,
+        HideInInspector = 1,
+        PerRendererData = 2,
+        NoScaleOffset = 4,
+        Normal = 8,
+        HDR = 16,
+        Gamma = 32,
+        NonModifiableTextureData = 64,
+    }
+
     public enum PropType
     {
         Color = 0,
@@ -44,20 +60,6 @@ public sealed class MaterialProperty
         Cube = 4,
         Any = 6,
     }
-
-    public enum PropFlags
-    {
-        None = 0,
-        HideInInspector = 1,
-        PerRendererData = 2,
-        NoScaleOffset = 4,
-        Normal = 8,
-        HDR = 16,
-        Gamma = 32,
-        NonModifiableTextureData = 64,
-    }
-
-    public delegate bool ApplyPropertyCallback(UnityEditor.MaterialProperty prop, int changeMask, object previousValue);
 
 }
 

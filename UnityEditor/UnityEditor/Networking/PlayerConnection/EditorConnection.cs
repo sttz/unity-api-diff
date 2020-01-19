@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Networking.PlayerConnection
@@ -6,7 +8,7 @@ namespace UnityEditor.Networking.PlayerConnection
 
 public class EditorConnection : UnityEditor.ScriptableSingleton<UnityEditor.Networking.PlayerConnection.EditorConnection>, Networking.PlayerConnection.IEditorPlayerConnection
 {
-    public System.Collections.Generic.List<UnityEditor.Networking.PlayerConnection.ConnectedPlayer> ConnectedPlayers { get; }
+    public List<UnityEditor.Networking.PlayerConnection.ConnectedPlayer> ConnectedPlayers { get; }
 
     public EditorConnection();
 
@@ -15,10 +17,10 @@ public class EditorConnection : UnityEditor.ScriptableSingleton<UnityEditor.Netw
     public void Register(Guid messageId, Events.UnityAction<Networking.PlayerConnection.MessageEventArgs> callback);
     public void RegisterConnection(Events.UnityAction<int> callback);
     public void RegisterDisconnection(Events.UnityAction<int> callback);
-    public void Send(Guid messageId, byte[] data, int playerId);
     public void Send(Guid messageId, byte[] data);
-    public bool TrySend(Guid messageId, byte[] data, int playerId);
+    public void Send(Guid messageId, byte[] data, int playerId);
     public bool TrySend(Guid messageId, byte[] data);
+    public bool TrySend(Guid messageId, byte[] data, int playerId);
     public void Unregister(Guid messageId, Events.UnityAction<Networking.PlayerConnection.MessageEventArgs> callback);
 
 }

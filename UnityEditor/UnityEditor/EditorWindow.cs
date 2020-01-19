@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -9,30 +11,30 @@ public class EditorWindow : ScriptableObject
     static public UnityEditor.EditorWindow focusedWindow { get; }
     static public UnityEditor.EditorWindow mouseOverWindow { get; }
 
-    static public T CreateWindow(Type[] desiredDockNextTo);
-    static public T CreateWindow(string title, Type[] desiredDockNextTo);
+    static public T CreateWindow<T>(Type[] desiredDockNextTo);
+    static public T CreateWindow<T>(string title, Type[] desiredDockNextTo);
     static public void FocusWindowIfItsOpen(Type t);
-    static public void FocusWindowIfItsOpen();
-    static public UnityEditor.EditorWindow GetWindow(Type t, bool utility, string title, bool focus);
-    static public UnityEditor.EditorWindow GetWindow(Type t, bool utility, string title);
-    static public UnityEditor.EditorWindow GetWindow(Type t, bool utility);
+    static public void FocusWindowIfItsOpen<T>();
     static public UnityEditor.EditorWindow GetWindow(Type t);
-    static public T GetWindow();
-    static public T GetWindow(bool utility);
-    static public T GetWindow(bool utility, string title);
-    static public T GetWindow(string title);
-    static public T GetWindow(string title, bool focus);
-    static public T GetWindow(bool utility, string title, bool focus);
-    static public T GetWindow(Type[] desiredDockNextTo);
-    static public T GetWindow(string title, Type[] desiredDockNextTo);
-    static public T GetWindow(string title, bool focus, Type[] desiredDockNextTo);
-    static public UnityEditor.EditorWindow GetWindowWithRect(Type t, Rect rect, bool utility, string title);
-    static public UnityEditor.EditorWindow GetWindowWithRect(Type t, Rect rect, bool utility);
+    static public UnityEditor.EditorWindow GetWindow(Type t, bool utility);
+    static public UnityEditor.EditorWindow GetWindow(Type t, bool utility, string title);
+    static public UnityEditor.EditorWindow GetWindow(Type t, bool utility, string title, bool focus);
+    static public T GetWindow<T>();
+    static public T GetWindow<T>(Type[] desiredDockNextTo);
+    static public T GetWindow<T>(string title);
+    static public T GetWindow<T>(bool utility);
+    static public T GetWindow<T>(string title, Type[] desiredDockNextTo);
+    static public T GetWindow<T>(string title, bool focus);
+    static public T GetWindow<T>(bool utility, string title);
+    static public T GetWindow<T>(string title, bool focus, Type[] desiredDockNextTo);
+    static public T GetWindow<T>(bool utility, string title, bool focus);
     static public UnityEditor.EditorWindow GetWindowWithRect(Type t, Rect rect);
-    static public T GetWindowWithRect(Rect rect);
-    static public T GetWindowWithRect(Rect rect, bool utility);
-    static public T GetWindowWithRect(Rect rect, bool utility, string title);
-    static public T GetWindowWithRect(Rect rect, bool utility, string title, bool focus);
+    static public UnityEditor.EditorWindow GetWindowWithRect(Type t, Rect rect, bool utility);
+    static public UnityEditor.EditorWindow GetWindowWithRect(Type t, Rect rect, bool utility, string title);
+    static public T GetWindowWithRect<T>(Rect rect);
+    static public T GetWindowWithRect<T>(Rect rect, bool utility);
+    static public T GetWindowWithRect<T>(Rect rect, bool utility, string title);
+    static public T GetWindowWithRect<T>(Rect rect, bool utility, string title, bool focus);
 
     public int antiAlias { get; set; }
     public bool autoRepaintOnSceneChange { get; set; }

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.VersionControl
@@ -13,8 +15,8 @@ public class ChangeSet
 
     public ChangeSet();
     public ChangeSet(string description);
-    public ChangeSet(string description, string revision);
     public ChangeSet(UnityEditor.VersionControl.ChangeSet other);
+    public ChangeSet(string description, string revision);
 
     public void Dispose();
 

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.IMGUI.Controls
@@ -6,7 +8,7 @@ namespace UnityEditor.IMGUI.Controls
 
 public class TreeViewItem : IComparable<UnityEditor.IMGUI.Controls.TreeViewItem>
 {
-    public System.Collections.Generic.List<UnityEditor.IMGUI.Controls.TreeViewItem> children { get; set; }
+    public List<UnityEditor.IMGUI.Controls.TreeViewItem> children { get; set; }
     public int depth { get; set; }
     public string displayName { get; set; }
     public bool hasChildren { get; }

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.PackageManager.UI
@@ -6,7 +8,7 @@ namespace UnityEditor.PackageManager.UI
 
 public struct Sample
 {
-    static public System.Collections.Generic.IEnumerable<UnityEditor.PackageManager.UI.Sample> FindByPackage(string packageName, string packageVersion);
+    static public IEnumerable<UnityEditor.PackageManager.UI.Sample> FindByPackage(string packageName, string packageVersion);
 
     public string description { get; private set; }
     public string displayName { get; private set; }

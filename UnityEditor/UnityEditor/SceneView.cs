@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -10,7 +12,7 @@ public class SceneView : UnityEditor.SearchableEditorWindow, UnityEditor.IHasCus
 
     static public UnityEditor.SceneView currentDrawingSceneView { get; }
     static public UnityEditor.SceneView lastActiveSceneView { get; }
-    static public System.Collections.ArrayList sceneViews { get; }
+    static public ArrayList sceneViews { get; }
 
     static public event Action<UnityEditor.SceneView> beforeSceneGui;
     static public event Action<UnityEditor.SceneView> duringSceneGui;
@@ -89,6 +91,27 @@ public class SceneView : UnityEditor.SearchableEditorWindow, UnityEditor.IHasCus
 
     }
 
+    public class CameraSettings
+    {
+        public bool accelerationEnabled { get; set; }
+        public bool dynamicClip { get; set; }
+        public float easingDuration { get; set; }
+        public bool easingEnabled { get; set; }
+        public float farClip { get; set; }
+        public float fieldOfView { get; set; }
+        public float nearClip { get; set; }
+        public bool occlusionCulling { get; set; }
+        public float speed { get; set; }
+        public float speedMax { get; set; }
+        public float speedMin { get; set; }
+        public float speedNormalized { get; set; }
+
+        public CameraSettings();
+
+    }
+
+    public delegate void OnSceneFunc(UnityEditor.SceneView sceneView);
+
     public class SceneViewState
     {
         public bool showFlares;
@@ -106,27 +129,6 @@ public class SceneView : UnityEditor.SearchableEditorWindow, UnityEditor.IHasCus
         public bool IsAllOn();
         public void SetAllEnabled(bool value);
         public void Toggle(bool value);
-
-    }
-
-    public delegate void OnSceneFunc(UnityEditor.SceneView sceneView);
-
-    public class CameraSettings
-    {
-        public bool accelerationEnabled { get; set; }
-        public bool dynamicClip { get; set; }
-        public float easingDuration { get; set; }
-        public bool easingEnabled { get; set; }
-        public float farClip { get; set; }
-        public float fieldOfView { get; set; }
-        public float nearClip { get; set; }
-        public bool occlusionCulling { get; set; }
-        public float speed { get; set; }
-        public float speedMax { get; set; }
-        public float speedMin { get; set; }
-        public float speedNormalized { get; set; }
-
-        public CameraSettings();
 
     }
 
