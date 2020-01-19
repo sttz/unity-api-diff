@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditorInternal
@@ -6,7 +8,7 @@ namespace UnityEditorInternal
 
 public abstract class Il2CppNativeCodeBuilder
 {
-    public System.Collections.Generic.IEnumerable<string> AdditionalIl2CPPArguments { get; }
+    public IEnumerable<string> AdditionalIl2CPPArguments { get; }
     public string BaselibLibraryDirectory { get; }
     public string CacheDirectory { get; }
     public string CompilerArchitecture { get; }
@@ -19,7 +21,7 @@ public abstract class Il2CppNativeCodeBuilder
 
     public Il2CppNativeCodeBuilder(string baselibLibraryDirectory);
 
-    public System.Collections.Generic.IEnumerable<string> ConvertIncludesToFullPaths(System.Collections.Generic.IEnumerable<string> relativeIncludePaths);
+    public IEnumerable<string> ConvertIncludesToFullPaths(IEnumerable<string> relativeIncludePaths);
     public string ConvertOutputFileToFullPath(string outputFileRelativePath);
     protected void SetupEnvironment(System.Diagnostics.ProcessStartInfo startInfo);
     public void SetupStartInfo(System.Diagnostics.ProcessStartInfo startInfo);

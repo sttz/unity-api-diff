@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -57,6 +59,7 @@ public sealed class TextureImporterSettings
     public UnityEditor.TextureImporterFormat textureFormat { get; set; }
     public UnityEditor.TextureImporterShape textureShape { get; set; }
     public UnityEditor.TextureImporterType textureType { get; set; }
+    public bool vtOnly { get; set; }
     public TextureWrapMode wrapMode { get; set; }
     public TextureWrapMode wrapModeU { get; set; }
     public TextureWrapMode wrapModeV { get; set; }
@@ -64,8 +67,8 @@ public sealed class TextureImporterSettings
 
     public TextureImporterSettings();
 
-    public void ApplyTextureType(UnityEditor.TextureImporterType type, bool applyAll);
     public void ApplyTextureType(UnityEditor.TextureImporterType type);
+    public void ApplyTextureType(UnityEditor.TextureImporterType type, bool applyAll);
     public void CopyTo(UnityEditor.TextureImporterSettings target);
 
 }

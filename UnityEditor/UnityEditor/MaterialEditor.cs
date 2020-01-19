@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -31,11 +33,11 @@ public class MaterialEditor : UnityEditor.Editor
     public MaterialEditor();
 
     public void Awake();
-    public void BeginAnimatedCheck(Rect totalPosition, UnityEditor.MaterialProperty prop);
     public void BeginAnimatedCheck(UnityEditor.MaterialProperty prop);
+    public void BeginAnimatedCheck(Rect totalPosition, UnityEditor.MaterialProperty prop);
     public Color ColorProperty(UnityEditor.MaterialProperty prop, string label);
-    public Color ColorProperty(Rect position, UnityEditor.MaterialProperty prop, string label);
     public Color ColorProperty(string propertyName, string label);
+    public Color ColorProperty(Rect position, UnityEditor.MaterialProperty prop, string label);
     public void DefaultPreviewGUI(Rect r, GUIStyle background);
     public void DefaultPreviewSettingsGUI();
     public void DefaultShaderProperty(UnityEditor.MaterialProperty prop, string label);
@@ -46,8 +48,8 @@ public class MaterialEditor : UnityEditor.Editor
     public void EnableInstancingField(Rect r);
     public void EndAnimatedCheck();
     public float FloatProperty(UnityEditor.MaterialProperty prop, string label);
-    public float FloatProperty(Rect position, UnityEditor.MaterialProperty prop, string label);
     public float FloatProperty(string propertyName, string label);
+    public float FloatProperty(Rect position, UnityEditor.MaterialProperty prop, string label);
     public Color GetColor(string propertyName, out bool hasMixedValue);
     public float GetFloat(string propertyName, out bool hasMixedValue);
     public float GetPropertyHeight(UnityEditor.MaterialProperty prop);
@@ -95,35 +97,35 @@ public class MaterialEditor : UnityEditor.Editor
     public void SetVector(string propertyName, Vector4 value);
     public void ShaderProperty(UnityEditor.MaterialProperty prop, string label);
     public void ShaderProperty(UnityEditor.MaterialProperty prop, GUIContent label);
-    public void ShaderProperty(UnityEditor.MaterialProperty prop, string label, int labelIndent);
-    public void ShaderProperty(UnityEditor.MaterialProperty prop, GUIContent label, int labelIndent);
+    public void ShaderProperty(Shader shader, int propertyIndex);
     public void ShaderProperty(Rect position, UnityEditor.MaterialProperty prop, string label);
     public void ShaderProperty(Rect position, UnityEditor.MaterialProperty prop, GUIContent label);
+    public void ShaderProperty(UnityEditor.MaterialProperty prop, string label, int labelIndent);
+    public void ShaderProperty(UnityEditor.MaterialProperty prop, GUIContent label, int labelIndent);
     public void ShaderProperty(Rect position, UnityEditor.MaterialProperty prop, string label, int labelIndent);
     public void ShaderProperty(Rect position, UnityEditor.MaterialProperty prop, GUIContent label, int labelIndent);
-    public void ShaderProperty(Shader shader, int propertyIndex);
     public void TextureCompatibilityWarning(UnityEditor.MaterialProperty prop);
     public Texture TextureProperty(UnityEditor.MaterialProperty prop, string label);
-    public Texture TextureProperty(UnityEditor.MaterialProperty prop, string label, bool scaleOffset);
     public Texture TextureProperty(Rect position, UnityEditor.MaterialProperty prop, string label);
-    public Texture TextureProperty(Rect position, UnityEditor.MaterialProperty prop, string label, bool scaleOffset);
-    public Texture TextureProperty(Rect position, UnityEditor.MaterialProperty prop, string label, string tooltip, bool scaleOffset);
+    public Texture TextureProperty(UnityEditor.MaterialProperty prop, string label, bool scaleOffset);
     public Texture TextureProperty(string propertyName, string label, ShaderPropertyTexDim texDim);
+    public Texture TextureProperty(Rect position, UnityEditor.MaterialProperty prop, string label, bool scaleOffset);
     public Texture TextureProperty(string propertyName, string label, ShaderPropertyTexDim texDim, bool scaleOffset);
+    public Texture TextureProperty(Rect position, UnityEditor.MaterialProperty prop, string label, string tooltip, bool scaleOffset);
     public Texture TexturePropertyMiniThumbnail(Rect position, UnityEditor.MaterialProperty prop, string label, string tooltip);
     public Rect TexturePropertySingleLine(GUIContent label, UnityEditor.MaterialProperty textureProp);
     public Rect TexturePropertySingleLine(GUIContent label, UnityEditor.MaterialProperty textureProp, UnityEditor.MaterialProperty extraProperty1);
     public Rect TexturePropertySingleLine(GUIContent label, UnityEditor.MaterialProperty textureProp, UnityEditor.MaterialProperty extraProperty1, UnityEditor.MaterialProperty extraProperty2);
     public Rect TexturePropertyTwoLines(GUIContent label, UnityEditor.MaterialProperty textureProp, UnityEditor.MaterialProperty extraProperty1, GUIContent label2, UnityEditor.MaterialProperty extraProperty2);
-    public Rect TexturePropertyWithHDRColor(GUIContent label, UnityEditor.MaterialProperty textureProp, UnityEditor.MaterialProperty colorProperty, UnityEditor.ColorPickerHDRConfig hdrConfig, bool showAlpha);
     public Rect TexturePropertyWithHDRColor(GUIContent label, UnityEditor.MaterialProperty textureProp, UnityEditor.MaterialProperty colorProperty, bool showAlpha);
+    public Rect TexturePropertyWithHDRColor(GUIContent label, UnityEditor.MaterialProperty textureProp, UnityEditor.MaterialProperty colorProperty, UnityEditor.ColorPickerHDRConfig hdrConfig, bool showAlpha);
     public void TextureScaleOffsetProperty(UnityEditor.MaterialProperty property);
     public float TextureScaleOffsetProperty(Rect position, UnityEditor.MaterialProperty property);
     public float TextureScaleOffsetProperty(Rect position, UnityEditor.MaterialProperty property, bool partOfTexturePropertyControl);
     public void UndoRedoPerformed();
     public Vector4 VectorProperty(UnityEditor.MaterialProperty prop, string label);
-    public Vector4 VectorProperty(Rect position, UnityEditor.MaterialProperty prop, string label);
     public Vector4 VectorProperty(string propertyName, string label);
+    public Vector4 VectorProperty(Rect position, UnityEditor.MaterialProperty prop, string label);
 
 }
 

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental
@@ -6,7 +8,7 @@ namespace UnityEditor.Experimental
 
 public abstract class AssetsModifiedProcessor
 {
-    public System.Collections.Generic.HashSet<string> assetsReportedChanged { get; set; }
+    public HashSet<string> assetsReportedChanged { get; set; }
 
     protected AssetsModifiedProcessor();
 

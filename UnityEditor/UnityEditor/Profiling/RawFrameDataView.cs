@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Profiling
@@ -7,14 +9,14 @@ namespace UnityEditor.Profiling
 public class RawFrameDataView : UnityEditor.Profiling.FrameDataView
 {
     public bool Equals(object obj);
-    public void GetFlowEvents(System.Collections.Generic.List<FlowEvent> outFlowEvents);
+    public void GetFlowEvents(List<FlowEvent> outFlowEvents);
     public int GetHashCode();
-    public void GetSampleCallstack(int sampleIndex, System.Collections.Generic.List<ulong> outCallstack);
+    public void GetSampleCallstack(int sampleIndex, List<ulong> outCallstack);
     public ushort GetSampleCategoryIndex(int sampleIndex);
     public int GetSampleChildrenCount(int sampleIndex);
     public int GetSampleChildrenCountRecursive(int sampleIndex);
     public Unity.Profiling.LowLevel.MarkerFlags GetSampleFlags(int sampleIndex);
-    public void GetSampleFlowEvents(int sampleIndex, System.Collections.Generic.List<FlowEvent> outFlowEvents);
+    public void GetSampleFlowEvents(int sampleIndex, List<FlowEvent> outFlowEvents);
     public int GetSampleMarkerId(int sampleIndex);
     public double GetSampleMetadataAsDouble(int sampleIndex, int metadataIndex);
     public float GetSampleMetadataAsFloat(int sampleIndex, int metadataIndex);

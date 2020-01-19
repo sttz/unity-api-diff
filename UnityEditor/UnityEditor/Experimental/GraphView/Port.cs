@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental.GraphView
@@ -6,7 +8,7 @@ namespace UnityEditor.Experimental.GraphView
 
 public class Port : UnityEditor.Experimental.GraphView.GraphElement
 {
-    static public UnityEditor.Experimental.GraphView.Port Create(UnityEditor.Experimental.GraphView.Orientation orientation, UnityEditor.Experimental.GraphView.Direction direction, Capacity capacity, Type type);
+    static public UnityEditor.Experimental.GraphView.Port Create<TEdge>(UnityEditor.Experimental.GraphView.Orientation orientation, UnityEditor.Experimental.GraphView.Direction direction, Capacity capacity, Type type);
 
     protected UIElements.VisualElement m_ConnectorBox;
     protected UIElements.VisualElement m_ConnectorBoxCap;
@@ -17,7 +19,7 @@ public class Port : UnityEditor.Experimental.GraphView.GraphElement
     public Capacity capacity { get; private set; }
     public bool collapsed { get; }
     public bool connected { get; }
-    public System.Collections.Generic.IEnumerable<UnityEditor.Experimental.GraphView.Edge> connections { get; }
+    public IEnumerable<UnityEditor.Experimental.GraphView.Edge> connections { get; }
     public UnityEditor.Experimental.GraphView.Direction direction { get; private set; }
     public Color disabledPortColor { get; }
     public UnityEditor.Experimental.GraphView.EdgeConnector edgeConnector { get; }
@@ -36,7 +38,7 @@ public class Port : UnityEditor.Experimental.GraphView.GraphElement
 
     public void Connect(UnityEditor.Experimental.GraphView.Edge edge);
     public UnityEditor.Experimental.GraphView.Edge ConnectTo(UnityEditor.Experimental.GraphView.Port other);
-    public T ConnectTo(UnityEditor.Experimental.GraphView.Port other);
+    public T ConnectTo<T>(UnityEditor.Experimental.GraphView.Port other);
     public bool ContainsPoint(Vector2 localPoint);
     public void Disconnect(UnityEditor.Experimental.GraphView.Edge edge);
     public void DisconnectAll();

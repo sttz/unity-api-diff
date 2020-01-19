@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditorInternal
@@ -44,8 +46,8 @@ public static class ProfilerDriver
     static public string GetOverviewText(Profiling.ProfilerArea profilerArea, int frame);
     static public int GetPreviousFrameIndex(int frame);
     static public UnityEditor.Profiling.RawFrameDataView GetRawFrameDataView(int frameIndex, int threadIndex);
-    static public void GetStatisticsAvailable(Profiling.ProfilerArea profilerArea, int firstFrame, out int[] buffer);
     static public void GetStatisticsAvailable(Profiling.ProfilerArea profilerArea, int firstFrame, out bool[] buffer);
+    static public void GetStatisticsAvailable(Profiling.ProfilerArea profilerArea, int firstFrame, out int[] buffer);
     static public int GetStatisticsIdentifier(string propertyName);
     static public int GetStatisticsIdentifierForArea(Profiling.ProfilerArea profilerArea, string propertyName);
     static public void GetStatisticsValues(int identifier, int firstFrame, float scale, out float[] buffer, out float maxValue);

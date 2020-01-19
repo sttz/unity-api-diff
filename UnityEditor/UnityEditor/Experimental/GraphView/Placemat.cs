@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental.GraphView
@@ -6,12 +8,12 @@ namespace UnityEditor.Experimental.GraphView
 
 public class Placemat : UnityEditor.Experimental.GraphView.GraphElement
 {
-    static public bool CalculateSelectedNodeBounds(Rect pos, System.Collections.Generic.List<UnityEditor.Experimental.GraphView.Node> nodes, MinSizePolicy ensureMinSize = 0);
+    static public bool ComputeElementBounds(Rect pos, List<UnityEditor.Experimental.GraphView.GraphElement> elements, MinSizePolicy ensureMinSize = 0);
 
     protected UnityEditor.Experimental.GraphView.GraphView m_GraphView;
 
     public bool Collapsed { get; set; }
-    public System.Collections.Generic.IEnumerable<UnityEditor.Experimental.GraphView.GraphElement> CollapsedElements { get; }
+    public IEnumerable<UnityEditor.Experimental.GraphView.GraphElement> CollapsedElements { get; }
     public Vector2 CollapsedSize { get; }
     public Color Color { get; set; }
     public Rect ExpandedPosition { get; }

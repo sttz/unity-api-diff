@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -44,10 +46,33 @@ public sealed class LightingSettings : Object
     public bool prioritizeView { get; set; }
     public bool realtimeEnvironmentLighting { get; set; }
     public bool realtimeGI { get; set; }
+    public int russianRouletteStartBounce { get; set; }
     public Sampling sampling { get; set; }
     public string trainingDataDestination { get; set; }
 
     public LightingSettings();
+
+    public enum DenoiserType
+    {
+        None = 0,
+        Optix = 1,
+        OpenImage = 2,
+        RadeonPro = 3,
+    }
+
+    public enum FilterMode
+    {
+        None = 0,
+        Auto = 1,
+        Advanced = 2,
+    }
+
+    public enum FilterType
+    {
+        Gaussian = 0,
+        ATrous = 1,
+        None = 2,
+    }
 
     public enum Lightmapper
     {
@@ -60,28 +85,6 @@ public sealed class LightingSettings : Object
     {
         Auto = 0,
         Fixed = 1,
-    }
-
-    public enum FilterMode
-    {
-        None = 0,
-        Auto = 1,
-        Advanced = 2,
-    }
-
-    public enum DenoiserType
-    {
-        None = 0,
-        Optix = 1,
-        OpenImage = 2,
-        RadeonPro = 3,
-    }
-
-    public enum FilterType
-    {
-        Gaussian = 0,
-        ATrous = 1,
-        None = 2,
     }
 
 }

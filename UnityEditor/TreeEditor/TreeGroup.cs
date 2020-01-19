@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TreeEditor
@@ -10,9 +12,9 @@ public class TreeGroup
     static protected float GenerateBendNormalFactor;
     static protected bool GenerateDoubleSidedGeometry;
 
-    static protected float ComputeAmbientOcclusion(Vector3 pos, Vector3 nor, System.Collections.Generic.List<TreeEditor.TreeAOSphere> aoSpheres, float aoDensity);
+    static protected float ComputeAmbientOcclusion(Vector3 pos, Vector3 nor, List<TreeEditor.TreeAOSphere> aoSpheres, float aoDensity);
     static protected Vector4 CreateTangent(TreeEditor.TreeNode node, Quaternion rot, Vector3 normal);
-    static protected int GetMaterialIndex(Material m, System.Collections.Generic.List<TreeEditor.TreeMaterial> materials, bool tileV);
+    static protected int GetMaterialIndex(Material m, List<TreeEditor.TreeMaterial> materials, bool tileV);
 
     public float animationEdge;
     public float animationPrimary;
@@ -38,7 +40,7 @@ public class TreeGroup
 
     public TreeGroup();
 
-    public void BuildAOSpheres(System.Collections.Generic.List<TreeEditor.TreeAOSphere> aoSpheres);
+    public void BuildAOSpheres(List<TreeEditor.TreeAOSphere> aoSpheres);
     public bool CanHaveSubGroups();
     public bool CheckExternalChanges();
     public Vector2 ComputeWindFactor(TreeEditor.TreeNode node, float offset);
@@ -50,16 +52,9 @@ public class TreeGroup
     public void UpdateDistribution(bool completeUpdate, bool updateSubGroups);
     public void UpdateFrequency(TreeEditor.TreeData owner);
     public void UpdateMatrix();
-    public void UpdateMesh(System.Collections.Generic.List<TreeEditor.TreeMaterial> materials, System.Collections.Generic.List<TreeEditor.TreeVertex> verts, System.Collections.Generic.List<TreeEditor.TreeTriangle> tris, System.Collections.Generic.List<TreeEditor.TreeAOSphere> aoSpheres, int buildFlags, float adaptiveQuality, float aoDensity);
+    public void UpdateMesh(List<TreeEditor.TreeMaterial> materials, List<TreeEditor.TreeVertex> verts, List<TreeEditor.TreeTriangle> tris, List<TreeEditor.TreeAOSphere> aoSpheres, int buildFlags, float adaptiveQuality, float aoDensity);
     public void UpdateParameters();
     public void UpdateSeed();
-
-    public enum LockFlag
-    {
-        LockPosition = 1,
-        LockAlignment = 2,
-        LockShape = 4,
-    }
 
     public enum BuildFlag
     {
@@ -73,6 +68,13 @@ public class TreeGroup
         Alternate = 1,
         Opposite = 2,
         Whorled = 3,
+    }
+
+    public enum LockFlag
+    {
+        LockPosition = 1,
+        LockAlignment = 2,
+        LockShape = 4,
     }
 
 }

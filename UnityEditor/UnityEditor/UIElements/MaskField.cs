@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.UIElements
@@ -13,10 +15,10 @@ public class MaskField : UnityEditor.UIElements.BaseMaskField<int>
     public Func<string, string> formatListItemCallback { get; set; }
     public Func<string, string> formatSelectedValueCallback { get; set; }
 
-    public MaskField(System.Collections.Generic.List<string> choices, int defaultMask, Func<string, string> formatSelectedValueCallback = null, Func<string, string> formatListItemCallback = null);
-    public MaskField(string label, System.Collections.Generic.List<string> choices, int defaultMask, Func<string, string> formatSelectedValueCallback = null, Func<string, string> formatListItemCallback = null);
     public MaskField();
     public MaskField(string label);
+    public MaskField(List<string> choices, int defaultMask, Func<string, string> formatSelectedValueCallback = null, Func<string, string> formatListItemCallback = null);
+    public MaskField(string label, List<string> choices, int defaultMask, Func<string, string> formatSelectedValueCallback = null, Func<string, string> formatListItemCallback = null);
 
     public class UxmlFactory : UIElements.UxmlFactory<UnityEditor.UIElements.MaskField, UxmlTraits>
     {

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -8,11 +10,14 @@ public sealed class EditorSettings : Object
 {
     static public UnityEditor.AssetPipelineMode assetPipelineMode { get; }
     static public bool asyncShaderCompilation { get; set; }
+    static public bool cacheServerEnableAuth { get; set; }
     static public bool cacheServerEnableDownload { get; set; }
+    static public bool cacheServerEnableTls { get; set; }
     static public bool cacheServerEnableUpload { get; set; }
     static public string cacheServerEndpoint { get; set; }
     static public UnityEditor.CacheServerMode cacheServerMode { get; set; }
     static public string cacheServerNamespacePrefix { get; set; }
+    static public bool cachingShaderPreprocessor { get; set; }
     static public UnityEditor.EditorBehaviorMode defaultBehaviorMode { get; set; }
     static public bool enableTextureStreamingInEditMode { get; set; }
     static public bool enableTextureStreamingInPlayMode { get; set; }

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Profiling
@@ -34,24 +36,16 @@ public abstract class FrameDataView : IDisposable
     public int GetCounterValueAsInt(int markerId);
     public long GetCounterValueAsLong(int markerId);
     public void GetCounterValuePtr(int markerId);
-    public Unity.Collections.NativeArray<T> GetFrameMetaData(Guid id, int tag);
-    public Unity.Collections.NativeArray<T> GetFrameMetaData(Guid id, int tag, int index);
+    public Unity.Collections.NativeArray<T> GetFrameMetaData<T>(Guid id, int tag);
+    public Unity.Collections.NativeArray<T> GetFrameMetaData<T>(Guid id, int tag, int index);
     public int GetFrameMetaDataCount(Guid id, int tag);
     public ushort GetMarkerCategoryIndex(int markerId);
     public Unity.Profiling.LowLevel.MarkerFlags GetMarkerFlags(int markerId);
     public int GetMarkerId(string markerName);
     public string GetMarkerName(int markerId);
-    public void GetMarkers(System.Collections.Generic.List<MarkerInfo> markerInfoList);
+    public void GetMarkers(List<MarkerInfo> markerInfoList);
     public bool HasCounterValue(int markerId);
     public MethodInfo ResolveMethodInfo(ulong addr);
-
-    public struct MarkerMetadataInfo
-    {
-        public string name;
-        public Unity.Profiling.LowLevel.ProfilerMarkerDataType type;
-        public Unity.Profiling.ProfilerMarkerDataUnit unit;
-
-    }
 
     public struct MarkerInfo
     {
@@ -60,6 +54,14 @@ public abstract class FrameDataView : IDisposable
         public int id;
         public MarkerMetadataInfo[] metadataInfo;
         public string name;
+
+    }
+
+    public struct MarkerMetadataInfo
+    {
+        public string name;
+        public Unity.Profiling.LowLevel.ProfilerMarkerDataType type;
+        public Unity.Profiling.ProfilerMarkerDataUnit unit;
 
     }
 

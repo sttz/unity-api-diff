@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -71,7 +73,7 @@ public class SerializedProperty : IDisposable
     public UnityEditor.SerializedProperty GetArrayElementAtIndex(int index);
     public UnityEditor.SerializedProperty GetEndProperty();
     public UnityEditor.SerializedProperty GetEndProperty(bool includeInvisible);
-    public System.Collections.IEnumerator GetEnumerator();
+    public IEnumerator GetEnumerator();
     public UnityEditor.SerializedProperty GetFixedBufferElementAtIndex(int index);
     public void InsertArrayElementAtIndex(int index);
     public bool MoveArrayElement(int srcIndex, int dstIndex);

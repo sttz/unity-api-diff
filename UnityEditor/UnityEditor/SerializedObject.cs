@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -14,8 +16,8 @@ public class SerializedObject : IDisposable
     public Object[] targetObjects { get; }
 
     public SerializedObject(Object obj);
-    public SerializedObject(Object obj, Object context);
     public SerializedObject(Object[] objs);
+    public SerializedObject(Object obj, Object context);
     public SerializedObject(Object[] objs, Object context);
 
     public bool ApplyModifiedProperties();

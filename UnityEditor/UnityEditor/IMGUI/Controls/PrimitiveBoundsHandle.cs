@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.IMGUI.Controls
@@ -15,8 +17,8 @@ public abstract class PrimitiveBoundsHandle
     public SizeFunction midpointHandleSizeFunction { get; set; }
     public Color wireframeColor { get; set; }
 
-    public PrimitiveBoundsHandle(int controlIDHint);
     public PrimitiveBoundsHandle();
+    public PrimitiveBoundsHandle(int controlIDHint);
 
     public void DrawHandle();
     protected void DrawWireframe();

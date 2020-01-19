@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.SceneManagement
@@ -39,16 +41,16 @@ public sealed class EditorSceneManager : SceneManagement.SceneManager
     static public void MoveSceneAfter(SceneManagement.Scene src, SceneManagement.Scene dst);
     static public void MoveSceneBefore(SceneManagement.Scene src, SceneManagement.Scene dst);
     static public SceneManagement.Scene NewPreviewScene();
-    static public SceneManagement.Scene NewScene(UnityEditor.SceneManagement.NewSceneSetup setup, UnityEditor.SceneManagement.NewSceneMode mode);
     static public SceneManagement.Scene NewScene(UnityEditor.SceneManagement.NewSceneSetup setup);
-    static public SceneManagement.Scene OpenScene(string scenePath, UnityEditor.SceneManagement.OpenSceneMode mode);
+    static public SceneManagement.Scene NewScene(UnityEditor.SceneManagement.NewSceneSetup setup, UnityEditor.SceneManagement.NewSceneMode mode);
     static public SceneManagement.Scene OpenScene(string scenePath);
+    static public SceneManagement.Scene OpenScene(string scenePath, UnityEditor.SceneManagement.OpenSceneMode mode);
     static public void RestoreSceneManagerSetup(UnityEditor.SceneManagement.SceneSetup[] value);
     static public bool SaveCurrentModifiedScenesIfUserWantsTo();
     static public bool SaveModifiedScenesIfUserWantsTo(SceneManagement.Scene[] scenes);
     static public bool SaveOpenScenes();
-    static public bool SaveScene(SceneManagement.Scene scene, string dstScenePath);
     static public bool SaveScene(SceneManagement.Scene scene);
+    static public bool SaveScene(SceneManagement.Scene scene, string dstScenePath);
     static public bool SaveScene(SceneManagement.Scene scene, string dstScenePath, bool saveAsCopy);
     static public bool SaveScenes(SceneManagement.Scene[] scenes);
     static public void SetSceneCullingMask(SceneManagement.Scene scene, ulong sceneCullingMask);
@@ -57,19 +59,19 @@ public sealed class EditorSceneManager : SceneManagement.SceneManager
 
     public delegate void NewSceneCreatedCallback(SceneManagement.Scene scene, UnityEditor.SceneManagement.NewSceneSetup setup, UnityEditor.SceneManagement.NewSceneMode mode);
 
-    public delegate void SceneOpeningCallback(string path, UnityEditor.SceneManagement.OpenSceneMode mode);
-
-    public delegate void SceneOpenedCallback(SceneManagement.Scene scene, UnityEditor.SceneManagement.OpenSceneMode mode);
+    public delegate void SceneClosedCallback(SceneManagement.Scene scene);
 
     public delegate void SceneClosingCallback(SceneManagement.Scene scene, bool removingScene);
 
-    public delegate void SceneClosedCallback(SceneManagement.Scene scene);
+    public delegate void SceneDirtiedCallback(SceneManagement.Scene scene);
 
-    public delegate void SceneSavingCallback(SceneManagement.Scene scene, string path);
+    public delegate void SceneOpenedCallback(SceneManagement.Scene scene, UnityEditor.SceneManagement.OpenSceneMode mode);
+
+    public delegate void SceneOpeningCallback(string path, UnityEditor.SceneManagement.OpenSceneMode mode);
 
     public delegate void SceneSavedCallback(SceneManagement.Scene scene);
 
-    public delegate void SceneDirtiedCallback(SceneManagement.Scene scene);
+    public delegate void SceneSavingCallback(SceneManagement.Scene scene, string path);
 
 }
 

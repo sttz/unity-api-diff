@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Profiling
@@ -25,25 +27,25 @@ public class HierarchyFrameDataView : UnityEditor.Profiling.FrameDataView
 
     public bool Equals(object obj);
     public int GetHashCode();
-    public void GetItemAncestors(int id, System.Collections.Generic.List<int> outAncestors);
-    public void GetItemCallstack(int id, System.Collections.Generic.List<ulong> outCallstack);
+    public void GetItemAncestors(int id, List<int> outAncestors);
+    public void GetItemCallstack(int id, List<ulong> outCallstack);
     public ushort GetItemCategoryIndex(int id);
-    public void GetItemChildren(int id, System.Collections.Generic.List<int> outChildren);
+    public void GetItemChildren(int id, List<int> outChildren);
     public string GetItemColumnData(int id, int column);
     public double GetItemColumnDataAsDouble(int id, int column);
     public float GetItemColumnDataAsFloat(int id, int column);
     public float GetItemColumnDataAsSingle(int id, int column);
     public int GetItemDepth(int id);
-    public void GetItemDescendantsThatHaveChildren(int id, System.Collections.Generic.List<int> outChildren);
+    public void GetItemDescendantsThatHaveChildren(int id, List<int> outChildren);
     public int GetItemInstanceID(int id);
     public Unity.Profiling.LowLevel.MarkerFlags GetItemMarkerFlags(int id);
     public int GetItemMarkerID(int id);
-    public void GetItemMarkerIDPath(int id, System.Collections.Generic.List<int> outFullIdPath);
-    public void GetItemMergedSampleCallstack(int id, int sampleIndex, System.Collections.Generic.List<ulong> outCallstack);
-    public void GetItemMergedSamplesColumnData(int id, int column, System.Collections.Generic.List<string> outStrings);
-    public void GetItemMergedSamplesColumnDataAsFloats(int id, int column, System.Collections.Generic.List<float> outValues);
+    public void GetItemMarkerIDPath(int id, List<int> outFullIdPath);
+    public void GetItemMergedSampleCallstack(int id, int sampleIndex, List<ulong> outCallstack);
+    public void GetItemMergedSamplesColumnData(int id, int column, List<string> outStrings);
+    public void GetItemMergedSamplesColumnDataAsFloats(int id, int column, List<float> outValues);
     public int GetItemMergedSamplesCount(int id);
-    public void GetItemMergedSamplesInstanceID(int id, System.Collections.Generic.List<int> outInstanceIds);
+    public void GetItemMergedSamplesInstanceID(int id, List<int> outInstanceIds);
     public string GetItemMetadata(int id, int index);
     public float GetItemMetadataAsFloat(int id, int index);
     public long GetItemMetadataAsLong(int id, int index);

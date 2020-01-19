@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental.GraphView
@@ -23,7 +25,7 @@ public class Node : UnityEditor.Experimental.GraphView.GraphElement, UnityEditor
     public Node(string uiFile);
 
     public void BuildContextualMenu(UIElements.ContextualMenuPopulateEvent evt);
-    public void CollectElements(System.Collections.Generic.HashSet<UnityEditor.Experimental.GraphView.GraphElement> collectedElementSet, Func<UnityEditor.Experimental.GraphView.GraphElement, bool> conditionFunc);
+    public void CollectElements(HashSet<UnityEditor.Experimental.GraphView.GraphElement> collectedElementSet, Func<UnityEditor.Experimental.GraphView.GraphElement, bool> conditionFunc);
     public Rect GetPosition();
     public UnityEditor.Experimental.GraphView.Port InstantiatePort(UnityEditor.Experimental.GraphView.Orientation orientation, UnityEditor.Experimental.GraphView.Direction direction, Capacity capacity, Type type);
     protected void OnPortRemoved(UnityEditor.Experimental.GraphView.Port port);

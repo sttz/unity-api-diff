@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -18,7 +20,7 @@ public class AssetImporter : Object
     public AssetImporter();
 
     public void AddRemap(SourceAssetIdentifier identifier, Object externalObject);
-    public System.Collections.Generic.Dictionary<SourceAssetIdentifier, Object> GetExternalObjectMap();
+    public Dictionary<SourceAssetIdentifier, Object> GetExternalObjectMap();
     public bool RemoveRemap(SourceAssetIdentifier identifier);
     public void SaveAndReimport();
     public void SetAssetBundleNameAndVariant(string assetBundleName, string assetBundleVariant);

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -7,6 +9,12 @@ namespace UnityEditor
 public enum DrawCameraMode
 {
     UserDefined = -2147483648,
+    Baked = -18,
+    Directionality = -17,
+    Irradiance = -16,
+    Emissive = -15,
+    Albedo = -14,
+    Charting = -12,
     Normal = -1,
     Textured = 0,
     Wireframe = 1,
@@ -20,18 +28,12 @@ public enum DrawCameraMode
     DeferredSpecular = 9,
     DeferredSmoothness = 10,
     DeferredNormal = 11,
-    Charting = -12,
     RealtimeCharting = 12,
     Systems = 13,
-    Albedo = -14,
     RealtimeAlbedo = 14,
-    Emissive = -15,
     RealtimeEmissive = 15,
-    Irradiance = -16,
     RealtimeIndirect = 16,
-    Directionality = -17,
     RealtimeDirectionality = 17,
-    Baked = -18,
     BakedLightmap = 18,
     Clustering = 19,
     LitClustering = 20,

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -60,19 +62,12 @@ public static class LightmapEditorSettings
     static public bool textureCompression { get; set; }
     static public string trainingDataDestination { get; set; }
 
-    public enum Lightmapper
+    public enum DenoiserType
     {
-        Radiosity = 0,
-        Enlighten = 0,
-        PathTracer = 1,
-        ProgressiveCPU = 1,
-        ProgressiveGPU = 2,
-    }
-
-    public enum Sampling
-    {
-        Auto = 0,
-        Fixed = 1,
+        None = 0,
+        Optix = 1,
+        OpenImage = 2,
+        RadeonPro = 3,
     }
 
     public enum FilterMode
@@ -80,14 +75,6 @@ public static class LightmapEditorSettings
         None = 0,
         Auto = 1,
         Advanced = 2,
-    }
-
-    public enum DenoiserType
-    {
-        None = 0,
-        Optix = 1,
-        OpenImage = 2,
-        RadeonPro = 3,
     }
 
     public enum FilterType
@@ -103,16 +90,31 @@ public static class LightmapEditorSettings
         PathTracer = 1,
     }
 
-    public enum PathTracerSampling
+    public enum Lightmapper
     {
-        Auto = 0,
-        Fixed = 1,
+        Radiosity = 0,
+        Enlighten = 0,
+        PathTracer = 1,
+        ProgressiveCPU = 1,
+        ProgressiveGPU = 2,
     }
 
     public enum PathTracerFilter
     {
         Gaussian = 0,
         ATrous = 1,
+    }
+
+    public enum PathTracerSampling
+    {
+        Auto = 0,
+        Fixed = 1,
+    }
+
+    public enum Sampling
+    {
+        Auto = 0,
+        Fixed = 1,
     }
 
 }

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -15,6 +17,7 @@ public class ModelImporter : UnityEditor.AssetImporter
     public WrapMode animationWrapMode { get; set; }
     public bool autoGenerateAvatarMappingIfUnspecified { get; set; }
     public UnityEditor.ModelImporterAvatarSetup avatarSetup { get; set; }
+    public bool bakeAxisConversion { get; set; }
     public bool bakeIK { get; set; }
     public UnityEditor.ModelImporterClipAnimation[] clipAnimations { get; set; }
     public UnityEditor.ModelImporterClipAnimation[] defaultClipAnimations { get; }

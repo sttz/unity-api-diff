@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental
@@ -31,24 +33,10 @@ public sealed class AssetDatabaseExperimental
     static public void RefreshCacheServerNamespacePrefix();
     static public void RefreshConnectionToCacheServer();
     static public void RegisterCustomDependency(string dependency, Hash128 hashOfValue);
-    static public void SetImporterOverride(string path);
+    static public void SetImporterOverride<T>(string path);
     static public uint UnregisterCustomDependencyPrefixFilter(string prefixFilter);
 
     public AssetDatabaseExperimental();
-
-    public enum OnDemandMode
-    {
-        Off = 0,
-        Lazy = 1,
-        Background = 2,
-    }
-
-    public enum ImportSyncMode
-    {
-        Block = 0,
-        Queue = 1,
-        Poll = 2,
-    }
 
     public struct AssetDatabaseCounters
     {
@@ -56,13 +44,6 @@ public sealed class AssetDatabaseExperimental
         public ImportCounters import;
 
         public void ResetDeltas();
-
-        public struct Counter
-        {
-            public long delta;
-            public long total;
-
-        }
 
         public struct CacheServerCounters
         {
@@ -84,6 +65,13 @@ public sealed class AssetDatabaseExperimental
 
         }
 
+        public struct Counter
+        {
+            public long delta;
+            public long total;
+
+        }
+
         public struct ImportCounters
         {
             public Counter domainReload;
@@ -94,6 +82,20 @@ public sealed class AssetDatabaseExperimental
 
         }
 
+    }
+
+    public enum ImportSyncMode
+    {
+        Block = 0,
+        Queue = 1,
+        Poll = 2,
+    }
+
+    public enum OnDemandMode
+    {
+        Off = 0,
+        Lazy = 1,
+        Background = 2,
     }
 
 }

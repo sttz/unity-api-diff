@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental.GraphView
@@ -13,7 +15,7 @@ public abstract class GraphViewToolWindow : UnityEditor.EditorWindow
 
     protected GraphViewToolWindow();
 
-    public System.Collections.Generic.IEnumerable<Type> GetExtraPaneTypes();
+    public IEnumerable<Type> GetExtraPaneTypes();
     protected bool IsGraphViewSupported(UnityEditor.Experimental.GraphView.GraphView gv);
     protected void OnEnable();
     protected void OnGraphViewChanged();

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -28,15 +30,6 @@ public sealed class MaterialProperty
 
     public delegate bool ApplyPropertyCallback(UnityEditor.MaterialProperty prop, int changeMask, object previousValue);
 
-    public enum PropType
-    {
-        Color = 0,
-        Vector = 1,
-        Float = 2,
-        Range = 3,
-        Texture = 4,
-    }
-
     public enum PropFlags
     {
         None = 0,
@@ -47,6 +40,15 @@ public sealed class MaterialProperty
         HDR = 16,
         Gamma = 32,
         NonModifiableTextureData = 64,
+    }
+
+    public enum PropType
+    {
+        Color = 0,
+        Vector = 1,
+        Float = 2,
+        Range = 3,
+        Texture = 4,
     }
 
     public enum TexDim

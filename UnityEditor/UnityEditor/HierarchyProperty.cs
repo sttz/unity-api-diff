@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -29,8 +31,8 @@ public sealed class HierarchyProperty : UnityEditor.IHierarchyProperty
     public bool showSceneHeaders { get; set; }
 
     public HierarchyProperty(UnityEditor.HierarchyType hierarchyType);
-    public HierarchyProperty(UnityEditor.HierarchyType hierarchyType, bool forceImport);
     public HierarchyProperty(string rootPath);
+    public HierarchyProperty(UnityEditor.HierarchyType hierarchyType, bool forceImport);
     public HierarchyProperty(string rootPath, bool forceImport);
     public HierarchyProperty(UnityEditor.HierarchyType hierarchyType, string rootPath, bool forceImport);
 

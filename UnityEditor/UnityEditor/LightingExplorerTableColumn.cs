@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -7,6 +9,10 @@ namespace UnityEditor
 public sealed class LightingExplorerTableColumn
 {
     public LightingExplorerTableColumn(DataType type, GUIContent headerContent, string propertyName = null, int width = 100, OnGUIDelegate onGUIDelegate = null, ComparePropertiesDelegate compareDelegate = null, CopyPropertiesDelegate copyDelegate = null, int[] dependencyIndices = null);
+
+    public delegate int ComparePropertiesDelegate(UnityEditor.SerializedProperty lhs, UnityEditor.SerializedProperty rhs);
+
+    public delegate void CopyPropertiesDelegate(UnityEditor.SerializedProperty target, UnityEditor.SerializedProperty source);
 
     public enum DataType
     {
@@ -20,10 +26,6 @@ public sealed class LightingExplorerTableColumn
     }
 
     public delegate void OnGUIDelegate(Rect r, UnityEditor.SerializedProperty prop, UnityEditor.SerializedProperty[] dependencies);
-
-    public delegate int ComparePropertiesDelegate(UnityEditor.SerializedProperty lhs, UnityEditor.SerializedProperty rhs);
-
-    public delegate void CopyPropertiesDelegate(UnityEditor.SerializedProperty target, UnityEditor.SerializedProperty source);
 
 }
 

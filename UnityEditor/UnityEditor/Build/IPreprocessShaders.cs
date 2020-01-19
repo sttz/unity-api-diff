@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Build
@@ -6,7 +8,7 @@ namespace UnityEditor.Build
 
 public interface IPreprocessShaders : UnityEditor.Build.IOrderedCallback
 {
-    public void OnProcessShader(Shader shader, UnityEditor.Rendering.ShaderSnippetData snippet, System.Collections.Generic.IList<UnityEditor.Rendering.ShaderCompilerData> data);
+    public void OnProcessShader(Shader shader, UnityEditor.Rendering.ShaderSnippetData snippet, IList<UnityEditor.Rendering.ShaderCompilerData> data);
 
 }
 

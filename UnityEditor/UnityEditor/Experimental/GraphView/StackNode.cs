@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental.GraphView
@@ -16,13 +18,13 @@ public class StackNode : UnityEditor.Experimental.GraphView.Node, UnityEditor.Ex
 
     protected bool AcceptsElement(UnityEditor.Experimental.GraphView.GraphElement element, int proposedIndex, int maxIndex);
     public void AddElement(UnityEditor.Experimental.GraphView.GraphElement element);
-    public bool CanAcceptDrop(System.Collections.Generic.List<UnityEditor.Experimental.GraphView.ISelectable> selection);
-    public void CollectElements(System.Collections.Generic.HashSet<UnityEditor.Experimental.GraphView.GraphElement> collectedElementSet, Func<UnityEditor.Experimental.GraphView.GraphElement, bool> conditionFunc);
-    public bool DragEnter(UIElements.DragEnterEvent evt, System.Collections.Generic.IEnumerable<UnityEditor.Experimental.GraphView.ISelectable> selection, UnityEditor.Experimental.GraphView.IDropTarget enteredTarget, UnityEditor.Experimental.GraphView.ISelection dragSource);
+    public bool CanAcceptDrop(List<UnityEditor.Experimental.GraphView.ISelectable> selection);
+    public void CollectElements(HashSet<UnityEditor.Experimental.GraphView.GraphElement> collectedElementSet, Func<UnityEditor.Experimental.GraphView.GraphElement, bool> conditionFunc);
+    public bool DragEnter(UIElements.DragEnterEvent evt, IEnumerable<UnityEditor.Experimental.GraphView.ISelectable> selection, UnityEditor.Experimental.GraphView.IDropTarget enteredTarget, UnityEditor.Experimental.GraphView.ISelection dragSource);
     public bool DragExited();
-    public bool DragLeave(UIElements.DragLeaveEvent evt, System.Collections.Generic.IEnumerable<UnityEditor.Experimental.GraphView.ISelectable> selection, UnityEditor.Experimental.GraphView.IDropTarget leftTarget, UnityEditor.Experimental.GraphView.ISelection dragSource);
-    public bool DragPerform(UIElements.DragPerformEvent evt, System.Collections.Generic.IEnumerable<UnityEditor.Experimental.GraphView.ISelectable> selection, UnityEditor.Experimental.GraphView.IDropTarget dropTarget, UnityEditor.Experimental.GraphView.ISelection dragSource);
-    public bool DragUpdated(UIElements.DragUpdatedEvent evt, System.Collections.Generic.IEnumerable<UnityEditor.Experimental.GraphView.ISelectable> selection, UnityEditor.Experimental.GraphView.IDropTarget dropTarget, UnityEditor.Experimental.GraphView.ISelection dragSource);
+    public bool DragLeave(UIElements.DragLeaveEvent evt, IEnumerable<UnityEditor.Experimental.GraphView.ISelectable> selection, UnityEditor.Experimental.GraphView.IDropTarget leftTarget, UnityEditor.Experimental.GraphView.ISelection dragSource);
+    public bool DragPerform(UIElements.DragPerformEvent evt, IEnumerable<UnityEditor.Experimental.GraphView.ISelectable> selection, UnityEditor.Experimental.GraphView.IDropTarget dropTarget, UnityEditor.Experimental.GraphView.ISelection dragSource);
+    public bool DragUpdated(UIElements.DragUpdatedEvent evt, IEnumerable<UnityEditor.Experimental.GraphView.ISelectable> selection, UnityEditor.Experimental.GraphView.IDropTarget dropTarget, UnityEditor.Experimental.GraphView.ISelection dragSource);
     protected void ExecuteDefaultAction(UIElements.EventBase evt);
     public int GetInsertionIndex(Vector2 worldPosition);
     public void InsertElement(int index, UnityEditor.Experimental.GraphView.GraphElement element);

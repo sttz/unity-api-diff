@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditorInternal
@@ -35,12 +37,12 @@ public class ReorderableList
     public int count { get; }
     public bool draggable { get; set; }
     public int index { get; set; }
-    public System.Collections.IList list { get; set; }
+    public IList list { get; set; }
     public UnityEditor.SerializedProperty serializedProperty { get; set; }
 
-    public ReorderableList(System.Collections.IList elements, Type elementType);
-    public ReorderableList(System.Collections.IList elements, Type elementType, bool draggable, bool displayHeader, bool displayAddButton, bool displayRemoveButton);
+    public ReorderableList(IList elements, Type elementType);
     public ReorderableList(UnityEditor.SerializedObject serializedObject, UnityEditor.SerializedProperty elements);
+    public ReorderableList(IList elements, Type elementType, bool draggable, bool displayHeader, bool displayAddButton, bool displayRemoveButton);
     public ReorderableList(UnityEditor.SerializedObject serializedObject, UnityEditor.SerializedProperty elements, bool draggable, bool displayHeader, bool displayAddButton, bool displayRemoveButton);
 
     public void DoLayoutList();
@@ -50,35 +52,15 @@ public class ReorderableList
     public bool HasKeyboardControl();
     public void ReleaseKeyboardFocus();
 
-    public delegate void HeaderCallbackDelegate(Rect rect);
-
-    public delegate void FooterCallbackDelegate(Rect rect);
-
-    public delegate void ElementCallbackDelegate(Rect rect, int index, bool isActive, bool isFocused);
-
-    public delegate float ElementHeightCallbackDelegate(int index);
-
-    public delegate void DrawNoneElementCallback(Rect rect);
-
-    public delegate void ReorderCallbackDelegateWithDetails(UnityEditorInternal.ReorderableList list, int oldIndex, int newIndex);
-
-    public delegate void ReorderCallbackDelegate(UnityEditorInternal.ReorderableList list);
-
-    public delegate void SelectCallbackDelegate(UnityEditorInternal.ReorderableList list);
-
     public delegate void AddCallbackDelegate(UnityEditorInternal.ReorderableList list);
 
     public delegate void AddDropdownCallbackDelegate(Rect buttonRect, UnityEditorInternal.ReorderableList list);
 
-    public delegate void RemoveCallbackDelegate(UnityEditorInternal.ReorderableList list);
-
-    public delegate void ChangedCallbackDelegate(UnityEditorInternal.ReorderableList list);
+    public delegate bool CanAddCallbackDelegate(UnityEditorInternal.ReorderableList list);
 
     public delegate bool CanRemoveCallbackDelegate(UnityEditorInternal.ReorderableList list);
 
-    public delegate bool CanAddCallbackDelegate(UnityEditorInternal.ReorderableList list);
-
-    public delegate void DragCallbackDelegate(UnityEditorInternal.ReorderableList list);
+    public delegate void ChangedCallbackDelegate(UnityEditorInternal.ReorderableList list);
 
     public class Defaults
     {
@@ -103,11 +85,31 @@ public class ReorderableList
         public void DrawElementBackground(Rect rect, int index, bool selected, bool focused, bool draggable);
         public void DrawElementDraggingHandle(Rect rect, int index, bool selected, bool focused, bool draggable);
         public void DrawFooter(Rect rect, UnityEditorInternal.ReorderableList list);
-        public void DrawHeader(Rect headerRect, UnityEditor.SerializedObject serializedObject, UnityEditor.SerializedProperty element, System.Collections.IList elementList);
+        public void DrawHeader(Rect headerRect, UnityEditor.SerializedObject serializedObject, UnityEditor.SerializedProperty element, IList elementList);
         public void DrawHeaderBackground(Rect headerRect);
         public void DrawNoneElement(Rect rect, bool draggable);
 
     }
+
+    public delegate void DragCallbackDelegate(UnityEditorInternal.ReorderableList list);
+
+    public delegate void DrawNoneElementCallback(Rect rect);
+
+    public delegate void ElementCallbackDelegate(Rect rect, int index, bool isActive, bool isFocused);
+
+    public delegate float ElementHeightCallbackDelegate(int index);
+
+    public delegate void FooterCallbackDelegate(Rect rect);
+
+    public delegate void HeaderCallbackDelegate(Rect rect);
+
+    public delegate void RemoveCallbackDelegate(UnityEditorInternal.ReorderableList list);
+
+    public delegate void ReorderCallbackDelegate(UnityEditorInternal.ReorderableList list);
+
+    public delegate void ReorderCallbackDelegateWithDetails(UnityEditorInternal.ReorderableList list, int oldIndex, int newIndex);
+
+    public delegate void SelectCallbackDelegate(UnityEditorInternal.ReorderableList list);
 
 }
 
