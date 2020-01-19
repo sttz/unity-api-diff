@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -6,24 +8,22 @@ namespace UnityEditor
 
 public enum TextureImporterFormat
 {
+    AutomaticCompressedHDR = -7,
+    AutomaticHDR = -6,
+    AutomaticCrunched = -5,
+    AutomaticTruecolor = -3,
+    Automatic16bit = -2,
     Automatic = -1,
     AutomaticCompressed = -1,
-    Automatic16bit = -2,
-    AutomaticTruecolor = -3,
-    AutomaticCrunched = -5,
-    AutomaticHDR = -6,
-    AutomaticCompressedHDR = -7,
-    DXT1 = 10,
-    DXT5 = 12,
-    RGB16 = 7,
-    RGB24 = 3,
     Alpha8 = 1,
-    R16 = 9,
-    R8 = 63,
-    RG16 = 62,
     ARGB16 = 2,
+    RGB24 = 3,
     RGBA32 = 4,
     ARGB32 = 5,
+    RGB16 = 7,
+    R16 = 9,
+    DXT1 = 10,
+    DXT5 = 12,
     RGBA16 = 13,
     RHalf = 15,
     RGHalf = 16,
@@ -32,10 +32,10 @@ public enum TextureImporterFormat
     RGFloat = 19,
     RGBAFloat = 20,
     RGB9E5 = 22,
-    BC4 = 26,
-    BC5 = 27,
     BC6H = 24,
     BC7 = 25,
+    BC4 = 26,
+    BC5 = 27,
     DXT1Crunched = 28,
     DXT5Crunched = 29,
     PVRTC_RGB2 = 30,
@@ -66,6 +66,8 @@ public enum TextureImporterFormat
     ASTC_RGBA_12x12 = 59,
     ETC_RGB4_3DS = 60,
     ETC_RGBA8_3DS = 61,
+    RG16 = 62,
+    R8 = 63,
     ETC_RGB4Crunched = 64,
     ETC2_RGBA8Crunched = 65,
 }

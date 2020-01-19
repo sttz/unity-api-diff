@@ -1,10 +1,12 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.VersionControl
 {
 
-public class ChangeSets : System.Collections.Generic.List<UnityEditor.VersionControl.ChangeSet>
+public class ChangeSets : List<UnityEditor.VersionControl.ChangeSet>
 {
     public ChangeSets();
 

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Build.Content
@@ -6,7 +8,7 @@ namespace UnityEditor.Build.Content
 
 public class PreloadInfo
 {
-    public System.Collections.Generic.List<UnityEditor.Build.Content.ObjectIdentifier> preloadObjects { get; set; }
+    public List<UnityEditor.Build.Content.ObjectIdentifier> preloadObjects { get; set; }
 
     public PreloadInfo();
 

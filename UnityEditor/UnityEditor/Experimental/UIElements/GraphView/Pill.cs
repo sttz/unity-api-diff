@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental.UIElements.GraphView
@@ -23,7 +25,7 @@ public class Pill : Experimental.UIElements.VisualElement
 
     public class UxmlTraits : UxmlTraits
     {
-        public System.Collections.Generic.IEnumerable<Experimental.UIElements.UxmlChildElementDescription> uxmlChildElementsDescription { get; }
+        public IEnumerable<Experimental.UIElements.UxmlChildElementDescription> uxmlChildElementsDescription { get; }
 
         public UxmlTraits();
 

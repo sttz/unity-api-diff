@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TreeEditor
@@ -15,10 +17,10 @@ public class TreeGroupLeaf : TreeEditor.TreeGroup
 
     public TreeGroupLeaf();
 
-    public void BuildAOSpheres(System.Collections.Generic.List<TreeEditor.TreeAOSphere> aoSpheres);
+    public void BuildAOSpheres(List<TreeEditor.TreeAOSphere> aoSpheres);
     public bool CanHaveSubGroups();
     public void UpdateMatrix();
-    public void UpdateMesh(System.Collections.Generic.List<TreeEditor.TreeMaterial> materials, System.Collections.Generic.List<TreeEditor.TreeVertex> verts, System.Collections.Generic.List<TreeEditor.TreeTriangle> tris, System.Collections.Generic.List<TreeEditor.TreeAOSphere> aoSpheres, int buildFlags, float adaptiveQuality, float aoDensity);
+    public void UpdateMesh(List<TreeEditor.TreeMaterial> materials, List<TreeEditor.TreeVertex> verts, List<TreeEditor.TreeTriangle> tris, List<TreeEditor.TreeAOSphere> aoSpheres, int buildFlags, float adaptiveQuality, float aoDensity);
     public void UpdateParameters();
 
     public enum GeometryMode

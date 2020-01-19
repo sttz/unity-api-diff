@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental.U2D
@@ -11,7 +13,7 @@ public interface ISpriteEditorDataProvider
     public Object targetObject { get; }
 
     public void Apply();
-    public T GetDataProvider();
+    public T GetDataProvider<T>();
     public UnityEditor.SpriteRect[] GetSpriteRects();
     public bool HasDataProvider(Type type);
     public void InitSpriteEditorDataProvider();

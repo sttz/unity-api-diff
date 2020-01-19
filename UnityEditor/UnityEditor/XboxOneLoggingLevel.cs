@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -6,9 +8,9 @@ namespace UnityEditor
 
 public enum XboxOneLoggingLevel
 {
-    AllLogging = 4,
-    WarningsAndErrors = 2,
     ErrorsOnly = 1,
+    WarningsAndErrors = 2,
+    AllLogging = 4,
 }
 
 }

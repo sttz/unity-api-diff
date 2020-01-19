@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -22,14 +24,14 @@ public sealed class PrefabUtility
     static public GameObject FindPrefabRoot(GameObject source);
     static public GameObject FindRootGameObjectWithSameParentPrefab(GameObject target);
     static public GameObject FindValidUploadPrefabInstanceRoot(GameObject target);
-    static public System.Collections.Generic.List<UnityEditor.SceneManagement.AddedComponent> GetAddedComponents(GameObject prefabInstance);
-    static public System.Collections.Generic.List<UnityEditor.SceneManagement.AddedGameObject> GetAddedGameObjects(GameObject prefabInstance);
-    static public TObject GetCorrespondingObjectFromOriginalSource(TObject componentOrGameObject);
-    static public TObject GetCorrespondingObjectFromSource(TObject componentOrGameObject);
-    static public TObject GetCorrespondingObjectFromSourceAtPath(TObject componentOrGameObject, string assetPath);
+    static public List<UnityEditor.SceneManagement.AddedComponent> GetAddedComponents(GameObject prefabInstance);
+    static public List<UnityEditor.SceneManagement.AddedGameObject> GetAddedGameObjects(GameObject prefabInstance);
+    static public TObject GetCorrespondingObjectFromOriginalSource<TObject>(TObject componentOrGameObject);
+    static public TObject GetCorrespondingObjectFromSource<TObject>(TObject componentOrGameObject);
+    static public TObject GetCorrespondingObjectFromSourceAtPath<TObject>(TObject componentOrGameObject, string assetPath);
     static public Texture2D GetIconForGameObject(GameObject gameObject);
     static public GameObject GetNearestPrefabInstanceRoot(Object componentOrGameObject);
-    static public System.Collections.Generic.List<UnityEditor.SceneManagement.ObjectOverride> GetObjectOverrides(GameObject prefabInstance, bool includeDefaultOverrides = false);
+    static public List<UnityEditor.SceneManagement.ObjectOverride> GetObjectOverrides(GameObject prefabInstance, bool includeDefaultOverrides = false);
     static public GameObject GetOutermostPrefabInstanceRoot(Object componentOrGameObject);
     static public string GetPrefabAssetPathOfNearestInstanceRoot(Object instanceComponentOrGameObject);
     static public UnityEditor.PrefabAssetType GetPrefabAssetType(Object componentOrGameObject);
@@ -39,7 +41,7 @@ public sealed class PrefabUtility
     static public Object GetPrefabParent(Object obj);
     static public UnityEditor.PrefabType GetPrefabType(Object target);
     static public UnityEditor.PropertyModification[] GetPropertyModifications(Object targetPrefab);
-    static public System.Collections.Generic.List<UnityEditor.SceneManagement.RemovedComponent> GetRemovedComponents(GameObject prefabInstance);
+    static public List<UnityEditor.SceneManagement.RemovedComponent> GetRemovedComponents(GameObject prefabInstance);
     static public bool HasPrefabInstanceAnyOverrides(GameObject instanceRoot, bool includeDefaultOverrides);
     static public Object InstantiateAttachedAsset(Object targetObject);
     static public Object InstantiatePrefab(Object assetComponentOrGameObject);
@@ -76,8 +78,8 @@ public sealed class PrefabUtility
     static public void RevertPrefabInstance(GameObject instanceRoot, UnityEditor.InteractionMode action);
     static public void RevertPropertyOverride(UnityEditor.SerializedProperty instanceProperty, UnityEditor.InteractionMode action);
     static public void RevertRemovedComponent(GameObject instanceGameObject, Component assetComponent, UnityEditor.InteractionMode action);
-    static public GameObject SaveAsPrefabAsset(GameObject instanceRoot, string assetPath, out bool success);
     static public GameObject SaveAsPrefabAsset(GameObject instanceRoot, string assetPath);
+    static public GameObject SaveAsPrefabAsset(GameObject instanceRoot, string assetPath, out bool success);
     static public GameObject SaveAsPrefabAssetAndConnect(GameObject instanceRoot, string assetPath, UnityEditor.InteractionMode action);
     static public GameObject SaveAsPrefabAssetAndConnect(GameObject instanceRoot, string assetPath, UnityEditor.InteractionMode action, out bool success);
     static public GameObject SavePrefabAsset(GameObject asset);

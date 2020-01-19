@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental.UIElements.GraphView
@@ -6,7 +8,7 @@ namespace UnityEditor.Experimental.UIElements.GraphView
 
 public interface ISelection
 {
-    public System.Collections.Generic.List<UnityEditor.Experimental.UIElements.GraphView.ISelectable> selection { get; }
+    public List<UnityEditor.Experimental.UIElements.GraphView.ISelectable> selection { get; }
 
     public void AddToSelection(UnityEditor.Experimental.UIElements.GraphView.ISelectable selectable);
     public void ClearSelection();

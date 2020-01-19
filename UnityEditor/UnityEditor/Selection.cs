@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -21,8 +23,8 @@ public sealed class Selection
 
     static public bool Contains(int instanceID);
     static public bool Contains(Object obj);
-    static public T[] GetFiltered(UnityEditor.SelectionMode mode);
     static public Object[] GetFiltered(Type type, UnityEditor.SelectionMode mode);
+    static public T[] GetFiltered<T>(UnityEditor.SelectionMode mode);
     static public Transform[] GetTransforms(UnityEditor.SelectionMode mode);
     static public void SetActiveObjectWithContext(Object obj, Object context);
 

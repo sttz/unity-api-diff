@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental.UIElements.GraphView
@@ -8,7 +10,7 @@ public class EdgeDragHelper<TEdge> : UnityEditor.Experimental.UIElements.GraphVi
 {
     static protected UnityEditor.Experimental.UIElements.GraphView.NodeAdapter s_nodeAdapter;
 
-    protected System.Collections.Generic.List<UnityEditor.Experimental.UIElements.GraphView.Port> m_CompatiblePorts;
+    protected List<UnityEditor.Experimental.UIElements.GraphView.Port> m_CompatiblePorts;
     protected UnityEditor.Experimental.UIElements.GraphView.GraphView m_GraphView;
     protected UnityEditor.Experimental.UIElements.GraphView.IEdgeConnectorListener m_Listener;
 

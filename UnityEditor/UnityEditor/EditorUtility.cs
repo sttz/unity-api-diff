@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -27,8 +29,8 @@ public class EditorUtility
     static public void DisplayCustomMenu(Rect position, GUIContent[] options, int selected, SelectMenuItemFunction callback, object userData);
     static public void DisplayCustomMenu(Rect position, GUIContent[] options, int selected, SelectMenuItemFunction callback, object userData, bool showHotkey);
     static public void DisplayCustomMenu(Rect position, GUIContent[] options, Func<int, bool> checkEnabled, int selected, SelectMenuItemFunction callback, object userData, bool showHotkey = false);
-    static public bool DisplayDialog(string title, string message, string ok, string cancel);
     static public bool DisplayDialog(string title, string message, string ok);
+    static public bool DisplayDialog(string title, string message, string ok, string cancel);
     static public int DisplayDialogComplex(string title, string message, string ok, string cancel, string alt);
     static public void DisplayPopupMenu(Rect position, string menuItemPath, UnityEditor.MenuCommand command);
     static public void DisplayProgressBar(string title, string info, float progress);
@@ -36,8 +38,8 @@ public class EditorUtility
     static public Object FindAsset(string path, Type type);
     static public GameObject FindPrefabRoot(GameObject source);
     static public void FocusProjectWindow();
-    static public string FormatBytes(long bytes);
     static public string FormatBytes(int bytes);
+    static public string FormatBytes(long bytes);
     static public string GetAssetPath(Object asset);
     static public int GetObjectEnabled(Object target);
     static public Object GetPrefabParent(Object source);
@@ -53,8 +55,8 @@ public class EditorUtility
     static public string OpenFolderPanel(string title, string folder, string defaultName);
     static public void OpenWithDefaultApp(string fileName);
     static public bool ReconnectToLastPrefab(GameObject go);
-    static public GameObject ReplacePrefab(GameObject go, Object targetPrefab, UnityEditor.ReplacePrefabOptions options);
     static public GameObject ReplacePrefab(GameObject go, Object targetPrefab);
+    static public GameObject ReplacePrefab(GameObject go, Object targetPrefab, UnityEditor.ReplacePrefabOptions options);
     static public bool ResetToPrefabState(Object source);
     static public void RevealInFinder(string path);
     static public string SaveFilePanel(string title, string directory, string defaultName, string extension);

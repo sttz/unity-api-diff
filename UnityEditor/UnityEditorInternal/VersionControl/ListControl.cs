@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditorInternal.VersionControl
@@ -36,27 +38,27 @@ public class ListControl
     public void SelectedSet(UnityEditorInternal.VersionControl.ListItem item);
     public void Sync();
 
-    public enum SelectDirection
-    {
-        Up = 0,
-        Down = 1,
-        Current = 2,
-    }
+    public delegate void ActionDelegate(UnityEditorInternal.VersionControl.ListItem item, int actionIdx);
+
+    public delegate void DragDelegate(UnityEditor.VersionControl.ChangeSet target);
+
+    public delegate void ExpandDelegate(UnityEditor.VersionControl.ChangeSet expand, UnityEditorInternal.VersionControl.ListItem item);
 
     public class ListState
     {
-        public System.Collections.Generic.List<string> Expanded;
+        public List<string> Expanded;
         public float Scroll;
 
         public ListState();
 
     }
 
-    public delegate void ExpandDelegate(UnityEditor.VersionControl.ChangeSet expand, UnityEditorInternal.VersionControl.ListItem item);
-
-    public delegate void DragDelegate(UnityEditor.VersionControl.ChangeSet target);
-
-    public delegate void ActionDelegate(UnityEditorInternal.VersionControl.ListItem item, int actionIdx);
+    public enum SelectDirection
+    {
+        Up = 0,
+        Down = 1,
+        Current = 2,
+    }
 
 }
 

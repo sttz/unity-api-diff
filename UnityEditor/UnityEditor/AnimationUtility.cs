@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -57,6 +59,8 @@ public class AnimationUtility
         ClipModified = 2,
     }
 
+    public delegate void OnCurveWasModified(AnimationClip clip, UnityEditor.EditorCurveBinding binding, CurveModifiedType type);
+
     public enum TangentMode
     {
         Free = 0,
@@ -65,8 +69,6 @@ public class AnimationUtility
         Constant = 3,
         ClampedAuto = 4,
     }
-
-    public delegate void OnCurveWasModified(AnimationClip clip, UnityEditor.EditorCurveBinding binding, CurveModifiedType type);
 
 }
 

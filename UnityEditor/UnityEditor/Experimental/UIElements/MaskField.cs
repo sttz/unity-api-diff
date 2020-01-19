@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental.UIElements
@@ -9,8 +11,8 @@ public class MaskField : UnityEditor.Experimental.UIElements.BasePopupField<int,
     public Func<string, string> formatListItemCallback { get; set; }
     public Func<string, string> formatSelectedValueCallback { get; set; }
 
-    public MaskField(System.Collections.Generic.List<string> choices, int defaultMask, Func<string, string> formatSelectedValueCallback = null, Func<string, string> formatListItemCallback = null);
     public MaskField();
+    public MaskField(List<string> choices, int defaultMask, Func<string, string> formatSelectedValueCallback = null, Func<string, string> formatListItemCallback = null);
 
     public void SetValueWithoutNotify(int newValue);
 

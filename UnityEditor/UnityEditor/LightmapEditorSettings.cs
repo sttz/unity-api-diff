@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -54,21 +56,6 @@ public static class LightmapEditorSettings
     static public float skyLightIntensity { get; set; }
     static public bool textureCompression { get; set; }
 
-    public enum Lightmapper
-    {
-        Radiosity = 0,
-        Enlighten = 0,
-        PathTracer = 1,
-        ProgressiveCPU = 1,
-        ProgressiveGPU = 2,
-    }
-
-    public enum Sampling
-    {
-        Auto = 0,
-        Fixed = 1,
-    }
-
     public enum FilterMode
     {
         None = 0,
@@ -89,16 +76,31 @@ public static class LightmapEditorSettings
         PathTracer = 1,
     }
 
-    public enum PathTracerSampling
+    public enum Lightmapper
     {
-        Auto = 0,
-        Fixed = 1,
+        Radiosity = 0,
+        Enlighten = 0,
+        PathTracer = 1,
+        ProgressiveCPU = 1,
+        ProgressiveGPU = 2,
     }
 
     public enum PathTracerFilter
     {
         Gaussian = 0,
         ATrous = 1,
+    }
+
+    public enum PathTracerSampling
+    {
+        Auto = 0,
+        Fixed = 1,
+    }
+
+    public enum Sampling
+    {
+        Auto = 0,
+        Fixed = 1,
     }
 
 }

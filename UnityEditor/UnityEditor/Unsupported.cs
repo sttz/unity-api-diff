@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -8,7 +10,7 @@ public static class Unsupported
 {
     static public bool useScriptableRenderPipeline { get; set; }
 
-    static public bool AreAllParametersInDestination(Object transition, UnityEditor.Animations.AnimatorController controller, System.Collections.Generic.List<string> missingParameters);
+    static public bool AreAllParametersInDestination(Object transition, UnityEditor.Animations.AnimatorController controller, List<string> missingParameters);
     static public bool CanPasteParametersToTransition(Object transition, UnityEditor.Animations.AnimatorController controller);
     static public void CaptureScreenshotImmediate(string filePath, int x, int y, int width, int height);
     static public void ClearSkinCache();
@@ -17,7 +19,7 @@ public static class Unsupported
     static public void CopyStateMachineDataToPasteboard(Object stateMachineObject, UnityEditor.Animations.AnimatorController controller, int layerIndex);
     static public void CopyStateMachineTransitionParametersToPasteboard(Object transition, UnityEditor.Animations.AnimatorController controller);
     static public void DeleteGameObjectSelection();
-    static public bool DestinationHasCompatibleParameterTypes(Object transition, UnityEditor.Animations.AnimatorController controller, System.Collections.Generic.List<string> mismatchedParameters);
+    static public bool DestinationHasCompatibleParameterTypes(Object transition, UnityEditor.Animations.AnimatorController controller, List<string> mismatchedParameters);
     static public void DuplicateGameObjectsUsingPasteboard();
     static public bool GetApplicationSettingCompressAssetsOnImport();
     static public string GetBaseUnityDeveloperFolder();

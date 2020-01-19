@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -10,7 +12,7 @@ public class SceneView : UnityEditor.SearchableEditorWindow, UnityEditor.IHasCus
 
     static public UnityEditor.SceneView currentDrawingSceneView { get; }
     static public UnityEditor.SceneView lastActiveSceneView { get; }
-    static public System.Collections.ArrayList sceneViews { get; }
+    static public ArrayList sceneViews { get; }
 
     static public CameraMode AddCameraMode(string name, string section);
     static public void ClearUserDefinedCameraModes();
@@ -83,6 +85,8 @@ public class SceneView : UnityEditor.SearchableEditorWindow, UnityEditor.IHasCus
 
     }
 
+    public delegate void OnSceneFunc(UnityEditor.SceneView sceneView);
+
     public class SceneViewState
     {
         public bool showFlares;
@@ -99,8 +103,6 @@ public class SceneView : UnityEditor.SearchableEditorWindow, UnityEditor.IHasCus
         public void Toggle(bool value);
 
     }
-
-    public delegate void OnSceneFunc(UnityEditor.SceneView sceneView);
 
 }
 

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -43,9 +45,9 @@ public static class Lightmapping
         Legacy = 2,
     }
 
-    public delegate void OnStartedFunction();
-
     public delegate void OnCompletedFunction();
+
+    public delegate void OnStartedFunction();
 
 }
 

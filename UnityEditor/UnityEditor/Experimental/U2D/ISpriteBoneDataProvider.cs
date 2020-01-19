@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental.U2D
@@ -6,8 +8,8 @@ namespace UnityEditor.Experimental.U2D
 
 public interface ISpriteBoneDataProvider
 {
-    public System.Collections.Generic.List<Experimental.U2D.SpriteBone> GetBones(UnityEditor.GUID guid);
-    public void SetBones(UnityEditor.GUID guid, System.Collections.Generic.List<Experimental.U2D.SpriteBone> bones);
+    public List<Experimental.U2D.SpriteBone> GetBones(UnityEditor.GUID guid);
+    public void SetBones(UnityEditor.GUID guid, List<Experimental.U2D.SpriteBone> bones);
 
 }
 

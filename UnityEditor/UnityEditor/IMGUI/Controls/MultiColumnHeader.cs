@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.IMGUI.Controls
@@ -36,8 +38,6 @@ public class MultiColumnHeader
     protected void SortingButton(Column column, Rect headerRect, int columnIndex);
     protected void ToggleVisibility(int columnIndex);
 
-    public delegate void HeaderCallback(UnityEditor.IMGUI.Controls.MultiColumnHeader multiColumnHeader);
-
     public static class DefaultGUI
     {
         static public float columnContentMargin { get; }
@@ -54,6 +54,8 @@ public class MultiColumnHeader
         static public GUIStyle columnHeaderRightAligned;
 
     }
+
+    public delegate void HeaderCallback(UnityEditor.IMGUI.Controls.MultiColumnHeader multiColumnHeader);
 
 }
 

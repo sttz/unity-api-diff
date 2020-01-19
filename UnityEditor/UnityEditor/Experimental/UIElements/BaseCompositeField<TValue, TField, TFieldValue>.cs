@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental.UIElements
@@ -6,7 +8,7 @@ namespace UnityEditor.Experimental.UIElements
 
 public abstract class BaseCompositeField<TValue, TField, TFieldValue> : Experimental.UIElements.BaseField<TValue>
 {
-    protected System.Collections.Generic.List<TField> m_Fields;
+    protected List<TField> m_Fields;
 
     public Experimental.UIElements.VisualElement contentContainer { get; }
     public int focusIndex { get; set; }

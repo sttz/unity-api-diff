@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -77,8 +79,8 @@ public class EditorUserBuildSettings : Object
     static public void SetPlatformSettings(string platformName, string name, string value);
     static public void SetPlatformSettings(string buildTargetGroup, string buildTarget, string name, string value);
     static public void SetWSADotNetNative(UnityEditor.WSABuildType config, bool enabled);
-    static public bool SwitchActiveBuildTarget(UnityEditor.BuildTargetGroup targetGroup, UnityEditor.BuildTarget target);
     static public bool SwitchActiveBuildTarget(UnityEditor.BuildTarget target);
+    static public bool SwitchActiveBuildTarget(UnityEditor.BuildTargetGroup targetGroup, UnityEditor.BuildTarget target);
     static public bool SwitchActiveBuildTargetAsync(UnityEditor.BuildTargetGroup targetGroup, UnityEditor.BuildTarget target);
 
 }

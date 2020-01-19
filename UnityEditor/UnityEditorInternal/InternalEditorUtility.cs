@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditorInternal
@@ -57,7 +59,7 @@ public class InternalEditorUtility
     static public int[] GetLicenseFlags();
     static public string GetLicenseInfo();
     static public Object GetLoadedObjectFromInstanceID(int instanceID);
-    static public System.Collections.Generic.List<int> GetNewSelection(int clickedInstanceID, System.Collections.Generic.List<int> allInstanceIDs, System.Collections.Generic.List<int> selectedInstanceIDs, int lastClickedInstanceID, bool keepMultiSelection, bool useShiftAsActionKey, bool allowMultiSelection);
+    static public List<int> GetNewSelection(int clickedInstanceID, List<int> allInstanceIDs, List<int> selectedInstanceIDs, int lastClickedInstanceID, bool keepMultiSelection, bool useShiftAsActionKey, bool allowMultiSelection);
     static public string GetNoDiffToolsDetectedMessage();
     static public Object GetObjectFromInstanceID(int instanceID);
     static public Camera[] GetSceneViewCameras();

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -68,11 +70,11 @@ public sealed class EditorApplication
 
     public EditorApplication();
 
-    public delegate void ProjectWindowItemCallback(string guid, Rect selectionRect);
+    public delegate void CallbackFunction();
 
     public delegate void HierarchyWindowItemCallback(int instanceID, Rect selectionRect);
 
-    public delegate void CallbackFunction();
+    public delegate void ProjectWindowItemCallback(string guid, Rect selectionRect);
 
     public delegate void SerializedPropertyCallbackFunction(UnityEditor.GenericMenu menu, UnityEditor.SerializedProperty property);
 

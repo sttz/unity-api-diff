@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditorInternal
@@ -23,9 +25,9 @@ public class EditMode
 
     public EditMode();
 
-    public delegate void OnEditModeStopFunc(UnityEditor.Editor editor);
-
     public delegate void OnEditModeStartFunc(UnityEditor.Editor editor, SceneViewEditMode mode);
+
+    public delegate void OnEditModeStopFunc(UnityEditor.Editor editor);
 
     public enum SceneViewEditMode
     {

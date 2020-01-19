@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -25,15 +27,6 @@ public sealed class ShaderUtil
 
     public ShaderUtil();
 
-    public enum ShaderPropertyType
-    {
-        Color = 0,
-        Vector = 1,
-        Float = 2,
-        Range = 3,
-        TexEnv = 4,
-    }
-
     public enum ShaderPropertyTexDim
     {
         TexDimNone = 0,
@@ -41,6 +34,15 @@ public sealed class ShaderUtil
         TexDim3D = 3,
         TexDimCUBE = 4,
         TexDimAny = 6,
+    }
+
+    public enum ShaderPropertyType
+    {
+        Color = 0,
+        Vector = 1,
+        Float = 2,
+        Range = 3,
+        TexEnv = 4,
     }
 
 }

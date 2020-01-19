@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental.U2D
@@ -9,11 +11,11 @@ public interface ISpriteEditor
     public bool editingDisabled { get; }
     public bool enableMouseMoveEvent { set; }
     public UnityEditor.SpriteRect selectedSpriteRect { get; set; }
-    public System.Collections.Generic.List<UnityEditor.SpriteRect> spriteRects { set; }
+    public List<UnityEditor.SpriteRect> spriteRects { set; }
     public Rect windowDimension { get; }
 
     public void ApplyOrRevertModification(bool apply);
-    public T GetDataProvider();
+    public T GetDataProvider<T>();
     public Experimental.UIElements.VisualElement GetMainVisualContainer();
     public bool HandleSpriteSelection();
     public void RequestRepaint();
