@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Experimental.XR
@@ -12,8 +14,8 @@ public class XRDepthSubsystem : Experimental.IntegratedSubsystem<Experimental.XR
 
     public XRDepthSubsystem();
 
-    public void GetConfidence(System.Collections.Generic.List<float> confidenceOut);
-    public void GetPoints(System.Collections.Generic.List<Vector3> pointsOut);
+    public void GetConfidence(List<float> confidenceOut);
+    public void GetPoints(List<Vector3> pointsOut);
 
 }
 

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -45,13 +47,13 @@ public sealed class GUIStyle
     public void CalcMinMaxWidth(GUIContent content, out float minWidth, out float maxWidth);
     public Vector2 CalcScreenSize(Vector2 contentSize);
     public Vector2 CalcSize(GUIContent content);
-    public void Draw(Rect position, bool isHover, bool isActive, bool on, bool hasKeyboardFocus);
-    public void Draw(Rect position, string text, bool isHover, bool isActive, bool on, bool hasKeyboardFocus);
-    public void Draw(Rect position, Texture image, bool isHover, bool isActive, bool on, bool hasKeyboardFocus);
-    public void Draw(Rect position, GUIContent content, bool isHover, bool isActive, bool on, bool hasKeyboardFocus);
     public void Draw(Rect position, GUIContent content, int controlID);
     public void Draw(Rect position, GUIContent content, int controlID, bool on);
     public void Draw(Rect position, GUIContent content, int controlID, bool on, bool hover);
+    public void Draw(Rect position, bool isHover, bool isActive, bool on, bool hasKeyboardFocus);
+    public void Draw(Rect position, GUIContent content, bool isHover, bool isActive, bool on, bool hasKeyboardFocus);
+    public void Draw(Rect position, Texture image, bool isHover, bool isActive, bool on, bool hasKeyboardFocus);
+    public void Draw(Rect position, string text, bool isHover, bool isActive, bool on, bool hasKeyboardFocus);
     public void DrawCursor(Rect position, GUIContent content, int controlID, int character);
     public void DrawWithTextSelection(Rect position, GUIContent content, int controlID, int firstSelectedCharacter, int lastSelectedCharacter);
     public Vector2 GetCursorPixelPosition(Rect position, GUIContent content, int cursorStringIndex);

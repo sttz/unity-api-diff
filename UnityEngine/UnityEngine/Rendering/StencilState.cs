@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -23,8 +25,8 @@ public struct StencilState : IEquatable<Rendering.StencilState>
     public StencilState(bool enabled = true, byte readMask = 255, byte writeMask = 255, Rendering.CompareFunction compareFunction = 8, Rendering.StencilOp passOperation = 0, Rendering.StencilOp failOperation = 0, Rendering.StencilOp zFailOperation = 0);
     public StencilState(bool enabled, byte readMask, byte writeMask, Rendering.CompareFunction compareFunctionFront, Rendering.StencilOp passOperationFront, Rendering.StencilOp failOperationFront, Rendering.StencilOp zFailOperationFront, Rendering.CompareFunction compareFunctionBack, Rendering.StencilOp passOperationBack, Rendering.StencilOp failOperationBack, Rendering.StencilOp zFailOperationBack);
 
-    public bool Equals(Rendering.StencilState other);
     public bool Equals(object obj);
+    public bool Equals(Rendering.StencilState other);
     public int GetHashCode();
     public void SetCompareFunction(Rendering.CompareFunction value);
     public void SetFailOperation(Rendering.StencilOp value);

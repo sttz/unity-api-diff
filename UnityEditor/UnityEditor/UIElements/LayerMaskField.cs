@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.UIElements
@@ -13,10 +15,10 @@ public class LayerMaskField : UnityEditor.UIElements.MaskField
     public Func<string, string> formatListItemCallback { get; set; }
     public Func<string, string> formatSelectedValueCallback { get; set; }
 
-    public LayerMaskField(int defaultMask);
-    public LayerMaskField(string label, int defaultMask);
     public LayerMaskField();
+    public LayerMaskField(int defaultMask);
     public LayerMaskField(string label);
+    public LayerMaskField(string label, int defaultMask);
 
     public class UxmlFactory : UIElements.UxmlFactory<UnityEditor.UIElements.LayerMaskField, UxmlTraits>
     {

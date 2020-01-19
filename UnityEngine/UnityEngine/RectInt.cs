@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -21,8 +23,8 @@ public struct RectInt : IEquatable<RectInt>
     public int yMax { get; set; }
     public int yMin { get; set; }
 
-    public RectInt(int xMin, int yMin, int width, int height);
     public RectInt(Vector2Int position, Vector2Int size);
+    public RectInt(int xMin, int yMin, int width, int height);
 
     public void ClampToBounds(RectInt bounds);
     public bool Contains(Vector2Int position);
@@ -30,7 +32,7 @@ public struct RectInt : IEquatable<RectInt>
     public void SetMinMax(Vector2Int minPosition, Vector2Int maxPosition);
     public string ToString();
 
-    public struct PositionEnumerator : System.Collections.Generic.IEnumerator<Vector2Int>, System.Collections.IEnumerator, IDisposable
+    public struct PositionEnumerator : IEnumerator<Vector2Int>, IEnumerator, IDisposable
     {
         public Vector2Int Current { get; }
 

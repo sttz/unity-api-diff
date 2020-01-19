@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -19,20 +21,24 @@ public sealed class ADBannerView
 
     public ADBannerView(Type type, Layout layout);
 
+    public delegate void BannerWasClickedDelegate();
+
+    public delegate void BannerWasLoadedDelegate();
+
     public enum Layout
     {
-        Top = 0,
-        Bottom = 1,
-        TopLeft = 0,
-        TopRight = 4,
-        TopCenter = 8,
-        BottomLeft = 1,
-        BottomRight = 5,
-        BottomCenter = 9,
-        CenterLeft = 2,
-        CenterRight = 6,
-        Center = 10,
         Manual = -1,
+        Top = 0,
+        TopLeft = 0,
+        Bottom = 1,
+        BottomLeft = 1,
+        CenterLeft = 2,
+        TopRight = 4,
+        BottomRight = 5,
+        CenterRight = 6,
+        TopCenter = 8,
+        BottomCenter = 9,
+        Center = 10,
     }
 
     public enum Type
@@ -40,10 +46,6 @@ public sealed class ADBannerView
         Banner = 0,
         MediumRect = 1,
     }
-
-    public delegate void BannerWasClickedDelegate();
-
-    public delegate void BannerWasLoadedDelegate();
 
 }
 

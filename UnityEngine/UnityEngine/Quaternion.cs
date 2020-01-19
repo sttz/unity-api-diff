@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -14,18 +16,18 @@ public struct Quaternion : IEquatable<Quaternion>
     static public Quaternion AngleAxis(float angle, Vector3 axis);
     static public Quaternion AxisAngle(Vector3 axis, float angle);
     static public float Dot(Quaternion a, Quaternion b);
-    static public Quaternion Euler(float x, float y, float z);
     static public Quaternion Euler(Vector3 euler);
-    static public Quaternion EulerAngles(float x, float y, float z);
+    static public Quaternion Euler(float x, float y, float z);
     static public Quaternion EulerAngles(Vector3 euler);
-    static public Quaternion EulerRotation(float x, float y, float z);
+    static public Quaternion EulerAngles(float x, float y, float z);
     static public Quaternion EulerRotation(Vector3 euler);
+    static public Quaternion EulerRotation(float x, float y, float z);
     static public Quaternion FromToRotation(Vector3 fromDirection, Vector3 toDirection);
     static public Quaternion Inverse(Quaternion rotation);
     static public Quaternion Lerp(Quaternion a, Quaternion b, float t);
     static public Quaternion LerpUnclamped(Quaternion a, Quaternion b, float t);
-    static public Quaternion LookRotation(Vector3 forward, Vector3 upwards);
     static public Quaternion LookRotation(Vector3 forward);
+    static public Quaternion LookRotation(Vector3 forward, Vector3 upwards);
     static public Quaternion Normalize(Quaternion q);
     static public Quaternion RotateTowards(Quaternion from, Quaternion to, float maxDegreesDelta);
     static public Quaternion Slerp(Quaternion a, Quaternion b, float t);
@@ -49,10 +51,10 @@ public struct Quaternion : IEquatable<Quaternion>
     public void Normalize();
     public void Set(float newX, float newY, float newZ, float newW);
     public void SetAxisAngle(Vector3 axis, float angle);
-    public void SetEulerAngles(float x, float y, float z);
     public void SetEulerAngles(Vector3 euler);
-    public void SetEulerRotation(float x, float y, float z);
+    public void SetEulerAngles(float x, float y, float z);
     public void SetEulerRotation(Vector3 euler);
+    public void SetEulerRotation(float x, float y, float z);
     public void SetFromToRotation(Vector3 fromDirection, Vector3 toDirection);
     public void SetLookRotation(Vector3 view);
     public void SetLookRotation(Vector3 view, Vector3 up);

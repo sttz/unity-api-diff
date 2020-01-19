@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Experimental.Animations
@@ -16,9 +18,9 @@ public struct MuscleHandle
 
     public MuscleHandle(BodyDof bodyDof);
     public MuscleHandle(HeadDof headDof);
-    public MuscleHandle(HumanPartDof partDof, LegDof legDof);
     public MuscleHandle(HumanPartDof partDof, ArmDof armDof);
     public MuscleHandle(HumanPartDof partDof, FingerDof fingerDof);
+    public MuscleHandle(HumanPartDof partDof, LegDof legDof);
 
 }
 

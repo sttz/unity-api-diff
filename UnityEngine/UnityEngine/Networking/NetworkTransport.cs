@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Networking
@@ -8,20 +10,20 @@ public sealed class NetworkTransport
 {
     static public bool IsStarted { get; }
 
-    static public int AddHost(Networking.HostTopology topology, int port, string ip);
-    static public int AddHost(Networking.HostTopology topology, int port);
     static public int AddHost(Networking.HostTopology topology);
-    static public int AddHostWithSimulator(Networking.HostTopology topology, int minTimeout, int maxTimeout, int port, string ip);
-    static public int AddHostWithSimulator(Networking.HostTopology topology, int minTimeout, int maxTimeout, int port);
+    static public int AddHost(Networking.HostTopology topology, int port);
+    static public int AddHost(Networking.HostTopology topology, int port, string ip);
     static public int AddHostWithSimulator(Networking.HostTopology topology, int minTimeout, int maxTimeout);
+    static public int AddHostWithSimulator(Networking.HostTopology topology, int minTimeout, int maxTimeout, int port);
+    static public int AddHostWithSimulator(Networking.HostTopology topology, int minTimeout, int maxTimeout, int port, string ip);
     static public void AddSceneId(int id);
-    static public int AddWebsocketHost(Networking.HostTopology topology, int port, string ip);
     static public int AddWebsocketHost(Networking.HostTopology topology, int port);
+    static public int AddWebsocketHost(Networking.HostTopology topology, int port, string ip);
     static public int Connect(int hostId, string address, int port, int exeptionConnectionId, out byte error);
     static public void ConnectAsNetworkHost(int hostId, string address, int port, Networking.Types.NetworkID network, Networking.Types.SourceID source, Networking.Types.NodeID node, out byte error);
     static public int ConnectEndPoint(int hostId, System.Net.EndPoint endPoint, int exceptionConnectionId, out byte error);
-    static public int ConnectToNetworkPeer(int hostId, string address, int port, int exceptionConnectionId, int relaySlotId, Networking.Types.NetworkID network, Networking.Types.SourceID source, Networking.Types.NodeID node, int bytesPerSec, float bucketSizeFactor, out byte error);
     static public int ConnectToNetworkPeer(int hostId, string address, int port, int exceptionConnectionId, int relaySlotId, Networking.Types.NetworkID network, Networking.Types.SourceID source, Networking.Types.NodeID node, out byte error);
+    static public int ConnectToNetworkPeer(int hostId, string address, int port, int exceptionConnectionId, int relaySlotId, Networking.Types.NetworkID network, Networking.Types.SourceID source, Networking.Types.NodeID node, int bytesPerSec, float bucketSizeFactor, out byte error);
     static public int ConnectWithSimulator(int hostId, string address, int port, int exeptionConnectionId, out byte error, Networking.ConnectionSimulatorConfig conf);
     static public bool Disconnect(int hostId, int connectionId, out byte error);
     static public void DisconnectNetworkHost(int hostId, out byte error);
@@ -36,8 +38,8 @@ public sealed class NetworkTransport
     static public void GetConnectionInfo(int hostId, int connectionId, out string address, out int port, out Networking.Types.NetworkID network, out Networking.Types.NodeID dstNode, out byte error);
     static public int GetCurrentIncomingMessageAmount();
     static public int GetCurrentOutgoingMessageAmount();
-    static public int GetCurrentRtt(int hostId, int connectionId, out byte error);
     static public int GetCurrentRTT(int hostId, int connectionId, out byte error);
+    static public int GetCurrentRtt(int hostId, int connectionId, out byte error);
     static public int GetHostPort(int hostId);
     static public int GetIncomingMessageQueueSize(int hostId, out byte error);
     static public int GetIncomingPacketCount(int hostId, int connectionId, out byte error);

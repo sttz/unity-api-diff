@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -16,8 +18,8 @@ public struct VisibleReflectionProbe : IEquatable<Rendering.VisibleReflectionPro
     public ReflectionProbe reflectionProbe { get; }
     public Texture texture { get; }
 
-    public bool Equals(Rendering.VisibleReflectionProbe other);
     public bool Equals(object obj);
+    public bool Equals(Rendering.VisibleReflectionProbe other);
     public int GetHashCode();
 
 }

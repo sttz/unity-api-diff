@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -36,12 +38,12 @@ public sealed class ParticleSystemRenderer : Renderer
     public void BakeTrailsMesh(Mesh mesh, Camera camera, bool useTransform = false);
     public void DisableVertexStreams(ParticleSystemVertexStreams streams);
     public void EnableVertexStreams(ParticleSystemVertexStreams streams);
-    public void GetActiveVertexStreams(System.Collections.Generic.List<ParticleSystemVertexStream> streams);
+    public void GetActiveVertexStreams(List<ParticleSystemVertexStream> streams);
     public ParticleSystemVertexStreams GetEnabledVertexStreams(ParticleSystemVertexStreams streams);
     public int GetMeshes(out Mesh[] meshes);
-    public void SetActiveVertexStreams(System.Collections.Generic.List<ParticleSystemVertexStream> streams);
-    public void SetMeshes(Mesh[] meshes, int size);
+    public void SetActiveVertexStreams(List<ParticleSystemVertexStream> streams);
     public void SetMeshes(Mesh[] meshes);
+    public void SetMeshes(Mesh[] meshes, int size);
 
 }
 

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -28,43 +30,43 @@ public class Component : Object
 
     public Component();
 
-    public void BroadcastMessage(string methodName, object parameter, SendMessageOptions options);
-    public void BroadcastMessage(string methodName, object parameter);
     public void BroadcastMessage(string methodName);
     public void BroadcastMessage(string methodName, SendMessageOptions options);
+    public void BroadcastMessage(string methodName, object parameter);
+    public void BroadcastMessage(string methodName, object parameter, SendMessageOptions options);
     public bool CompareTag(string tag);
-    public Component GetComponent(Type type);
-    public T GetComponent();
     public Component GetComponent(string type);
-    public Component GetComponentInChildren(Type t, bool includeInactive);
+    public Component GetComponent(Type type);
+    public T GetComponent<T>();
     public Component GetComponentInChildren(Type t);
-    public T GetComponentInChildren(bool includeInactive);
-    public T GetComponentInChildren();
+    public Component GetComponentInChildren(Type t, bool includeInactive);
+    public T GetComponentInChildren<T>();
+    public T GetComponentInChildren<T>(bool includeInactive);
     public Component GetComponentInParent(Type t);
-    public T GetComponentInParent();
+    public T GetComponentInParent<T>();
     public Component[] GetComponents(Type type);
-    public void GetComponents(Type type, System.Collections.Generic.List<Component> results);
-    public void GetComponents(System.Collections.Generic.List<T> results);
-    public T[] GetComponents();
-    public Component[] GetComponentsInChildren(Type t, bool includeInactive);
+    public void GetComponents(Type type, List<Component> results);
+    public T[] GetComponents<T>();
+    public void GetComponents<T>(List<T> results);
     public Component[] GetComponentsInChildren(Type t);
-    public T[] GetComponentsInChildren(bool includeInactive);
-    public void GetComponentsInChildren(bool includeInactive, System.Collections.Generic.List<T> result);
-    public T[] GetComponentsInChildren();
-    public void GetComponentsInChildren(System.Collections.Generic.List<T> results);
-    public Component[] GetComponentsInParent(Type t, bool includeInactive);
+    public Component[] GetComponentsInChildren(Type t, bool includeInactive);
+    public T[] GetComponentsInChildren<T>();
+    public T[] GetComponentsInChildren<T>(bool includeInactive);
+    public void GetComponentsInChildren<T>(List<T> results);
+    public void GetComponentsInChildren<T>(bool includeInactive, List<T> result);
     public Component[] GetComponentsInParent(Type t);
-    public T[] GetComponentsInParent(bool includeInactive);
-    public void GetComponentsInParent(bool includeInactive, System.Collections.Generic.List<T> results);
-    public T[] GetComponentsInParent();
-    public void SendMessage(string methodName, object value);
+    public Component[] GetComponentsInParent(Type t, bool includeInactive);
+    public T[] GetComponentsInParent<T>();
+    public T[] GetComponentsInParent<T>(bool includeInactive);
+    public void GetComponentsInParent<T>(bool includeInactive, List<T> results);
     public void SendMessage(string methodName);
-    public void SendMessage(string methodName, object value, SendMessageOptions options);
     public void SendMessage(string methodName, SendMessageOptions options);
-    public void SendMessageUpwards(string methodName, object value, SendMessageOptions options);
-    public void SendMessageUpwards(string methodName, object value);
+    public void SendMessage(string methodName, object value);
+    public void SendMessage(string methodName, object value, SendMessageOptions options);
     public void SendMessageUpwards(string methodName);
     public void SendMessageUpwards(string methodName, SendMessageOptions options);
+    public void SendMessageUpwards(string methodName, object value);
+    public void SendMessageUpwards(string methodName, object value, SendMessageOptions options);
 
 }
 

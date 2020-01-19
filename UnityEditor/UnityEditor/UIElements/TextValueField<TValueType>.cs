@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.UIElements
@@ -12,7 +14,7 @@ public abstract class TextValueField<TValueType> : UIElements.TextInputBaseField
     protected TextValueField(int maxLength, TextValueInput<TValueType> textValueInput);
     protected TextValueField(string label, int maxLength, TextValueInput<TValueType> textValueInput);
 
-    protected void AddLabelDragger();
+    protected void AddLabelDragger<TDraggerType>();
     public void ApplyInputDeviceDelta(Vector3 delta, UnityEditor.UIElements.DeltaSpeed speed, TValueType startValue);
     public void SetValueWithoutNotify(TValueType newValue);
     public void StartDragging();

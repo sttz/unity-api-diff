@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -12,8 +14,8 @@ public sealed class ADInterstitialAd
 
     public bool loaded { get; }
 
-    public ADInterstitialAd(bool autoReload);
     public ADInterstitialAd();
+    public ADInterstitialAd(bool autoReload);
 
     public void ReloadAd();
     public void Show();

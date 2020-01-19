@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -6,6 +8,7 @@ namespace UnityEngine
 
 public enum ParticleSystemVertexStreams
 {
+    None = 0,
     Position = 1,
     Normal = 2,
     Tangent = 4,
@@ -20,7 +23,6 @@ public enum ParticleSystemVertexStreams
     Custom1 = 2048,
     Custom2 = 4096,
     Random = 8192,
-    None = 0,
     All = 2147483647,
 }
 

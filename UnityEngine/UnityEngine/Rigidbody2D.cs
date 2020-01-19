@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -42,23 +44,23 @@ public sealed class Rigidbody2D : Component
     public void AddTorque(float torque);
     public void AddTorque(float torque, ForceMode2D mode);
     public int Cast(Vector2 direction, RaycastHit2D[] results);
-    public int Cast(Vector2 direction, RaycastHit2D[] results, float distance);
-    public int Cast(Vector2 direction, System.Collections.Generic.List<RaycastHit2D> results, float distance = ∞);
     public int Cast(Vector2 direction, ContactFilter2D contactFilter, RaycastHit2D[] results);
+    public int Cast(Vector2 direction, List<RaycastHit2D> results, float distance = ∞);
+    public int Cast(Vector2 direction, RaycastHit2D[] results, float distance);
+    public int Cast(Vector2 direction, ContactFilter2D contactFilter, List<RaycastHit2D> results, float distance);
     public int Cast(Vector2 direction, ContactFilter2D contactFilter, RaycastHit2D[] results, float distance);
-    public int Cast(Vector2 direction, ContactFilter2D contactFilter, System.Collections.Generic.List<RaycastHit2D> results, float distance);
     public Vector2 ClosestPoint(Vector2 position);
     public ColliderDistance2D Distance(Collider2D collider);
+    public int GetAttachedColliders(List<Collider2D> results);
     public int GetAttachedColliders(out Collider2D[] results);
-    public int GetAttachedColliders(System.Collections.Generic.List<Collider2D> results);
-    public int GetContacts(ContactPoint2D[] contacts);
-    public int GetContacts(System.Collections.Generic.List<ContactPoint2D> contacts);
-    public int GetContacts(ContactFilter2D contactFilter, ContactPoint2D[] contacts);
-    public int GetContacts(ContactFilter2D contactFilter, System.Collections.Generic.List<ContactPoint2D> contacts);
+    public int GetContacts(List<Collider2D> colliders);
     public int GetContacts(Collider2D[] colliders);
-    public int GetContacts(System.Collections.Generic.List<Collider2D> colliders);
+    public int GetContacts(List<ContactPoint2D> contacts);
+    public int GetContacts(ContactPoint2D[] contacts);
+    public int GetContacts(ContactFilter2D contactFilter, List<Collider2D> colliders);
     public int GetContacts(ContactFilter2D contactFilter, Collider2D[] colliders);
-    public int GetContacts(ContactFilter2D contactFilter, System.Collections.Generic.List<Collider2D> colliders);
+    public int GetContacts(ContactFilter2D contactFilter, List<ContactPoint2D> contacts);
+    public int GetContacts(ContactFilter2D contactFilter, ContactPoint2D[] contacts);
     public Vector2 GetPoint(Vector2 point);
     public Vector2 GetPointVelocity(Vector2 point);
     public Vector2 GetRelativePoint(Vector2 relativePoint);
@@ -68,15 +70,15 @@ public sealed class Rigidbody2D : Component
     public bool IsAwake();
     public bool IsSleeping();
     public bool IsTouching(Collider2D collider);
-    public bool IsTouching(Collider2D collider, ContactFilter2D contactFilter);
     public bool IsTouching(ContactFilter2D contactFilter);
+    public bool IsTouching(Collider2D collider, ContactFilter2D contactFilter);
     public bool IsTouchingLayers();
     public bool IsTouchingLayers(int layerMask);
     public void MovePosition(Vector2 position);
     public void MoveRotation(float angle);
     public void MoveRotation(Quaternion rotation);
+    public int OverlapCollider(ContactFilter2D contactFilter, List<Collider2D> results);
     public int OverlapCollider(ContactFilter2D contactFilter, out Collider2D[] results);
-    public int OverlapCollider(ContactFilter2D contactFilter, System.Collections.Generic.List<Collider2D> results);
     public bool OverlapPoint(Vector2 point);
     public void SetRotation(float angle);
     public void SetRotation(Quaternion rotation);

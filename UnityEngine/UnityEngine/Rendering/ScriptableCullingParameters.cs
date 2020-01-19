@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -28,8 +30,8 @@ public struct ScriptableCullingParameters : IEquatable<Rendering.ScriptableCulli
     public float stereoSeparationDistance { get; set; }
     public Matrix4x4 stereoViewMatrix { get; set; }
 
-    public bool Equals(Rendering.ScriptableCullingParameters other);
     public bool Equals(object obj);
+    public bool Equals(Rendering.ScriptableCullingParameters other);
     public Plane GetCullingPlane(int index);
     public int GetHashCode();
     public float GetLayerCullingDistance(int layerIndex);

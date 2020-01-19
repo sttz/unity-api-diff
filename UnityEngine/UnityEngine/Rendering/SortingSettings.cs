@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -14,8 +16,8 @@ public struct SortingSettings : IEquatable<Rendering.SortingSettings>
 
     public SortingSettings(Camera camera);
 
-    public bool Equals(Rendering.SortingSettings other);
     public bool Equals(object obj);
+    public bool Equals(Rendering.SortingSettings other);
     public int GetHashCode();
 
 }

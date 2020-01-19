@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -16,11 +18,11 @@ public class AnimationCurve : IEquatable<AnimationCurve>
     public WrapMode postWrapMode { get; set; }
     public WrapMode preWrapMode { get; set; }
 
-    public AnimationCurve(Keyframe[] keys);
     public AnimationCurve();
+    public AnimationCurve(Keyframe[] keys);
 
-    public int AddKey(float time, float value);
     public int AddKey(Keyframe key);
+    public int AddKey(float time, float value);
     public bool Equals(object o);
     public bool Equals(AnimationCurve other);
     public float Evaluate(float time);

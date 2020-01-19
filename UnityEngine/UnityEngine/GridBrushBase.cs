@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -23,6 +25,18 @@ public abstract class GridBrushBase : ScriptableObject
     public void Rotate(RotationDirection direction, CellLayout layout);
     public void Select(GridLayout gridLayout, GameObject brushTarget, BoundsInt position);
 
+    public enum FlipAxis
+    {
+        X = 0,
+        Y = 1,
+    }
+
+    public enum RotationDirection
+    {
+        Clockwise = 0,
+        CounterClockwise = 1,
+    }
+
     public enum Tool
     {
         Select = 0,
@@ -32,18 +46,6 @@ public abstract class GridBrushBase : ScriptableObject
         Pick = 4,
         Erase = 5,
         FloodFill = 6,
-    }
-
-    public enum RotationDirection
-    {
-        Clockwise = 0,
-        CounterClockwise = 1,
-    }
-
-    public enum FlipAxis
-    {
-        X = 0,
-        Y = 1,
     }
 
 }

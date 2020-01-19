@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Tilemaps
@@ -17,12 +19,10 @@ public sealed class TilemapRenderer : Renderer
 
     public TilemapRenderer();
 
-    public enum SortOrder
+    public enum DetectChunkCullingBounds
     {
-        BottomLeft = 0,
-        BottomRight = 1,
-        TopLeft = 2,
-        TopRight = 3,
+        Auto = 0,
+        Manual = 1,
     }
 
     public enum Mode
@@ -31,10 +31,12 @@ public sealed class TilemapRenderer : Renderer
         Individual = 1,
     }
 
-    public enum DetectChunkCullingBounds
+    public enum SortOrder
     {
-        Auto = 0,
-        Manual = 1,
+        BottomLeft = 0,
+        BottomRight = 1,
+        TopLeft = 2,
+        TopRight = 3,
     }
 
 }

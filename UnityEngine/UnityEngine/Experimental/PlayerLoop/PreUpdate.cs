@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Experimental.PlayerLoop
@@ -6,11 +8,7 @@ namespace UnityEngine.Experimental.PlayerLoop
 
 public struct PreUpdate
 {
-    public struct PhysicsUpdate
-    {
-    }
-
-    public struct Physics2DUpdate
+    public struct AIUpdate
     {
     }
 
@@ -22,15 +20,19 @@ public struct PreUpdate
     {
     }
 
+    public struct NewInputUpdate
+    {
+    }
+
+    public struct Physics2DUpdate
+    {
+    }
+
+    public struct PhysicsUpdate
+    {
+    }
+
     public struct SendMouseEvents
-    {
-    }
-
-    public struct AIUpdate
-    {
-    }
-
-    public struct WindUpdate
     {
     }
 
@@ -38,7 +40,7 @@ public struct PreUpdate
     {
     }
 
-    public struct NewInputUpdate
+    public struct WindUpdate
     {
     }
 

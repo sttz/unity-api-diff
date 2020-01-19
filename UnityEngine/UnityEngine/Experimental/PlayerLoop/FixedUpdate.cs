@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Experimental.PlayerLoop
@@ -6,6 +8,10 @@ namespace UnityEngine.Experimental.PlayerLoop
 
 public struct FixedUpdate
 {
+    public struct AudioFixedUpdate
+    {
+    }
+
     public struct ClearLines
     {
     }
@@ -14,31 +20,7 @@ public struct FixedUpdate
     {
     }
 
-    public struct AudioFixedUpdate
-    {
-    }
-
-    public struct ScriptRunBehaviourFixedUpdate
-    {
-    }
-
     public struct DirectorFixedUpdate
-    {
-    }
-
-    public struct LegacyFixedAnimationUpdate
-    {
-    }
-
-    public struct XRFixedUpdate
-    {
-    }
-
-    public struct PhysicsFixedUpdate
-    {
-    }
-
-    public struct Physics2DFixedUpdate
     {
     }
 
@@ -46,11 +28,31 @@ public struct FixedUpdate
     {
     }
 
-    public struct ScriptRunDelayedFixedFrameRate
+    public struct LegacyFixedAnimationUpdate
     {
     }
 
     public struct NewInputFixedUpdate
+    {
+    }
+
+    public struct Physics2DFixedUpdate
+    {
+    }
+
+    public struct PhysicsFixedUpdate
+    {
+    }
+
+    public struct ScriptRunBehaviourFixedUpdate
+    {
+    }
+
+    public struct ScriptRunDelayedFixedFrameRate
+    {
+    }
+
+    public struct XRFixedUpdate
     {
     }
 

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -10,10 +12,10 @@ public struct ScriptableRenderContext : IEquatable<Rendering.ScriptableRenderCon
 
     public void BeginRenderPass(int width, int height, int samples, Unity.Collections.NativeArray<Rendering.AttachmentDescriptor> attachments, int depthAttachmentIndex = -1);
     public Rendering.ScopedRenderPass BeginScopedRenderPass(int width, int height, int samples, Unity.Collections.NativeArray<Rendering.AttachmentDescriptor> attachments, int depthAttachmentIndex = -1);
-    public Rendering.ScopedSubPass BeginScopedSubPass(Unity.Collections.NativeArray<int> colors, Unity.Collections.NativeArray<int> inputs, bool isDepthReadOnly = false);
     public Rendering.ScopedSubPass BeginScopedSubPass(Unity.Collections.NativeArray<int> colors, bool isDepthReadOnly = false);
-    public void BeginSubPass(Unity.Collections.NativeArray<int> colors, Unity.Collections.NativeArray<int> inputs, bool isDepthReadOnly = false);
+    public Rendering.ScopedSubPass BeginScopedSubPass(Unity.Collections.NativeArray<int> colors, Unity.Collections.NativeArray<int> inputs, bool isDepthReadOnly = false);
     public void BeginSubPass(Unity.Collections.NativeArray<int> colors, bool isDepthReadOnly = false);
+    public void BeginSubPass(Unity.Collections.NativeArray<int> colors, Unity.Collections.NativeArray<int> inputs, bool isDepthReadOnly = false);
     public Rendering.CullingResults Cull(Rendering.ScriptableCullingParameters parameters);
     public void DrawGizmos(Camera camera, Rendering.GizmoSubset gizmoSubset);
     public void DrawRenderers(Rendering.CullingResults cullingResults, Rendering.DrawingSettings drawingSettings, Rendering.FilteringSettings filteringSettings);
@@ -23,8 +25,8 @@ public struct ScriptableRenderContext : IEquatable<Rendering.ScriptableRenderCon
     public void DrawSkybox(Camera camera);
     public void EndRenderPass();
     public void EndSubPass();
-    public bool Equals(Rendering.ScriptableRenderContext other);
     public bool Equals(object obj);
+    public bool Equals(Rendering.ScriptableRenderContext other);
     public void ExecuteCommandBuffer(Rendering.CommandBuffer commandBuffer);
     public void ExecuteCommandBufferAsync(Rendering.CommandBuffer commandBuffer, Rendering.ComputeQueueType queueType);
     public int GetHashCode();

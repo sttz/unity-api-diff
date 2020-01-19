@@ -1,10 +1,12 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
 {
 
-public abstract class CustomYieldInstruction : System.Collections.IEnumerator
+public abstract class CustomYieldInstruction : IEnumerator
 {
     public object Current { get; }
     public bool keepWaiting { get; }

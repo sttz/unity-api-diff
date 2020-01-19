@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -8,12 +10,12 @@ public sealed class CanvasRenderer : Component
 {
     static public event OnRequestRebuild onRequestRebuild;
 
-    static public void AddUIVertexStream(System.Collections.Generic.List<UIVertex> verts, System.Collections.Generic.List<Vector3> positions, System.Collections.Generic.List<Color32> colors, System.Collections.Generic.List<Vector2> uv0S, System.Collections.Generic.List<Vector2> uv1S, System.Collections.Generic.List<Vector3> normals, System.Collections.Generic.List<Vector4> tangents);
-    static public void AddUIVertexStream(System.Collections.Generic.List<UIVertex> verts, System.Collections.Generic.List<Vector3> positions, System.Collections.Generic.List<Color32> colors, System.Collections.Generic.List<Vector2> uv0S, System.Collections.Generic.List<Vector2> uv1S, System.Collections.Generic.List<Vector2> uv2S, System.Collections.Generic.List<Vector2> uv3S, System.Collections.Generic.List<Vector3> normals, System.Collections.Generic.List<Vector4> tangents);
-    static public void CreateUIVertexStream(System.Collections.Generic.List<UIVertex> verts, System.Collections.Generic.List<Vector3> positions, System.Collections.Generic.List<Color32> colors, System.Collections.Generic.List<Vector2> uv0S, System.Collections.Generic.List<Vector2> uv1S, System.Collections.Generic.List<Vector3> normals, System.Collections.Generic.List<Vector4> tangents, System.Collections.Generic.List<int> indices);
-    static public void CreateUIVertexStream(System.Collections.Generic.List<UIVertex> verts, System.Collections.Generic.List<Vector3> positions, System.Collections.Generic.List<Color32> colors, System.Collections.Generic.List<Vector2> uv0S, System.Collections.Generic.List<Vector2> uv1S, System.Collections.Generic.List<Vector2> uv2S, System.Collections.Generic.List<Vector2> uv3S, System.Collections.Generic.List<Vector3> normals, System.Collections.Generic.List<Vector4> tangents, System.Collections.Generic.List<int> indices);
-    static public void SplitUIVertexStreams(System.Collections.Generic.List<UIVertex> verts, System.Collections.Generic.List<Vector3> positions, System.Collections.Generic.List<Color32> colors, System.Collections.Generic.List<Vector2> uv0S, System.Collections.Generic.List<Vector2> uv1S, System.Collections.Generic.List<Vector3> normals, System.Collections.Generic.List<Vector4> tangents, System.Collections.Generic.List<int> indices);
-    static public void SplitUIVertexStreams(System.Collections.Generic.List<UIVertex> verts, System.Collections.Generic.List<Vector3> positions, System.Collections.Generic.List<Color32> colors, System.Collections.Generic.List<Vector2> uv0S, System.Collections.Generic.List<Vector2> uv1S, System.Collections.Generic.List<Vector2> uv2S, System.Collections.Generic.List<Vector2> uv3S, System.Collections.Generic.List<Vector3> normals, System.Collections.Generic.List<Vector4> tangents, System.Collections.Generic.List<int> indices);
+    static public void AddUIVertexStream(List<UIVertex> verts, List<Vector3> positions, List<Color32> colors, List<Vector2> uv0S, List<Vector2> uv1S, List<Vector3> normals, List<Vector4> tangents);
+    static public void AddUIVertexStream(List<UIVertex> verts, List<Vector3> positions, List<Color32> colors, List<Vector2> uv0S, List<Vector2> uv1S, List<Vector2> uv2S, List<Vector2> uv3S, List<Vector3> normals, List<Vector4> tangents);
+    static public void CreateUIVertexStream(List<UIVertex> verts, List<Vector3> positions, List<Color32> colors, List<Vector2> uv0S, List<Vector2> uv1S, List<Vector3> normals, List<Vector4> tangents, List<int> indices);
+    static public void CreateUIVertexStream(List<UIVertex> verts, List<Vector3> positions, List<Color32> colors, List<Vector2> uv0S, List<Vector2> uv1S, List<Vector2> uv2S, List<Vector2> uv3S, List<Vector3> normals, List<Vector4> tangents, List<int> indices);
+    static public void SplitUIVertexStreams(List<UIVertex> verts, List<Vector3> positions, List<Color32> colors, List<Vector2> uv0S, List<Vector2> uv1S, List<Vector3> normals, List<Vector4> tangents, List<int> indices);
+    static public void SplitUIVertexStreams(List<UIVertex> verts, List<Vector3> positions, List<Color32> colors, List<Vector2> uv0S, List<Vector2> uv1S, List<Vector2> uv2S, List<Vector2> uv3S, List<Vector3> normals, List<Vector4> tangents, List<int> indices);
 
     public int absoluteDepth { get; }
     public bool cull { get; set; }
@@ -34,8 +36,8 @@ public sealed class CanvasRenderer : Component
     public float GetAlpha();
     public Color GetColor();
     public float GetInheritedAlpha();
-    public Material GetMaterial(int index);
     public Material GetMaterial();
+    public Material GetMaterial(int index);
     public Material GetPopMaterial(int index);
     public void SetAlpha(float alpha);
     public void SetAlphaTexture(Texture texture);
@@ -45,7 +47,7 @@ public sealed class CanvasRenderer : Component
     public void SetMesh(Mesh mesh);
     public void SetPopMaterial(Material material, int index);
     public void SetTexture(Texture texture);
-    public void SetVertices(System.Collections.Generic.List<UIVertex> vertices);
+    public void SetVertices(List<UIVertex> vertices);
     public void SetVertices(UIVertex[] vertices, int size);
 
     public delegate void OnRequestRebuild();

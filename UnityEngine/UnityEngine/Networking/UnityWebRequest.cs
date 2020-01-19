@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Networking
@@ -24,30 +26,30 @@ public class UnityWebRequest : IDisposable
     static public Networking.UnityWebRequest Get(Uri uri);
     static public Networking.UnityWebRequest GetAssetBundle(string uri);
     static public Networking.UnityWebRequest GetAssetBundle(string uri, uint crc);
-    static public Networking.UnityWebRequest GetAssetBundle(string uri, uint version, uint crc);
-    static public Networking.UnityWebRequest GetAssetBundle(string uri, Hash128 hash, uint crc);
     static public Networking.UnityWebRequest GetAssetBundle(string uri, CachedAssetBundle cachedAssetBundle, uint crc);
+    static public Networking.UnityWebRequest GetAssetBundle(string uri, Hash128 hash, uint crc);
+    static public Networking.UnityWebRequest GetAssetBundle(string uri, uint version, uint crc);
     static public Networking.UnityWebRequest GetAudioClip(string uri, AudioType audioType);
     static public Networking.UnityWebRequest GetTexture(string uri);
     static public Networking.UnityWebRequest GetTexture(string uri, bool nonReadable);
     static public Networking.UnityWebRequest Head(string uri);
     static public Networking.UnityWebRequest Head(Uri uri);
-    static public Networking.UnityWebRequest Post(string uri, string postData);
-    static public Networking.UnityWebRequest Post(Uri uri, string postData);
     static public Networking.UnityWebRequest Post(string uri, WWWForm formData);
     static public Networking.UnityWebRequest Post(Uri uri, WWWForm formData);
-    static public Networking.UnityWebRequest Post(string uri, System.Collections.Generic.List<Networking.IMultipartFormSection> multipartFormSections);
-    static public Networking.UnityWebRequest Post(Uri uri, System.Collections.Generic.List<Networking.IMultipartFormSection> multipartFormSections);
-    static public Networking.UnityWebRequest Post(string uri, System.Collections.Generic.List<Networking.IMultipartFormSection> multipartFormSections, byte[] boundary);
-    static public Networking.UnityWebRequest Post(Uri uri, System.Collections.Generic.List<Networking.IMultipartFormSection> multipartFormSections, byte[] boundary);
-    static public Networking.UnityWebRequest Post(string uri, System.Collections.Generic.Dictionary<string, string> formFields);
-    static public Networking.UnityWebRequest Post(Uri uri, System.Collections.Generic.Dictionary<string, string> formFields);
+    static public Networking.UnityWebRequest Post(string uri, Dictionary<string, string> formFields);
+    static public Networking.UnityWebRequest Post(Uri uri, Dictionary<string, string> formFields);
+    static public Networking.UnityWebRequest Post(string uri, List<Networking.IMultipartFormSection> multipartFormSections);
+    static public Networking.UnityWebRequest Post(Uri uri, List<Networking.IMultipartFormSection> multipartFormSections);
+    static public Networking.UnityWebRequest Post(string uri, string postData);
+    static public Networking.UnityWebRequest Post(Uri uri, string postData);
+    static public Networking.UnityWebRequest Post(string uri, List<Networking.IMultipartFormSection> multipartFormSections, byte[] boundary);
+    static public Networking.UnityWebRequest Post(Uri uri, List<Networking.IMultipartFormSection> multipartFormSections, byte[] boundary);
     static public Networking.UnityWebRequest Put(string uri, byte[] bodyData);
-    static public Networking.UnityWebRequest Put(Uri uri, byte[] bodyData);
     static public Networking.UnityWebRequest Put(string uri, string bodyData);
+    static public Networking.UnityWebRequest Put(Uri uri, byte[] bodyData);
     static public Networking.UnityWebRequest Put(Uri uri, string bodyData);
-    static public byte[] SerializeFormSections(System.Collections.Generic.List<Networking.IMultipartFormSection> multipartFormSections, byte[] boundary);
-    static public byte[] SerializeSimpleForm(System.Collections.Generic.Dictionary<string, string> formFields);
+    static public byte[] SerializeFormSections(List<Networking.IMultipartFormSection> multipartFormSections, byte[] boundary);
+    static public byte[] SerializeSimpleForm(Dictionary<string, string> formFields);
     static public string UnEscapeURL(string s);
     static public string UnEscapeURL(string s, System.Text.Encoding e);
 
@@ -77,18 +79,18 @@ public class UnityWebRequest : IDisposable
     public bool useHttpContinue { get; set; }
 
     public UnityWebRequest();
-    public UnityWebRequest(string url);
     public UnityWebRequest(Uri uri);
-    public UnityWebRequest(string url, string method);
+    public UnityWebRequest(string url);
     public UnityWebRequest(Uri uri, string method);
-    public UnityWebRequest(string url, string method, Networking.DownloadHandler downloadHandler, Networking.UploadHandler uploadHandler);
+    public UnityWebRequest(string url, string method);
     public UnityWebRequest(Uri uri, string method, Networking.DownloadHandler downloadHandler, Networking.UploadHandler uploadHandler);
+    public UnityWebRequest(string url, string method, Networking.DownloadHandler downloadHandler, Networking.UploadHandler uploadHandler);
 
     public void Abort();
     public void Dispose();
     public string GetRequestHeader(string name);
     public string GetResponseHeader(string name);
-    public System.Collections.Generic.Dictionary<string, string> GetResponseHeaders();
+    public Dictionary<string, string> GetResponseHeaders();
     public AsyncOperation Send();
     public Networking.UnityWebRequestAsyncOperation SendWebRequest();
     public void SetRequestHeader(string name, string value);

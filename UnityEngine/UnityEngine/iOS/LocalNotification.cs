@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.iOS
@@ -19,7 +21,7 @@ public sealed class LocalNotification
     public iOS.CalendarUnit repeatInterval { get; set; }
     public string soundName { get; set; }
     public string timeZone { get; set; }
-    public System.Collections.IDictionary userInfo { get; set; }
+    public IDictionary userInfo { get; set; }
 
     public LocalNotification();
 

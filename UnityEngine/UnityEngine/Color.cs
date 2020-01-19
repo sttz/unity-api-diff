@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -35,8 +37,8 @@ public struct Color : IEquatable<Color>
     public Color linear { get; }
     public float maxColorComponent { get; }
 
-    public Color(float r, float g, float b, float a);
     public Color(float r, float g, float b);
+    public Color(float r, float g, float b, float a);
 
     public bool Equals(object other);
     public bool Equals(Color other);

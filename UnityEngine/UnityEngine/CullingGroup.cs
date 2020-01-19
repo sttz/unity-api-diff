@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -6,7 +8,7 @@ namespace UnityEngine
 
 public class CullingGroup : IDisposable
 {
-    static public void EraseSwapBack(int index, T[] myArray, int size);
+    static public void EraseSwapBack<T>(int index, T[] myArray, int size);
 
     public bool enabled { get; set; }
     public StateChanged onStateChanged { get; set; }
@@ -18,8 +20,8 @@ public class CullingGroup : IDisposable
     public void EraseSwapBack(int index);
     public int GetDistance(int index);
     public bool IsVisible(int index);
-    public int QueryIndices(bool visible, int[] result, int firstIndex);
     public int QueryIndices(int distanceIndex, int[] result, int firstIndex);
+    public int QueryIndices(bool visible, int[] result, int firstIndex);
     public int QueryIndices(bool visible, int distanceIndex, int[] result, int firstIndex);
     public void SetBoundingDistances(float[] distances);
     public void SetBoundingSphereCount(int count);

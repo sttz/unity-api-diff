@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -36,9 +38,9 @@ public struct Vector4 : IEquatable<Vector4>
     public Vector4 normalized { get; }
     public float sqrMagnitude { get; }
 
-    public Vector4(float x, float y, float z, float w);
-    public Vector4(float x, float y, float z);
     public Vector4(float x, float y);
+    public Vector4(float x, float y, float z);
+    public Vector4(float x, float y, float z, float w);
 
     public bool Equals(object other);
     public bool Equals(Vector4 other);

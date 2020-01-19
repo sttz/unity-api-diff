@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -25,12 +27,6 @@ public sealed class LightProbeProxyVolume : Behaviour
 
     public void Update();
 
-    public enum ResolutionMode
-    {
-        Automatic = 0,
-        Custom = 1,
-    }
-
     public enum BoundingBoxMode
     {
         AutomaticLocal = 0,
@@ -44,6 +40,12 @@ public sealed class LightProbeProxyVolume : Behaviour
         CellCenter = 1,
     }
 
+    public enum QualityMode
+    {
+        Low = 0,
+        Normal = 1,
+    }
+
     public enum RefreshMode
     {
         Automatic = 0,
@@ -51,10 +53,10 @@ public sealed class LightProbeProxyVolume : Behaviour
         ViaScripting = 2,
     }
 
-    public enum QualityMode
+    public enum ResolutionMode
     {
-        Low = 0,
-        Normal = 1,
+        Automatic = 0,
+        Custom = 1,
     }
 
 }

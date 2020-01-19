@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -21,8 +23,8 @@ public struct BlendState : IEquatable<Rendering.BlendState>
 
     public BlendState(bool separateMRTBlend = false, bool alphaToMask = false);
 
-    public bool Equals(Rendering.BlendState other);
     public bool Equals(object obj);
+    public bool Equals(Rendering.BlendState other);
     public int GetHashCode();
 
 }

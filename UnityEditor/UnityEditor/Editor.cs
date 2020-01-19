@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -13,11 +15,11 @@ public class Editor : ScriptableObject, UnityEditor.IPreviewable, UnityEditor.IT
     static public void CreateCachedEditorWithContext(Object targetObject, Object context, Type editorType, UnityEditor.Editor previousEditor);
     static public void CreateCachedEditorWithContext(Object[] targetObjects, Object context, Type editorType, UnityEditor.Editor previousEditor);
     static public UnityEditor.Editor CreateEditor(Object targetObject);
-    static public UnityEditor.Editor CreateEditor(Object targetObject, Type editorType);
     static public UnityEditor.Editor CreateEditor(Object[] targetObjects);
+    static public UnityEditor.Editor CreateEditor(Object targetObject, Type editorType);
     static public UnityEditor.Editor CreateEditor(Object[] targetObjects, Type editorType);
-    static public UnityEditor.Editor CreateEditorWithContext(Object[] targetObjects, Object context, Type editorType);
     static public UnityEditor.Editor CreateEditorWithContext(Object[] targetObjects, Object context);
+    static public UnityEditor.Editor CreateEditorWithContext(Object[] targetObjects, Object context, Type editorType);
 
     public UnityEditor.SerializedObject serializedObject { get; }
     public Object target { get; set; }

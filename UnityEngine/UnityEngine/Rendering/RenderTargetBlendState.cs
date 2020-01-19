@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -18,8 +20,8 @@ public struct RenderTargetBlendState : IEquatable<Rendering.RenderTargetBlendSta
 
     public RenderTargetBlendState(Rendering.ColorWriteMask writeMask = 15, Rendering.BlendMode sourceColorBlendMode = 1, Rendering.BlendMode destinationColorBlendMode = 0, Rendering.BlendMode sourceAlphaBlendMode = 1, Rendering.BlendMode destinationAlphaBlendMode = 0, Rendering.BlendOp colorBlendOperation = 0, Rendering.BlendOp alphaBlendOperation = 0);
 
-    public bool Equals(Rendering.RenderTargetBlendState other);
     public bool Equals(object obj);
+    public bool Equals(Rendering.RenderTargetBlendState other);
     public int GetHashCode();
 
 }

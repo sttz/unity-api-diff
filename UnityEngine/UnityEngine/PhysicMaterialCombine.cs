@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -7,8 +9,8 @@ namespace UnityEngine
 public enum PhysicMaterialCombine
 {
     Average = 0,
-    Minimum = 2,
     Multiply = 1,
+    Minimum = 2,
     Maximum = 3,
 }
 

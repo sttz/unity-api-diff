@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -6,9 +8,9 @@ namespace UnityEngine
 
 public enum LightmappingMode
 {
-    Realtime = 4,
-    Baked = 2,
     Mixed = 1,
+    Baked = 2,
+    Realtime = 4,
 }
 
 }

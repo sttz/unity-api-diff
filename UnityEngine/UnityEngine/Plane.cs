@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -12,8 +14,8 @@ public struct Plane
     public Plane flipped { get; }
     public Vector3 normal { get; set; }
 
-    public Plane(Vector3 inNormal, Vector3 inPoint);
     public Plane(Vector3 inNormal, float d);
+    public Plane(Vector3 inNormal, Vector3 inPoint);
     public Plane(Vector3 a, Vector3 b, Vector3 c);
 
     public Vector3 ClosestPointOnPlane(Vector3 point);

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -38,52 +40,52 @@ public sealed class GameObject : Object
     public string tag { get; set; }
     public Transform transform { get; }
 
-    public GameObject(string name);
     public GameObject();
+    public GameObject(string name);
     public GameObject(string name, Type[] components);
 
-    public Component AddComponent(Type componentType);
-    public T AddComponent();
     public Component AddComponent(string className);
-    public void BroadcastMessage(string methodName, SendMessageOptions options);
-    public void BroadcastMessage(string methodName, object parameter, SendMessageOptions options);
-    public void BroadcastMessage(string methodName, object parameter);
+    public Component AddComponent(Type componentType);
+    public T AddComponent<T>();
     public void BroadcastMessage(string methodName);
+    public void BroadcastMessage(string methodName, SendMessageOptions options);
+    public void BroadcastMessage(string methodName, object parameter);
+    public void BroadcastMessage(string methodName, object parameter, SendMessageOptions options);
     public bool CompareTag(string tag);
-    public T GetComponent();
-    public Component GetComponent(Type type);
     public Component GetComponent(string type);
-    public Component GetComponentInChildren(Type type, bool includeInactive);
+    public Component GetComponent(Type type);
+    public T GetComponent<T>();
     public Component GetComponentInChildren(Type type);
-    public T GetComponentInChildren();
-    public T GetComponentInChildren(bool includeInactive);
+    public Component GetComponentInChildren(Type type, bool includeInactive);
+    public T GetComponentInChildren<T>();
+    public T GetComponentInChildren<T>(bool includeInactive);
     public Component GetComponentInParent(Type type);
-    public T GetComponentInParent();
+    public T GetComponentInParent<T>();
     public Component[] GetComponents(Type type);
-    public T[] GetComponents();
-    public void GetComponents(Type type, System.Collections.Generic.List<Component> results);
-    public void GetComponents(System.Collections.Generic.List<T> results);
+    public void GetComponents(Type type, List<Component> results);
+    public T[] GetComponents<T>();
+    public void GetComponents<T>(List<T> results);
     public Component[] GetComponentsInChildren(Type type);
     public Component[] GetComponentsInChildren(Type type, bool includeInactive);
-    public T[] GetComponentsInChildren(bool includeInactive);
-    public void GetComponentsInChildren(bool includeInactive, System.Collections.Generic.List<T> results);
-    public T[] GetComponentsInChildren();
-    public void GetComponentsInChildren(System.Collections.Generic.List<T> results);
+    public T[] GetComponentsInChildren<T>();
+    public T[] GetComponentsInChildren<T>(bool includeInactive);
+    public void GetComponentsInChildren<T>(List<T> results);
+    public void GetComponentsInChildren<T>(bool includeInactive, List<T> results);
     public Component[] GetComponentsInParent(Type type);
     public Component[] GetComponentsInParent(Type type, bool includeInactive);
-    public void GetComponentsInParent(bool includeInactive, System.Collections.Generic.List<T> results);
-    public T[] GetComponentsInParent(bool includeInactive);
-    public T[] GetComponentsInParent();
+    public T[] GetComponentsInParent<T>();
+    public T[] GetComponentsInParent<T>(bool includeInactive);
+    public void GetComponentsInParent<T>(bool includeInactive, List<T> results);
     public void PlayAnimation(Object animation);
     public void SampleAnimation(Object clip, float time);
-    public void SendMessage(string methodName, SendMessageOptions options);
-    public void SendMessage(string methodName, object value, SendMessageOptions options);
-    public void SendMessage(string methodName, object value);
     public void SendMessage(string methodName);
-    public void SendMessageUpwards(string methodName, SendMessageOptions options);
-    public void SendMessageUpwards(string methodName, object value, SendMessageOptions options);
-    public void SendMessageUpwards(string methodName, object value);
+    public void SendMessage(string methodName, SendMessageOptions options);
+    public void SendMessage(string methodName, object value);
+    public void SendMessage(string methodName, object value, SendMessageOptions options);
     public void SendMessageUpwards(string methodName);
+    public void SendMessageUpwards(string methodName, SendMessageOptions options);
+    public void SendMessageUpwards(string methodName, object value);
+    public void SendMessageUpwards(string methodName, object value, SendMessageOptions options);
     public void SetActive(bool value);
     public void SetActiveRecursively(bool state);
     public void StopAnimation();

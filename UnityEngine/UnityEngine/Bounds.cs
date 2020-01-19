@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -16,8 +18,8 @@ public struct Bounds : IEquatable<Bounds>
 
     public Vector3 ClosestPoint(Vector3 point);
     public bool Contains(Vector3 point);
-    public void Encapsulate(Vector3 point);
     public void Encapsulate(Bounds bounds);
+    public void Encapsulate(Vector3 point);
     public bool Equals(object other);
     public bool Equals(Bounds other);
     public void Expand(float amount);

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngineInternal.Input
@@ -6,11 +8,11 @@ namespace UnityEngineInternal.Input
 
 public enum NativeInputEventType
 {
-    DeviceRemoved = 1146242381,
     DeviceConfigChanged = 1145259591,
-    Text = 1413830740,
-    State = 1398030676,
     Delta = 1145852993,
+    DeviceRemoved = 1146242381,
+    State = 1398030676,
+    Text = 1413830740,
 }
 
 }

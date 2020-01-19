@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Animations
@@ -32,10 +34,10 @@ public sealed class AnimatorState : Object
     public UnityEditor.Animations.AnimatorStateTransition AddExitTransition();
     public UnityEditor.Animations.AnimatorStateTransition AddExitTransition(bool defaultExitTime);
     public StateMachineBehaviour AddStateMachineBehaviour(Type stateMachineBehaviourType);
-    public T AddStateMachineBehaviour();
-    public void AddTransition(UnityEditor.Animations.AnimatorStateTransition transition);
+    public T AddStateMachineBehaviour<T>();
     public UnityEditor.Animations.AnimatorStateTransition AddTransition(UnityEditor.Animations.AnimatorState destinationState);
     public UnityEditor.Animations.AnimatorStateTransition AddTransition(UnityEditor.Animations.AnimatorStateMachine destinationStateMachine);
+    public void AddTransition(UnityEditor.Animations.AnimatorStateTransition transition);
     public UnityEditor.Animations.AnimatorStateTransition AddTransition(UnityEditor.Animations.AnimatorState destinationState, bool defaultExitTime);
     public UnityEditor.Animations.AnimatorStateTransition AddTransition(UnityEditor.Animations.AnimatorStateMachine destinationStateMachine, bool defaultExitTime);
     public Motion GetMotion();

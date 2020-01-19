@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -65,17 +67,17 @@ public sealed class TextureImporter : UnityEditor.AssetImporter, UnityEditor.Exp
     public bool GetAllowsAlphaSplitting();
     public UnityEditor.TextureImporterFormat GetAutomaticFormat(string platform);
     public UnityEditor.TextureImporterPlatformSettings GetDefaultPlatformTextureSettings();
-    public bool GetPlatformTextureSettings(string platform, out int maxTextureSize, out UnityEditor.TextureImporterFormat textureFormat, out int compressionQuality, out bool etc1AlphaSplitEnabled);
-    public bool GetPlatformTextureSettings(string platform, out int maxTextureSize, out UnityEditor.TextureImporterFormat textureFormat, out int compressionQuality);
-    public bool GetPlatformTextureSettings(string platform, out int maxTextureSize, out UnityEditor.TextureImporterFormat textureFormat);
     public UnityEditor.TextureImporterPlatformSettings GetPlatformTextureSettings(string platform);
+    public bool GetPlatformTextureSettings(string platform, out int maxTextureSize, out UnityEditor.TextureImporterFormat textureFormat);
+    public bool GetPlatformTextureSettings(string platform, out int maxTextureSize, out UnityEditor.TextureImporterFormat textureFormat, out int compressionQuality);
+    public bool GetPlatformTextureSettings(string platform, out int maxTextureSize, out UnityEditor.TextureImporterFormat textureFormat, out int compressionQuality, out bool etc1AlphaSplitEnabled);
     public void ReadTextureImportInstructions(UnityEditor.BuildTarget target, out TextureFormat desiredFormat, out ColorSpace colorSpace, out int compressionQuality);
     public void ReadTextureSettings(UnityEditor.TextureImporterSettings dest);
     public void SetAllowsAlphaSplitting(bool flag);
-    public void SetPlatformTextureSettings(string platform, int maxTextureSize, UnityEditor.TextureImporterFormat textureFormat, int compressionQuality, bool allowsAlphaSplit);
+    public void SetPlatformTextureSettings(UnityEditor.TextureImporterPlatformSettings platformSettings);
     public void SetPlatformTextureSettings(string platform, int maxTextureSize, UnityEditor.TextureImporterFormat textureFormat);
     public void SetPlatformTextureSettings(string platform, int maxTextureSize, UnityEditor.TextureImporterFormat textureFormat, bool allowsAlphaSplit);
-    public void SetPlatformTextureSettings(UnityEditor.TextureImporterPlatformSettings platformSettings);
+    public void SetPlatformTextureSettings(string platform, int maxTextureSize, UnityEditor.TextureImporterFormat textureFormat, int compressionQuality, bool allowsAlphaSplit);
     public void SetTextureSettings(UnityEditor.TextureImporterSettings src);
 
 }

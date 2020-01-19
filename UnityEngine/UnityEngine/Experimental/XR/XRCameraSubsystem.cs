@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Experimental.XR
@@ -15,7 +17,7 @@ public class XRCameraSubsystem : Experimental.IntegratedSubsystem<Experimental.X
 
     public XRCameraSubsystem();
 
-    public void GetTextures(System.Collections.Generic.List<Texture2D> texturesOut);
+    public void GetTextures(List<Texture2D> texturesOut);
     public bool TryGetAverageBrightness(float averageBrightness);
     public bool TryGetAverageColorTemperature(float averageColorTemperature);
     public bool TryGetDisplayMatrix(Matrix4x4 displayMatrix);

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -6,12 +8,12 @@ namespace UnityEngine
 
 public sealed class Sprite : Object
 {
-    static public Sprite Create(Texture2D texture, Rect rect, Vector2 pivot, float pixelsPerUnit, uint extrude, SpriteMeshType meshType, Vector4 border, bool generateFallbackPhysicsShape);
-    static public Sprite Create(Texture2D texture, Rect rect, Vector2 pivot, float pixelsPerUnit, uint extrude, SpriteMeshType meshType, Vector4 border);
-    static public Sprite Create(Texture2D texture, Rect rect, Vector2 pivot, float pixelsPerUnit, uint extrude, SpriteMeshType meshType);
-    static public Sprite Create(Texture2D texture, Rect rect, Vector2 pivot, float pixelsPerUnit, uint extrude);
-    static public Sprite Create(Texture2D texture, Rect rect, Vector2 pivot, float pixelsPerUnit);
     static public Sprite Create(Texture2D texture, Rect rect, Vector2 pivot);
+    static public Sprite Create(Texture2D texture, Rect rect, Vector2 pivot, float pixelsPerUnit);
+    static public Sprite Create(Texture2D texture, Rect rect, Vector2 pivot, float pixelsPerUnit, uint extrude);
+    static public Sprite Create(Texture2D texture, Rect rect, Vector2 pivot, float pixelsPerUnit, uint extrude, SpriteMeshType meshType);
+    static public Sprite Create(Texture2D texture, Rect rect, Vector2 pivot, float pixelsPerUnit, uint extrude, SpriteMeshType meshType, Vector4 border);
+    static public Sprite Create(Texture2D texture, Rect rect, Vector2 pivot, float pixelsPerUnit, uint extrude, SpriteMeshType meshType, Vector4 border, bool generateFallbackPhysicsShape);
 
     public Texture2D associatedAlphaSplitTexture { get; }
     public Vector4 border { get; }
@@ -30,11 +32,11 @@ public sealed class Sprite : Object
     public Vector2[] uv { get; }
     public Vector2[] vertices { get; }
 
-    public int GetPhysicsShape(int shapeIdx, System.Collections.Generic.List<Vector2> physicsShape);
+    public int GetPhysicsShape(int shapeIdx, List<Vector2> physicsShape);
     public int GetPhysicsShapeCount();
     public int GetPhysicsShapePointCount(int shapeIdx);
     public void OverrideGeometry(Vector2[] vertices, ushort[] triangles);
-    public void OverridePhysicsShape(System.Collections.Generic.IList<Vector2[]> physicsShapes);
+    public void OverridePhysicsShape(IList<Vector2[]> physicsShapes);
 
 }
 

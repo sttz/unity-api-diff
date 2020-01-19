@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -33,7 +35,7 @@ public sealed class GUISkin : ScriptableObject
     public GUISkin();
 
     public GUIStyle FindStyle(string styleName);
-    public System.Collections.IEnumerator GetEnumerator();
+    public IEnumerator GetEnumerator();
     public GUIStyle GetStyle(string styleName);
 
 }

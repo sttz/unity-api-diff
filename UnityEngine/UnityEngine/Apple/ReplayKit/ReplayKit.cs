@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Apple.ReplayKit
@@ -20,12 +22,12 @@ public static class ReplayKit
     static public void HideCameraPreview();
     static public bool Preview();
     static public bool ShowCameraPreviewAt(float posX, float posY);
-    static public void StartBroadcasting(BroadcastStatusCallback callback, bool enableMicrophone, bool enableCamera);
-    static public void StartBroadcasting(BroadcastStatusCallback callback, bool enableMicrophone);
     static public void StartBroadcasting(BroadcastStatusCallback callback);
-    static public bool StartRecording(bool enableMicrophone, bool enableCamera);
-    static public bool StartRecording(bool enableMicrophone);
+    static public void StartBroadcasting(BroadcastStatusCallback callback, bool enableMicrophone);
+    static public void StartBroadcasting(BroadcastStatusCallback callback, bool enableMicrophone, bool enableCamera);
     static public bool StartRecording();
+    static public bool StartRecording(bool enableMicrophone);
+    static public bool StartRecording(bool enableMicrophone, bool enableCamera);
     static public void StopBroadcasting();
     static public bool StopRecording();
 

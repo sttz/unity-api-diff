@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.IMGUI.Controls
@@ -10,8 +12,8 @@ public class CapsuleBoundsHandle : UnityEditor.IMGUI.Controls.PrimitiveBoundsHan
     public HeightAxis heightAxis { get; set; }
     public float radius { get; set; }
 
-    public CapsuleBoundsHandle(int controlIDHint);
     public CapsuleBoundsHandle();
+    public CapsuleBoundsHandle(int controlIDHint);
 
     protected void DrawWireframe();
     protected Bounds OnHandleChanged(HandleDirection handle, Bounds boundsOnClick, Bounds newBounds);

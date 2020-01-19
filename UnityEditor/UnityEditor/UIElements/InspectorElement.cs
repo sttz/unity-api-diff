@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.UIElements
@@ -20,9 +22,9 @@ public class InspectorElement : UIElements.BindableElement
     static public string ussClassName;
 
     public InspectorElement();
-    public InspectorElement(Object obj);
-    public InspectorElement(UnityEditor.SerializedObject obj);
     public InspectorElement(UnityEditor.Editor editor);
+    public InspectorElement(UnityEditor.SerializedObject obj);
+    public InspectorElement(Object obj);
 
     public class UxmlFactory : UIElements.UxmlFactory<UnityEditor.UIElements.InspectorElement, UxmlTraits>
     {

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -27,8 +29,8 @@ public struct ContactFilter2D
     public void ClearNormalAngle();
     public bool IsFilteringDepth(GameObject obj);
     public bool IsFilteringLayerMask(GameObject obj);
-    public bool IsFilteringNormalAngle(Vector2 normal);
     public bool IsFilteringNormalAngle(float angle);
+    public bool IsFilteringNormalAngle(Vector2 normal);
     public bool IsFilteringTrigger(Collider2D collider);
     public ContactFilter2D NoFilter();
     public void SetDepth(float minDepth, float maxDepth);

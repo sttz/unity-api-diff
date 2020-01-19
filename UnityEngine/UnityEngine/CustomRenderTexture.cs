@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -19,18 +21,18 @@ public sealed class CustomRenderTexture : RenderTexture
     public CustomRenderTextureUpdateZoneSpace updateZoneSpace { get; set; }
     public bool wrapUpdateZones { get; set; }
 
-    public CustomRenderTexture(int width, int height, RenderTextureFormat format, RenderTextureReadWrite readWrite);
-    public CustomRenderTexture(int width, int height, RenderTextureFormat format);
     public CustomRenderTexture(int width, int height);
     public CustomRenderTexture(int width, int height, Experimental.Rendering.DefaultFormat defaultFormat);
     public CustomRenderTexture(int width, int height, Experimental.Rendering.GraphicsFormat format);
+    public CustomRenderTexture(int width, int height, RenderTextureFormat format);
+    public CustomRenderTexture(int width, int height, RenderTextureFormat format, RenderTextureReadWrite readWrite);
 
     public void ClearUpdateZones();
-    public void GetUpdateZones(System.Collections.Generic.List<CustomRenderTextureUpdateZone> updateZones);
+    public void GetUpdateZones(List<CustomRenderTextureUpdateZone> updateZones);
     public void Initialize();
     public void SetUpdateZones(CustomRenderTextureUpdateZone[] updateZones);
-    public void Update(int count);
     public void Update();
+    public void Update(int count);
 
 }
 

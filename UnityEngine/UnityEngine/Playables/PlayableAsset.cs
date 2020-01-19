@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Playables
@@ -7,7 +9,7 @@ namespace UnityEngine.Playables
 public abstract class PlayableAsset : ScriptableObject, Playables.IPlayableAsset
 {
     public double duration { get; }
-    public System.Collections.Generic.IEnumerable<Playables.PlayableBinding> outputs { get; }
+    public IEnumerable<Playables.PlayableBinding> outputs { get; }
 
     protected PlayableAsset();
 

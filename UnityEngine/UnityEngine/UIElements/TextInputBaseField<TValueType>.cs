@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.UIElements
@@ -30,14 +32,6 @@ public abstract class TextInputBaseField<TValueType> : UIElements.BaseField<TVal
 
     public void SelectAll();
 
-    public class UxmlTraits<TValueType> : UIElements.BaseFieldTraits<string, UIElements.UxmlStringAttributeDescription>
-    {
-        public UxmlTraits();
-
-        public void Init(UIElements.VisualElement ve, UIElements.IUxmlAttributes bag, UIElements.CreationContext cc);
-
-    }
-
     protected abstract class TextInputBase<TValueType> : UIElements.VisualElement, UIElements.ITextInputField, UIElements.IEventHandler, UIElements.ITextElement
     {
         public Color cursorColor { get; }
@@ -54,6 +48,14 @@ public abstract class TextInputBaseField<TValueType> : UIElements.BaseField<TVal
 
         protected void BuildContextualMenu(UIElements.ContextualMenuPopulateEvent evt);
         public void SelectAll();
+
+    }
+
+    public class UxmlTraits<TValueType> : UIElements.BaseFieldTraits<string, UIElements.UxmlStringAttributeDescription>
+    {
+        public UxmlTraits();
+
+        public void Init(UIElements.VisualElement ve, UIElements.IUxmlAttributes bag, UIElements.CreationContext cc);
 
     }
 

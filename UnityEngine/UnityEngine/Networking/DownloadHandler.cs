@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Networking
@@ -6,7 +8,7 @@ namespace UnityEngine.Networking
 
 public class DownloadHandler : IDisposable
 {
-    static protected T GetCheckedDownloader(Networking.UnityWebRequest www);
+    static protected T GetCheckedDownloader<T>(Networking.UnityWebRequest www);
 
     public byte[] data { get; }
     public bool isDone { get; }

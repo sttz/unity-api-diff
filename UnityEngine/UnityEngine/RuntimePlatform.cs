@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -14,12 +16,12 @@ public enum RuntimePlatform
     WindowsWebPlayer = 5,
     WindowsEditor = 7,
     IPhonePlayer = 8,
-    XBOX360 = 10,
     PS3 = 9,
+    XBOX360 = 10,
     Android = 11,
     NaCl = 12,
-    FlashPlayer = 15,
     LinuxPlayer = 13,
+    FlashPlayer = 15,
     LinuxEditor = 16,
     WebGLPlayer = 17,
     MetroPlayerX86 = 18,

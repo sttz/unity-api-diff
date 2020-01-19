@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -17,20 +19,20 @@ public sealed class CompositeCollider2D : Collider2D
     public CompositeCollider2D();
 
     public void GenerateGeometry();
+    public int GetPath(int index, List<Vector2> points);
     public int GetPath(int index, Vector2[] points);
-    public int GetPath(int index, System.Collections.Generic.List<Vector2> points);
     public int GetPathPointCount(int index);
-
-    public enum GeometryType
-    {
-        Outlines = 0,
-        Polygons = 1,
-    }
 
     public enum GenerationType
     {
         Synchronous = 0,
         Manual = 1,
+    }
+
+    public enum GeometryType
+    {
+        Outlines = 0,
+        Polygons = 1,
     }
 
 }

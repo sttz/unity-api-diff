@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -57,8 +59,8 @@ public class Application
     static public void CancelQuit();
     static public bool CanStreamedLevelBeLoaded(int levelIndex);
     static public bool CanStreamedLevelBeLoaded(string levelName);
-    static public void CaptureScreenshot(string filename, int superSize);
     static public void CaptureScreenshot(string filename);
+    static public void CaptureScreenshot(string filename, int superSize);
     static public void DontDestroyOnLoad(Object o);
     static public void ExternalCall(string functionName, object[] args);
     static public void ExternalEval(string script);
@@ -79,8 +81,8 @@ public class Application
     static public AsyncOperation LoadLevelAsync(int index);
     static public AsyncOperation LoadLevelAsync(string levelName);
     static public void OpenURL(string url);
-    static public void Quit(int exitCode);
     static public void Quit();
+    static public void Quit(int exitCode);
     static public void RegisterLogCallback(LogCallback handler);
     static public void RegisterLogCallbackThreaded(LogCallback handler);
     static public bool RequestAdvertisingIdentifierAsync(AdvertisingIdentifierCallback delegateMethod);
@@ -95,9 +97,9 @@ public class Application
 
     public delegate void AdvertisingIdentifierCallback(string advertisingId, bool trackingEnabled, string errorMsg);
 
-    public delegate void LowMemoryCallback();
-
     public delegate void LogCallback(string condition, string stackTrace, LogType type);
+
+    public delegate void LowMemoryCallback();
 
 }
 

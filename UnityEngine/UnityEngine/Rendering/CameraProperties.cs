@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -6,17 +8,17 @@ namespace UnityEngine.Rendering
 
 public struct CameraProperties : IEquatable<Rendering.CameraProperties>
 {
-    public bool Equals(Rendering.CameraProperties other);
     public bool Equals(object obj);
+    public bool Equals(Rendering.CameraProperties other);
     public Plane GetCameraCullingPlane(int index);
     public int GetHashCode();
     public Plane GetShadowCullingPlane(int index);
     public void SetCameraCullingPlane(int index, Plane plane);
     public void SetShadowCullingPlane(int index, Plane plane);
 
-    public struct <m_ShadowCullPlanes>__FixedBuffer0
+    public struct <layerCullDistances>__FixedBuffer2
     {
-        public byte FixedElementField;
+        public float FixedElementField;
 
     }
 
@@ -26,9 +28,9 @@ public struct CameraProperties : IEquatable<Rendering.CameraProperties>
 
     }
 
-    public struct <layerCullDistances>__FixedBuffer2
+    public struct <m_ShadowCullPlanes>__FixedBuffer0
     {
-        public float FixedElementField;
+        public byte FixedElementField;
 
     }
 

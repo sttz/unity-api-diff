@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -13,13 +15,13 @@ public class Logger : ILogger, ILogHandler
     public Logger(ILogHandler logHandler);
 
     public bool IsLogTypeAllowed(LogType logType);
+    public void Log(object message);
     public void Log(LogType logType, object message);
+    public void Log(string tag, object message);
     public void Log(LogType logType, object message, Object context);
     public void Log(LogType logType, string tag, object message);
-    public void Log(LogType logType, string tag, object message, Object context);
-    public void Log(object message);
-    public void Log(string tag, object message);
     public void Log(string tag, object message, Object context);
+    public void Log(LogType logType, string tag, object message, Object context);
     public void LogError(string tag, object message);
     public void LogError(string tag, object message, Object context);
     public void LogException(Exception exception);

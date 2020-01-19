@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -15,7 +17,6 @@ public enum HumanBodyBones
     RightFoot = 6,
     Spine = 7,
     Chest = 8,
-    UpperChest = 54,
     Neck = 9,
     Head = 10,
     LeftShoulder = 11,
@@ -61,6 +62,7 @@ public enum HumanBodyBones
     RightLittleProximal = 51,
     RightLittleIntermediate = 52,
     RightLittleDistal = 53,
+    UpperChest = 54,
     LastBone = 55,
 }
 

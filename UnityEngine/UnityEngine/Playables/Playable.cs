@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Playables
@@ -13,7 +15,7 @@ public struct Playable : Playables.IPlayable, IEquatable<Playables.Playable>
     public bool Equals(Playables.Playable other);
     public Playables.PlayableHandle GetHandle();
     public Type GetPlayableType();
-    public bool IsPlayableOfType();
+    public bool IsPlayableOfType<T>();
 
 }
 

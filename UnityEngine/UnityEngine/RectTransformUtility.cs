@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -6,8 +8,8 @@ namespace UnityEngine
 
 public sealed class RectTransformUtility
 {
-    static public Bounds CalculateRelativeRectTransformBounds(Transform root, Transform child);
     static public Bounds CalculateRelativeRectTransformBounds(Transform trans);
+    static public Bounds CalculateRelativeRectTransformBounds(Transform root, Transform child);
     static public void FlipLayoutAxes(RectTransform rect, bool keepPositioning, bool recursive);
     static public void FlipLayoutOnAxis(RectTransform rect, int axis, bool keepPositioning, bool recursive);
     static public Vector2 PixelAdjustPoint(Vector2 point, Transform elementTransform, Canvas canvas);

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.MemoryProfiler
@@ -22,10 +24,10 @@ public struct TypeDescription
 
     public enum TypeFlags
     {
+        kArrayRankMask = -65536,
         kNone = 0,
         kValueType = 1,
         kArray = 2,
-        kArrayRankMask = -65536,
     }
 
 }

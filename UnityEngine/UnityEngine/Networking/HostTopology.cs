@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Networking
@@ -11,7 +13,7 @@ public class HostTopology
     public float MessagePoolSizeGrowthFactor { get; set; }
     public ushort ReceivedMessagePoolSize { get; set; }
     public ushort SentMessagePoolSize { get; set; }
-    public System.Collections.Generic.List<Networking.ConnectionConfig> SpecialConnectionConfigs { get; }
+    public List<Networking.ConnectionConfig> SpecialConnectionConfigs { get; }
     public int SpecialConnectionConfigsCount { get; }
 
     public HostTopology(Networking.ConnectionConfig defaultConfig, int maxDefaultConnections);

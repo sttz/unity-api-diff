@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Experimental.PlayerLoop
@@ -6,39 +8,7 @@ namespace UnityEngine.Experimental.PlayerLoop
 
 public struct EarlyUpdate
 {
-    public struct PollPlayerConnection
-    {
-    }
-
-    public struct ProfilerStartFrame
-    {
-    }
-
-    public struct PollHtcsPlayerConnection
-    {
-    }
-
-    public struct GpuTimestamp
-    {
-    }
-
     public struct AnalyticsCoreStatsUpdate
-    {
-    }
-
-    public struct UnityWebRequestUpdate
-    {
-    }
-
-    public struct UpdateStreamingManager
-    {
-    }
-
-    public struct ExecuteMainThreadJobs
-    {
-    }
-
-    public struct ProcessMouseInWindow
     {
     }
 
@@ -50,71 +20,7 @@ public struct EarlyUpdate
     {
     }
 
-    public struct PresentBeforeUpdate
-    {
-    }
-
-    public struct ResetFrameStatsAfterPresent
-    {
-    }
-
-    public struct UpdateAllUnityWebStreams
-    {
-    }
-
-    public struct UpdateAsyncReadbackManager
-    {
-    }
-
-    public struct UpdateTextureStreamingManager
-    {
-    }
-
-    public struct UpdatePreloading
-    {
-    }
-
-    public struct RendererNotifyInvisible
-    {
-    }
-
-    public struct PlayerCleanupCachedData
-    {
-    }
-
-    public struct UpdateMainGameViewRect
-    {
-    }
-
-    public struct UpdateCanvasRectTransform
-    {
-    }
-
-    public struct UpdateInputManager
-    {
-    }
-
-    public struct ProcessRemoteInput
-    {
-    }
-
-    public struct XRUpdate
-    {
-    }
-
-    public struct ScriptRunDelayedStartupFrame
-    {
-    }
-
-    public struct UpdateKinect
-    {
-    }
-
     public struct DeliverIosPlatformEvents
-    {
-    }
-
-    public struct DispatchEventQueueEvents
     {
     }
 
@@ -122,7 +28,63 @@ public struct EarlyUpdate
     {
     }
 
+    public struct DispatchEventQueueEvents
+    {
+    }
+
+    public struct ExecuteMainThreadJobs
+    {
+    }
+
+    public struct GpuTimestamp
+    {
+    }
+
+    public struct PerformanceAnalyticsUpdate
+    {
+    }
+
     public struct PhysicsResetInterpolatedTransformPosition
+    {
+    }
+
+    public struct PlayerCleanupCachedData
+    {
+    }
+
+    public struct PollHtcsPlayerConnection
+    {
+    }
+
+    public struct PollPlayerConnection
+    {
+    }
+
+    public struct PresentBeforeUpdate
+    {
+    }
+
+    public struct ProcessMouseInWindow
+    {
+    }
+
+    public struct ProcessRemoteInput
+    {
+    }
+
+    public struct ProfilerStartFrame
+    {
+    }
+
+    public struct RendererNotifyInvisible
+    {
+    }
+
+    public struct ResetFrameStatsAfterPresent
+    {
+    }
+
+    public struct ScriptRunDelayedStartupFrame
     {
     }
 
@@ -134,7 +96,47 @@ public struct EarlyUpdate
     {
     }
 
-    public struct PerformanceAnalyticsUpdate
+    public struct UnityWebRequestUpdate
+    {
+    }
+
+    public struct UpdateAllUnityWebStreams
+    {
+    }
+
+    public struct UpdateAsyncReadbackManager
+    {
+    }
+
+    public struct UpdateCanvasRectTransform
+    {
+    }
+
+    public struct UpdateInputManager
+    {
+    }
+
+    public struct UpdateKinect
+    {
+    }
+
+    public struct UpdateMainGameViewRect
+    {
+    }
+
+    public struct UpdatePreloading
+    {
+    }
+
+    public struct UpdateStreamingManager
+    {
+    }
+
+    public struct UpdateTextureStreamingManager
+    {
+    }
+
+    public struct XRUpdate
     {
     }
 

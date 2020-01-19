@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -15,21 +17,21 @@ public class Debug
     static public void Assert(bool condition, Object context);
     static public void Assert(bool condition, object message);
     static public void Assert(bool condition, string message);
+    static public void Assert(bool condition, string format, object[] args);
     static public void Assert(bool condition, object message, Object context);
     static public void Assert(bool condition, string message, Object context);
-    static public void Assert(bool condition, string format, object[] args);
     static public void AssertFormat(bool condition, string format, object[] args);
     static public void AssertFormat(bool condition, Object context, string format, object[] args);
     static public void Break();
     static public void ClearDeveloperConsole();
     static public void DebugBreak();
-    static public void DrawLine(Vector3 start, Vector3 end, Color color, float duration);
-    static public void DrawLine(Vector3 start, Vector3 end, Color color);
     static public void DrawLine(Vector3 start, Vector3 end);
+    static public void DrawLine(Vector3 start, Vector3 end, Color color);
+    static public void DrawLine(Vector3 start, Vector3 end, Color color, float duration);
     static public void DrawLine(Vector3 start, Vector3 end, Color color, float duration, bool depthTest);
-    static public void DrawRay(Vector3 start, Vector3 dir, Color color, float duration);
-    static public void DrawRay(Vector3 start, Vector3 dir, Color color);
     static public void DrawRay(Vector3 start, Vector3 dir);
+    static public void DrawRay(Vector3 start, Vector3 dir, Color color);
+    static public void DrawRay(Vector3 start, Vector3 dir, Color color, float duration);
     static public void DrawRay(Vector3 start, Vector3 dir, Color color, float duration, bool depthTest);
     static public void Log(object message);
     static public void Log(object message, Object context);

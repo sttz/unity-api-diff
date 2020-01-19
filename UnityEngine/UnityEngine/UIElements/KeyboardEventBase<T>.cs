@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.UIElements
@@ -6,8 +8,8 @@ namespace UnityEngine.UIElements
 
 public abstract class KeyboardEventBase<T> : UIElements.EventBase<T>, UIElements.IKeyboardEvent
 {
-    static public T GetPooled(char c, KeyCode keyCode, EventModifiers modifiers);
     static public T GetPooled(Event systemEvent);
+    static public T GetPooled(char c, KeyCode keyCode, EventModifiers modifiers);
 
     public bool actionKey { get; }
     public bool altKey { get; }

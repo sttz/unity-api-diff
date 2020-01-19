@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Analytics
@@ -13,8 +15,8 @@ public static class Analytics
     static public bool playerOptedOut { get; }
 
     static public Analytics.AnalyticsResult CustomEvent(string customEventName);
+    static public Analytics.AnalyticsResult CustomEvent(string customEventName, IDictionary<string, object> eventData);
     static public Analytics.AnalyticsResult CustomEvent(string customEventName, Vector3 position);
-    static public Analytics.AnalyticsResult CustomEvent(string customEventName, System.Collections.Generic.IDictionary<string, object> eventData);
     static public Analytics.AnalyticsResult FlushEvents();
     static public Analytics.AnalyticsResult RegisterEvent(string eventName, int maxEventPerHour, int maxItems, string vendorKey = "", string prefix = "");
     static public Analytics.AnalyticsResult RegisterEvent(string eventName, int maxEventPerHour, int maxItems, string vendorKey, int ver, string prefix = "");

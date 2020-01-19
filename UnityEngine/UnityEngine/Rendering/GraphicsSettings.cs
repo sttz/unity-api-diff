@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -16,8 +18,8 @@ public sealed class GraphicsSettings : Object
 
     static public Shader GetCustomShader(Rendering.BuiltinShaderType type);
     static public Rendering.BuiltinShaderMode GetShaderMode(Rendering.BuiltinShaderType type);
-    static public bool HasShaderDefine(Rendering.GraphicsTier tier, Rendering.BuiltinShaderDefine defineHash);
     static public bool HasShaderDefine(Rendering.BuiltinShaderDefine defineHash);
+    static public bool HasShaderDefine(Rendering.GraphicsTier tier, Rendering.BuiltinShaderDefine defineHash);
     static public void SetCustomShader(Rendering.BuiltinShaderType type, Shader shader);
     static public void SetShaderMode(Rendering.BuiltinShaderType type, Rendering.BuiltinShaderMode mode);
 

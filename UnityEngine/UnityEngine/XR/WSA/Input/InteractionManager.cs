@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.XR.WSA.Input
@@ -24,8 +26,8 @@ public class InteractionManager
     static public event SourceEventHandler SourceReleased;
     static public event SourceEventHandler SourceUpdated;
 
-    static public int GetCurrentReading(XR.WSA.Input.InteractionSourceState[] sourceStates);
     static public XR.WSA.Input.InteractionSourceState[] GetCurrentReading();
+    static public int GetCurrentReading(XR.WSA.Input.InteractionSourceState[] sourceStates);
 
     public InteractionManager();
 

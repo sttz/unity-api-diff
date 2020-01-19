@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Experimental.Rendering
@@ -16,8 +18,8 @@ public class GraphicsFormatUtility
     static public uint GetColorComponentCount(Experimental.Rendering.GraphicsFormat format);
     static public uint GetComponentCount(Experimental.Rendering.GraphicsFormat format);
     static public string GetFormatString(Experimental.Rendering.GraphicsFormat format);
-    static public Experimental.Rendering.GraphicsFormat GetGraphicsFormat(TextureFormat format, bool isSRGB);
     static public Experimental.Rendering.GraphicsFormat GetGraphicsFormat(RenderTextureFormat format, bool isSRGB);
+    static public Experimental.Rendering.GraphicsFormat GetGraphicsFormat(TextureFormat format, bool isSRGB);
     static public Experimental.Rendering.GraphicsFormat GetGraphicsFormat(RenderTextureFormat format, RenderTextureReadWrite readWrite);
     static public Experimental.Rendering.GraphicsFormat GetLinearFormat(Experimental.Rendering.GraphicsFormat format);
     static public RenderTextureFormat GetRenderTextureFormat(Experimental.Rendering.GraphicsFormat format);

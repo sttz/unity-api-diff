@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -112,10 +114,10 @@ public sealed class Camera : Behaviour
     public void RemoveCommandBuffers(Rendering.CameraEvent evt);
     public void Render();
     public void RenderDontRestore();
-    public bool RenderToCubemap(Cubemap cubemap, int faceMask);
     public bool RenderToCubemap(Cubemap cubemap);
-    public bool RenderToCubemap(RenderTexture cubemap, int faceMask);
     public bool RenderToCubemap(RenderTexture cubemap);
+    public bool RenderToCubemap(Cubemap cubemap, int faceMask);
+    public bool RenderToCubemap(RenderTexture cubemap, int faceMask);
     public bool RenderToCubemap(RenderTexture cubemap, int faceMask, MonoOrStereoscopicEye stereoEye);
     public void RenderWithShader(Shader shader, string replacementTag);
     public void Reset();
@@ -128,11 +130,11 @@ public sealed class Camera : Behaviour
     public void ResetStereoViewMatrices();
     public void ResetTransparencySortSettings();
     public void ResetWorldToCameraMatrix();
-    public Ray ScreenPointToRay(Vector3 pos, MonoOrStereoscopicEye eye);
     public Ray ScreenPointToRay(Vector3 pos);
+    public Ray ScreenPointToRay(Vector3 pos, MonoOrStereoscopicEye eye);
     public Vector3 ScreenToViewportPoint(Vector3 position);
-    public Vector3 ScreenToWorldPoint(Vector3 position, MonoOrStereoscopicEye eye);
     public Vector3 ScreenToWorldPoint(Vector3 position);
+    public Vector3 ScreenToWorldPoint(Vector3 position, MonoOrStereoscopicEye eye);
     public void SetReplacementShader(Shader shader, string replacementTag);
     public void SetStereoProjectionMatrices(Matrix4x4 leftMatrix, Matrix4x4 rightMatrix);
     public void SetStereoProjectionMatrix(StereoscopicEye eye, Matrix4x4 matrix);
@@ -142,29 +144,31 @@ public sealed class Camera : Behaviour
     public void SetTargetBuffers(RenderBuffer[] colorBuffer, RenderBuffer depthBuffer);
     public bool TryGetCullingParameters(out Rendering.ScriptableCullingParameters cullingParameters);
     public bool TryGetCullingParameters(bool stereoAware, out Rendering.ScriptableCullingParameters cullingParameters);
-    public Ray ViewportPointToRay(Vector3 pos, MonoOrStereoscopicEye eye);
     public Ray ViewportPointToRay(Vector3 pos);
+    public Ray ViewportPointToRay(Vector3 pos, MonoOrStereoscopicEye eye);
     public Vector3 ViewportToScreenPoint(Vector3 position);
-    public Vector3 ViewportToWorldPoint(Vector3 position, MonoOrStereoscopicEye eye);
     public Vector3 ViewportToWorldPoint(Vector3 position);
-    public Vector3 WorldToScreenPoint(Vector3 position, MonoOrStereoscopicEye eye);
+    public Vector3 ViewportToWorldPoint(Vector3 position, MonoOrStereoscopicEye eye);
     public Vector3 WorldToScreenPoint(Vector3 position);
-    public Vector3 WorldToViewportPoint(Vector3 position, MonoOrStereoscopicEye eye);
+    public Vector3 WorldToScreenPoint(Vector3 position, MonoOrStereoscopicEye eye);
     public Vector3 WorldToViewportPoint(Vector3 position);
+    public Vector3 WorldToViewportPoint(Vector3 position, MonoOrStereoscopicEye eye);
 
-    public enum GateFitMode
-    {
-        Vertical = 1,
-        Horizontal = 2,
-        Fill = 3,
-        Overscan = 4,
-        None = 0,
-    }
+    public delegate void CameraCallback(Camera cam);
 
     public enum FieldOfViewAxis
     {
         Vertical = 0,
         Horizontal = 1,
+    }
+
+    public enum GateFitMode
+    {
+        None = 0,
+        Vertical = 1,
+        Horizontal = 2,
+        Fill = 3,
+        Overscan = 4,
     }
 
     public struct GateFitParameters
@@ -176,12 +180,6 @@ public sealed class Camera : Behaviour
 
     }
 
-    public enum StereoscopicEye
-    {
-        Left = 0,
-        Right = 1,
-    }
-
     public enum MonoOrStereoscopicEye
     {
         Left = 0,
@@ -189,7 +187,11 @@ public sealed class Camera : Behaviour
         Mono = 2,
     }
 
-    public delegate void CameraCallback(Camera cam);
+    public enum StereoscopicEye
+    {
+        Left = 0,
+        Right = 1,
+    }
 
 }
 

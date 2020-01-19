@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -45,8 +47,8 @@ public struct Vector3 : IEquatable<Vector3>
     static public float SignedAngle(Vector3 from, Vector3 to, Vector3 axis);
     static public Vector3 Slerp(Vector3 a, Vector3 b, float t);
     static public Vector3 SlerpUnclamped(Vector3 a, Vector3 b, float t);
-    static public Vector3 SmoothDamp(Vector3 current, Vector3 target, Vector3 currentVelocity, float smoothTime, float maxSpeed);
     static public Vector3 SmoothDamp(Vector3 current, Vector3 target, Vector3 currentVelocity, float smoothTime);
+    static public Vector3 SmoothDamp(Vector3 current, Vector3 target, Vector3 currentVelocity, float smoothTime, float maxSpeed);
     static public Vector3 SmoothDamp(Vector3 current, Vector3 target, Vector3 currentVelocity, float smoothTime, float maxSpeed, float deltaTime);
     static public float SqrMagnitude(Vector3 vector);
 
@@ -59,8 +61,8 @@ public struct Vector3 : IEquatable<Vector3>
     public Vector3 normalized { get; }
     public float sqrMagnitude { get; }
 
-    public Vector3(float x, float y, float z);
     public Vector3(float x, float y);
+    public Vector3(float x, float y, float z);
 
     public bool Equals(object other);
     public bool Equals(Vector3 other);

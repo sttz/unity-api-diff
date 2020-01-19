@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -31,8 +33,8 @@ public struct Vector2 : IEquatable<Vector2>
     static public Vector2 Reflect(Vector2 inDirection, Vector2 inNormal);
     static public Vector2 Scale(Vector2 a, Vector2 b);
     static public float SignedAngle(Vector2 from, Vector2 to);
-    static public Vector2 SmoothDamp(Vector2 current, Vector2 target, Vector2 currentVelocity, float smoothTime, float maxSpeed);
     static public Vector2 SmoothDamp(Vector2 current, Vector2 target, Vector2 currentVelocity, float smoothTime);
+    static public Vector2 SmoothDamp(Vector2 current, Vector2 target, Vector2 currentVelocity, float smoothTime, float maxSpeed);
     static public Vector2 SmoothDamp(Vector2 current, Vector2 target, Vector2 currentVelocity, float smoothTime, float maxSpeed, float deltaTime);
     static public float SqrMagnitude(Vector2 a);
 

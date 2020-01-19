@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.UIElements
@@ -13,17 +15,17 @@ public class ListView : UIElements.VisualElement
     public Action<UIElements.VisualElement, int> bindItem { get; set; }
     public UIElements.VisualElement contentContainer { get; }
     public int itemHeight { get; set; }
-    public System.Collections.IList itemsSource { get; set; }
+    public IList itemsSource { get; set; }
     public Func<UIElements.VisualElement> makeItem { get; set; }
     public int selectedIndex { get; set; }
     public object selectedItem { get; }
     public UIElements.SelectionType selectionType { get; set; }
 
     public event Action<object> onItemChosen;
-    public event Action<System.Collections.Generic.List<object>> onSelectionChanged;
+    public event Action<List<object>> onSelectionChanged;
 
     public ListView();
-    public ListView(System.Collections.IList itemsSource, int itemHeight, Func<UIElements.VisualElement> makeItem, Action<UIElements.VisualElement, int> bindItem);
+    public ListView(IList itemsSource, int itemHeight, Func<UIElements.VisualElement> makeItem, Action<UIElements.VisualElement, int> bindItem);
 
     protected void AddToSelection(int index);
     protected void ClearSelection();
@@ -42,7 +44,7 @@ public class ListView : UIElements.VisualElement
 
     public class UxmlTraits : UxmlTraits
     {
-        public System.Collections.Generic.IEnumerable<UIElements.UxmlChildElementDescription> uxmlChildElementsDescription { get; }
+        public IEnumerable<UIElements.UxmlChildElementDescription> uxmlChildElementsDescription { get; }
 
         public UxmlTraits();
 

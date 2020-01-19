@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -22,8 +24,8 @@ public struct BoundsInt : IEquatable<BoundsInt>
     public int zMax { get; set; }
     public int zMin { get; set; }
 
-    public BoundsInt(int xMin, int yMin, int zMin, int sizeX, int sizeY, int sizeZ);
     public BoundsInt(Vector3Int position, Vector3Int size);
+    public BoundsInt(int xMin, int yMin, int zMin, int sizeX, int sizeY, int sizeZ);
 
     public void ClampToBounds(BoundsInt bounds);
     public bool Contains(Vector3Int position);
@@ -33,7 +35,7 @@ public struct BoundsInt : IEquatable<BoundsInt>
     public void SetMinMax(Vector3Int minPosition, Vector3Int maxPosition);
     public string ToString();
 
-    public struct PositionEnumerator : System.Collections.Generic.IEnumerator<Vector3Int>, System.Collections.IEnumerator, IDisposable
+    public struct PositionEnumerator : IEnumerator<Vector3Int>, IEnumerator, IDisposable
     {
         public Vector3Int Current { get; }
 

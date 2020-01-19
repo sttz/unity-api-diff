@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -20,8 +22,8 @@ public class Collision2D
     public Collision2D();
 
     public ContactPoint2D GetContact(int index);
+    public int GetContacts(List<ContactPoint2D> contacts);
     public int GetContacts(ContactPoint2D[] contacts);
-    public int GetContacts(System.Collections.Generic.List<ContactPoint2D> contacts);
 
 }
 

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -12,14 +14,14 @@ public class TouchScreenKeyboard
     static public bool isSupported { get; }
     static public bool visible { get; }
 
-    static public TouchScreenKeyboard Open(string text, TouchScreenKeyboardType keyboardType, bool autocorrection, bool multiline, bool secure, bool alert, string textPlaceholder, int characterLimit);
-    static public TouchScreenKeyboard Open(string text, TouchScreenKeyboardType keyboardType, bool autocorrection, bool multiline, bool secure, bool alert, string textPlaceholder);
-    static public TouchScreenKeyboard Open(string text, TouchScreenKeyboardType keyboardType, bool autocorrection, bool multiline, bool secure, bool alert);
-    static public TouchScreenKeyboard Open(string text, TouchScreenKeyboardType keyboardType, bool autocorrection, bool multiline, bool secure);
-    static public TouchScreenKeyboard Open(string text, TouchScreenKeyboardType keyboardType, bool autocorrection, bool multiline);
-    static public TouchScreenKeyboard Open(string text, TouchScreenKeyboardType keyboardType, bool autocorrection);
-    static public TouchScreenKeyboard Open(string text, TouchScreenKeyboardType keyboardType);
     static public TouchScreenKeyboard Open(string text);
+    static public TouchScreenKeyboard Open(string text, TouchScreenKeyboardType keyboardType);
+    static public TouchScreenKeyboard Open(string text, TouchScreenKeyboardType keyboardType, bool autocorrection);
+    static public TouchScreenKeyboard Open(string text, TouchScreenKeyboardType keyboardType, bool autocorrection, bool multiline);
+    static public TouchScreenKeyboard Open(string text, TouchScreenKeyboardType keyboardType, bool autocorrection, bool multiline, bool secure);
+    static public TouchScreenKeyboard Open(string text, TouchScreenKeyboardType keyboardType, bool autocorrection, bool multiline, bool secure, bool alert);
+    static public TouchScreenKeyboard Open(string text, TouchScreenKeyboardType keyboardType, bool autocorrection, bool multiline, bool secure, bool alert, string textPlaceholder);
+    static public TouchScreenKeyboard Open(string text, TouchScreenKeyboardType keyboardType, bool autocorrection, bool multiline, bool secure, bool alert, string textPlaceholder, int characterLimit);
 
     public bool active { get; set; }
     public bool canGetSelection { get; }

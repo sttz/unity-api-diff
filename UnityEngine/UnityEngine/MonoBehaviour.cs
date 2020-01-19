@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -20,13 +22,13 @@ public class MonoBehaviour : Behaviour
     public bool IsInvoking();
     public bool IsInvoking(string methodName);
     public Coroutine StartCoroutine(string methodName);
+    public Coroutine StartCoroutine(IEnumerator routine);
     public Coroutine StartCoroutine(string methodName, object value);
-    public Coroutine StartCoroutine(System.Collections.IEnumerator routine);
-    public Coroutine StartCoroutine_Auto(System.Collections.IEnumerator routine);
+    public Coroutine StartCoroutine_Auto(IEnumerator routine);
     public void StopAllCoroutines();
-    public void StopCoroutine(System.Collections.IEnumerator routine);
-    public void StopCoroutine(Coroutine routine);
     public void StopCoroutine(string methodName);
+    public void StopCoroutine(IEnumerator routine);
+    public void StopCoroutine(Coroutine routine);
 
 }
 

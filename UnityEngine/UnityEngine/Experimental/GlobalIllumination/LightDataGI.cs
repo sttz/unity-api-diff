@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Experimental.GlobalIllumination
@@ -22,10 +24,10 @@ public struct LightDataGI
     public Experimental.GlobalIllumination.LightType type;
 
     public void Init(Experimental.GlobalIllumination.DirectionalLight light);
-    public void Init(Experimental.GlobalIllumination.PointLight light);
-    public void Init(Experimental.GlobalIllumination.SpotLight light);
-    public void Init(Experimental.GlobalIllumination.RectangleLight light);
     public void Init(Experimental.GlobalIllumination.DiscLight light);
+    public void Init(Experimental.GlobalIllumination.PointLight light);
+    public void Init(Experimental.GlobalIllumination.RectangleLight light);
+    public void Init(Experimental.GlobalIllumination.SpotLight light);
     public void InitNoBake(int lightInstanceID);
 
 }

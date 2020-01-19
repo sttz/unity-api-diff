@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -45,11 +47,11 @@ public sealed class QualitySettings : Object
     static public int streamingMipmapsRenderersPerFrame { get; set; }
     static public int vSyncCount { get; set; }
 
-    static public void DecreaseLevel(bool applyExpensiveChanges);
     static public void DecreaseLevel();
+    static public void DecreaseLevel(bool applyExpensiveChanges);
     static public int GetQualityLevel();
-    static public void IncreaseLevel(bool applyExpensiveChanges);
     static public void IncreaseLevel();
+    static public void IncreaseLevel(bool applyExpensiveChanges);
     static public void SetQualityLevel(int index);
     static public void SetQualityLevel(int index, bool applyExpensiveChanges);
 

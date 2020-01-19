@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -12,9 +14,9 @@ public class LocationService
 
     public LocationService();
 
-    public void Start(float desiredAccuracyInMeters, float updateDistanceInMeters);
-    public void Start(float desiredAccuracyInMeters);
     public void Start();
+    public void Start(float desiredAccuracyInMeters);
+    public void Start(float desiredAccuracyInMeters, float updateDistanceInMeters);
     public void Stop();
 
 }

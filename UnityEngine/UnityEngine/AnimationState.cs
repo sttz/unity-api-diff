@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -21,8 +23,8 @@ public sealed class AnimationState : TrackedReference
 
     public AnimationState();
 
-    public void AddMixingTransform(Transform mix, bool recursive);
     public void AddMixingTransform(Transform mix);
+    public void AddMixingTransform(Transform mix, bool recursive);
     public void RemoveMixingTransform(Transform mix);
 
 }

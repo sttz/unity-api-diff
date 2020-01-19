@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -12,8 +14,8 @@ public struct LODParameters : IEquatable<Rendering.LODParameters>
     public bool isOrthographic { get; set; }
     public float orthoSize { get; set; }
 
-    public bool Equals(Rendering.LODParameters other);
     public bool Equals(object obj);
+    public bool Equals(Rendering.LODParameters other);
     public int GetHashCode();
 
 }

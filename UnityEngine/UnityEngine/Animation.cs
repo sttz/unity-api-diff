@@ -1,10 +1,12 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
 {
 
-public sealed class Animation : Behaviour, System.Collections.IEnumerable
+public sealed class Animation : Behaviour, IEnumerable
 {
     public bool animateOnlyIfVisible { get; set; }
     public bool animatePhysics { get; set; }
@@ -19,35 +21,35 @@ public sealed class Animation : Behaviour, System.Collections.IEnumerable
     public Animation();
 
     public void AddClip(AnimationClip clip, string newName);
-    public void AddClip(AnimationClip clip, string newName, int firstFrame, int lastFrame, bool addLoopFrame);
     public void AddClip(AnimationClip clip, string newName, int firstFrame, int lastFrame);
-    public void Blend(string animation, float targetWeight, float fadeLength);
-    public void Blend(string animation, float targetWeight);
+    public void AddClip(AnimationClip clip, string newName, int firstFrame, int lastFrame, bool addLoopFrame);
     public void Blend(string animation);
-    public void CrossFade(string animation, float fadeLength, PlayMode mode);
-    public void CrossFade(string animation, float fadeLength);
+    public void Blend(string animation, float targetWeight);
+    public void Blend(string animation, float targetWeight, float fadeLength);
     public void CrossFade(string animation);
-    public AnimationState CrossFadeQueued(string animation, float fadeLength, QueueMode queue, PlayMode mode);
-    public AnimationState CrossFadeQueued(string animation, float fadeLength, QueueMode queue);
-    public AnimationState CrossFadeQueued(string animation, float fadeLength);
+    public void CrossFade(string animation, float fadeLength);
+    public void CrossFade(string animation, float fadeLength, PlayMode mode);
     public AnimationState CrossFadeQueued(string animation);
+    public AnimationState CrossFadeQueued(string animation, float fadeLength);
+    public AnimationState CrossFadeQueued(string animation, float fadeLength, QueueMode queue);
+    public AnimationState CrossFadeQueued(string animation, float fadeLength, QueueMode queue, PlayMode mode);
     public AnimationClip GetClip(string name);
     public int GetClipCount();
-    public System.Collections.IEnumerator GetEnumerator();
+    public IEnumerator GetEnumerator();
     public bool IsPlaying(string name);
     public bool Play();
-    public bool Play(PlayMode mode);
-    public bool Play(string animation, PlayMode mode);
     public bool Play(string animation);
     public bool Play(AnimationPlayMode mode);
+    public bool Play(PlayMode mode);
     public bool Play(string animation, AnimationPlayMode mode);
-    public AnimationState PlayQueued(string animation, QueueMode queue, PlayMode mode);
-    public AnimationState PlayQueued(string animation, QueueMode queue);
+    public bool Play(string animation, PlayMode mode);
     public AnimationState PlayQueued(string animation);
+    public AnimationState PlayQueued(string animation, QueueMode queue);
+    public AnimationState PlayQueued(string animation, QueueMode queue, PlayMode mode);
     public void RemoveClip(AnimationClip clip);
     public void RemoveClip(string clipName);
-    public void Rewind(string name);
     public void Rewind();
+    public void Rewind(string name);
     public void Sample();
     public void Stop();
     public void Stop(string name);

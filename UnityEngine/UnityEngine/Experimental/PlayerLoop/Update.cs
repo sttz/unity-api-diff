@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Experimental.PlayerLoop
@@ -6,11 +8,11 @@ namespace UnityEngine.Experimental.PlayerLoop
 
 public struct Update
 {
-    public struct ScriptRunBehaviourUpdate
+    public struct DirectorUpdate
     {
     }
 
-    public struct DirectorUpdate
+    public struct ScriptRunBehaviourUpdate
     {
     }
 

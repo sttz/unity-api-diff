@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -16,8 +18,8 @@ public struct VisibleLight : IEquatable<Rendering.VisibleLight>
     public Rect screenRect { get; set; }
     public float spotAngle { get; set; }
 
-    public bool Equals(Rendering.VisibleLight other);
     public bool Equals(object obj);
+    public bool Equals(Rendering.VisibleLight other);
     public int GetHashCode();
 
 }

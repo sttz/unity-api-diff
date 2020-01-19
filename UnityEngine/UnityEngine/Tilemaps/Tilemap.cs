@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Tilemaps
@@ -37,13 +39,13 @@ public sealed class Tilemap : GridLayout
     public Color GetEditorPreviewColor(Vector3Int position);
     public Sprite GetEditorPreviewSprite(Vector3Int position);
     public Tilemaps.TileBase GetEditorPreviewTile(Vector3Int position);
-    public T GetEditorPreviewTile(Vector3Int position);
+    public T GetEditorPreviewTile<T>(Vector3Int position);
     public Tilemaps.TileFlags GetEditorPreviewTileFlags(Vector3Int position);
     public Matrix4x4 GetEditorPreviewTransformMatrix(Vector3Int position);
     public GameObject GetInstantiatedObject(Vector3Int position);
     public Sprite GetSprite(Vector3Int position);
     public Tilemaps.TileBase GetTile(Vector3Int position);
-    public T GetTile(Vector3Int position);
+    public T GetTile<T>(Vector3Int position);
     public Tilemaps.TileFlags GetTileFlags(Vector3Int position);
     public Tilemaps.TileBase[] GetTilesBlock(BoundsInt bounds);
     public Matrix4x4 GetTransformMatrix(Vector3Int position);

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -26,13 +28,13 @@ public sealed class Font : Object
     public Font();
     public Font(string name);
 
-    public bool GetCharacterInfo(char ch, out CharacterInfo info, int size, FontStyle style);
-    public bool GetCharacterInfo(char ch, out CharacterInfo info, int size);
     public bool GetCharacterInfo(char ch, out CharacterInfo info);
+    public bool GetCharacterInfo(char ch, out CharacterInfo info, int size);
+    public bool GetCharacterInfo(char ch, out CharacterInfo info, int size, FontStyle style);
     public bool HasCharacter(char c);
-    public void RequestCharactersInTexture(string characters, int size, FontStyle style);
-    public void RequestCharactersInTexture(string characters, int size);
     public void RequestCharactersInTexture(string characters);
+    public void RequestCharactersInTexture(string characters, int size);
+    public void RequestCharactersInTexture(string characters, int size, FontStyle style);
 
     public delegate void FontTextureRebuildCallback();
 

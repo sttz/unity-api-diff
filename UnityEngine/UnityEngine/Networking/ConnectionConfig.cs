@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Networking
@@ -13,7 +15,7 @@ public class ConnectionConfig
     public uint AllCostTimeout { get; set; }
     public float BandwidthPeakFactor { get; set; }
     public int ChannelCount { get; }
-    public System.Collections.Generic.List<Networking.ChannelQOS> Channels { get; }
+    public List<Networking.ChannelQOS> Channels { get; }
     public uint ConnectTimeout { get; set; }
     public uint DisconnectTimeout { get; set; }
     public ushort FragmentSize { get; set; }
@@ -44,8 +46,8 @@ public class ConnectionConfig
 
     public byte AddChannel(Networking.QosType value);
     public Networking.QosType GetChannel(byte idx);
-    public System.Collections.Generic.IList<byte> GetSharedOrderChannels(byte idx);
-    public void MakeChannelsSharedOrder(System.Collections.Generic.List<byte> channelIndices);
+    public IList<byte> GetSharedOrderChannels(byte idx);
+    public void MakeChannelsSharedOrder(List<byte> channelIndices);
 
 }
 

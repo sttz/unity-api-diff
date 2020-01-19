@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Experimental.Audio
@@ -33,9 +35,9 @@ public class AudioSampleProvider : IDisposable
 
     public delegate uint ConsumeSampleFramesNativeFunction(uint providerId, IntPtr interleavedSampleFrames, uint sampleFrameCount);
 
-    public delegate void SampleFramesHandler(Experimental.Audio.AudioSampleProvider provider, uint sampleFrameCount);
-
     public delegate void SampleFramesEventNativeFunction(IntPtr userData, uint providerId, uint sampleFrameCount);
+
+    public delegate void SampleFramesHandler(Experimental.Audio.AudioSampleProvider provider, uint sampleFrameCount);
 
 }
 

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -41,11 +43,11 @@ public class Renderer : Component
 
     public Renderer();
 
-    public void GetClosestReflectionProbes(System.Collections.Generic.List<Rendering.ReflectionProbeBlendInfo> result);
-    public void GetMaterials(System.Collections.Generic.List<Material> m);
+    public void GetClosestReflectionProbes(List<Rendering.ReflectionProbeBlendInfo> result);
+    public void GetMaterials(List<Material> m);
     public void GetPropertyBlock(MaterialPropertyBlock properties);
     public void GetPropertyBlock(MaterialPropertyBlock properties, int materialIndex);
-    public void GetSharedMaterials(System.Collections.Generic.List<Material> m);
+    public void GetSharedMaterials(List<Material> m);
     public bool HasPropertyBlock();
     public void SetPropertyBlock(MaterialPropertyBlock properties);
     public void SetPropertyBlock(MaterialPropertyBlock properties, int materialIndex);

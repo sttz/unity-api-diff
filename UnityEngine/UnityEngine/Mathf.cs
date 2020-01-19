@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -22,8 +24,8 @@ public struct Mathf
     static public float Atan2(float y, float x);
     static public float Ceil(float f);
     static public int CeilToInt(float f);
-    static public float Clamp(float value, float min, float max);
     static public int Clamp(int value, int min, int max);
+    static public float Clamp(float value, float min, float max);
     static public float Clamp01(float value);
     static public int ClosestPowerOfTwo(int value);
     static public Color CorrelatedColorTemperatureToRGB(float kelvin);
@@ -42,17 +44,17 @@ public struct Mathf
     static public float LerpAngle(float a, float b, float t);
     static public float LerpUnclamped(float a, float b, float t);
     static public float LinearToGammaSpace(float value);
-    static public float Log(float f, float p);
     static public float Log(float f);
+    static public float Log(float f, float p);
     static public float Log10(float f);
-    static public float Max(float a, float b);
+    static public int Max(int[] values);
     static public float Max(float[] values);
     static public int Max(int a, int b);
-    static public int Max(int[] values);
-    static public float Min(float a, float b);
+    static public float Max(float a, float b);
+    static public int Min(int[] values);
     static public float Min(float[] values);
     static public int Min(int a, int b);
-    static public int Min(int[] values);
+    static public float Min(float a, float b);
     static public float MoveTowards(float current, float target, float maxDelta);
     static public float MoveTowardsAngle(float current, float target, float maxDelta);
     static public int NextPowerOfTwo(int value);
@@ -64,11 +66,11 @@ public struct Mathf
     static public int RoundToInt(float f);
     static public float Sign(float f);
     static public float Sin(float f);
-    static public float SmoothDamp(float current, float target, float currentVelocity, float smoothTime, float maxSpeed);
     static public float SmoothDamp(float current, float target, float currentVelocity, float smoothTime);
+    static public float SmoothDamp(float current, float target, float currentVelocity, float smoothTime, float maxSpeed);
     static public float SmoothDamp(float current, float target, float currentVelocity, float smoothTime, float maxSpeed, float deltaTime);
-    static public float SmoothDampAngle(float current, float target, float currentVelocity, float smoothTime, float maxSpeed);
     static public float SmoothDampAngle(float current, float target, float currentVelocity, float smoothTime);
+    static public float SmoothDampAngle(float current, float target, float currentVelocity, float smoothTime, float maxSpeed);
     static public float SmoothDampAngle(float current, float target, float currentVelocity, float smoothTime, float maxSpeed, float deltaTime);
     static public float SmoothStep(float from, float to, float t);
     static public float Sqrt(float f);

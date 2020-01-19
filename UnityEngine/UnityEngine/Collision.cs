@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -21,9 +23,9 @@ public class Collision
     public Collision();
 
     public ContactPoint GetContact(int index);
+    public int GetContacts(List<ContactPoint> contacts);
     public int GetContacts(ContactPoint[] contacts);
-    public int GetContacts(System.Collections.Generic.List<ContactPoint> contacts);
-    public System.Collections.IEnumerator GetEnumerator();
+    public IEnumerator GetEnumerator();
 
 }
 

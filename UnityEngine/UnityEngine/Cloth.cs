@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -37,14 +39,14 @@ public sealed class Cloth : Component
     public Cloth();
 
     public void ClearTransformMotion();
-    public void GetSelfAndInterCollisionIndices(System.Collections.Generic.List<uint> indices);
-    public void GetVirtualParticleIndices(System.Collections.Generic.List<uint> indices);
-    public void GetVirtualParticleWeights(System.Collections.Generic.List<Vector3> weights);
-    public void SetEnabledFading(bool enabled, float interpolationTime);
+    public void GetSelfAndInterCollisionIndices(List<uint> indices);
+    public void GetVirtualParticleIndices(List<uint> indices);
+    public void GetVirtualParticleWeights(List<Vector3> weights);
     public void SetEnabledFading(bool enabled);
-    public void SetSelfAndInterCollisionIndices(System.Collections.Generic.List<uint> indices);
-    public void SetVirtualParticleIndices(System.Collections.Generic.List<uint> indices);
-    public void SetVirtualParticleWeights(System.Collections.Generic.List<Vector3> weights);
+    public void SetEnabledFading(bool enabled, float interpolationTime);
+    public void SetSelfAndInterCollisionIndices(List<uint> indices);
+    public void SetVirtualParticleIndices(List<uint> indices);
+    public void SetVirtualParticleWeights(List<Vector3> weights);
 
 }
 

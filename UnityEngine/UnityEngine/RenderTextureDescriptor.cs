@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -27,8 +29,8 @@ public struct RenderTextureDescriptor
 
     public RenderTextureDescriptor(int width, int height);
     public RenderTextureDescriptor(int width, int height, RenderTextureFormat colorFormat);
-    public RenderTextureDescriptor(int width, int height, RenderTextureFormat colorFormat, int depthBufferBits);
     public RenderTextureDescriptor(int width, int height, Experimental.Rendering.GraphicsFormat colorFormat, int depthBufferBits);
+    public RenderTextureDescriptor(int width, int height, RenderTextureFormat colorFormat, int depthBufferBits);
 
 }
 

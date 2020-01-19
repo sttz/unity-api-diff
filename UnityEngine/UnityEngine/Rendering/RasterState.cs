@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -15,8 +17,8 @@ public struct RasterState : IEquatable<Rendering.RasterState>
 
     public RasterState(Rendering.CullMode cullingMode = 2, int offsetUnits = 0, float offsetFactor = 0, bool depthClip = true);
 
-    public bool Equals(Rendering.RasterState other);
     public bool Equals(object obj);
+    public bool Equals(Rendering.RasterState other);
     public int GetHashCode();
 
 }

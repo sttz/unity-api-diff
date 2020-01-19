@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -13,8 +15,8 @@ public struct ShadowDrawingSettings : IEquatable<Rendering.ShadowDrawingSettings
 
     public ShadowDrawingSettings(Rendering.CullingResults cullingResults, int lightIndex);
 
-    public bool Equals(Rendering.ShadowDrawingSettings other);
     public bool Equals(object obj);
+    public bool Equals(Rendering.ShadowDrawingSettings other);
     public int GetHashCode();
 
 }

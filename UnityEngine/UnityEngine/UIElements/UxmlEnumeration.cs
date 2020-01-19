@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.UIElements
@@ -6,7 +8,7 @@ namespace UnityEngine.UIElements
 
 public class UxmlEnumeration : UIElements.UxmlTypeRestriction
 {
-    public System.Collections.Generic.IEnumerable<string> values { get; set; }
+    public IEnumerable<string> values { get; set; }
 
     public UxmlEnumeration();
 

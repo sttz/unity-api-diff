@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -26,18 +28,18 @@ public sealed class RectTransform : Transform
     public void SetInsetAndSizeFromParentEdge(Edge edge, float inset, float size);
     public void SetSizeWithCurrentAnchors(Axis axis, float size);
 
+    public enum Axis
+    {
+        Horizontal = 0,
+        Vertical = 1,
+    }
+
     public enum Edge
     {
         Left = 0,
         Right = 1,
         Top = 2,
         Bottom = 3,
-    }
-
-    public enum Axis
-    {
-        Horizontal = 0,
-        Vertical = 1,
     }
 
     public delegate void ReapplyDrivenProperties(RectTransform driven);

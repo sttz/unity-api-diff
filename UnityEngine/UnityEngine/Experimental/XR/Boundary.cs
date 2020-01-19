@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Experimental.XR
@@ -11,8 +13,8 @@ public static class Boundary
 
     static public bool TryGetDimensions(out Vector3 dimensionsOut);
     static public bool TryGetDimensions(out Vector3 dimensionsOut, Type boundaryType);
-    static public bool TryGetGeometry(System.Collections.Generic.List<Vector3> geometry);
-    static public bool TryGetGeometry(System.Collections.Generic.List<Vector3> geometry, Type boundaryType);
+    static public bool TryGetGeometry(List<Vector3> geometry);
+    static public bool TryGetGeometry(List<Vector3> geometry, Type boundaryType);
 
     public enum Type
     {

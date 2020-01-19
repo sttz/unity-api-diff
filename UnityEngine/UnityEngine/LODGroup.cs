@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -20,8 +22,8 @@ public class LODGroup : Component
     public void ForceLOD(int index);
     public LOD[] GetLODs();
     public void RecalculateBounds();
-    public void SetLODs(LOD[] lods);
     public void SetLODS(LOD[] lods);
+    public void SetLODs(LOD[] lods);
 
 }
 

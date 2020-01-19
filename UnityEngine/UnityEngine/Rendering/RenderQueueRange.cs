@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -18,8 +20,8 @@ public struct RenderQueueRange : IEquatable<Rendering.RenderQueueRange>
 
     public RenderQueueRange(int lowerBound, int upperBound);
 
-    public bool Equals(Rendering.RenderQueueRange other);
     public bool Equals(object obj);
+    public bool Equals(Rendering.RenderQueueRange other);
     public int GetHashCode();
 
 }

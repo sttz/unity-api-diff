@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -11,8 +13,8 @@ public struct ShadowSplitData : IEquatable<Rendering.ShadowSplitData>
     public int cullingPlaneCount { get; set; }
     public Vector4 cullingSphere { get; set; }
 
-    public bool Equals(Rendering.ShadowSplitData other);
     public bool Equals(object obj);
+    public bool Equals(Rendering.ShadowSplitData other);
     public Plane GetCullingPlane(int index);
     public int GetHashCode();
     public void SetCullingPlane(int index, Plane plane);

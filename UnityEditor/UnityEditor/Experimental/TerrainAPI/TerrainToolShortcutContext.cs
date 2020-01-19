@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental.TerrainAPI
@@ -6,7 +8,7 @@ namespace UnityEditor.Experimental.TerrainAPI
 
 public class TerrainToolShortcutContext : UnityEditor.ShortcutManagement.IShortcutToolContext
 {
-    public void SelectPaintTool();
+    public void SelectPaintTool<T>();
 
 }
 

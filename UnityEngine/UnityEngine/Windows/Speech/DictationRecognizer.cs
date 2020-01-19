@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Windows.Speech
@@ -24,13 +26,13 @@ public sealed class DictationRecognizer : IDisposable
     public void Start();
     public void Stop();
 
-    public delegate void DictationHypothesisDelegate(string text);
-
-    public delegate void DictationResultDelegate(string text, Windows.Speech.ConfidenceLevel confidence);
-
     public delegate void DictationCompletedDelegate(Windows.Speech.DictationCompletionCause cause);
 
     public delegate void DictationErrorHandler(string error, int hresult);
+
+    public delegate void DictationHypothesisDelegate(string text);
+
+    public delegate void DictationResultDelegate(string text, Windows.Speech.ConfidenceLevel confidence);
 
 }
 

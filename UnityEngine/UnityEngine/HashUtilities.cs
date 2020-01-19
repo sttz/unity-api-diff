@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -7,8 +9,8 @@ namespace UnityEngine
 public static class HashUtilities
 {
     static public void AppendHash(Hash128 inHash, Hash128 outHash);
-    static public void ComputeHash128(T& value, Hash128 hash);
     static public void ComputeHash128(byte[] value, Hash128 hash);
+    static public void ComputeHash128<T>(T value, Hash128 hash);
     static public void QuantisedMatrixHash(Matrix4x4 value, Hash128 hash);
     static public void QuantisedVectorHash(Vector3 value, Hash128 hash);
 

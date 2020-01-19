@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Experimental.XR
@@ -12,9 +14,9 @@ public class XRReferencePointSubsystem : Experimental.IntegratedSubsystem<Experi
 
     public XRReferencePointSubsystem();
 
-    public void GetAllReferencePoints(System.Collections.Generic.List<Experimental.XR.ReferencePoint> referencePointsOut);
-    public bool TryAddReferencePoint(Vector3 position, Quaternion rotation, out Experimental.XR.TrackableId referencePointId);
+    public void GetAllReferencePoints(List<Experimental.XR.ReferencePoint> referencePointsOut);
     public bool TryAddReferencePoint(Pose pose, out Experimental.XR.TrackableId referencePointId);
+    public bool TryAddReferencePoint(Vector3 position, Quaternion rotation, out Experimental.XR.TrackableId referencePointId);
     public bool TryGetReferencePoint(Experimental.XR.TrackableId referencePointId, out Experimental.XR.ReferencePoint referencePoint);
     public bool TryRemoveReferencePoint(Experimental.XR.TrackableId referencePointId);
 

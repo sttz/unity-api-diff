@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.XR
@@ -7,9 +9,9 @@ namespace UnityEngine.XR
 public class InputDevices
 {
     static public XR.InputDevice GetDeviceAtXRNode(XR.XRNode node);
-    static public void GetDevices(System.Collections.Generic.List<XR.InputDevice> inputDevices);
-    static public void GetDevicesAtXRNode(XR.XRNode node, System.Collections.Generic.List<XR.InputDevice> inputDevices);
-    static public void GetDevicesWithRole(XR.InputDeviceRole role, System.Collections.Generic.List<XR.InputDevice> inputDevices);
+    static public void GetDevices(List<XR.InputDevice> inputDevices);
+    static public void GetDevicesAtXRNode(XR.XRNode node, List<XR.InputDevice> inputDevices);
+    static public void GetDevicesWithRole(XR.InputDeviceRole role, List<XR.InputDevice> inputDevices);
 
     public InputDevices();
 

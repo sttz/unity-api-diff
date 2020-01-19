@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.XR.WSA.WebCam
@@ -10,7 +12,7 @@ public sealed class PhotoCaptureFrame : IDisposable
     public bool hasLocationData { get; private set; }
     public XR.WSA.WebCam.CapturePixelFormat pixelFormat { get; private set; }
 
-    public void CopyRawImageDataIntoBuffer(System.Collections.Generic.List<byte> byteBuffer);
+    public void CopyRawImageDataIntoBuffer(List<byte> byteBuffer);
     public void Dispose();
     public IntPtr GetUnsafePointerToBuffer();
     public bool TryGetCameraToWorldMatrix(out Matrix4x4 cameraToWorldMatrix);

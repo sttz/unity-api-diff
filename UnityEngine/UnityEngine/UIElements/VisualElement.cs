@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.UIElements
@@ -41,7 +43,7 @@ public class VisualElement : UIElements.Focusable, UIElements.ITransform, UIElem
     public void Add(UIElements.VisualElement child);
     public void AddToClassList(string className);
     public void BringToFront();
-    public System.Collections.Generic.IEnumerable<UIElements.VisualElement> Children();
+    public IEnumerable<UIElements.VisualElement> Children();
     public bool ClassListContains(string cls);
     public void Clear();
     public void ClearClassList();
@@ -52,8 +54,8 @@ public class VisualElement : UIElements.Focusable, UIElements.ITransform, UIElem
     public object FindAncestorUserData();
     public UIElements.VisualElement FindCommonAncestor(UIElements.VisualElement other);
     public void Focus();
-    public T GetFirstAncestorOfType();
-    public T GetFirstOfType();
+    public T GetFirstAncestorOfType<T>();
+    public T GetFirstOfType<T>();
     public int IndexOf(UIElements.VisualElement element);
     public void Insert(int index, UIElements.VisualElement element);
     public void MarkDirtyRepaint();
@@ -71,21 +73,24 @@ public class VisualElement : UIElements.Focusable, UIElements.ITransform, UIElem
     public void ToggleInClassList(string className);
     public string ToString();
 
-    public class UxmlFactory : UIElements.UxmlFactory<UIElements.VisualElement, UxmlTraits>
+    public struct Hierarchy
     {
-        public UxmlFactory();
+        public int childCount { get; }
+        public UIElements.VisualElement this[int key] { get; }
+        public UIElements.VisualElement parent { get; }
 
-    }
-
-    public class UxmlTraits : UIElements.UxmlTraits
-    {
-        protected UIElements.UxmlBoolAttributeDescription focusable { get; set; }
-        protected UIElements.UxmlIntAttributeDescription focusIndex { get; set; }
-        public System.Collections.Generic.IEnumerable<UIElements.UxmlChildElementDescription> uxmlChildElementsDescription { get; }
-
-        public UxmlTraits();
-
-        public void Init(UIElements.VisualElement ve, UIElements.IUxmlAttributes bag, UIElements.CreationContext cc);
+        public void Add(UIElements.VisualElement child);
+        public IEnumerable<UIElements.VisualElement> Children();
+        public void Clear();
+        public UIElements.VisualElement ElementAt(int index);
+        public bool Equals(object obj);
+        public bool Equals(Hierarchy other);
+        public int GetHashCode();
+        public int IndexOf(UIElements.VisualElement element);
+        public void Insert(int index, UIElements.VisualElement child);
+        public void Remove(UIElements.VisualElement child);
+        public void RemoveAt(int index);
+        public void Sort(Comparison<UIElements.VisualElement> comp);
 
     }
 
@@ -96,24 +101,21 @@ public class VisualElement : UIElements.Focusable, UIElements.ITransform, UIElem
         AtMost = 2,
     }
 
-    public struct Hierarchy
+    public class UxmlFactory : UIElements.UxmlFactory<UIElements.VisualElement, UxmlTraits>
     {
-        public int childCount { get; }
-        public UIElements.VisualElement this[int key] { get; }
-        public UIElements.VisualElement parent { get; }
+        public UxmlFactory();
 
-        public void Add(UIElements.VisualElement child);
-        public System.Collections.Generic.IEnumerable<UIElements.VisualElement> Children();
-        public void Clear();
-        public UIElements.VisualElement ElementAt(int index);
-        public bool Equals(Hierarchy other);
-        public bool Equals(object obj);
-        public int GetHashCode();
-        public int IndexOf(UIElements.VisualElement element);
-        public void Insert(int index, UIElements.VisualElement child);
-        public void Remove(UIElements.VisualElement child);
-        public void RemoveAt(int index);
-        public void Sort(Comparison<UIElements.VisualElement> comp);
+    }
+
+    public class UxmlTraits : UIElements.UxmlTraits
+    {
+        protected UIElements.UxmlBoolAttributeDescription focusable { get; set; }
+        protected UIElements.UxmlIntAttributeDescription focusIndex { get; set; }
+        public IEnumerable<UIElements.UxmlChildElementDescription> uxmlChildElementsDescription { get; }
+
+        public UxmlTraits();
+
+        public void Init(UIElements.VisualElement ve, UIElements.IUxmlAttributes bag, UIElements.CreationContext cc);
 
     }
 

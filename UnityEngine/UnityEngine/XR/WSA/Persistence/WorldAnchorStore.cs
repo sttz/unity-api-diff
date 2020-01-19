@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.XR.WSA.Persistence
@@ -13,8 +15,8 @@ public class WorldAnchorStore : IDisposable
     public void Clear();
     public bool Delete(string id);
     public void Dispose();
-    public int GetAllIds(string[] ids);
     public string[] GetAllIds();
+    public int GetAllIds(string[] ids);
     public XR.WSA.WorldAnchor Load(string id, GameObject go);
     public bool Save(string id, XR.WSA.WorldAnchor anchor);
 

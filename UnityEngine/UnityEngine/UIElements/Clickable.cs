@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.UIElements
@@ -12,9 +14,9 @@ public class Clickable : UIElements.MouseManipulator
     public event Action clicked;
     public event Action<UIElements.EventBase> clickedWithEventInfo;
 
-    public Clickable(Action handler, long delay, long interval);
-    public Clickable(Action<UIElements.EventBase> handler);
     public Clickable(Action handler);
+    public Clickable(Action<UIElements.EventBase> handler);
+    public Clickable(Action handler, long delay, long interval);
 
     protected void OnMouseDown(UIElements.MouseDownEvent evt);
     protected void OnMouseMove(UIElements.MouseMoveEvent evt);

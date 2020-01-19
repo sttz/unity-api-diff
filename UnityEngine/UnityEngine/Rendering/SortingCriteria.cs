@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -12,10 +14,10 @@ public enum SortingCriteria
     BackToFront = 4,
     QuantizedFrontToBack = 8,
     OptimizeStateChanges = 16,
-    CanvasOrder = 32,
-    RendererPriority = 64,
-    CommonOpaque = 59,
     CommonTransparent = 23,
+    CanvasOrder = 32,
+    CommonOpaque = 59,
+    RendererPriority = 64,
 }
 
 }

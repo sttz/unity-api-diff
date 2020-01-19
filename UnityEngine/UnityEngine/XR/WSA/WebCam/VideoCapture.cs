@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.XR.WSA.WebCam
@@ -6,10 +8,10 @@ namespace UnityEngine.XR.WSA.WebCam
 
 public class VideoCapture : IDisposable
 {
-    static public System.Collections.Generic.IEnumerable<Resolution> SupportedResolutions { get; }
+    static public IEnumerable<Resolution> SupportedResolutions { get; }
 
     static public void CreateAsync(bool showHolograms, OnVideoCaptureResourceCreatedCallback onCreatedCallback);
-    static public System.Collections.Generic.IEnumerable<float> GetSupportedFrameRatesForResolution(Resolution resolution);
+    static public IEnumerable<float> GetSupportedFrameRatesForResolution(Resolution resolution);
 
     public bool IsRecording { get; }
 
@@ -20,12 +22,6 @@ public class VideoCapture : IDisposable
     public void StopRecordingAsync(OnStoppedRecordingVideoCallback onStoppedRecordingVideoCallback);
     public void StopVideoModeAsync(OnVideoModeStoppedCallback onVideoModeStoppedCallback);
 
-    public enum CaptureResultType
-    {
-        Success = 0,
-        UnknownError = 1,
-    }
-
     public enum AudioState
     {
         MicAudio = 0,
@@ -33,6 +29,22 @@ public class VideoCapture : IDisposable
         ApplicationAndMicAudio = 2,
         None = 3,
     }
+
+    public enum CaptureResultType
+    {
+        Success = 0,
+        UnknownError = 1,
+    }
+
+    public delegate void OnStartedRecordingVideoCallback(VideoCaptureResult result);
+
+    public delegate void OnStoppedRecordingVideoCallback(VideoCaptureResult result);
+
+    public delegate void OnVideoCaptureResourceCreatedCallback(XR.WSA.WebCam.VideoCapture captureObject);
+
+    public delegate void OnVideoModeStartedCallback(VideoCaptureResult result);
+
+    public delegate void OnVideoModeStoppedCallback(VideoCaptureResult result);
 
     public struct VideoCaptureResult
     {
@@ -42,16 +54,6 @@ public class VideoCapture : IDisposable
         public bool success { get; }
 
     }
-
-    public delegate void OnVideoCaptureResourceCreatedCallback(XR.WSA.WebCam.VideoCapture captureObject);
-
-    public delegate void OnVideoModeStartedCallback(VideoCaptureResult result);
-
-    public delegate void OnVideoModeStoppedCallback(VideoCaptureResult result);
-
-    public delegate void OnStartedRecordingVideoCallback(VideoCaptureResult result);
-
-    public delegate void OnStoppedRecordingVideoCallback(VideoCaptureResult result);
 
 }
 

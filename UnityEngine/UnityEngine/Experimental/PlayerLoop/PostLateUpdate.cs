@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Experimental.PlayerLoop
@@ -6,107 +8,7 @@ namespace UnityEngine.Experimental.PlayerLoop
 
 public struct PostLateUpdate
 {
-    public struct PlayerSendFrameStarted
-    {
-    }
-
-    public struct UpdateRectTransform
-    {
-    }
-
-    public struct UpdateCanvasRectTransform
-    {
-    }
-
-    public struct PlayerUpdateCanvases
-    {
-    }
-
-    public struct UpdateAudio
-    {
-    }
-
-    public struct UpdateVideo
-    {
-    }
-
-    public struct DirectorLateUpdate
-    {
-    }
-
-    public struct ScriptRunDelayedDynamicFrameRate
-    {
-    }
-
-    public struct VFXUpdate
-    {
-    }
-
-    public struct ParticleSystemEndUpdateAll
-    {
-    }
-
-    public struct EndGraphicsJobsAfterScriptLateUpdate
-    {
-    }
-
-    public struct UpdateSubstance
-    {
-    }
-
-    public struct UpdateCustomRenderTextures
-    {
-    }
-
-    public struct UpdateAllRenderers
-    {
-    }
-
-    public struct EnlightenRuntimeUpdate
-    {
-    }
-
-    public struct UpdateAllSkinnedMeshes
-    {
-    }
-
-    public struct ProcessWebSendMessages
-    {
-    }
-
-    public struct SortingGroupsUpdate
-    {
-    }
-
-    public struct UpdateVideoTextures
-    {
-    }
-
-    public struct DirectorRenderImage
-    {
-    }
-
-    public struct PlayerEmitCanvasGeometry
-    {
-    }
-
-    public struct FinishFrameRendering
-    {
-    }
-
     public struct BatchModeUpdate
-    {
-    }
-
-    public struct PlayerSendFrameComplete
-    {
-    }
-
-    public struct UpdateCaptureScreenshot
-    {
-    }
-
-    public struct PresentAfterDraw
     {
     }
 
@@ -114,39 +16,19 @@ public struct PostLateUpdate
     {
     }
 
-    public struct XRPostPresent
+    public struct DirectorLateUpdate
     {
     }
 
-    public struct UpdateResolution
+    public struct DirectorRenderImage
     {
     }
 
-    public struct InputEndFrame
+    public struct EndGraphicsJobsAfterScriptLateUpdate
     {
     }
 
-    public struct GUIClearEvents
-    {
-    }
-
-    public struct ShaderHandleErrors
-    {
-    }
-
-    public struct ResetInputAxis
-    {
-    }
-
-    public struct ThreadedLoadingDebug
-    {
-    }
-
-    public struct ProfilerSynchronizeStats
-    {
-    }
-
-    public struct MemoryFrameMaintenance
+    public struct EnlightenRuntimeUpdate
     {
     }
 
@@ -154,11 +36,23 @@ public struct PostLateUpdate
     {
     }
 
-    public struct ProfilerEndFrame
+    public struct FinishFrameRendering
     {
     }
 
-    public struct PlayerSendFramePostPresent
+    public struct GUIClearEvents
+    {
+    }
+
+    public struct InputEndFrame
+    {
+    }
+
+    public struct MemoryFrameMaintenance
+    {
+    }
+
+    public struct ParticleSystemEndUpdateAll
     {
     }
 
@@ -170,7 +64,115 @@ public struct PostLateUpdate
     {
     }
 
+    public struct PlayerEmitCanvasGeometry
+    {
+    }
+
+    public struct PlayerSendFrameComplete
+    {
+    }
+
+    public struct PlayerSendFramePostPresent
+    {
+    }
+
+    public struct PlayerSendFrameStarted
+    {
+    }
+
+    public struct PlayerUpdateCanvases
+    {
+    }
+
+    public struct PresentAfterDraw
+    {
+    }
+
+    public struct ProcessWebSendMessages
+    {
+    }
+
+    public struct ProfilerEndFrame
+    {
+    }
+
+    public struct ProfilerSynchronizeStats
+    {
+    }
+
+    public struct ResetInputAxis
+    {
+    }
+
+    public struct ScriptRunDelayedDynamicFrameRate
+    {
+    }
+
+    public struct ShaderHandleErrors
+    {
+    }
+
+    public struct SortingGroupsUpdate
+    {
+    }
+
+    public struct ThreadedLoadingDebug
+    {
+    }
+
     public struct TriggerEndOfFrameCallbacks
+    {
+    }
+
+    public struct UpdateAllRenderers
+    {
+    }
+
+    public struct UpdateAllSkinnedMeshes
+    {
+    }
+
+    public struct UpdateAudio
+    {
+    }
+
+    public struct UpdateCanvasRectTransform
+    {
+    }
+
+    public struct UpdateCaptureScreenshot
+    {
+    }
+
+    public struct UpdateCustomRenderTextures
+    {
+    }
+
+    public struct UpdateRectTransform
+    {
+    }
+
+    public struct UpdateResolution
+    {
+    }
+
+    public struct UpdateSubstance
+    {
+    }
+
+    public struct UpdateVideo
+    {
+    }
+
+    public struct UpdateVideoTextures
+    {
+    }
+
+    public struct VFXUpdate
+    {
+    }
+
+    public struct XRPostPresent
     {
     }
 

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Animations
@@ -20,12 +22,12 @@ public sealed class ParentConstraint : Behaviour, Animations.IConstraint, Animat
     public int AddSource(Animations.ConstraintSource source);
     public Vector3 GetRotationOffset(int index);
     public Animations.ConstraintSource GetSource(int index);
-    public void GetSources(System.Collections.Generic.List<Animations.ConstraintSource> sources);
+    public void GetSources(List<Animations.ConstraintSource> sources);
     public Vector3 GetTranslationOffset(int index);
     public void RemoveSource(int index);
     public void SetRotationOffset(int index, Vector3 value);
     public void SetSource(int index, Animations.ConstraintSource source);
-    public void SetSources(System.Collections.Generic.List<Animations.ConstraintSource> sources);
+    public void SetSources(List<Animations.ConstraintSource> sources);
     public void SetTranslationOffset(int index, Vector3 value);
 
 }

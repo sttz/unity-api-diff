@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -6,12 +8,12 @@ namespace UnityEngine
 
 public sealed class AudioClip : Object
 {
-    static public AudioClip Create(string name, int lengthSamples, int channels, int frequency, bool _3D, bool stream);
-    static public AudioClip Create(string name, int lengthSamples, int channels, int frequency, bool _3D, bool stream, PCMReaderCallback pcmreadercallback);
-    static public AudioClip Create(string name, int lengthSamples, int channels, int frequency, bool _3D, bool stream, PCMReaderCallback pcmreadercallback, PCMSetPositionCallback pcmsetpositioncallback);
     static public AudioClip Create(string name, int lengthSamples, int channels, int frequency, bool stream);
+    static public AudioClip Create(string name, int lengthSamples, int channels, int frequency, bool _3D, bool stream);
     static public AudioClip Create(string name, int lengthSamples, int channels, int frequency, bool stream, PCMReaderCallback pcmreadercallback);
+    static public AudioClip Create(string name, int lengthSamples, int channels, int frequency, bool _3D, bool stream, PCMReaderCallback pcmreadercallback);
     static public AudioClip Create(string name, int lengthSamples, int channels, int frequency, bool stream, PCMReaderCallback pcmreadercallback, PCMSetPositionCallback pcmsetpositioncallback);
+    static public AudioClip Create(string name, int lengthSamples, int channels, int frequency, bool _3D, bool stream, PCMReaderCallback pcmreadercallback, PCMSetPositionCallback pcmsetpositioncallback);
 
     public bool ambisonic { get; }
     public int channels { get; }

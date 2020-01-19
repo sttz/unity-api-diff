@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -64,7 +66,7 @@ public sealed class Terrain : Behaviour
     public void AddTreeInstance(TreeInstance instance);
     public void ApplyDelayedHeightmapModification();
     public void Flush();
-    public void GetClosestReflectionProbes(System.Collections.Generic.List<Rendering.ReflectionProbeBlendInfo> result);
+    public void GetClosestReflectionProbes(List<Rendering.ReflectionProbeBlendInfo> result);
     public Vector3 GetPosition();
     public void GetSplatMaterialPropertyBlock(MaterialPropertyBlock dest);
     public float SampleHeight(Vector3 worldPosition);

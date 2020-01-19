@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -30,9 +32,9 @@ public struct Rect : IEquatable<Rect>
     public float yMax { get; set; }
     public float yMin { get; set; }
 
-    public Rect(float x, float y, float width, float height);
-    public Rect(Vector2 position, Vector2 size);
     public Rect(Rect source);
+    public Rect(Vector2 position, Vector2 size);
+    public Rect(float x, float y, float width, float height);
 
     public bool Contains(Vector2 point);
     public bool Contains(Vector3 point);

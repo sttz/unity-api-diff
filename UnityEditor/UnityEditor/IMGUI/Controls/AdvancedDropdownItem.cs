@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.IMGUI.Controls
@@ -6,7 +8,7 @@ namespace UnityEditor.IMGUI.Controls
 
 public class AdvancedDropdownItem : IComparable
 {
-    public System.Collections.Generic.IEnumerable<UnityEditor.IMGUI.Controls.AdvancedDropdownItem> children { get; }
+    public IEnumerable<UnityEditor.IMGUI.Controls.AdvancedDropdownItem> children { get; }
     public bool enabled { get; set; }
     public Texture2D icon { get; set; }
     public int id { get; set; }

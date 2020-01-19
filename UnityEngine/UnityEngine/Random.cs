@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -21,10 +23,10 @@ public sealed class Random
     static public Color ColorHSV(float hueMin, float hueMax, float saturationMin, float saturationMax, float valueMin, float valueMax);
     static public Color ColorHSV(float hueMin, float hueMax, float saturationMin, float saturationMax, float valueMin, float valueMax, float alphaMin, float alphaMax);
     static public void InitState(int seed);
-    static public float RandomRange(float min, float max);
     static public int RandomRange(int min, int max);
-    static public float Range(float min, float max);
+    static public float RandomRange(float min, float max);
     static public int Range(int min, int max);
+    static public float Range(float min, float max);
 
     public Random();
 

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Networking
@@ -11,13 +13,13 @@ public class MultipartFormDataSection : Networking.IMultipartFormSection
     public byte[] sectionData { get; }
     public string sectionName { get; }
 
-    public MultipartFormDataSection(string name, byte[] data, string contentType);
-    public MultipartFormDataSection(string name, byte[] data);
     public MultipartFormDataSection(byte[] data);
-    public MultipartFormDataSection(string name, string data, System.Text.Encoding encoding, string contentType);
-    public MultipartFormDataSection(string name, string data, string contentType);
-    public MultipartFormDataSection(string name, string data);
     public MultipartFormDataSection(string data);
+    public MultipartFormDataSection(string name, byte[] data);
+    public MultipartFormDataSection(string name, string data);
+    public MultipartFormDataSection(string name, byte[] data, string contentType);
+    public MultipartFormDataSection(string name, string data, string contentType);
+    public MultipartFormDataSection(string name, string data, System.Text.Encoding encoding, string contentType);
 
 }
 

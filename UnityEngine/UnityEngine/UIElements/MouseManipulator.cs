@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.UIElements
@@ -6,7 +8,7 @@ namespace UnityEngine.UIElements
 
 public abstract class MouseManipulator : UIElements.Manipulator
 {
-    public System.Collections.Generic.List<UIElements.ManipulatorActivationFilter> activators { get; private set; }
+    public List<UIElements.ManipulatorActivationFilter> activators { get; private set; }
 
     protected MouseManipulator();
 

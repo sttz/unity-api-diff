@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -6,7 +8,7 @@ namespace UnityEngine
 
 public interface IAnimationClipSource
 {
-    public void GetAnimationClips(System.Collections.Generic.List<AnimationClip> results);
+    public void GetAnimationClips(List<AnimationClip> results);
 
 }
 

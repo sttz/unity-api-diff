@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.UIElements
@@ -14,8 +16,8 @@ public class TextField : UIElements.TextInputBaseField<string>
     public string value { get; set; }
 
     public TextField();
-    public TextField(int maxLength, bool multiline, bool isPasswordField, char maskChar);
     public TextField(string label);
+    public TextField(int maxLength, bool multiline, bool isPasswordField, char maskChar);
     public TextField(string label, int maxLength, bool multiline, bool isPasswordField, char maskChar);
 
     public void SelectRange(int rangeCursorIndex, int selectionIndex);

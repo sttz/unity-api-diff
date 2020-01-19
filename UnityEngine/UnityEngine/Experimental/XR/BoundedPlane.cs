@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Experimental.XR
@@ -18,7 +20,7 @@ public struct BoundedPlane
     public float Width { get; }
 
     public void GetCorners(out Vector3 p0, out Vector3 p1, out Vector3 p2, out Vector3 p3);
-    public bool TryGetBoundary(System.Collections.Generic.List<Vector3> boundaryOut);
+    public bool TryGetBoundary(List<Vector3> boundaryOut);
 
 }
 

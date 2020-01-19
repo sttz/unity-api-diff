@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Unity.Jobs.LowLevel.Unsafe
@@ -13,8 +15,8 @@ public static class JobsUtility
     static public bool JobCompilerEnabled { get; set; }
     static public bool JobDebuggerEnabled { get; set; }
 
-    static public IntPtr CreateJobReflectionData(Type type, Unity.Jobs.LowLevel.Unsafe.JobType jobType, object managedJobFunction0, object managedJobFunction1 = null, object managedJobFunction2 = null);
     static public IntPtr CreateJobReflectionData(Type wrapperJobType, Type userJobType, Unity.Jobs.LowLevel.Unsafe.JobType jobType, object managedJobFunction0);
+    static public IntPtr CreateJobReflectionData(Type type, Unity.Jobs.LowLevel.Unsafe.JobType jobType, object managedJobFunction0, object managedJobFunction1 = null, object managedJobFunction2 = null);
     static public void GetJobRange(Unity.Jobs.LowLevel.Unsafe.JobRanges ranges, int jobIndex, out int beginIndex, out int endIndex);
     static public bool GetWorkStealingRange(Unity.Jobs.LowLevel.Unsafe.JobRanges ranges, int jobIndex, out int beginIndex, out int endIndex);
     static public void PatchBufferMinMaxRanges(IntPtr bufferRangePatchData, void jobdata, int startIndex, int rangeSize);

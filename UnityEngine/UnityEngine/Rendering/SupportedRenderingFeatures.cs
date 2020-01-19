@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -25,18 +27,18 @@ public class SupportedRenderingFeatures
 
     public SupportedRenderingFeatures();
 
-    public enum ReflectionProbeModes
-    {
-        None = 0,
-        Rotation = 1,
-    }
-
     public enum LightmapMixedBakeModes
     {
         None = 0,
         IndirectOnly = 1,
         Subtractive = 2,
         Shadowmask = 4,
+    }
+
+    public enum ReflectionProbeModes
+    {
+        None = 0,
+        Rotation = 1,
     }
 
 }

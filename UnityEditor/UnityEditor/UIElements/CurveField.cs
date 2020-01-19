@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.UIElements
@@ -21,6 +23,13 @@ public class CurveField : UIElements.BaseField<AnimationCurve>
 
     public void SetValueWithoutNotify(AnimationCurve newValue);
 
+    public enum RenderMode
+    {
+        Texture = 0,
+        Default = 0,
+        Mesh = 1,
+    }
+
     public class UxmlFactory : UIElements.UxmlFactory<UnityEditor.UIElements.CurveField, UxmlTraits>
     {
         public UxmlFactory();
@@ -31,13 +40,6 @@ public class CurveField : UIElements.BaseField<AnimationCurve>
     {
         public UxmlTraits();
 
-    }
-
-    public enum RenderMode
-    {
-        Texture = 0,
-        Mesh = 1,
-        Default = 0,
     }
 
 }

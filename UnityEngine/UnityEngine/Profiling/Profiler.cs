@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Profiling
@@ -21,8 +23,8 @@ public sealed class Profiler
     static public void BeginSample(string name, Object targetObject);
     static public void BeginThreadProfiling(string threadGroupName, string threadName);
     static public void EmitFrameMetaData(Guid id, int tag, Array data);
-    static public void EmitFrameMetaData(Guid id, int tag, System.Collections.Generic.List<T> data);
-    static public void EmitFrameMetaData(Guid id, int tag, Unity.Collections.NativeArray<T> data);
+    static public void EmitFrameMetaData<T>(Guid id, int tag, List<T> data);
+    static public void EmitFrameMetaData<T>(Guid id, int tag, Unity.Collections.NativeArray<T> data);
     static public void EndSample();
     static public void EndThreadProfiling();
     static public long GetAllocatedMemoryForGraphicsDriver();

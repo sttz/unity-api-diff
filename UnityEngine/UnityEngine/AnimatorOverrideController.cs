@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -15,8 +17,8 @@ public class AnimatorOverrideController : RuntimeAnimatorController
     public AnimatorOverrideController();
     public AnimatorOverrideController(RuntimeAnimatorController controller);
 
-    public void ApplyOverrides(System.Collections.Generic.IList<System.Collections.Generic.KeyValuePair<AnimationClip, AnimationClip>> overrides);
-    public void GetOverrides(System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<AnimationClip, AnimationClip>> overrides);
+    public void ApplyOverrides(IList<KeyValuePair<AnimationClip, AnimationClip>> overrides);
+    public void GetOverrides(List<KeyValuePair<AnimationClip, AnimationClip>> overrides);
 
 }
 

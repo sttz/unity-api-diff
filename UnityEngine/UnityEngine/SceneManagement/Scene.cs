@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.SceneManagement
@@ -18,7 +20,7 @@ public struct Scene
     public bool Equals(object other);
     public int GetHashCode();
     public GameObject[] GetRootGameObjects();
-    public void GetRootGameObjects(System.Collections.Generic.List<GameObject> rootGameObjects);
+    public void GetRootGameObjects(List<GameObject> rootGameObjects);
     public bool IsValid();
 
 }

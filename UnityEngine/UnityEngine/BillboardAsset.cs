@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -16,17 +18,17 @@ public sealed class BillboardAsset : Object
 
     public BillboardAsset();
 
-    public void GetImageTexCoords(System.Collections.Generic.List<Vector4> imageTexCoords);
     public Vector4[] GetImageTexCoords();
-    public void GetIndices(System.Collections.Generic.List<ushort> indices);
+    public void GetImageTexCoords(List<Vector4> imageTexCoords);
     public ushort[] GetIndices();
-    public void GetVertices(System.Collections.Generic.List<Vector2> vertices);
+    public void GetIndices(List<ushort> indices);
     public Vector2[] GetVertices();
-    public void SetImageTexCoords(System.Collections.Generic.List<Vector4> imageTexCoords);
+    public void GetVertices(List<Vector2> vertices);
+    public void SetImageTexCoords(List<Vector4> imageTexCoords);
     public void SetImageTexCoords(Vector4[] imageTexCoords);
-    public void SetIndices(System.Collections.Generic.List<ushort> indices);
+    public void SetIndices(List<ushort> indices);
     public void SetIndices(ushort[] indices);
-    public void SetVertices(System.Collections.Generic.List<Vector2> vertices);
+    public void SetVertices(List<Vector2> vertices);
     public void SetVertices(Vector2[] vertices);
 
 }

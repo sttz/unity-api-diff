@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.XR.WSA.Input
@@ -47,13 +49,13 @@ public sealed class GestureRecognizer : IDisposable
     public void StartCapturingGestures();
     public void StopCapturingGestures();
 
+    public delegate void GestureErrorDelegate(string error, int hresult);
+
     public delegate void HoldCanceledEventDelegate(XR.WSA.Input.InteractionSourceKind source, Ray headRay);
 
     public delegate void HoldCompletedEventDelegate(XR.WSA.Input.InteractionSourceKind source, Ray headRay);
 
     public delegate void HoldStartedEventDelegate(XR.WSA.Input.InteractionSourceKind source, Ray headRay);
-
-    public delegate void TappedEventDelegate(XR.WSA.Input.InteractionSourceKind source, int tapCount, Ray headRay);
 
     public delegate void ManipulationCanceledEventDelegate(XR.WSA.Input.InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay);
 
@@ -75,7 +77,7 @@ public sealed class GestureRecognizer : IDisposable
 
     public delegate void RecognitionStartedEventDelegate(XR.WSA.Input.InteractionSourceKind source, Ray headRay);
 
-    public delegate void GestureErrorDelegate(string error, int hresult);
+    public delegate void TappedEventDelegate(XR.WSA.Input.InteractionSourceKind source, int tapCount, Ray headRay);
 
 }
 

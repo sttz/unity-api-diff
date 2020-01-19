@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.XR.WSA.Sharing
@@ -16,15 +18,15 @@ public class WorldAnchorTransferBatch : IDisposable
 
     public bool AddWorldAnchor(string id, XR.WSA.WorldAnchor anchor);
     public void Dispose();
-    public int GetAllIds(string[] ids);
     public string[] GetAllIds();
+    public int GetAllIds(string[] ids);
     public XR.WSA.WorldAnchor LockObject(string id, GameObject go);
 
-    public delegate void SerializationDataAvailableDelegate(byte[] data);
+    public delegate void DeserializationCompleteDelegate(XR.WSA.Sharing.SerializationCompletionReason completionReason, XR.WSA.Sharing.WorldAnchorTransferBatch deserializedTransferBatch);
 
     public delegate void SerializationCompleteDelegate(XR.WSA.Sharing.SerializationCompletionReason completionReason);
 
-    public delegate void DeserializationCompleteDelegate(XR.WSA.Sharing.SerializationCompletionReason completionReason, XR.WSA.Sharing.WorldAnchorTransferBatch deserializedTransferBatch);
+    public delegate void SerializationDataAvailableDelegate(byte[] data);
 
 }
 

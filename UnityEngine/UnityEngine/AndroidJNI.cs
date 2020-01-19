@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -114,8 +116,8 @@ public class AndroidJNI
     static public IntPtr NewStringUTF(string bytes);
     static public IntPtr PopLocalFrame(IntPtr ptr);
     static public int PushLocalFrame(int capacity);
-    static public void SetBooleanArrayElement(IntPtr array, int index, byte val);
     static public void SetBooleanArrayElement(IntPtr array, int index, bool val);
+    static public void SetBooleanArrayElement(IntPtr array, int index, byte val);
     static public void SetBooleanField(IntPtr obj, IntPtr fieldID, bool val);
     static public void SetByteArrayElement(IntPtr array, int index, sbyte val);
     static public void SetByteField(IntPtr obj, IntPtr fieldID, byte val);
@@ -156,8 +158,8 @@ public class AndroidJNI
     static public IntPtr ToFloatArray(float[] array);
     static public IntPtr ToIntArray(int[] array);
     static public IntPtr ToLongArray(long[] array);
-    static public IntPtr ToObjectArray(IntPtr[] array, IntPtr arrayClass);
     static public IntPtr ToObjectArray(IntPtr[] array);
+    static public IntPtr ToObjectArray(IntPtr[] array, IntPtr arrayClass);
     static public IntPtr ToReflectedField(IntPtr clazz, IntPtr fieldID, bool isStatic);
     static public IntPtr ToReflectedMethod(IntPtr clazz, IntPtr methodID, bool isStatic);
     static public IntPtr ToSByteArray(sbyte[] array);

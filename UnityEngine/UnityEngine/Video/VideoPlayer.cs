@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Video
@@ -80,9 +82,9 @@ public sealed class VideoPlayer : Behaviour
     public void StepForward();
     public void Stop();
 
-    public delegate void EventHandler(Video.VideoPlayer source);
-
     public delegate void ErrorEventHandler(Video.VideoPlayer source, string message);
+
+    public delegate void EventHandler(Video.VideoPlayer source);
 
     public delegate void FrameReadyEventHandler(Video.VideoPlayer source, long frameIdx);
 

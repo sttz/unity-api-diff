@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.ShortcutManagement
@@ -14,8 +16,8 @@ public interface IShortcutManager
     public void ClearShortcutOverride(string shortcutId);
     public void CreateProfile(string profileId);
     public void DeleteProfile(string profileId);
-    public System.Collections.Generic.IEnumerable<string> GetAvailableProfileIds();
-    public System.Collections.Generic.IEnumerable<string> GetAvailableShortcutIds();
+    public IEnumerable<string> GetAvailableProfileIds();
+    public IEnumerable<string> GetAvailableShortcutIds();
     public UnityEditor.ShortcutManagement.ShortcutBinding GetShortcutBinding(string shortcutId);
     public bool IsProfileIdValid(string profileId);
     public bool IsProfileReadOnly(string profileId);

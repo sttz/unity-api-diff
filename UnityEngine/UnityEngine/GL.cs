@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -18,8 +20,8 @@ public sealed class GL
     static public bool wireframe { get; set; }
 
     static public void Begin(int mode);
-    static public void Clear(bool clearDepth, bool clearColor, Color backgroundColor, float depth);
     static public void Clear(bool clearDepth, bool clearColor, Color backgroundColor);
+    static public void Clear(bool clearDepth, bool clearColor, Color backgroundColor, float depth);
     static public void ClearWithSkybox(bool clearDepth, Camera camera);
     static public void Color(Color c);
     static public void End();

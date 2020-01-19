@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Experimental.AI
@@ -16,8 +18,8 @@ public struct NavMeshQuery : IDisposable
     public int GetPathResult(Unity.Collections.NativeSlice<Experimental.AI.PolygonId> path);
     public Experimental.AI.NavMeshPolyTypes GetPolygonType(Experimental.AI.PolygonId polygon);
     public bool GetPortalPoints(Experimental.AI.PolygonId polygon, Experimental.AI.PolygonId neighbourPolygon, out Vector3 left, out Vector3 right);
-    public bool IsValid(Experimental.AI.PolygonId polygon);
     public bool IsValid(Experimental.AI.NavMeshLocation location);
+    public bool IsValid(Experimental.AI.PolygonId polygon);
     public Experimental.AI.NavMeshLocation MapLocation(Vector3 position, Vector3 extents, int agentTypeID, int areaMask = -1);
     public Experimental.AI.NavMeshLocation MoveLocation(Experimental.AI.NavMeshLocation location, Vector3 target, int areaMask = -1);
     public void MoveLocations(Unity.Collections.NativeSlice<Experimental.AI.NavMeshLocation> locations, Unity.Collections.NativeSlice<Vector3> targets, Unity.Collections.NativeSlice<int> areaMasks);

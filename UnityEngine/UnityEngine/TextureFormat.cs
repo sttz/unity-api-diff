@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -6,6 +8,12 @@ namespace UnityEngine
 
 public enum TextureFormat
 {
+    ATC_RGB4 = -127,
+    ATC_RGBA8 = -127,
+    PVRTC_2BPP_RGB = -127,
+    PVRTC_2BPP_RGBA = -127,
+    PVRTC_4BPP_RGB = -127,
+    PVRTC_4BPP_RGBA = -127,
     Alpha8 = 1,
     ARGB4444 = 2,
     RGB24 = 3,
@@ -25,10 +33,10 @@ public enum TextureFormat
     RGBAFloat = 20,
     YUY2 = 21,
     RGB9e5Float = 22,
-    BC4 = 26,
-    BC5 = 27,
     BC6H = 24,
     BC7 = 25,
+    BC4 = 26,
+    BC5 = 27,
     DXT1Crunched = 28,
     DXT5Crunched = 29,
     PVRTC_RGB2 = 30,
@@ -36,8 +44,6 @@ public enum TextureFormat
     PVRTC_RGB4 = 32,
     PVRTC_RGBA4 = 33,
     ETC_RGB4 = 34,
-    ATC_RGB4 = -127,
-    ATC_RGBA8 = -127,
     EAC_R = 41,
     EAC_R_SIGNED = 42,
     EAC_RG = 43,
@@ -46,11 +52,23 @@ public enum TextureFormat
     ETC2_RGBA1 = 46,
     ETC2_RGBA8 = 47,
     ASTC_4x4 = 48,
+    ASTC_RGB_4x4 = 48,
     ASTC_5x5 = 49,
+    ASTC_RGB_5x5 = 49,
     ASTC_6x6 = 50,
+    ASTC_RGB_6x6 = 50,
     ASTC_8x8 = 51,
+    ASTC_RGB_8x8 = 51,
     ASTC_10x10 = 52,
+    ASTC_RGB_10x10 = 52,
     ASTC_12x12 = 53,
+    ASTC_RGB_12x12 = 53,
+    ASTC_RGBA_4x4 = 54,
+    ASTC_RGBA_5x5 = 55,
+    ASTC_RGBA_6x6 = 56,
+    ASTC_RGBA_8x8 = 57,
+    ASTC_RGBA_10x10 = 58,
+    ASTC_RGBA_12x12 = 59,
     ETC_RGB4_3DS = 60,
     ETC_RGBA8_3DS = 61,
     RG16 = 62,
@@ -63,22 +81,6 @@ public enum TextureFormat
     ASTC_HDR_8x8 = 69,
     ASTC_HDR_10x10 = 70,
     ASTC_HDR_12x12 = 71,
-    ASTC_RGB_4x4 = 48,
-    ASTC_RGB_5x5 = 49,
-    ASTC_RGB_6x6 = 50,
-    ASTC_RGB_8x8 = 51,
-    ASTC_RGB_10x10 = 52,
-    ASTC_RGB_12x12 = 53,
-    ASTC_RGBA_4x4 = 54,
-    ASTC_RGBA_5x5 = 55,
-    ASTC_RGBA_6x6 = 56,
-    ASTC_RGBA_8x8 = 57,
-    ASTC_RGBA_10x10 = 58,
-    ASTC_RGBA_12x12 = 59,
-    PVRTC_2BPP_RGB = -127,
-    PVRTC_2BPP_RGBA = -127,
-    PVRTC_4BPP_RGB = -127,
-    PVRTC_4BPP_RGBA = -127,
 }
 
 }

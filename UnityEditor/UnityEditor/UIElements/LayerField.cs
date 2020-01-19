@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.UIElements
@@ -14,9 +16,9 @@ public class LayerField : UnityEditor.UIElements.PopupField<int>
     public Func<int, string> formatSelectedValueCallback { get; set; }
     public int value { get; set; }
 
-    public LayerField(string label);
     public LayerField();
     public LayerField(int defaultValue);
+    public LayerField(string label);
     public LayerField(string label, int defaultValue);
 
     public void SetValueWithoutNotify(int newValue);

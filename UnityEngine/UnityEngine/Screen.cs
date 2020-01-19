@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -24,10 +26,10 @@ public sealed class Screen
     static public int sleepTimeout { get; set; }
     static public int width { get; }
 
-    static public void SetResolution(int width, int height, FullScreenMode fullscreenMode, int preferredRefreshRate);
+    static public void SetResolution(int width, int height, bool fullscreen);
     static public void SetResolution(int width, int height, FullScreenMode fullscreenMode);
     static public void SetResolution(int width, int height, bool fullscreen, int preferredRefreshRate);
-    static public void SetResolution(int width, int height, bool fullscreen);
+    static public void SetResolution(int width, int height, FullScreenMode fullscreenMode, int preferredRefreshRate);
 
     public Screen();
 

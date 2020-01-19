@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -25,6 +27,7 @@ public enum SystemLanguage
     Greek = 16,
     Hebrew = 17,
     Hugarian = 18,
+    Hungarian = 18,
     Icelandic = 19,
     Indonesian = 20,
     Italian = 21,
@@ -49,7 +52,6 @@ public enum SystemLanguage
     ChineseSimplified = 40,
     ChineseTraditional = 41,
     Unknown = 42,
-    Hungarian = 18,
 }
 
 }

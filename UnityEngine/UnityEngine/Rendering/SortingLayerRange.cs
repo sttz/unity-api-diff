@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -13,8 +15,8 @@ public struct SortingLayerRange : IEquatable<Rendering.SortingLayerRange>
 
     public SortingLayerRange(short lowerBound, short upperBound);
 
-    public bool Equals(Rendering.SortingLayerRange other);
     public bool Equals(object obj);
+    public bool Equals(Rendering.SortingLayerRange other);
     public int GetHashCode();
 
 }

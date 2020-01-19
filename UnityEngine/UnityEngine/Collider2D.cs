@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -22,38 +24,38 @@ public class Collider2D : Behaviour
     public Collider2D();
 
     public int Cast(Vector2 direction, RaycastHit2D[] results);
-    public int Cast(Vector2 direction, RaycastHit2D[] results, float distance);
-    public int Cast(Vector2 direction, RaycastHit2D[] results, float distance, bool ignoreSiblingColliders);
     public int Cast(Vector2 direction, ContactFilter2D contactFilter, RaycastHit2D[] results);
+    public int Cast(Vector2 direction, RaycastHit2D[] results, float distance);
     public int Cast(Vector2 direction, ContactFilter2D contactFilter, RaycastHit2D[] results, float distance);
+    public int Cast(Vector2 direction, RaycastHit2D[] results, float distance, bool ignoreSiblingColliders);
+    public int Cast(Vector2 direction, ContactFilter2D contactFilter, List<RaycastHit2D> results, float distance = ∞, bool ignoreSiblingColliders = true);
     public int Cast(Vector2 direction, ContactFilter2D contactFilter, RaycastHit2D[] results, float distance, bool ignoreSiblingColliders);
-    public int Cast(Vector2 direction, ContactFilter2D contactFilter, System.Collections.Generic.List<RaycastHit2D> results, float distance = ∞, bool ignoreSiblingColliders = true);
     public Vector2 ClosestPoint(Vector2 position);
     public ColliderDistance2D Distance(Collider2D collider);
-    public int GetContacts(ContactPoint2D[] contacts);
-    public int GetContacts(System.Collections.Generic.List<ContactPoint2D> contacts);
-    public int GetContacts(ContactFilter2D contactFilter, ContactPoint2D[] contacts);
-    public int GetContacts(ContactFilter2D contactFilter, System.Collections.Generic.List<ContactPoint2D> contacts);
+    public int GetContacts(List<Collider2D> colliders);
     public int GetContacts(Collider2D[] colliders);
-    public int GetContacts(System.Collections.Generic.List<Collider2D> colliders);
+    public int GetContacts(List<ContactPoint2D> contacts);
+    public int GetContacts(ContactPoint2D[] contacts);
+    public int GetContacts(ContactFilter2D contactFilter, List<Collider2D> colliders);
     public int GetContacts(ContactFilter2D contactFilter, Collider2D[] colliders);
-    public int GetContacts(ContactFilter2D contactFilter, System.Collections.Generic.List<Collider2D> colliders);
+    public int GetContacts(ContactFilter2D contactFilter, List<ContactPoint2D> contacts);
+    public int GetContacts(ContactFilter2D contactFilter, ContactPoint2D[] contacts);
     public bool IsTouching(Collider2D collider);
-    public bool IsTouching(Collider2D collider, ContactFilter2D contactFilter);
     public bool IsTouching(ContactFilter2D contactFilter);
+    public bool IsTouching(Collider2D collider, ContactFilter2D contactFilter);
     public bool IsTouchingLayers();
     public bool IsTouchingLayers(int layerMask);
+    public int OverlapCollider(ContactFilter2D contactFilter, List<Collider2D> results);
     public int OverlapCollider(ContactFilter2D contactFilter, Collider2D[] results);
-    public int OverlapCollider(ContactFilter2D contactFilter, System.Collections.Generic.List<Collider2D> results);
     public bool OverlapPoint(Vector2 point);
     public int Raycast(Vector2 direction, RaycastHit2D[] results);
+    public int Raycast(Vector2 direction, ContactFilter2D contactFilter, RaycastHit2D[] results);
     public int Raycast(Vector2 direction, RaycastHit2D[] results, float distance);
+    public int Raycast(Vector2 direction, ContactFilter2D contactFilter, List<RaycastHit2D> results, float distance = ∞);
+    public int Raycast(Vector2 direction, ContactFilter2D contactFilter, RaycastHit2D[] results, float distance);
     public int Raycast(Vector2 direction, RaycastHit2D[] results, float distance, int layerMask);
     public int Raycast(Vector2 direction, RaycastHit2D[] results, float distance, int layerMask, float minDepth);
     public int Raycast(Vector2 direction, RaycastHit2D[] results, float distance, int layerMask, float minDepth, float maxDepth);
-    public int Raycast(Vector2 direction, ContactFilter2D contactFilter, RaycastHit2D[] results);
-    public int Raycast(Vector2 direction, ContactFilter2D contactFilter, RaycastHit2D[] results, float distance);
-    public int Raycast(Vector2 direction, ContactFilter2D contactFilter, System.Collections.Generic.List<RaycastHit2D> results, float distance = ∞);
 
 }
 

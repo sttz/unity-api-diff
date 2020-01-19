@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -16,17 +18,17 @@ public sealed class Cubemap : Texture
     public Cubemap(int width, Experimental.Rendering.GraphicsFormat format, Experimental.Rendering.TextureCreationFlags flags);
     public Cubemap(int width, TextureFormat textureFormat, bool mipChain);
 
-    public void Apply(bool updateMipmaps, bool makeNoLongerReadable);
-    public void Apply(bool updateMipmaps);
     public void Apply();
+    public void Apply(bool updateMipmaps);
+    public void Apply(bool updateMipmaps, bool makeNoLongerReadable);
     public Color GetPixel(CubemapFace face, int x, int y);
-    public Color[] GetPixels(CubemapFace face, int miplevel);
     public Color[] GetPixels(CubemapFace face);
+    public Color[] GetPixels(CubemapFace face, int miplevel);
     public void SetPixel(CubemapFace face, int x, int y, Color color);
-    public void SetPixels(Color[] colors, CubemapFace face, int miplevel);
     public void SetPixels(Color[] colors, CubemapFace face);
-    public void SmoothEdges(int smoothRegionWidthInPixels);
+    public void SetPixels(Color[] colors, CubemapFace face, int miplevel);
     public void SmoothEdges();
+    public void SmoothEdges(int smoothRegionWidthInPixels);
     public void UpdateExternalTexture(IntPtr nativeTexture);
 
 }

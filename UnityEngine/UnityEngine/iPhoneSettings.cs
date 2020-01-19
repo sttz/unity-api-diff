@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -19,9 +21,9 @@ public class iPhoneSettings
     static public string uniqueIdentifier { get; }
     static public bool verticalOrientation { get; }
 
-    static public void StartLocationServiceUpdates(float desiredAccuracyInMeters, float updateDistanceInMeters);
-    static public void StartLocationServiceUpdates(float desiredAccuracyInMeters);
     static public void StartLocationServiceUpdates();
+    static public void StartLocationServiceUpdates(float desiredAccuracyInMeters);
+    static public void StartLocationServiceUpdates(float desiredAccuracyInMeters, float updateDistanceInMeters);
     static public void StopLocationServiceUpdates();
 
     public iPhoneSettings();

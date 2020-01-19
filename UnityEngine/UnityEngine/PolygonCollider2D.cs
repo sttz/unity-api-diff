@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine
@@ -16,10 +18,10 @@ public sealed class PolygonCollider2D : Collider2D
     public void CreatePrimitive(int sides, Vector2 scale);
     public void CreatePrimitive(int sides, Vector2 scale, Vector2 offset);
     public Vector2[] GetPath(int index);
-    public int GetPath(int index, System.Collections.Generic.List<Vector2> points);
+    public int GetPath(int index, List<Vector2> points);
     public int GetTotalPointCount();
+    public void SetPath(int index, List<Vector2> points);
     public void SetPath(int index, Vector2[] points);
-    public void SetPath(int index, System.Collections.Generic.List<Vector2> points);
 
 }
 

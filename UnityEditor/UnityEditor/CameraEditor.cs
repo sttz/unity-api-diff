@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -19,8 +21,8 @@ public class CameraEditor : UnityEditor.Editor
 
     public sealed class Settings
     {
-        static public System.Collections.Generic.IEnumerable<string> ApertureFormatNames { get; }
-        static public System.Collections.Generic.IEnumerable<Vector2> ApertureFormatValues { get; }
+        static public IEnumerable<string> ApertureFormatNames { get; }
+        static public IEnumerable<Vector2> ApertureFormatValues { get; }
 
         static public void DrawCameraWarnings(Camera camera);
 

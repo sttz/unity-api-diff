@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEngine.Rendering
@@ -15,8 +17,8 @@ public struct RenderStateBlock : IEquatable<Rendering.RenderStateBlock>
 
     public RenderStateBlock(Rendering.RenderStateMask mask);
 
-    public bool Equals(Rendering.RenderStateBlock other);
     public bool Equals(object obj);
+    public bool Equals(Rendering.RenderStateBlock other);
     public int GetHashCode();
 
 }
