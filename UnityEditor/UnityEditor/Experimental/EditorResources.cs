@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental
@@ -25,7 +27,7 @@ public class EditorResources
     static public string GetAssetPath(Object obj);
     static public string GetFullPath(string path);
     static public Object Load(string assetPath, Type type);
-    static public T Load(string assetPath, bool isRequired = true);
+    static public T Load<T>(string assetPath, bool isRequired = true);
 
     public EditorResources();
 

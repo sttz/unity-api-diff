@@ -1,10 +1,12 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.VersionControl
 {
 
-public class AssetList : System.Collections.Generic.List<UnityEditor.VersionControl.Asset>
+public class AssetList : List<UnityEditor.VersionControl.Asset>
 {
     public AssetList();
     public AssetList(UnityEditor.VersionControl.AssetList src);

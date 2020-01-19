@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -8,9 +10,9 @@ public enum ModelImporterTangents
 {
     Import = 0,
     CalculateLegacy = 1,
-    CalculateLegacyWithSplitTangents = 4,
-    CalculateMikk = 3,
     None = 2,
+    CalculateMikk = 3,
+    CalculateLegacyWithSplitTangents = 4,
 }
 
 }

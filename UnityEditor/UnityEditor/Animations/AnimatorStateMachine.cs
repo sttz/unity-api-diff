@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Animations
@@ -30,11 +32,11 @@ public sealed class AnimatorStateMachine : Object
     public UnityEditor.Animations.AnimatorStateMachine AddStateMachine(string name, Vector3 position);
     public void AddStateMachine(UnityEditor.Animations.AnimatorStateMachine stateMachine, Vector3 position);
     public StateMachineBehaviour AddStateMachineBehaviour(Type stateMachineBehaviourType);
-    public T AddStateMachineBehaviour();
+    public T AddStateMachineBehaviour<T>();
     public UnityEditor.Animations.AnimatorTransition AddStateMachineExitTransition(UnityEditor.Animations.AnimatorStateMachine sourceStateMachine);
     public UnityEditor.Animations.AnimatorTransition AddStateMachineTransition(UnityEditor.Animations.AnimatorStateMachine sourceStateMachine);
-    public UnityEditor.Animations.AnimatorTransition AddStateMachineTransition(UnityEditor.Animations.AnimatorStateMachine sourceStateMachine, UnityEditor.Animations.AnimatorStateMachine destinationStateMachine);
     public UnityEditor.Animations.AnimatorTransition AddStateMachineTransition(UnityEditor.Animations.AnimatorStateMachine sourceStateMachine, UnityEditor.Animations.AnimatorState destinationState);
+    public UnityEditor.Animations.AnimatorTransition AddStateMachineTransition(UnityEditor.Animations.AnimatorStateMachine sourceStateMachine, UnityEditor.Animations.AnimatorStateMachine destinationStateMachine);
     public UnityEditor.Animations.AnimatorTransition[] GetStateMachineTransitions(UnityEditor.Animations.AnimatorStateMachine sourceStateMachine);
     public string MakeUniqueStateMachineName(string name);
     public string MakeUniqueStateName(string name);

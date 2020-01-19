@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -123,28 +125,28 @@ public sealed class PlayerSettings : Object
     static public string[] GetAvailableVirtualRealitySDKs(UnityEditor.BuildTargetGroup targetGroup);
     static public UnityEditor.ScriptingImplementation GetDefaultScriptingBackend(UnityEditor.BuildTargetGroup targetGroup);
     static public Rendering.GraphicsDeviceType[] GetGraphicsAPIs(UnityEditor.BuildTarget platform);
-    static public Texture2D[] GetIconsForTargetGroup(UnityEditor.BuildTargetGroup platform, UnityEditor.IconKind kind);
     static public Texture2D[] GetIconsForTargetGroup(UnityEditor.BuildTargetGroup platform);
-    static public int[] GetIconSizesForTargetGroup(UnityEditor.BuildTargetGroup platform, UnityEditor.IconKind kind);
+    static public Texture2D[] GetIconsForTargetGroup(UnityEditor.BuildTargetGroup platform, UnityEditor.IconKind kind);
     static public int[] GetIconSizesForTargetGroup(UnityEditor.BuildTargetGroup platform);
+    static public int[] GetIconSizesForTargetGroup(UnityEditor.BuildTargetGroup platform, UnityEditor.IconKind kind);
     static public UnityEditor.Il2CppCompilerConfiguration GetIl2CppCompilerConfiguration(UnityEditor.BuildTargetGroup targetGroup);
     static public bool GetIncrementalIl2CppBuild(UnityEditor.BuildTargetGroup targetGroup);
     static public UnityEditor.ManagedStrippingLevel GetManagedStrippingLevel(UnityEditor.BuildTargetGroup targetGroup);
     static public bool GetMobileMTRendering(UnityEditor.BuildTargetGroup targetGroup);
     static public UnityEditor.PlatformIcon[] GetPlatformIcons(UnityEditor.BuildTargetGroup platform, UnityEditor.PlatformIconKind kind);
     static public Object[] GetPreloadedAssets();
-    static public bool GetPropertyBool(string name, UnityEditor.BuildTargetGroup target);
     static public bool GetPropertyBool(string name);
-    static public int GetPropertyInt(string name, UnityEditor.BuildTargetGroup target);
+    static public bool GetPropertyBool(string name, UnityEditor.BuildTargetGroup target);
     static public int GetPropertyInt(string name);
-    static public bool GetPropertyOptionalBool(string name, bool value, UnityEditor.BuildTargetGroup target);
+    static public int GetPropertyInt(string name, UnityEditor.BuildTargetGroup target);
     static public bool GetPropertyOptionalBool(string name, bool value);
-    static public bool GetPropertyOptionalInt(string name, int value, UnityEditor.BuildTargetGroup target);
+    static public bool GetPropertyOptionalBool(string name, bool value, UnityEditor.BuildTargetGroup target);
     static public bool GetPropertyOptionalInt(string name, int value);
-    static public bool GetPropertyOptionalString(string name, string value, UnityEditor.BuildTargetGroup target);
+    static public bool GetPropertyOptionalInt(string name, int value, UnityEditor.BuildTargetGroup target);
     static public bool GetPropertyOptionalString(string name, string value);
-    static public string GetPropertyString(string name, UnityEditor.BuildTargetGroup target);
+    static public bool GetPropertyOptionalString(string name, string value, UnityEditor.BuildTargetGroup target);
     static public string GetPropertyString(string name);
+    static public string GetPropertyString(string name, UnityEditor.BuildTargetGroup target);
     static public UnityEditor.ScriptingImplementation GetScriptingBackend(UnityEditor.BuildTargetGroup targetGroup);
     static public string GetScriptingDefineSymbolsForGroup(UnityEditor.BuildTargetGroup targetGroup);
     static public StackTraceLogType GetStackTraceLogType(LogType logType);
@@ -160,23 +162,23 @@ public sealed class PlayerSettings : Object
     static public void SetArchitecture(UnityEditor.BuildTargetGroup targetGroup, int architecture);
     static public void SetAspectRatio(UnityEditor.AspectRatio aspectRatio, bool enable);
     static public void SetGraphicsAPIs(UnityEditor.BuildTarget platform, Rendering.GraphicsDeviceType[] apis);
-    static public void SetIconsForTargetGroup(UnityEditor.BuildTargetGroup platform, Texture2D[] icons, UnityEditor.IconKind kind);
     static public void SetIconsForTargetGroup(UnityEditor.BuildTargetGroup platform, Texture2D[] icons);
+    static public void SetIconsForTargetGroup(UnityEditor.BuildTargetGroup platform, Texture2D[] icons, UnityEditor.IconKind kind);
     static public void SetIl2CppCompilerConfiguration(UnityEditor.BuildTargetGroup targetGroup, UnityEditor.Il2CppCompilerConfiguration configuration);
     static public void SetIncrementalIl2CppBuild(UnityEditor.BuildTargetGroup targetGroup, bool enabled);
     static public void SetManagedStrippingLevel(UnityEditor.BuildTargetGroup targetGroup, UnityEditor.ManagedStrippingLevel level);
     static public void SetMobileMTRendering(UnityEditor.BuildTargetGroup targetGroup, bool enable);
     static public void SetPlatformIcons(UnityEditor.BuildTargetGroup platform, UnityEditor.PlatformIconKind kind, UnityEditor.PlatformIcon[] icons);
     static public void SetPreloadedAssets(Object[] assets);
-    static public void SetPropertyBool(string name, bool value, UnityEditor.BuildTargetGroup target);
     static public void SetPropertyBool(string name, bool value);
     static public void SetPropertyBool(string name, bool value, UnityEditor.BuildTarget target);
-    static public void SetPropertyInt(string name, int value, UnityEditor.BuildTargetGroup target);
+    static public void SetPropertyBool(string name, bool value, UnityEditor.BuildTargetGroup target);
     static public void SetPropertyInt(string name, int value);
     static public void SetPropertyInt(string name, int value, UnityEditor.BuildTarget target);
-    static public void SetPropertyString(string name, string value, UnityEditor.BuildTargetGroup target);
+    static public void SetPropertyInt(string name, int value, UnityEditor.BuildTargetGroup target);
     static public void SetPropertyString(string name, string value);
     static public void SetPropertyString(string name, string value, UnityEditor.BuildTarget target);
+    static public void SetPropertyString(string name, string value, UnityEditor.BuildTargetGroup target);
     static public void SetScriptingBackend(UnityEditor.BuildTargetGroup targetGroup, UnityEditor.ScriptingImplementation backend);
     static public void SetScriptingDefineSymbolsForGroup(UnityEditor.BuildTargetGroup targetGroup, string defines);
     static public void SetStackTraceLogType(LogType logType, StackTraceLogType stackTraceType);
@@ -216,6 +218,18 @@ public sealed class PlayerSettings : Object
         static public bool useCustomKeystore { get; set; }
 
         public Android();
+
+    }
+
+    public class Facebook
+    {
+        static public string appId { get; set; }
+        static public string sdkVersion { get; set; }
+        static public bool useCookies { get; set; }
+        static public bool useFrictionlessRequests { get; set; }
+        static public bool useStatus { get; set; }
+
+        public Facebook();
 
     }
 
@@ -260,18 +274,6 @@ public sealed class PlayerSettings : Object
         static public void SetLaunchScreenImage(Texture2D image, UnityEditor.iOSLaunchScreenImageType type);
 
         public iOS();
-
-    }
-
-    public class Facebook
-    {
-        static public string appId { get; set; }
-        static public string sdkVersion { get; set; }
-        static public bool useCookies { get; set; }
-        static public bool useFrictionlessRequests { get; set; }
-        static public bool useStatus { get; set; }
-
-        public Facebook();
 
     }
 
@@ -374,11 +376,25 @@ public sealed class PlayerSettings : Object
 
         public PS4();
 
+        public enum PlayStationVREyeToEyeDistanceSettings
+        {
+            PerUser = 0,
+            ForceDefault = 1,
+            DynamicModeAtRuntime = 2,
+        }
+
         public enum PS4AppCategory
         {
             Application = 0,
             Patch = 1,
             Remaster = 2,
+        }
+
+        public enum PS4EnterButtonAssignment
+        {
+            CircleButton = 0,
+            CrossButton = 1,
+            SystemDefined = 2,
         }
 
         public enum PS4RemotePlayKeyAssignment
@@ -393,35 +409,6 @@ public sealed class PlayerSettings : Object
             PatternG = 6,
             PatternH = 7,
         }
-
-        public enum PS4EnterButtonAssignment
-        {
-            CircleButton = 0,
-            CrossButton = 1,
-            SystemDefined = 2,
-        }
-
-        public enum PlayStationVREyeToEyeDistanceSettings
-        {
-            PerUser = 0,
-            ForceDefault = 1,
-            DynamicModeAtRuntime = 2,
-        }
-
-    }
-
-    public struct SplashScreenLogo
-    {
-        static public Sprite unityLogo { get; }
-
-        static public SplashScreenLogo Create(float duration);
-        static public SplashScreenLogo Create();
-        static public SplashScreenLogo Create(float duration, Sprite logo);
-        static public SplashScreenLogo CreateWithUnityLogo();
-        static public SplashScreenLogo CreateWithUnityLogo(float duration);
-
-        public float duration { get; set; }
-        public Sprite logo { get; set; }
 
     }
 
@@ -461,6 +448,21 @@ public sealed class PlayerSettings : Object
             DarkOnLight = 0,
             LightOnDark = 1,
         }
+
+    }
+
+    public struct SplashScreenLogo
+    {
+        static public Sprite unityLogo { get; }
+
+        static public SplashScreenLogo Create();
+        static public SplashScreenLogo Create(float duration);
+        static public SplashScreenLogo Create(float duration, Sprite logo);
+        static public SplashScreenLogo CreateWithUnityLogo();
+        static public SplashScreenLogo CreateWithUnityLogo(float duration);
+
+        public float duration { get; set; }
+        public Sprite logo { get; set; }
 
     }
 
@@ -538,12 +540,10 @@ public sealed class PlayerSettings : Object
 
         public Switch();
 
-        public enum ScreenResolutionBehavior
+        public enum ApplicationAttribute
         {
-            Manual = 0,
-            OperationMode = 1,
-            PerformanceMode = 2,
-            Both = 3,
+            None = 0,
+            Demo = 1,
         }
 
         public enum Languages
@@ -565,20 +565,6 @@ public sealed class PlayerSettings : Object
             Korean = 14,
         }
 
-        public enum StartupUserAccount
-        {
-            None = 0,
-            Required = 1,
-            RequiredWithNetworkServiceAccountAvailable = 2,
-        }
-
-        public enum TouchScreenUsage
-        {
-            Supported = 0,
-            Required = 1,
-            None = 2,
-        }
-
         public enum LogoHandling
         {
             Auto = 0,
@@ -590,12 +576,6 @@ public sealed class PlayerSettings : Object
             LicensedByNintendo = 0,
             DistributedByNintendo = 1,
             Nintendo = 2,
-        }
-
-        public enum ApplicationAttribute
-        {
-            None = 0,
-            Demo = 1,
         }
 
         public enum RatingCategories
@@ -615,6 +595,21 @@ public sealed class PlayerSettings : Object
             IARCGeneric = 12,
         }
 
+        public enum ScreenResolutionBehavior
+        {
+            Manual = 0,
+            OperationMode = 1,
+            PerformanceMode = 2,
+            Both = 3,
+        }
+
+        public enum StartupUserAccount
+        {
+            None = 0,
+            Required = 1,
+            RequiredWithNetworkServiceAccountAvailable = 2,
+        }
+
         public enum SupportedNpadStyle
         {
             FullKey = 2,
@@ -622,6 +617,13 @@ public sealed class PlayerSettings : Object
             JoyDual = 16,
             JoyLeft = 256,
             JoyRight = 65536,
+        }
+
+        public enum TouchScreenUsage
+        {
+            Supported = 0,
+            Required = 1,
+            None = 2,
         }
 
     }
@@ -656,128 +658,50 @@ public sealed class PlayerSettings : Object
 
     }
 
-    public enum WSAApplicationShowName
+    public class VROculus
     {
-        NotSet = 0,
-        AllLogos = 1,
-        NoLogos = 2,
-        StandardLogoOnly = 3,
-        WideLogoOnly = 4,
-    }
+        static public bool dashSupport { get; set; }
+        static public bool lowOverheadMode { get; set; }
+        static public bool protectedContext { get; set; }
+        static public bool sharedDepthBuffer { get; set; }
+        static public bool v2Signing { get; set; }
 
-    public enum WSADefaultTileSize
-    {
-        NotSet = 0,
-        Medium = 1,
-        Wide = 2,
-    }
-
-    public enum WSAApplicationForegroundText
-    {
-        Light = 1,
-        Dark = 2,
-    }
-
-    public enum WSACapability
-    {
-        EnterpriseAuthentication = 0,
-        InternetClient = 1,
-        InternetClientServer = 2,
-        MusicLibrary = 3,
-        PicturesLibrary = 4,
-        PrivateNetworkClientServer = 5,
-        RemovableStorage = 6,
-        SharedUserCertificates = 7,
-        VideosLibrary = 8,
-        WebCam = 9,
-        Proximity = 10,
-        Microphone = 11,
-        Location = 12,
-        HumanInterfaceDevice = 13,
-        AllJoyn = 14,
-        BlockedChatMessages = 15,
-        Chat = 16,
-        CodeGeneration = 17,
-        Objects3D = 18,
-        PhoneCall = 19,
-        UserAccountInformation = 20,
-        VoipCall = 21,
-        Bluetooth = 22,
-        SpatialPerception = 23,
-        InputInjectionBrokered = 24,
-        Appointments = 25,
-        BackgroundMediaPlayback = 26,
-        Contacts = 27,
-        LowLevelDevices = 28,
-        OfflineMapsManagement = 29,
-        PhoneCallHistoryPublic = 30,
-        PointOfService = 31,
-        RecordedCallsFolder = 32,
-        RemoteSystem = 33,
-        SystemManagement = 34,
-        UserDataTasks = 35,
-        UserNotificationListener = 36,
-        GazeInput = 37,
-    }
-
-    public enum WSATargetFamily
-    {
-        Desktop = 0,
-        Mobile = 1,
-        Xbox = 2,
-        Holographic = 3,
-        Team = 4,
-        IoT = 5,
-        IoTHeadless = 6,
-    }
-
-    public enum WSAImageScale
-    {
-        _100 = 100,
-        _125 = 125,
-        _150 = 150,
-        _200 = 200,
-        _400 = 400,
-        Target16 = 16,
-        Target24 = 24,
-        Target32 = 32,
-        Target48 = 48,
-        Target256 = 256,
-        _80 = 80,
-        _140 = 140,
-        _180 = 180,
-        _240 = 240,
-    }
-
-    public enum WSAImageType
-    {
-        PackageLogo = 1,
-        SplashScreenImage = 2,
-        UWPSquare44x44Logo = 31,
-        UWPSquare71x71Logo = 32,
-        UWPSquare150x150Logo = 33,
-        UWPSquare310x310Logo = 34,
-        UWPWide310x150Logo = 35,
-    }
-
-    public enum WSAInputSource
-    {
-        CoreWindow = 0,
-        IndependentInputSource = 1,
-        SwapChainPanel = 2,
-    }
-
-    public struct WSASupportedFileType
-    {
-        public string contentType;
-        public string fileType;
+        public VROculus();
 
     }
 
-    public struct WSAFileTypeAssociations
+    public static class VRWindowsMixedReality
     {
-        public string name;
-        public WSASupportedFileType[] supportedFileTypes;
+        static public DepthBufferFormat depthBufferFormat { get; set; }
+        static public bool depthBufferSharingEnabled { get; set; }
+
+        public enum DepthBufferFormat
+        {
+            DepthBufferFormat16Bit = 0,
+            DepthBufferFormat24Bit = 1,
+        }
+
+    }
+
+    public sealed class WebGL
+    {
+        static public bool analyzeBuildSize { get; set; }
+        static public UnityEditor.WebGLCompressionFormat compressionFormat { get; set; }
+        static public bool dataCaching { get; set; }
+        static public bool debugSymbols { get; set; }
+        static public string emscriptenArgs { get; set; }
+        static public UnityEditor.WebGLExceptionSupport exceptionSupport { get; set; }
+        static public UnityEditor.WebGLLinkerTarget linkerTarget { get; set; }
+        static public int memorySize { get; set; }
+        static public string modulesDirectory { get; set; }
+        static public bool nameFilesAsHashes { get; set; }
+        static public string template { get; set; }
+        static public bool threadsSupport { get; set; }
+        static public bool useEmbeddedResources { get; set; }
+        static public bool useWasm { get; set; }
+        static public bool wasmStreaming { get; set; }
+
+        public WebGL();
 
     }
 
@@ -868,39 +792,129 @@ public sealed class PlayerSettings : Object
 
     }
 
-    public sealed class WebGL
+    public enum WSAApplicationForegroundText
     {
-        static public bool analyzeBuildSize { get; set; }
-        static public UnityEditor.WebGLCompressionFormat compressionFormat { get; set; }
-        static public bool dataCaching { get; set; }
-        static public bool debugSymbols { get; set; }
-        static public string emscriptenArgs { get; set; }
-        static public UnityEditor.WebGLExceptionSupport exceptionSupport { get; set; }
-        static public UnityEditor.WebGLLinkerTarget linkerTarget { get; set; }
-        static public int memorySize { get; set; }
-        static public string modulesDirectory { get; set; }
-        static public bool nameFilesAsHashes { get; set; }
-        static public string template { get; set; }
-        static public bool threadsSupport { get; set; }
-        static public bool useEmbeddedResources { get; set; }
-        static public bool useWasm { get; set; }
-        static public bool wasmStreaming { get; set; }
+        Light = 1,
+        Dark = 2,
+    }
 
-        public WebGL();
+    public enum WSAApplicationShowName
+    {
+        NotSet = 0,
+        AllLogos = 1,
+        NoLogos = 2,
+        StandardLogoOnly = 3,
+        WideLogoOnly = 4,
+    }
+
+    public enum WSACapability
+    {
+        EnterpriseAuthentication = 0,
+        InternetClient = 1,
+        InternetClientServer = 2,
+        MusicLibrary = 3,
+        PicturesLibrary = 4,
+        PrivateNetworkClientServer = 5,
+        RemovableStorage = 6,
+        SharedUserCertificates = 7,
+        VideosLibrary = 8,
+        WebCam = 9,
+        Proximity = 10,
+        Microphone = 11,
+        Location = 12,
+        HumanInterfaceDevice = 13,
+        AllJoyn = 14,
+        BlockedChatMessages = 15,
+        Chat = 16,
+        CodeGeneration = 17,
+        Objects3D = 18,
+        PhoneCall = 19,
+        UserAccountInformation = 20,
+        VoipCall = 21,
+        Bluetooth = 22,
+        SpatialPerception = 23,
+        InputInjectionBrokered = 24,
+        Appointments = 25,
+        BackgroundMediaPlayback = 26,
+        Contacts = 27,
+        LowLevelDevices = 28,
+        OfflineMapsManagement = 29,
+        PhoneCallHistoryPublic = 30,
+        PointOfService = 31,
+        RecordedCallsFolder = 32,
+        RemoteSystem = 33,
+        SystemManagement = 34,
+        UserDataTasks = 35,
+        UserNotificationListener = 36,
+        GazeInput = 37,
+    }
+
+    public enum WSADefaultTileSize
+    {
+        NotSet = 0,
+        Medium = 1,
+        Wide = 2,
+    }
+
+    public struct WSAFileTypeAssociations
+    {
+        public string name;
+        public WSASupportedFileType[] supportedFileTypes;
 
     }
 
-    public static class VRWindowsMixedReality
+    public enum WSAImageScale
     {
-        static public DepthBufferFormat depthBufferFormat { get; set; }
-        static public bool depthBufferSharingEnabled { get; set; }
+        Target16 = 16,
+        Target24 = 24,
+        Target32 = 32,
+        Target48 = 48,
+        _80 = 80,
+        _100 = 100,
+        _125 = 125,
+        _140 = 140,
+        _150 = 150,
+        _180 = 180,
+        _200 = 200,
+        _240 = 240,
+        Target256 = 256,
+        _400 = 400,
+    }
 
-        public enum DepthBufferFormat
-        {
-            DepthBufferFormat16Bit = 0,
-            DepthBufferFormat24Bit = 1,
-        }
+    public enum WSAImageType
+    {
+        PackageLogo = 1,
+        SplashScreenImage = 2,
+        UWPSquare44x44Logo = 31,
+        UWPSquare71x71Logo = 32,
+        UWPSquare150x150Logo = 33,
+        UWPSquare310x310Logo = 34,
+        UWPWide310x150Logo = 35,
+    }
 
+    public enum WSAInputSource
+    {
+        CoreWindow = 0,
+        IndependentInputSource = 1,
+        SwapChainPanel = 2,
+    }
+
+    public struct WSASupportedFileType
+    {
+        public string contentType;
+        public string fileType;
+
+    }
+
+    public enum WSATargetFamily
+    {
+        Desktop = 0,
+        Mobile = 1,
+        Xbox = 2,
+        Holographic = 3,
+        Team = 4,
+        IoT = 5,
+        IoTHeadless = 6,
     }
 
     public sealed class XboxOne
@@ -947,18 +961,6 @@ public sealed class PlayerSettings : Object
         static public void UpdateAllowedProductId(int idx, string id);
 
         public XboxOne();
-
-    }
-
-    public class VROculus
-    {
-        static public bool dashSupport { get; set; }
-        static public bool lowOverheadMode { get; set; }
-        static public bool protectedContext { get; set; }
-        static public bool sharedDepthBuffer { get; set; }
-        static public bool v2Signing { get; set; }
-
-        public VROculus();
 
     }
 

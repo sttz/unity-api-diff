@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TreeEditor
@@ -9,7 +11,7 @@ public class TextureAtlas
     public int atlasHeight;
     public int atlasPadding;
     public int atlasWidth;
-    public System.Collections.Generic.List<TextureNode> nodes;
+    public List<TextureNode> nodes;
 
     public TextureAtlas();
 

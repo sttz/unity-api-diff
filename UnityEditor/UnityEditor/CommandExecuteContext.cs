@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -14,7 +16,7 @@ public class CommandExecuteContext
 
     public CommandExecuteContext();
 
-    public T GetArgument(int index, T defaultValue = null);
+    public T GetArgument<T>(int index, T defaultValue = null);
 
 }
 

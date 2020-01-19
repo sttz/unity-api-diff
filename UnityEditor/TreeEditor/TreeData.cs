@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TreeEditor
@@ -8,7 +10,7 @@ public class TreeData : ScriptableObject
 {
     static public int GetAdaptiveHeightSegments(float h, float adaptiveQuality);
     static public int GetAdaptiveRadialSegments(float r, float adaptiveQuality);
-    static public System.Collections.Generic.List<float> GetAdaptiveSamples(TreeEditor.TreeGroup group, TreeEditor.TreeNode node, float adaptiveQuality);
+    static public List<float> GetAdaptiveSamples(TreeEditor.TreeGroup group, TreeEditor.TreeNode node, float adaptiveQuality);
 
     public TreeEditor.TreeGroupBranch[] branchGroups;
     public bool isInPreviewMode;
@@ -37,7 +39,7 @@ public class TreeData : ScriptableObject
     public void Initialize();
     public bool IsAncestor(TreeEditor.TreeGroup ancestor, TreeEditor.TreeGroup g);
     public void LockGroup(TreeEditor.TreeGroup g);
-    public bool OptimizeMaterial(System.Collections.Generic.List<TreeEditor.TreeMaterial> materials, System.Collections.Generic.List<TreeEditor.TreeVertex> vertices, System.Collections.Generic.List<TreeEditor.TreeTriangle> triangles);
+    public bool OptimizeMaterial(List<TreeEditor.TreeMaterial> materials, List<TreeEditor.TreeVertex> vertices, List<TreeEditor.TreeTriangle> triangles);
     public void PreviewMesh(Matrix4x4 worldToLocalMatrix, out Material outMaterials);
     public void SetGroupParent(TreeEditor.TreeGroup g, TreeEditor.TreeGroup parent);
     public void SetNodeParent(TreeEditor.TreeNode n, TreeEditor.TreeNode parent);
@@ -45,7 +47,7 @@ public class TreeData : ScriptableObject
     public void UpdateDistribution(int id);
     public void UpdateFrequency(int id);
     public void UpdateMesh(Matrix4x4 worldToLocalMatrix, out Material outMaterials);
-    public void UpdateMesh(Matrix4x4 matrix, System.Collections.Generic.List<TreeEditor.TreeMaterial> materials, System.Collections.Generic.List<TreeEditor.TreeVertex> verts, System.Collections.Generic.List<TreeEditor.TreeTriangle> tris, System.Collections.Generic.List<TreeEditor.TreeAOSphere> aoSpheres, int buildFlags, float adaptiveQuality, float aoDensity);
+    public void UpdateMesh(Matrix4x4 matrix, List<TreeEditor.TreeMaterial> materials, List<TreeEditor.TreeVertex> verts, List<TreeEditor.TreeTriangle> tris, List<TreeEditor.TreeAOSphere> aoSpheres, int buildFlags, float adaptiveQuality, float aoDensity);
     public void UpdateSeed(int id);
     public void ValidateReferences();
 

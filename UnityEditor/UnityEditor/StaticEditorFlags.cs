@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -7,13 +9,13 @@ namespace UnityEditor
 public enum StaticEditorFlags
 {
     ContributeGI = 1,
+    LightmapStatic = 1,
     OccluderStatic = 2,
-    OccludeeStatic = 16,
     BatchingStatic = 4,
     NavigationStatic = 8,
+    OccludeeStatic = 16,
     OffMeshLinkGeneration = 32,
     ReflectionProbeStatic = 64,
-    LightmapStatic = 1,
 }
 
 }

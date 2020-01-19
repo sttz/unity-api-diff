@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -6,9 +8,9 @@ namespace UnityEditor
 
 public class SettingsProvider
 {
-    static public System.Collections.Generic.IEnumerable<string> GetSearchKeywordsFromGUIContentProperties();
-    static public System.Collections.Generic.IEnumerable<string> GetSearchKeywordsFromPath(string path);
-    static public System.Collections.Generic.IEnumerable<string> GetSearchKeywordsFromSerializedObject(UnityEditor.SerializedObject serializedObject);
+    static public IEnumerable<string> GetSearchKeywordsFromGUIContentProperties<T>();
+    static public IEnumerable<string> GetSearchKeywordsFromPath(string path);
+    static public IEnumerable<string> GetSearchKeywordsFromSerializedObject(UnityEditor.SerializedObject serializedObject);
 
     public Action<string, UIElements.VisualElement> activateHandler { get; set; }
     public Action deactivateHandler { get; set; }
@@ -16,13 +18,13 @@ public class SettingsProvider
     public Action<string> guiHandler { get; set; }
     public Func<string, bool> hasSearchInterestHandler { get; set; }
     public Action inspectorUpdateHandler { get; set; }
-    public System.Collections.Generic.IEnumerable<string> keywords { get; set; }
+    public IEnumerable<string> keywords { get; set; }
     public string label { get; set; }
     public UnityEditor.SettingsScope scope { get; }
     public string settingsPath { get; }
     public Action titleBarGuiHandler { get; set; }
 
-    public SettingsProvider(string path, UnityEditor.SettingsScope scopes, System.Collections.Generic.IEnumerable<string> keywords = null);
+    public SettingsProvider(string path, UnityEditor.SettingsScope scopes, IEnumerable<string> keywords = null);
 
     public bool HasSearchInterest(string searchContext);
     public void OnActivate(string searchContext, UIElements.VisualElement rootElement);
@@ -31,7 +33,7 @@ public class SettingsProvider
     public void OnGUI(string searchContext);
     public void OnInspectorUpdate();
     public void OnTitleBarGUI();
-    public void PopulateSearchKeywordsFromGUIContentProperties();
+    public void PopulateSearchKeywordsFromGUIContentProperties<T>();
     public void Repaint();
 
 }

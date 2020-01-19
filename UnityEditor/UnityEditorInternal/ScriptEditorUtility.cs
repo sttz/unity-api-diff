@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditorInternal
@@ -8,7 +10,7 @@ public class ScriptEditorUtility
 {
     static public string GetExternalScriptEditor();
     static public string GetExternalScriptEditorArgs();
-    static public System.Collections.Generic.Dictionary<string, string> GetFoundScriptEditorPaths(RuntimePlatform platform);
+    static public Dictionary<string, string> GetFoundScriptEditorPaths(RuntimePlatform platform);
     static public ScriptEditor GetScriptEditorFromPath(string path);
     static public ScriptEditor GetScriptEditorFromPreferences();
     static public void RegisterIde(Func<Installation[]> pathCallBack);
@@ -17,6 +19,13 @@ public class ScriptEditorUtility
 
     public ScriptEditorUtility();
 
+    public struct Installation
+    {
+        public string Name;
+        public string Path;
+
+    }
+
     public enum ScriptEditor
     {
         SystemDefault = 0,
@@ -24,13 +33,6 @@ public class ScriptEditorUtility
         VisualStudio = 2,
         VisualStudioExpress = 3,
         Other = 32,
-    }
-
-    public struct Installation
-    {
-        public string Name;
-        public string Path;
-
     }
 
 }

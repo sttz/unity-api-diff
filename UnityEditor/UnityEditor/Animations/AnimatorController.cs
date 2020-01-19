@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Animations
@@ -19,16 +21,16 @@ public sealed class AnimatorController : RuntimeAnimatorController
     public AnimatorController();
 
     public StateMachineBehaviour AddEffectiveStateMachineBehaviour(Type stateMachineBehaviourType, UnityEditor.Animations.AnimatorState state, int layerIndex);
-    public T AddEffectiveStateMachineBehaviour(UnityEditor.Animations.AnimatorState state, int layerIndex);
-    public void AddLayer(string name);
+    public T AddEffectiveStateMachineBehaviour<T>(UnityEditor.Animations.AnimatorState state, int layerIndex);
     public void AddLayer(UnityEditor.Animations.AnimatorControllerLayer layer);
+    public void AddLayer(string name);
     public UnityEditor.Animations.AnimatorState AddMotion(Motion motion);
     public UnityEditor.Animations.AnimatorState AddMotion(Motion motion, int layerIndex);
-    public void AddParameter(string name, AnimatorControllerParameterType type);
     public void AddParameter(AnimatorControllerParameter paramater);
+    public void AddParameter(string name, AnimatorControllerParameterType type);
     public UnityEditor.Animations.AnimatorState CreateBlendTreeInController(string name, out UnityEditor.Animations.BlendTree tree);
     public UnityEditor.Animations.AnimatorState CreateBlendTreeInController(string name, out UnityEditor.Animations.BlendTree tree, int layerIndex);
-    public T[] GetBehaviours();
+    public T[] GetBehaviours<T>();
     public StateMachineBehaviour[] GetStateEffectiveBehaviours(UnityEditor.Animations.AnimatorState state, int layerIndex);
     public Motion GetStateEffectiveMotion(UnityEditor.Animations.AnimatorState state);
     public Motion GetStateEffectiveMotion(UnityEditor.Animations.AnimatorState state, int layerIndex);

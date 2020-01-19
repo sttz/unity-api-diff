@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental.AssetImporters
@@ -14,7 +16,7 @@ public class AssetImportContext
     public void AddObjectToAsset(string identifier, Object obj, Texture2D thumbnail);
     public void DependsOnCustomDependency(string dependency);
     public void DependsOnSourceAsset(string path);
-    public void GetObjects(System.Collections.Generic.List<Object> objects);
+    public void GetObjects(List<Object> objects);
     public string GetResultPath(string extension);
     public void LogImportError(string msg, Object obj = null);
     public void LogImportWarning(string msg, Object obj = null);

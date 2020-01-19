@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -7,8 +9,8 @@ namespace UnityEditor
 public sealed class PluginImporter : UnityEditor.AssetImporter
 {
     static public UnityEditor.PluginImporter[] GetAllImporters();
-    static public UnityEditor.PluginImporter[] GetImporters(string platformName);
     static public UnityEditor.PluginImporter[] GetImporters(UnityEditor.BuildTarget platform);
+    static public UnityEditor.PluginImporter[] GetImporters(string platformName);
     static public UnityEditor.PluginImporter[] GetImporters(string buildTargetGroup, string buildTarget);
     static public UnityEditor.PluginImporter[] GetImporters(UnityEditor.BuildTargetGroup buildTargetGroup, UnityEditor.BuildTarget buildTarget);
 
@@ -26,8 +28,8 @@ public sealed class PluginImporter : UnityEditor.AssetImporter
     public bool GetCompatibleWithPlatform(string platformName);
     public string GetEditorData(string key);
     public bool GetExcludeEditorFromAnyPlatform();
-    public bool GetExcludeFromAnyPlatform(string platformName);
     public bool GetExcludeFromAnyPlatform(UnityEditor.BuildTarget platform);
+    public bool GetExcludeFromAnyPlatform(string platformName);
     public bool GetIsOverridable();
     public string GetPlatformData(UnityEditor.BuildTarget platform, string key);
     public string GetPlatformData(string platformName, string key);
@@ -37,8 +39,8 @@ public sealed class PluginImporter : UnityEditor.AssetImporter
     public void SetCompatibleWithPlatform(string platformName, bool enable);
     public void SetEditorData(string key, string value);
     public void SetExcludeEditorFromAnyPlatform(bool excludedFromAny);
-    public void SetExcludeFromAnyPlatform(string platformName, bool excludedFromAny);
     public void SetExcludeFromAnyPlatform(UnityEditor.BuildTarget platform, bool excludedFromAny);
+    public void SetExcludeFromAnyPlatform(string platformName, bool excludedFromAny);
     public void SetIncludeInBuildDelegate(IncludeInBuildDelegate includeInBuildDelegate);
     public void SetPlatformData(UnityEditor.BuildTarget platform, string key, string value);
     public void SetPlatformData(string platformName, string key, string value);

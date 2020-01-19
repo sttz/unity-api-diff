@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Compilation
@@ -32,11 +34,11 @@ public static class CompilationPipeline
 
     public enum PrecompiledAssemblySources
     {
+        All = -1,
         UserAssembly = 1,
         UnityEngine = 2,
         UnityEditor = 4,
         SystemAssembly = 8,
-        All = -1,
     }
 
 }

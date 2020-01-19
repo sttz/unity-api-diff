@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -6,7 +8,9 @@ namespace UnityEditor
 
 public enum CommandHint : long
 {
+    UserDefined = -2147483648,
     Undefined = -1,
+    Any = -1,
     None = 0,
     Event = 1,
     Menu = 2,
@@ -16,8 +20,6 @@ public enum CommandHint : long
     OnGUI = 3145728,
     UIElements = 5242880,
     Validate = 1073741824,
-    UserDefined = -2147483648,
-    Any = -1,
 }
 
 }

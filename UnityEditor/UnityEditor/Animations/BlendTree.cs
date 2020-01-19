@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Animations
@@ -19,8 +21,8 @@ public class BlendTree : Motion
     public void AddChild(Motion motion);
     public void AddChild(Motion motion, Vector2 position);
     public void AddChild(Motion motion, float threshold);
-    public UnityEditor.Animations.BlendTree CreateBlendTreeChild(float threshold);
     public UnityEditor.Animations.BlendTree CreateBlendTreeChild(Vector2 position);
+    public UnityEditor.Animations.BlendTree CreateBlendTreeChild(float threshold);
     public void RemoveChild(int index);
 
 }

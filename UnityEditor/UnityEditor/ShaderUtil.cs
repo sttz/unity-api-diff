@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -14,8 +16,8 @@ public sealed class ShaderUtil
     static public void ClearShaderErrors(Shader s);
     static public void ClearShaderMessages(Shader s);
     static public void CompilePass(Material material, int pass, bool forceSync = false);
-    static public Shader CreateShaderAsset(string source, bool compileInitialShaderVariants);
     static public Shader CreateShaderAsset(string source);
+    static public Shader CreateShaderAsset(string source, bool compileInitialShaderVariants);
     static public UnityEditor.ShaderInfo[] GetAllShaderInfo();
     static public int GetCallableShaderCount(Experimental.Rendering.RayTracingShader s);
     static public string GetCallableShaderName(Experimental.Rendering.RayTracingShader s, int shaderIndex);
@@ -45,8 +47,8 @@ public sealed class ShaderUtil
     static public void RestoreAsyncCompilation(Rendering.CommandBuffer cmd);
     static public void SetAsyncCompilation(Rendering.CommandBuffer cmd, bool allow);
     static public bool ShaderHasError(Shader shader);
-    static public void UpdateShaderAsset(Shader shader, string source, bool compileInitialShaderVariants);
     static public void UpdateShaderAsset(Shader shader, string source);
+    static public void UpdateShaderAsset(Shader shader, string source, bool compileInitialShaderVariants);
 
     public ShaderUtil();
 

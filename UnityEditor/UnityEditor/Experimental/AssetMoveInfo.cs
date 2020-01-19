@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor.Experimental
@@ -11,8 +13,8 @@ public struct AssetMoveInfo : IEquatable<UnityEditor.Experimental.AssetMoveInfo>
 
     public AssetMoveInfo(string sourceAssetPath, string destinationAssetPath);
 
-    public bool Equals(UnityEditor.Experimental.AssetMoveInfo other);
     public bool Equals(object obj);
+    public bool Equals(UnityEditor.Experimental.AssetMoveInfo other);
     public int GetHashCode();
 
 }

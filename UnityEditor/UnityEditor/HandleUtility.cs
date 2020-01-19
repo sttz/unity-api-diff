@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -32,8 +34,8 @@ public sealed class HandleUtility
     static public Vector2 GUIPointToScreenPixelCoordinate(Vector2 guiPoint);
     static public Ray GUIPointToWorldRay(Vector2 position);
     static public GameObject PickGameObject(Vector2 position, out int materialIndex);
-    static public GameObject PickGameObject(Vector2 position, GameObject[] ignore, out int materialIndex);
     static public GameObject PickGameObject(Vector2 position, bool selectPrefabRoot);
+    static public GameObject PickGameObject(Vector2 position, GameObject[] ignore, out int materialIndex);
     static public GameObject PickGameObject(Vector2 position, bool selectPrefabRoot, GameObject[] ignore);
     static public GameObject[] PickRectObjects(Rect rect);
     static public GameObject[] PickRectObjects(Rect rect, bool selectPrefabRootsOnly);

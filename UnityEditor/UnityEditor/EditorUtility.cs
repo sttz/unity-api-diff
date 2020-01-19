@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditor
@@ -29,8 +31,8 @@ public class EditorUtility
     static public void DisplayCustomMenu(Rect position, GUIContent[] options, int selected, SelectMenuItemFunction callback, object userData, bool showHotkey);
     static public void DisplayCustomMenu(Rect position, GUIContent[] options, Func<int, bool> checkEnabled, int selected, SelectMenuItemFunction callback, object userData, bool showHotkey = false);
     static public void DisplayCustomMenuWithSeparators(Rect position, string[] options, bool[] enabled, bool[] separator, int[] selected, SelectMenuItemFunction callback, object userData);
-    static public bool DisplayDialog(string title, string message, string ok, string cancel);
     static public bool DisplayDialog(string title, string message, string ok);
+    static public bool DisplayDialog(string title, string message, string ok, string cancel);
     static public bool DisplayDialog(string title, string message, string ok, UnityEditor.DialogOptOutDecisionType dialogOptOutDecisionType, string dialogOptOutDecisionStorageKey);
     static public bool DisplayDialog(string title, string message, string ok, string cancel, UnityEditor.DialogOptOutDecisionType dialogOptOutDecisionType, string dialogOptOutDecisionStorageKey);
     static public int DisplayDialogComplex(string title, string message, string ok, string cancel, string alt);
@@ -40,8 +42,8 @@ public class EditorUtility
     static public Object FindAsset(string path, Type type);
     static public GameObject FindPrefabRoot(GameObject source);
     static public void FocusProjectWindow();
-    static public string FormatBytes(long bytes);
     static public string FormatBytes(int bytes);
+    static public string FormatBytes(long bytes);
     static public string GetAssetPath(Object asset);
     static public bool GetDialogOptOutDecision(UnityEditor.DialogOptOutDecisionType dialogOptOutDecisionType, string dialogOptOutDecisionStorageKey);
     static public int GetDirtyCount(int instanceID);
@@ -62,8 +64,8 @@ public class EditorUtility
     static public string OpenFolderPanel(string title, string folder, string defaultName);
     static public void OpenWithDefaultApp(string fileName);
     static public bool ReconnectToLastPrefab(GameObject go);
-    static public GameObject ReplacePrefab(GameObject go, Object targetPrefab, UnityEditor.ReplacePrefabOptions options);
     static public GameObject ReplacePrefab(GameObject go, Object targetPrefab);
+    static public GameObject ReplacePrefab(GameObject go, Object targetPrefab, UnityEditor.ReplacePrefabOptions options);
     static public void RequestScriptReload();
     static public bool ResetToPrefabState(Object source);
     static public void RevealInFinder(string path);

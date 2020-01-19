@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityEditorInternal
@@ -36,12 +38,15 @@ public static class ProfilerDriver
     static public int[] GetAvailableProfilers();
     static public string GetConnectionIdentifier(int guid);
     static public string GetFormattedStatisticsValue(int frame, int identifier);
+    static public UnityEditorInternal.GpuProfilingStatisticsAvailabilityStates GetGpuStatisticsAvailabilityState(int frame);
+    static public void GetGpuStatisticsAvailabilityStates(int firstFrame, out UnityEditorInternal.GpuProfilingStatisticsAvailabilityStates[] buffer);
     static public string[] GetGraphStatisticsPropertiesForArea(Profiling.ProfilerArea area);
     static public UnityEditor.Profiling.HierarchyFrameDataView GetHierarchyFrameDataView(int frameIndex, int threadIndex, ViewModes viewMode, int sortColumn, bool sortAscending);
     static public int GetNextFrameIndex(int frame);
     static public string GetOverviewText(Profiling.ProfilerArea profilerArea, int frame);
     static public int GetPreviousFrameIndex(int frame);
     static public void GetStatisticsAvailable(Profiling.ProfilerArea profilerArea, int firstFrame, out bool[] buffer);
+    static public void GetStatisticsAvailable(Profiling.ProfilerArea profilerArea, int firstFrame, out int[] buffer);
     static public int GetStatisticsIdentifier(string propertyName);
     static public int GetStatisticsIdentifierForArea(Profiling.ProfilerArea profilerArea, string propertyName);
     static public void GetStatisticsValues(int identifier, int firstFrame, float scale, out float[] buffer, out float maxValue);
