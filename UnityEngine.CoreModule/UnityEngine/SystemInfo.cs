@@ -62,6 +62,7 @@ public sealed class SystemInfo
     static public bool supportsAsyncCompute { get; }
     static public bool supportsAsyncGPUReadback { get; }
     static public bool supportsAudio { get; }
+    static public bool supportsCompressed3DTextures { get; }
     static public bool supportsComputeShaders { get; }
     static public bool supportsConservativeRaster { get; }
     static public bool supportsCubemapArrayTextures { get; }

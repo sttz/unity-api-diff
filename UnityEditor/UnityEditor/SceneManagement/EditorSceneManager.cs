@@ -10,6 +10,7 @@ public sealed class EditorSceneManager : SceneManagement.SceneManager
 {
     static public ulong DefaultSceneCullingMask = 16140901064495857664;
 
+    static public int loadedRootSceneCount { get; }
     static public int loadedSceneCount { get; }
     static public UnityEditor.SceneAsset playModeStartScene { get; set; }
     static public bool preventCrossSceneReferences { get; set; }
@@ -34,6 +35,7 @@ public sealed class EditorSceneManager : SceneManagement.SceneManager
     static public UnityEditor.SceneManagement.SceneSetup[] GetSceneManagerSetup();
     static public bool IsPreviewScene(SceneManagement.Scene scene);
     static public bool IsPreviewSceneObject(Object obj);
+    static public bool IsReloading(SceneManagement.Scene scene);
     static public AsyncOperation LoadSceneAsyncInPlayMode(string path, SceneManagement.LoadSceneParameters parameters);
     static public SceneManagement.Scene LoadSceneInPlayMode(string path, SceneManagement.LoadSceneParameters parameters);
     static public void MarkAllScenesDirty();

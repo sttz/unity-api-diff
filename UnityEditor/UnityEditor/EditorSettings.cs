@@ -19,6 +19,7 @@ public sealed class EditorSettings : Object
     static public string cacheServerNamespacePrefix { get; set; }
     static public bool cachingShaderPreprocessor { get; set; }
     static public UnityEditor.EditorBehaviorMode defaultBehaviorMode { get; set; }
+    static public bool disableCookiesInLightmapper { get; set; }
     static public bool enableTextureStreamingInEditMode { get; set; }
     static public bool enableTextureStreamingInPlayMode { get; set; }
     static public UnityEditor.EnterPlayModeOptions enterPlayModeOptions { get; set; }

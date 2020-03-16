@@ -16,6 +16,8 @@ public enum ShaderPropertyFlags
     HDR = 16,
     Gamma = 32,
     NonModifiableTextureData = 64,
+    MainTexture = 128,
+    MainColor = 256,
 }
 
 }

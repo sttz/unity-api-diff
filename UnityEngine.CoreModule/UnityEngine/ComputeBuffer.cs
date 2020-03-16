@@ -18,7 +18,9 @@ public sealed class ComputeBuffer : IDisposable
     public ComputeBuffer(int count, int stride, ComputeBufferType type);
     public ComputeBuffer(int count, int stride, ComputeBufferType type, ComputeBufferMode usage);
 
+    public Unity.Collections.NativeArray<T> BeginWrite<T>(int computeBufferStartIndex, int count);
     public void Dispose();
+    public void EndWrite<T>(int countWritten);
     public void GetData(Array data);
     public void GetData(Array data, int managedBufferStartIndex, int computeBufferStartIndex, int count);
     public IntPtr GetNativeBufferPtr();

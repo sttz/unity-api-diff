@@ -17,7 +17,7 @@ public static class Lightmapping
     static public float indirectOutputScale { get; set; }
     static public bool isRunning { get; }
     static public UnityEditor.LightingDataAsset lightingDataAsset { get; set; }
-    static public UnityEditor.LightingSettings lightingSettings { get; set; }
+    static public LightingSettings lightingSettings { get; set; }
     static public UnityEditor.LightmapSnapshot lightmapSnapshot { get; set; }
     static public bool realtimeGI { get; set; }
 
@@ -43,7 +43,7 @@ public static class Lightmapping
     static public void ForceStop();
     static public void GetTerrainGIChunks(Terrain terrain, int numChunksX, int numChunksY);
     static public void Tetrahedralize(Vector3[] positions, out int outIndices, out Vector3 outPositions);
-    static public bool TryGetLightingSettings(out UnityEditor.LightingSettings settings);
+    static public bool TryGetLightingSettings(out LightingSettings settings);
 
     public enum GIWorkflowMode
     {

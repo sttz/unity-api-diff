@@ -27,7 +27,9 @@ public class SupportedRenderingFeatures
     public ReflectionProbeModes reflectionProbeModes { get; set; }
     public bool reflectionProbes { get; set; }
     public bool rendererPriority { get; set; }
+    public bool rendererProbes { get; set; }
     public bool rendersUIOverlay { get; set; }
+    public bool terrainDetailUnsupported { get; set; }
 
     public SupportedRenderingFeatures();
 

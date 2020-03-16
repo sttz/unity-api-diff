@@ -3,19 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UnityEngine.Experimental.Rendering
+namespace UnityEngine.Rendering.VirtualTexturing.Procedural
 {
 
-public struct ProceduralTextureStackCreationParams
+public struct CreationParameters
 {
     static public int MaxNumLayers = 4;
     static public int MaxRequestsPerFrameSupported = 4095;
 
-    public uint height;
+    public int height;
     public Experimental.Rendering.GraphicsFormat[] layers;
-    public uint maxRequestsPerFrame;
-    public uint tilesize;
-    public uint width;
+    public int maxActiveRequests;
+    public int tilesize;
+    public int width;
 
 }
 

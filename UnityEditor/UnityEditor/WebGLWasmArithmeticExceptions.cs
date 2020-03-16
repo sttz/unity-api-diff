@@ -6,10 +6,10 @@ using UnityEngine;
 namespace UnityEditor
 {
 
-public class ProgressError : UnityEditor.ProgressReport
+public enum WebGLWasmArithmeticExceptions
 {
-    public ProgressError(string error);
-
+    Throw = 0,
+    Ignore = 1,
 }
 
 }

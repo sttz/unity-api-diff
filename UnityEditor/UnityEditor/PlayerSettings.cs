@@ -61,6 +61,7 @@ public sealed class PlayerSettings : Object
     static public bool logObjCUncaughtExceptions { get; set; }
     static public UnityEditor.MacFullscreenMode macFullscreenMode { get; set; }
     static public bool macRetinaSupport { get; set; }
+    static public bool mipStripping { get; set; }
     static public RenderingPath mobileRenderingPath { get; set; }
     static public bool MTRendering { get; set; }
     static public bool muteOtherAudioSources { get; set; }
@@ -151,6 +152,7 @@ public sealed class PlayerSettings : Object
     static public string GetScriptingDefineSymbolsForGroup(UnityEditor.BuildTargetGroup targetGroup);
     static public StackTraceLogType GetStackTraceLogType(LogType logType);
     static public UnityEditor.PlatformIconKind[] GetSupportedIconKindsForPlatform(UnityEditor.BuildTargetGroup platform);
+    static public string GetTemplateCustomValue(string name);
     static public bool GetUseDefaultGraphicsAPIs(UnityEditor.BuildTarget platform);
     static public string[] GetVirtualRealitySDKs(UnityEditor.BuildTargetGroup targetGroup);
     static public bool GetVirtualRealitySupported(UnityEditor.BuildTargetGroup targetGroup);
@@ -183,6 +185,7 @@ public sealed class PlayerSettings : Object
     static public void SetScriptingBackend(UnityEditor.BuildTargetGroup targetGroup, UnityEditor.ScriptingImplementation backend);
     static public void SetScriptingDefineSymbolsForGroup(UnityEditor.BuildTargetGroup targetGroup, string defines);
     static public void SetStackTraceLogType(LogType logType, StackTraceLogType stackTraceType);
+    static public void SetTemplateCustomValue(string name, string value);
     static public void SetUseDefaultGraphicsAPIs(UnityEditor.BuildTarget platform, bool automatic);
     static public void SetVirtualRealitySDKs(UnityEditor.BuildTargetGroup targetGroup, string[] sdks);
     static public void SetVirtualRealitySupported(UnityEditor.BuildTargetGroup targetGroup, bool value);
@@ -705,6 +708,7 @@ public sealed class PlayerSettings : Object
         static public bool threadsSupport { get; set; }
         static public bool useEmbeddedResources { get; set; }
         static public bool useWasm { get; set; }
+        static public UnityEditor.WebGLWasmArithmeticExceptions wasmArithmeticExceptions { get; set; }
         static public bool wasmStreaming { get; set; }
 
         public WebGL();
@@ -933,6 +937,7 @@ public sealed class PlayerSettings : Object
         static public bool DisableKinectGpuReservation { get; set; }
         static public bool Enable7thCore { get; set; }
         static public bool EnablePIXSampling { get; set; }
+        static public bool EnableTypeOptimization { get; set; }
         static public bool EnableVariableGPU { get; set; }
         static public string GameOsOverridePath { get; set; }
         static public bool IsContentPackage { get; set; }

@@ -14,6 +14,8 @@ public sealed class HandleUtility
     static public float niceMouseDelta { get; }
     static public float niceMouseDeltaZoom { get; }
 
+    static public event PlaceObjectDelegate placeObjectCustomPasses;
+
     static public void AddControl(int controlId, float distance);
     static public void AddDefaultControl(int controlId);
     static public float CalcLineTranslation(Vector2 src, Vector2 dest, Vector3 srcPosition, Vector3 constraintDir);
@@ -39,6 +41,7 @@ public sealed class HandleUtility
     static public GameObject PickGameObject(Vector2 position, bool selectPrefabRoot, GameObject[] ignore);
     static public GameObject[] PickRectObjects(Rect rect);
     static public GameObject[] PickRectObjects(Rect rect, bool selectPrefabRootsOnly);
+    static public bool PlaceObject(Vector2 guiPosition, out Vector3 position, out Vector3 normal);
     static public float PointOnLineParameter(Vector3 point, Vector3 linePoint, Vector3 lineDirection);
     static public void PopCamera(Camera camera);
     static public Vector3 ProjectPointLine(Vector3 point, Vector3 lineStart, Vector3 lineEnd);
@@ -50,6 +53,8 @@ public sealed class HandleUtility
     static public Vector3 WorldToGUIPointWithDepth(Vector3 world);
 
     public HandleUtility();
+
+    public delegate bool PlaceObjectDelegate(Vector2 guiPosition, out Vector3 position, out Vector3 normal);
 
 }
 

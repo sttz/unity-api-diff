@@ -54,6 +54,7 @@ public interface IStyle
     public UIElements.StyleLength paddingTop { get; set; }
     public UIElements.StyleEnum<UIElements.Position> position { get; set; }
     public UIElements.StyleLength right { get; set; }
+    public UIElements.StyleEnum<UIElements.TextOverflow> textOverflow { get; set; }
     public UIElements.StyleLength top { get; set; }
     public UIElements.StyleColor unityBackgroundImageTintColor { get; set; }
     public UIElements.StyleEnum<ScaleMode> unityBackgroundScaleMode { get; set; }
@@ -65,6 +66,7 @@ public interface IStyle
     public UIElements.StyleInt unitySliceRight { get; set; }
     public UIElements.StyleInt unitySliceTop { get; set; }
     public UIElements.StyleEnum<TextAnchor> unityTextAlign { get; set; }
+    public UIElements.StyleEnum<UIElements.TextOverflowPosition> unityTextOverflowPosition { get; set; }
     public UIElements.StyleEnum<UIElements.Visibility> visibility { get; set; }
     public UIElements.StyleEnum<UIElements.WhiteSpace> whiteSpace { get; set; }
     public UIElements.StyleLength width { get; set; }

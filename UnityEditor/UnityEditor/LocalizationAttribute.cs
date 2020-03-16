@@ -6,13 +6,10 @@ using UnityEngine;
 namespace UnityEditor
 {
 
-public enum ProgressStatus
+public sealed class LocalizationAttribute : Attribute
 {
-    Running = 0,
-    Succeeded = 1,
-    Failed = 2,
-    Canceled = 3,
-    Count = 4,
+    public LocalizationAttribute(string locGroupName = null);
+
 }
 
 }

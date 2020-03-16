@@ -14,9 +14,11 @@ public struct NavMeshBuildSettings
     public float agentSlope { get; set; }
     public int agentTypeID { get; set; }
     public AI.NavMeshBuildDebugSettings debug { get; set; }
+    public uint maxJobWorkers { get; set; }
     public float minRegionArea { get; set; }
     public bool overrideTileSize { get; set; }
     public bool overrideVoxelSize { get; set; }
+    public bool preserveTilesOutsideBounds { get; set; }
     public int tileSize { get; set; }
     public float voxelSize { get; set; }
 

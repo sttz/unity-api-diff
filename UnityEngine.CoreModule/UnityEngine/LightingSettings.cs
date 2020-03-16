@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UnityEditor
+namespace UnityEngine
 {
 
 public sealed class LightingSettings : Object
@@ -37,6 +37,7 @@ public sealed class LightingSettings : Object
     public FilterType filterTypeIndirect { get; set; }
     public float indirectResolution { get; set; }
     public int indirectSampleCount { get; set; }
+    public float indirectScale { get; set; }
     public int lightmapMaxSize { get; set; }
     public int lightmapPadding { get; set; }
     public Lightmapper lightmapper { get; set; }

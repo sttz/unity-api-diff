@@ -9,6 +9,7 @@ namespace UnityEngine.Experimental.GlobalIllumination
 public static class LightmapperUtils
 {
     static public Experimental.GlobalIllumination.LightMode Extract(LightmapBakeType baketype);
+    static public void Extract(Light l, out Experimental.GlobalIllumination.Cookie cookie);
     static public void Extract(Light l, Experimental.GlobalIllumination.DirectionalLight dir);
     static public void Extract(Light l, Experimental.GlobalIllumination.DiscLight disc);
     static public void Extract(Light l, Experimental.GlobalIllumination.PointLight point);

@@ -49,6 +49,7 @@ public class EditorWindow : ScriptableObject
     public UIElements.VisualElement rootVisualElement { get; }
     public string title { get; set; }
     public GUIContent titleContent { get; set; }
+    public bool wantsLessLayoutEvents { get; set; }
     public bool wantsMouseEnterLeaveWindow { get; set; }
     public bool wantsMouseMove { get; set; }
 

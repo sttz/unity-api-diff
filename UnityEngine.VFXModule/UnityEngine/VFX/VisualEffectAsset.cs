@@ -15,6 +15,11 @@ public class VisualEffectAsset : VFX.VisualEffectObject
 
     public VisualEffectAsset();
 
+    public void GetEvents(List<string> names);
+    public void GetExposedProperties(List<VFX.VFXExposedProperty> exposedProperties);
+    public Rendering.TextureDimension GetTextureDimension(string name);
+    public Rendering.TextureDimension GetTextureDimension(int nameID);
+
 }
 
 }

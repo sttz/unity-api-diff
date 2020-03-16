@@ -13,7 +13,9 @@ public struct DirectionalLight
     public Experimental.GlobalIllumination.LinearColor indirectColor;
     public int instanceID;
     public Experimental.GlobalIllumination.LightMode mode;
+    public Quaternion orientation;
     public float penumbraWidthRadian;
+    public Vector3 position;
     public bool shadow;
 
 }

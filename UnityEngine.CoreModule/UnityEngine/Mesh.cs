@@ -100,8 +100,11 @@ public sealed class Mesh : Object
     public void OptimizeIndexBuffers();
     public void OptimizeReorderVertexBuffer();
     public void RecalculateBounds();
+    public void RecalculateBounds(Rendering.MeshUpdateFlags flags);
     public void RecalculateNormals();
+    public void RecalculateNormals(Rendering.MeshUpdateFlags flags);
     public void RecalculateTangents();
+    public void RecalculateTangents(Rendering.MeshUpdateFlags flags);
     public void SetBoneWeights(Unity.Collections.NativeArray<byte> bonesPerVertex, Unity.Collections.NativeArray<BoneWeight1> weights);
     public void SetColors(List<Color> inColors);
     public void SetColors(List<Color32> inColors);
@@ -111,8 +114,13 @@ public sealed class Mesh : Object
     public void SetColors(List<Color32> inColors, int start, int length);
     public void SetColors(Color[] inColors, int start, int length);
     public void SetColors(Color32[] inColors, int start, int length);
+    public void SetColors(List<Color> inColors, int start, int length, Rendering.MeshUpdateFlags flags);
+    public void SetColors(List<Color32> inColors, int start, int length, Rendering.MeshUpdateFlags flags);
+    public void SetColors(Color[] inColors, int start, int length, Rendering.MeshUpdateFlags flags);
+    public void SetColors(Color32[] inColors, int start, int length, Rendering.MeshUpdateFlags flags);
     public void SetColors<T>(Unity.Collections.NativeArray<T> inColors);
     public void SetColors<T>(Unity.Collections.NativeArray<T> inColors, int start, int length);
+    public void SetColors<T>(Unity.Collections.NativeArray<T> inColors, int start, int length, Rendering.MeshUpdateFlags flags);
     public void SetIndexBufferData<T>(List<T> data, int dataStart, int meshBufferStart, int count, Rendering.MeshUpdateFlags flags = 0);
     public void SetIndexBufferData<T>(T[] data, int dataStart, int meshBufferStart, int count, Rendering.MeshUpdateFlags flags = 0);
     public void SetIndexBufferData<T>(Unity.Collections.NativeArray<T> data, int dataStart, int meshBufferStart, int count, Rendering.MeshUpdateFlags flags = 0);
@@ -133,15 +141,21 @@ public sealed class Mesh : Object
     public void SetNormals(Vector3[] inNormals);
     public void SetNormals(List<Vector3> inNormals, int start, int length);
     public void SetNormals(Vector3[] inNormals, int start, int length);
+    public void SetNormals(List<Vector3> inNormals, int start, int length, Rendering.MeshUpdateFlags flags);
+    public void SetNormals(Vector3[] inNormals, int start, int length, Rendering.MeshUpdateFlags flags);
     public void SetNormals<T>(Unity.Collections.NativeArray<T> inNormals);
     public void SetNormals<T>(Unity.Collections.NativeArray<T> inNormals, int start, int length);
+    public void SetNormals<T>(Unity.Collections.NativeArray<T> inNormals, int start, int length, Rendering.MeshUpdateFlags flags);
     public void SetSubMesh(int index, Rendering.SubMeshDescriptor desc, Rendering.MeshUpdateFlags flags = 0);
     public void SetTangents(List<Vector4> inTangents);
     public void SetTangents(Vector4[] inTangents);
     public void SetTangents(List<Vector4> inTangents, int start, int length);
     public void SetTangents(Vector4[] inTangents, int start, int length);
+    public void SetTangents(List<Vector4> inTangents, int start, int length, Rendering.MeshUpdateFlags flags);
+    public void SetTangents(Vector4[] inTangents, int start, int length, Rendering.MeshUpdateFlags flags);
     public void SetTangents<T>(Unity.Collections.NativeArray<T> inTangents);
     public void SetTangents<T>(Unity.Collections.NativeArray<T> inTangents, int start, int length);
+    public void SetTangents<T>(Unity.Collections.NativeArray<T> inTangents, int start, int length, Rendering.MeshUpdateFlags flags);
     public void SetTriangles(List<int> triangles, int submesh);
     public void SetTriangles(int[] triangles, int submesh);
     public void SetTriangles(List<int> triangles, int submesh, bool calculateBounds);
@@ -166,8 +180,15 @@ public sealed class Mesh : Object
     public void SetUVs(int channel, Vector2[] uvs, int start, int length);
     public void SetUVs(int channel, Vector3[] uvs, int start, int length);
     public void SetUVs(int channel, Vector4[] uvs, int start, int length);
+    public void SetUVs(int channel, List<Vector2> uvs, int start, int length, Rendering.MeshUpdateFlags flags);
+    public void SetUVs(int channel, List<Vector3> uvs, int start, int length, Rendering.MeshUpdateFlags flags);
+    public void SetUVs(int channel, List<Vector4> uvs, int start, int length, Rendering.MeshUpdateFlags flags);
+    public void SetUVs(int channel, Vector2[] uvs, int start, int length, Rendering.MeshUpdateFlags flags);
+    public void SetUVs(int channel, Vector3[] uvs, int start, int length, Rendering.MeshUpdateFlags flags);
+    public void SetUVs(int channel, Vector4[] uvs, int start, int length, Rendering.MeshUpdateFlags flags);
     public void SetUVs<T>(int channel, Unity.Collections.NativeArray<T> uvs);
     public void SetUVs<T>(int channel, Unity.Collections.NativeArray<T> uvs, int start, int length);
+    public void SetUVs<T>(int channel, Unity.Collections.NativeArray<T> uvs, int start, int length, Rendering.MeshUpdateFlags flags);
     public void SetVertexBufferData<T>(List<T> data, int dataStart, int meshBufferStart, int count, int stream = 0, Rendering.MeshUpdateFlags flags = 0);
     public void SetVertexBufferData<T>(T[] data, int dataStart, int meshBufferStart, int count, int stream = 0, Rendering.MeshUpdateFlags flags = 0);
     public void SetVertexBufferData<T>(Unity.Collections.NativeArray<T> data, int dataStart, int meshBufferStart, int count, int stream = 0, Rendering.MeshUpdateFlags flags = 0);
@@ -176,8 +197,11 @@ public sealed class Mesh : Object
     public void SetVertices(Vector3[] inVertices);
     public void SetVertices(List<Vector3> inVertices, int start, int length);
     public void SetVertices(Vector3[] inVertices, int start, int length);
+    public void SetVertices(List<Vector3> inVertices, int start, int length, Rendering.MeshUpdateFlags flags);
+    public void SetVertices(Vector3[] inVertices, int start, int length, Rendering.MeshUpdateFlags flags);
     public void SetVertices<T>(Unity.Collections.NativeArray<T> inVertices);
     public void SetVertices<T>(Unity.Collections.NativeArray<T> inVertices, int start, int length);
+    public void SetVertices<T>(Unity.Collections.NativeArray<T> inVertices, int start, int length, Rendering.MeshUpdateFlags flags);
     public void UploadMeshData(bool markNoLongerReadable);
 
     public struct MeshData

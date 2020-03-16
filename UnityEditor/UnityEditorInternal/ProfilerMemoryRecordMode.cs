@@ -9,9 +9,10 @@ namespace UnityEditorInternal
 public enum ProfilerMemoryRecordMode
 {
     None = 0,
-    ManagedAllocations = 1,
-    AllAllocationsFast = 2,
-    AllAllocationsFull = 3,
+    GCAlloc = 1,
+    UnsafeUtilityMalloc = 2,
+    JobHandleComplete = 4,
+    NativeAlloc = 8,
 }
 
 }

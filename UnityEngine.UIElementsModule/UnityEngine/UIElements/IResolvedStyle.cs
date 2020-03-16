@@ -51,6 +51,7 @@ public interface IResolvedStyle
     public float paddingTop { get; }
     public UIElements.Position position { get; }
     public float right { get; }
+    public UIElements.TextOverflow textOverflow { get; }
     public float top { get; }
     public Color unityBackgroundImageTintColor { get; }
     public ScaleMode unityBackgroundScaleMode { get; }
@@ -61,6 +62,7 @@ public interface IResolvedStyle
     public int unitySliceRight { get; }
     public int unitySliceTop { get; }
     public TextAnchor unityTextAlign { get; }
+    public UIElements.TextOverflowPosition unityTextOverflowPosition { get; }
     public UIElements.Visibility visibility { get; }
     public UIElements.WhiteSpace whiteSpace { get; }
     public float width { get; }

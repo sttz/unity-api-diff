@@ -22,6 +22,7 @@ public class Physics
     static public Vector3 clothGravity { get; set; }
     static public float defaultContactOffset { get; set; }
     static public float defaultMaxAngularSpeed { get; set; }
+    static public float defaultMaxDepenetrationVelocity { get; set; }
     static public PhysicsScene defaultPhysicsScene { get; }
     static public int defaultSolverIterations { get; set; }
     static public int defaultSolverVelocityIterations { get; set; }

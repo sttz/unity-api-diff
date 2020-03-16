@@ -14,6 +14,7 @@ public class CameraEditor : UnityEditor.Editor
     public CameraEditor();
 
     public void OnDestroy();
+    public void OnDisable();
     public void OnEnable();
     public void OnInspectorGUI();
     public void OnOverlayGUI(Object target, UnityEditor.SceneView sceneView);

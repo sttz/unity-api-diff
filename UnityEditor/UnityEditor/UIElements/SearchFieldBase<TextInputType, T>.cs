@@ -12,6 +12,7 @@ public abstract class SearchFieldBase<TextInputType, T> : UIElements.VisualEleme
     static public string cancelButtonUssClassName;
     static public string popupVariantUssClassName;
     static public string searchButtonUssClassName;
+    static public string textInputUssClassName;
     static public string textUssClassName;
     static public string ussClassName;
 

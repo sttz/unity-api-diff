@@ -53,6 +53,7 @@ public sealed class Handles
     static public void DrawBezier(Vector3 startPosition, Vector3 endPosition, Vector3 startTangent, Vector3 endTangent, Color color, Texture2D texture, float width);
     static public void DrawCamera(Rect position, Camera camera);
     static public void DrawCamera(Rect position, Camera camera, UnityEditor.DrawCameraMode drawMode);
+    static public void DrawCamera(Rect position, Camera camera, UnityEditor.DrawCameraMode drawMode, bool drawGizmos);
     static public void DrawCone(int controlID, Vector3 position, Quaternion rotation, float size);
     static public void DrawCube(int controlID, Vector3 position, Quaternion rotation, float size);
     static public void DrawCylinder(int controlID, Vector3 position, Quaternion rotation, float size);
@@ -71,6 +72,9 @@ public sealed class Handles
     static public void DrawSolidRectangleWithOutline(Rect rectangle, Color faceColor, Color outlineColor);
     static public void DrawSolidRectangleWithOutline(Vector3[] verts, Color faceColor, Color outlineColor);
     static public void DrawSphere(int controlID, Vector3 position, Quaternion rotation, float size);
+    static public void DrawTexture3DSDF(Texture texture, float stepScale = 1, float surfaceOffset = 0, Gradient customColorRamp = null);
+    static public void DrawTexture3DSlice(Texture texture, Vector3 slicePositions, FilterMode filterMode = 1, bool useColorRamp = false, Gradient customColorRamp = null);
+    static public void DrawTexture3DVolume(Texture texture, float opacity = 1, float qualityModifier = 1, FilterMode filterMode = 1, bool useColorRamp = false, Gradient customColorRamp = null);
     static public void DrawWireArc(Vector3 center, Vector3 normal, Vector3 from, float angle, float radius);
     static public void DrawWireCube(Vector3 center, Vector3 size);
     static public void DrawWireDisc(Vector3 center, Vector3 normal, float radius);

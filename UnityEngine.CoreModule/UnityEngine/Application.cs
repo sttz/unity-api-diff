@@ -55,6 +55,7 @@ public class Application
     static public event LowMemoryCallback lowMemory;
     static public event Events.UnityAction onBeforeRender;
     static public event Action quitting;
+    static public event Action unloading;
     static public event Func<bool> wantsToQuit;
 
     static public void CancelQuit();

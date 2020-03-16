@@ -11,6 +11,8 @@ public sealed class AssetDatabaseExperimental
     static public OnDemandMode ActiveOnDemandMode { get; set; }
     static public AssetDatabaseCounters counters { get; }
 
+    static public event Action<CacheServerConnectionChangedParameters> cacheServerConnectionChanged;
+
     static public bool CanConnectToCacheServer(string ip, ushort port);
     static public void ClearImporterOverride(string path);
     static public Hash128 GetArtifactHash(string guid, ImportSyncMode mode = 0);
@@ -29,9 +31,9 @@ public sealed class AssetDatabaseExperimental
     static public bool IsAssetImportWorkerProcess();
     static public bool IsCacheServerEnabled();
     static public bool IsConnectedToCacheServer();
+    static public bool IsDirectoryMonitoringEnabled();
     static public void ReconnectToCacheServer();
-    static public void RefreshCacheServerNamespacePrefix();
-    static public void RefreshConnectionToCacheServer();
+    static public void RefreshSettings();
     static public void RegisterCustomDependency(string dependency, Hash128 hashOfValue);
     static public void SetImporterOverride<T>(string path);
     static public uint UnregisterCustomDependencyPrefixFilter(string prefixFilter);
@@ -82,6 +84,10 @@ public sealed class AssetDatabaseExperimental
 
         }
 
+    }
+
+    public struct CacheServerConnectionChangedParameters
+    {
     }
 
     public enum ImportSyncMode

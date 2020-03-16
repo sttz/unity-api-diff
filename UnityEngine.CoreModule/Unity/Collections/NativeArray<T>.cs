@@ -26,6 +26,7 @@ public struct NativeArray<T> : IDisposable, IEnumerable<T>, IEnumerable, IEquata
     public NativeArray(Unity.Collections.NativeArray<T> array, Unity.Collections.Allocator allocator);
     public NativeArray(int length, Unity.Collections.Allocator allocator, Unity.Collections.NativeArrayOptions options = 1);
 
+    public ReadOnly<T> AsReadOnly();
     public void CopyFrom(T[] array);
     public void CopyFrom(Unity.Collections.NativeArray<T> array);
     public void CopyTo(T[] array);
@@ -52,6 +53,12 @@ public struct NativeArray<T> : IDisposable, IEnumerable<T>, IEnumerable, IEquata
         public void Dispose();
         public bool MoveNext();
         public void Reset();
+
+    }
+
+    public struct ReadOnly<T>
+    {
+        public T this[int index] { get; }
 
     }
 

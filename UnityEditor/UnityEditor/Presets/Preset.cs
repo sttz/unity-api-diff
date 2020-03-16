@@ -8,6 +8,7 @@ namespace UnityEditor.Presets
 
 public sealed class Preset : Object
 {
+    static public UnityEditor.Presets.PresetType[] GetAllDefaultTypes();
     static public UnityEditor.Presets.Preset GetDefaultForObject(Object target);
     static public UnityEditor.Presets.Preset GetDefaultForPreset(UnityEditor.Presets.Preset preset);
     static public UnityEditor.Presets.Preset[] GetDefaultPresetsForObject(Object target);

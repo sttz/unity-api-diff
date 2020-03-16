@@ -16,6 +16,7 @@ public sealed class Lightmapping
     static public bool Bake(SceneManagement.Scene scene);
     static public bool BakeAsync(SceneManagement.Scene scene);
     static public bool GetAdditionalBakedProbes(int id, Unity.Collections.NativeArray<Rendering.SphericalHarmonicsL2> outBakedProbeSH, Unity.Collections.NativeArray<float> outBakedProbeValidity);
+    static public bool GetAdditionalBakedProbes(int id, Unity.Collections.NativeArray<Rendering.SphericalHarmonicsL2> outBakedProbeSH, Unity.Collections.NativeArray<float> outBakedProbeValidity, Unity.Collections.NativeArray<float> outBakedProbeOctahedralDepth);
     static public bool GetCustomBakeResults(out Vector4[] results);
     static public void SetAdditionalBakedProbes(int id, Vector3[] positions);
     static public void SetCustomBakeInputs(Vector4[] inputData, int sampleCount);

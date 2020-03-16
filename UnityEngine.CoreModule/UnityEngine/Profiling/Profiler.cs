@@ -39,6 +39,7 @@ public sealed class Profiler
     static public uint GetTempAllocatorSize();
     static public uint GetTotalAllocatedMemory();
     static public long GetTotalAllocatedMemoryLong();
+    static public long GetTotalFragmentationInfo(Unity.Collections.NativeArray<int> stats);
     static public uint GetTotalReservedMemory();
     static public long GetTotalReservedMemoryLong();
     static public uint GetTotalUnusedReservedMemory();

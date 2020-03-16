@@ -10,6 +10,9 @@ public static class UnsafeUtility
 {
     static public void AddressOf<T>(T output);
     static public int AlignOf<T>();
+    static public T ArrayElementAsRef<T>(void ptr, int index);
+    static public T As<U, T>(U from);
+    static public T AsRef<T>(void ptr);
     static public void CopyObjectAddressToPtr(object target, void dstPtr);
     static public void CopyPtrToStructure<T>(void ptr, out T output);
     static public void CopyStructureToPtr<T>(T input, void ptr);

@@ -38,8 +38,8 @@ public sealed class NetworkTransport
     static public void GetConnectionInfo(int hostId, int connectionId, out string address, out int port, out Networking.Types.NetworkID network, out Networking.Types.NodeID dstNode, out byte error);
     static public int GetCurrentIncomingMessageAmount();
     static public int GetCurrentOutgoingMessageAmount();
-    static public int GetCurrentRtt(int hostId, int connectionId, out byte error);
     static public int GetCurrentRTT(int hostId, int connectionId, out byte error);
+    static public int GetCurrentRtt(int hostId, int connectionId, out byte error);
     static public short GetEncryptionSafeMaxPacketSize(short maxPacketSize);
     static public int GetHostPort(int hostId);
     static public int GetIncomingMessageQueueSize(int hostId, out byte error);

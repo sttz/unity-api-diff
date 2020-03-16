@@ -13,10 +13,10 @@ public struct ObjectIdentifier : IEquatable<UnityEditor.Build.Content.ObjectIden
     static public bool TryGetObjectIdentifier(int instanceID, out UnityEditor.Build.Content.ObjectIdentifier objectId);
     static public bool TryGetObjectIdentifier(Object targetObject, out UnityEditor.Build.Content.ObjectIdentifier objectId);
 
-    public string filePath { get; }
-    public UnityEditor.Build.Content.FileType fileType { get; }
-    public UnityEditor.GUID guid { get; }
-    public long localIdentifierInFile { get; }
+    public string filePath { get; internal set; }
+    public UnityEditor.Build.Content.FileType fileType { get; internal set; }
+    public UnityEditor.GUID guid { get; internal set; }
+    public long localIdentifierInFile { get; internal set; }
 
     public bool Equals(object obj);
     public bool Equals(UnityEditor.Build.Content.ObjectIdentifier other);

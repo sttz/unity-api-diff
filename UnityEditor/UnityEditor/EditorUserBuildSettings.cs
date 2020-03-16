@@ -45,7 +45,6 @@ public class EditorUserBuildSettings : Object
     static public UnityEditor.BuildTarget selectedStandaloneTarget { get; set; }
     static public int streamingInstallLaunchRange { get; set; }
     static public bool switchCreateRomFile { get; set; }
-    static public bool switchCreateSolutionFile { get; set; }
     static public bool switchEnableDebugPad { get; set; }
     static public bool switchEnableHeapInspector { get; set; }
     static public bool switchHTCSScriptDebugging { get; set; }

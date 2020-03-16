@@ -10,6 +10,8 @@ public class TextElement : UIElements.BindableElement, UIElements.ITextElement, 
 {
     static public string ussClassName;
 
+    public bool displayTooltipWhenElided { get; set; }
+    public bool isElided { get; private set; }
     public string text { get; set; }
 
     public TextElement();

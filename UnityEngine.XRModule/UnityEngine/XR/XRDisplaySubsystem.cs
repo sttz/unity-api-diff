@@ -15,8 +15,11 @@ public class XRDisplaySubsystem : IntegratedSubsystem<XR.XRDisplaySubsystemDescr
     public float scaleOfAllRenderTargets { get; set; }
     public float scaleOfAllViewports { get; set; }
     public bool singlePassRenderingDisabled { get; set; }
+    public bool sRGB { get; set; }
     public TextureLayout supportedTextureLayouts { get; }
     public TextureLayout textureLayout { get; set; }
+    public float zFar { get; set; }
+    public float zNear { get; set; }
 
     public event Action<bool> displayFocusChanged;
 

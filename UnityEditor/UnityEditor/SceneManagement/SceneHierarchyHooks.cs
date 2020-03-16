@@ -13,6 +13,7 @@ public static class SceneHierarchyHooks
 
     static public event Action<UnityEditor.GenericMenu, GameObject> addItemsToGameObjectContextMenu;
     static public event Action<UnityEditor.GenericMenu, SceneManagement.Scene> addItemsToSceneHeaderContextMenu;
+    static public event Action<UnityEditor.GenericMenu, SubSceneInfo> addItemsToSubSceneHeaderContextMenu;
 
     static public bool CanMoveTransformToScene(Transform transform, SceneManagement.Scene scene);
     static public bool CanSetNewParent(Transform transform, Transform newParent);

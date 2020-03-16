@@ -10,6 +10,8 @@ public struct LightDataGI
 {
     public Experimental.GlobalIllumination.LinearColor color;
     public float coneAngle;
+    public int cookieID;
+    public float cookieScale;
     public Experimental.GlobalIllumination.FalloffType falloff;
     public Experimental.GlobalIllumination.LinearColor indirectColor;
     public float innerConeAngle;
@@ -30,6 +32,13 @@ public struct LightDataGI
     public void Init(Experimental.GlobalIllumination.SpotLight light);
     public void Init(Experimental.GlobalIllumination.SpotLightBoxShape light);
     public void Init(Experimental.GlobalIllumination.SpotLightPyramidShape light);
+    public void Init(Experimental.GlobalIllumination.DirectionalLight light, Experimental.GlobalIllumination.Cookie cookie);
+    public void Init(Experimental.GlobalIllumination.DiscLight light, Experimental.GlobalIllumination.Cookie cookie);
+    public void Init(Experimental.GlobalIllumination.PointLight light, Experimental.GlobalIllumination.Cookie cookie);
+    public void Init(Experimental.GlobalIllumination.RectangleLight light, Experimental.GlobalIllumination.Cookie cookie);
+    public void Init(Experimental.GlobalIllumination.SpotLight light, Experimental.GlobalIllumination.Cookie cookie);
+    public void Init(Experimental.GlobalIllumination.SpotLightBoxShape light, Experimental.GlobalIllumination.Cookie cookie);
+    public void Init(Experimental.GlobalIllumination.SpotLightPyramidShape light, Experimental.GlobalIllumination.Cookie cookie);
     public void InitNoBake(int lightInstanceID);
 
 }

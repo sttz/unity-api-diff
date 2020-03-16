@@ -26,6 +26,8 @@ public class BatchRendererGroup : IDisposable
     public int GetNumBatches();
     public void RemoveBatch(int index);
     public void SetBatchBounds(int batchIndex, Bounds bounds);
+    public void SetBatchFlags(int batchIndex, ulong flags);
+    public void SetBatchPropertyMetadata(int batchIndex, Unity.Collections.NativeArray<int> cbufferLengths, Unity.Collections.NativeArray<int> cbufferMetadata);
     public void SetInstancingData(int batchIndex, int instanceCount, MaterialPropertyBlock customProps);
 
     public delegate Unity.Jobs.JobHandle OnPerformCulling(Rendering.BatchRendererGroup rendererGroup, Rendering.BatchCullingContext cullingContext);

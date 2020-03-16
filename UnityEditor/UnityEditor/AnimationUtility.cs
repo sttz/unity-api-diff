@@ -42,11 +42,13 @@ public class AnimationUtility
     static public void SetAnimationType(AnimationClip clip, UnityEditor.ModelImporterAnimationType type);
     static public void SetEditorCurve(AnimationClip clip, UnityEditor.EditorCurveBinding binding, AnimationCurve curve);
     static public void SetEditorCurve(AnimationClip clip, string relativePath, Type type, string propertyName, AnimationCurve curve);
+    static public void SetEditorCurves(AnimationClip clip, UnityEditor.EditorCurveBinding[] bindings, AnimationCurve[] curves);
     static public void SetGenerateMotionCurves(AnimationClip clip, bool value);
     static public void SetKeyBroken(AnimationCurve curve, int index, bool broken);
     static public void SetKeyLeftTangentMode(AnimationCurve curve, int index, TangentMode tangentMode);
     static public void SetKeyRightTangentMode(AnimationCurve curve, int index, TangentMode tangentMode);
     static public void SetObjectReferenceCurve(AnimationClip clip, UnityEditor.EditorCurveBinding binding, UnityEditor.ObjectReferenceKeyframe[] keyframes);
+    static public void SetObjectReferenceCurves(AnimationClip clip, UnityEditor.EditorCurveBinding[] bindings, UnityEditor.ObjectReferenceKeyframe[][] keyframes);
     static public void StartAnimationMode(Object[] objects);
     static public void StopAnimationMode();
 
