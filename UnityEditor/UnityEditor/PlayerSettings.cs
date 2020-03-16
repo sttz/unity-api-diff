@@ -927,6 +927,7 @@ public sealed class PlayerSettings : Object
         static public bool DisableKinectGpuReservation { get; set; }
         static public bool Enable7thCore { get; set; }
         static public bool EnablePIXSampling { get; set; }
+        static public bool EnableTypeOptimization { get; set; }
         static public bool EnableVariableGPU { get; set; }
         static public string GameOsOverridePath { get; set; }
         static public bool IsContentPackage { get; set; }

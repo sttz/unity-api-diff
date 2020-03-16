@@ -23,6 +23,7 @@ public struct ScriptableCullingParameters : IEquatable<Rendering.ScriptableCulli
     public bool isOrthographic { get; set; }
     public Rendering.LODParameters lodParameters { get; set; }
     public int maximumPortalCullingJobs { get; set; }
+    public int maximumVisibleLights { get; set; }
     public Vector3 origin { get; set; }
     public Rendering.ReflectionProbeSortingCriteria reflectionProbeSortingCriteria { get; set; }
     public float shadowDistance { get; set; }

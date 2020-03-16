@@ -19,6 +19,7 @@ public static class StaticOcclusionCulling
     static public void Clear();
     static public bool Compute();
     static public bool GenerateInBackground();
+    static public void RemoveCacheFolder();
     static public void SetDefaultOcclusionBakeSettings();
 
 }
