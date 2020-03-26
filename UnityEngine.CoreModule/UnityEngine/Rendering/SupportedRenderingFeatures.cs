@@ -23,6 +23,7 @@ public class SupportedRenderingFeatures
     public bool overridesLODBias { get; set; }
     public bool overridesMaximumLODLevel { get; set; }
     public bool overridesOtherLightingSettings { get; set; }
+    public bool particleSystemInstancing { get; set; }
     public bool receiveShadows { get; set; }
     public ReflectionProbeModes reflectionProbeModes { get; set; }
     public bool reflectionProbes { get; set; }

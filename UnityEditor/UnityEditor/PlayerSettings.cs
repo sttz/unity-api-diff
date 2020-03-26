@@ -371,6 +371,7 @@ public sealed class PlayerSettings : Object
         static public string StartupImagePath { get; set; }
         static public string startupImagesFolder { get; set; }
         static public bool useAudio3dBackend { get; set; }
+        static public bool useLowGarlicFragmentationMode { get; set; }
         static public bool useResolutionFallback { get; set; }
         static public int videoOutBaseModeInitialWidth { get; set; }
         static public int videoOutInitialWidth { get; set; }

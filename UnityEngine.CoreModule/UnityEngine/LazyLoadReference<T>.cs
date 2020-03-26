@@ -13,6 +13,9 @@ public struct LazyLoadReference<T>
     public bool isBroken { get; }
     public bool isSet { get; }
 
+    public LazyLoadReference(T asset);
+    public LazyLoadReference(int instanceID);
+
 }
 
 }

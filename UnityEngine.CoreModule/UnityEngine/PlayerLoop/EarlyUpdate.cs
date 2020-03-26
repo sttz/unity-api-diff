@@ -12,6 +12,10 @@ public struct EarlyUpdate
     {
     }
 
+    public struct ARCoreUpdate
+    {
+    }
+
     public struct ClearIntermediateRenderers
     {
     }

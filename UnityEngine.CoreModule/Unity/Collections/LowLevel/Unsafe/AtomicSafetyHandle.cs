@@ -26,13 +26,14 @@ public struct AtomicSafetyHandle
     static public Unity.Jobs.JobHandle GetWriter(Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle handle);
     static public string GetWriterName(Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle handle);
     static public bool IsTempMemoryHandle(Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle handle);
-    static public int NewStaticSafetyId(string ownerTypeName);
+    static public int NewStaticSafetyId(byte ownerTypeNameBytes, int byteCount);
+    static public int NewStaticSafetyId<T>();
     static public void PrepareUndisposable(Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle handle);
     static public void Release(Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle handle);
     static public void SetAllowReadOrWriteAccess(Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle handle, bool allowReadWriteAccess);
     static public void SetAllowSecondaryVersionWriting(Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle handle, bool allowWriting);
     static public void SetBumpSecondaryVersionOnScheduleWrite(Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle handle, bool value);
-    static public void SetCustomErrorMessage(int staticSafetyId, Unity.Collections.LowLevel.Unsafe.AtomicSafetyErrorType errorType, string message);
+    static public void SetCustomErrorMessage(int staticSafetyId, Unity.Collections.LowLevel.Unsafe.AtomicSafetyErrorType errorType, byte messageBytes, int byteCount);
     static public void SetStaticSafetyId(Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle handle, int staticSafetyId);
     static public void UseSecondaryVersion(Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle handle);
 

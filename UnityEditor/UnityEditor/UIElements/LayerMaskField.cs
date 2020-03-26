@@ -26,9 +26,11 @@ public class LayerMaskField : UnityEditor.UIElements.MaskField
 
     }
 
-    public class UxmlTraits : UxmlTraits
+    public class UxmlTraits : UxmlTraits<int>
     {
         public UxmlTraits();
+
+        public void Init(UIElements.VisualElement ve, UIElements.IUxmlAttributes bag, UIElements.CreationContext cc);
 
     }
 
