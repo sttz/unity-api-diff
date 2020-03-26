@@ -70,8 +70,11 @@ public sealed class ParticleSystem : Component
     public void Emit(EmitParams emitParams, int count);
     public void Emit(Vector3 position, Vector3 velocity, float size, float lifetime, Color32 color);
     public int GetCustomParticleData(List<Vector4> customData, ParticleSystemCustomData streamIndex);
+    public int GetParticles(out Unity.Collections.NativeArray<Particle> particles);
     public int GetParticles(out Particle[] particles);
+    public int GetParticles(out Unity.Collections.NativeArray<Particle> particles, int size);
     public int GetParticles(out Particle[] particles, int size);
+    public int GetParticles(out Unity.Collections.NativeArray<Particle> particles, int size, int offset);
     public int GetParticles(out Particle[] particles, int size, int offset);
     public PlaybackState GetPlaybackState();
     public Trails GetTrails();
@@ -82,8 +85,11 @@ public sealed class ParticleSystem : Component
     public void Play();
     public void Play(bool withChildren);
     public void SetCustomParticleData(List<Vector4> customData, ParticleSystemCustomData streamIndex);
+    public void SetParticles(out Unity.Collections.NativeArray<Particle> particles);
     public void SetParticles(out Particle[] particles);
+    public void SetParticles(out Unity.Collections.NativeArray<Particle> particles, int size);
     public void SetParticles(out Particle[] particles, int size);
+    public void SetParticles(out Unity.Collections.NativeArray<Particle> particles, int size, int offset);
     public void SetParticles(out Particle[] particles, int size, int offset);
     public void SetPlaybackState(PlaybackState playbackState);
     public void SetTrails(Trails trailData);

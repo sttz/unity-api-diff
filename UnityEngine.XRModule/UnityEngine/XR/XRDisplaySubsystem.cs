@@ -15,6 +15,9 @@ public class XRDisplaySubsystem : IntegratedSubsystem<XR.XRDisplaySubsystemDescr
     public bool displayOpaque { get; }
     public ReprojectionMode reprojectionMode { get; set; }
     public bool singlePassRenderingDisabled { get; set; }
+    public bool sRGB { get; set; }
+    public float zFar { get; set; }
+    public float zNear { get; set; }
 
     public XRDisplaySubsystem();
 
