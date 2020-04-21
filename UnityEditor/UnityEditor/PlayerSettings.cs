@@ -944,6 +944,7 @@ public sealed class PlayerSettings : Object
         static public bool IsContentPackage { get; set; }
         static public int monoLoggingLevel { get; set; }
         static public string OverrideIdentityName { get; set; }
+        static public string OverrideIdentityPublisher { get; set; }
         static public UnityEditor.XboxOnePackageUpdateGranularity PackageUpdateGranularity { get; set; }
         static public UnityEditor.XboxOneEncryptionLevel PackagingEncryption { get; set; }
         static public string PackagingOverridePath { get; set; }

@@ -148,6 +148,10 @@ public struct PostLateUpdate
     {
     }
 
+    public struct UpdateLightProbeProxyVolumes
+    {
+    }
+
     public struct UpdateRectTransform
     {
     }

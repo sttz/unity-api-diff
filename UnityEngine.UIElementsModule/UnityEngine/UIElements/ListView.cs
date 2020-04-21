@@ -30,6 +30,7 @@ public class ListView : UIElements.BindableElement, ISerializationCallbackReceiv
     public UIElements.SelectionType selectionType { get; set; }
     public UIElements.AlternatingRowBackground showAlternatingRowBackgrounds { get; set; }
     public bool showBorder { get; set; }
+    public bool showBoundCollectionSize { get; set; }
     public Action<UIElements.VisualElement, int> unbindItem { get; set; }
 
     public event Action<object> onItemChosen;
