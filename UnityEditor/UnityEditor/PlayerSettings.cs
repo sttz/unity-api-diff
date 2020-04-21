@@ -366,6 +366,7 @@ public sealed class PlayerSettings : Object
         static public string StartupImagePath { get; set; }
         static public string startupImagesFolder { get; set; }
         static public bool useAudio3dBackend { get; set; }
+        static public bool useLowGarlicFragmentationMode { get; set; }
         static public bool useResolutionFallback { get; set; }
         static public int videoOutBaseModeInitialWidth { get; set; }
         static public int videoOutInitialWidth { get; set; }
@@ -933,6 +934,7 @@ public sealed class PlayerSettings : Object
         static public bool IsContentPackage { get; set; }
         static public int monoLoggingLevel { get; set; }
         static public string OverrideIdentityName { get; set; }
+        static public string OverrideIdentityPublisher { get; set; }
         static public UnityEditor.XboxOnePackageUpdateGranularity PackageUpdateGranularity { get; set; }
         static public UnityEditor.XboxOneEncryptionLevel PackagingEncryption { get; set; }
         static public string PackagingOverridePath { get; set; }

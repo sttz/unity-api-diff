@@ -8,6 +8,8 @@ namespace UnityEngine.Tilemaps
 
 public sealed class Tilemap : GridLayout
 {
+    static public event Action<Tilemaps.Tilemap, SyncTile[]> tilemapTileChanged;
+
     public float animationFrameRate { get; set; }
     public BoundsInt cellBounds { get; }
     public Color color { get; set; }
@@ -78,6 +80,14 @@ public sealed class Tilemap : GridLayout
         ZX = 4,
         ZY = 5,
         Custom = 6,
+    }
+
+    public struct SyncTile
+    {
+        public Vector3Int position { get; }
+        public Tilemaps.TileBase tile { get; }
+        public Tilemaps.TileData tileData { get; }
+
     }
 
 }
