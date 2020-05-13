@@ -65,6 +65,7 @@ public static class ProfilerDriver
     static public void SetAreaEnabled(Profiling.ProfilerArea area, bool enabled);
     static public void SetAudioCaptureFlags(int flags);
     static public void SetAutoInstrumentedAssemblies(UnityEditorInternal.InstrumentedAssemblyTypes fullname);
+    static public void SetMarkerFiltering(string name);
 
 }
 
