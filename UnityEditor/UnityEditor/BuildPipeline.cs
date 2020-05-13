@@ -28,6 +28,7 @@ public class BuildPipeline
     static public bool GetHashForAssetBundle(string targetPath, out Hash128 hash);
     static public string GetPlaybackEngineDirectory(UnityEditor.BuildTarget target, UnityEditor.BuildOptions options);
     static public string GetPlaybackEngineDirectory(UnityEditor.BuildTargetGroup buildTargetGroup, UnityEditor.BuildTarget target, UnityEditor.BuildOptions options);
+    static public UnityEditor.PlayerConnectionInitiateMode GetPlayerConnectionInitiateMode(UnityEditor.BuildTarget targetPlatform, UnityEditor.BuildOptions buildOptions);
     static public bool IsBuildTargetSupported(UnityEditor.BuildTargetGroup buildTargetGroup, UnityEditor.BuildTarget target);
     static public void PopAssetDependencies();
     static public void PushAssetDependencies();

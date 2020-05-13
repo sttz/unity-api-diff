@@ -13,10 +13,12 @@ public sealed class RayTracingAccelerationStructure : IDisposable
 
     public void AddInstance(Renderer targetRenderer, bool[] subMeshMask = null, bool[] subMeshTransparencyFlags = null, bool enableTriangleCulling = true, bool frontTriangleCounterClockwise = false, uint mask = 255);
     public void Build();
+    public void Build(Vector3 relativeOrigin);
     public void Dispose();
     public ulong GetSize();
     public void Release();
     public void Update();
+    public void Update(Vector3 relativeOrigin);
     public void UpdateInstanceTransform(Renderer renderer);
 
     public enum ManagementMode

@@ -98,6 +98,7 @@ public sealed class PlayerSettings : Object
     static public Texture2D virtualRealitySplashScreen { get; set; }
     static public bool virtualRealitySupported { get; set; }
     static public bool visibleInBackground { get; set; }
+    static public bool vulkanEnablePreTransform { get; set; }
     static public bool vulkanEnableSetSRGBWrite { get; set; }
     static public uint vulkanNumSwapchainBuffers { get; set; }
     static public bool vulkanUseSWCommandBuffers { get; set; }

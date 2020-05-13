@@ -17,6 +17,7 @@ public static class ContentBuildInterface
     static public UnityEditor.Build.Content.SceneDependencyInfo CalculatePlayerDependenciesForScene(string scenePath, UnityEditor.Build.Content.BuildSettings settings, UnityEditor.Build.Content.BuildUsageTagSet usageSet, UnityEditor.Build.Content.BuildUsageCache usageCache, UnityEditor.Build.Content.DependencyType mode);
     static public UnityEditor.AssetBundleBuild[] GenerateAssetBundleBuilds();
     static public UnityEditor.Build.Content.BuildUsageTagGlobal GetGlobalUsageFromGraphicsSettings();
+    static public UnityEditor.Build.Content.ObjectIdentifier[] GetPlayerAssetRepresentations(UnityEditor.GUID asset, UnityEditor.BuildTarget target);
     static public UnityEditor.Build.Content.ObjectIdentifier[] GetPlayerDependenciesForObject(UnityEditor.Build.Content.ObjectIdentifier objectID, UnityEditor.BuildTarget target, UnityEditor.Build.Player.TypeDB typeDB);
     static public UnityEditor.Build.Content.ObjectIdentifier[] GetPlayerDependenciesForObject(Object targetObject, UnityEditor.BuildTarget target, UnityEditor.Build.Player.TypeDB typeDB);
     static public UnityEditor.Build.Content.ObjectIdentifier[] GetPlayerDependenciesForObject(UnityEditor.Build.Content.ObjectIdentifier objectID, UnityEditor.BuildTarget target, UnityEditor.Build.Player.TypeDB typeDB, UnityEditor.Build.Content.DependencyType mode);

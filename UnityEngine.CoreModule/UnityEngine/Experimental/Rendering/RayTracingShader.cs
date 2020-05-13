@@ -12,13 +12,17 @@ public sealed class RayTracingShader : Object
 
     public void Dispatch(string rayGenFunctionName, int width, int height, int depth, Camera camera = null);
     public void SetAccelerationStructure(string name, Experimental.Rendering.RayTracingAccelerationStructure accelerationStructure);
-    public void SetAccelerationStructure(int nameID, Experimental.Rendering.RayTracingAccelerationStructure accelerationStrucure);
+    public void SetAccelerationStructure(int nameID, Experimental.Rendering.RayTracingAccelerationStructure accelerationStructure);
     public void SetBool(string name, bool val);
     public void SetBool(int nameID, bool val);
+    public void SetBuffer(string name, ComputeBuffer buffer);
+    public void SetBuffer(string name, GraphicsBuffer buffer);
     public void SetBuffer(int nameID, ComputeBuffer buffer);
     public void SetBuffer(int nameID, GraphicsBuffer buffer);
-    public void SetBuffer(string resourceName, ComputeBuffer buffer);
-    public void SetBuffer(string resourceName, GraphicsBuffer buffer);
+    public void SetConstantBuffer(string name, ComputeBuffer buffer, int offset, int size);
+    public void SetConstantBuffer(string name, GraphicsBuffer buffer, int offset, int size);
+    public void SetConstantBuffer(int nameID, ComputeBuffer buffer, int offset, int size);
+    public void SetConstantBuffer(int nameID, GraphicsBuffer buffer, int offset, int size);
     public void SetFloat(string name, float val);
     public void SetFloat(int nameID, float val);
     public void SetFloats(string name, float[] values);
@@ -32,10 +36,10 @@ public sealed class RayTracingShader : Object
     public void SetMatrixArray(string name, Matrix4x4[] values);
     public void SetMatrixArray(int nameID, Matrix4x4[] values);
     public void SetShaderPass(string passName);
+    public void SetTexture(string name, Texture texture);
     public void SetTexture(int nameID, Texture texture);
-    public void SetTexture(string resourceName, Texture texture);
+    public void SetTextureFromGlobal(string name, string globalTextureName);
     public void SetTextureFromGlobal(int nameID, int globalTextureNameID);
-    public void SetTextureFromGlobal(string resourceName, string globalTextureName);
     public void SetVector(string name, Vector4 val);
     public void SetVector(int nameID, Vector4 val);
     public void SetVectorArray(string name, Vector4[] values);

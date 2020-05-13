@@ -15,6 +15,7 @@ public class Provider
     static public bool enabled { get; }
     static public bool hasChangelistSupport { get; }
     static public bool hasCheckoutSupport { get; }
+    static public bool hasLockingSupport { get; }
     static public bool isActive { get; }
     static public bool isVersioningFolders { get; }
     static public string offlineReason { get; }

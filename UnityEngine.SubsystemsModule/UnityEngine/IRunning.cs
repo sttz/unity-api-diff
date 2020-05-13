@@ -6,11 +6,9 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public interface ISubsystem : IRunning
+public interface IRunning
 {
-    public void Destroy();
-    public void Start();
-    public void Stop();
+    public bool running { get; }
 
 }
 

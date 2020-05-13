@@ -35,6 +35,8 @@ public class XRDisplaySubsystem : IntegratedSubsystem<XR.XRDisplaySubsystemDescr
     public int GetRenderPassCount();
     public RenderTexture GetRenderTextureForRenderPass(int renderPass);
     public void SetFocusPlane(Vector3 point, Vector3 normal, Vector3 velocity);
+    public void SetMSAALevel(int level);
+    public void SetPreferredMirrorBlitMode(int blitMode);
     public bool TryGetAppGPUTimeLastFrame(out float gpuTimeLastFrame);
     public bool TryGetCompositorGPUTimeLastFrame(out float gpuTimeLastFrameCompositor);
     public bool TryGetDisplayRefreshRate(out float displayRefreshRate);

@@ -27,7 +27,10 @@ public sealed class ComputeShader : Object
     public void SetBuffer(int kernelIndex, string name, GraphicsBuffer buffer);
     public void SetBuffer(int kernelIndex, int nameID, ComputeBuffer buffer);
     public void SetBuffer(int kernelIndex, int nameID, GraphicsBuffer buffer);
+    public void SetConstantBuffer(string name, ComputeBuffer buffer, int offset, int size);
+    public void SetConstantBuffer(string name, GraphicsBuffer buffer, int offset, int size);
     public void SetConstantBuffer(int nameID, ComputeBuffer buffer, int offset, int size);
+    public void SetConstantBuffer(int nameID, GraphicsBuffer buffer, int offset, int size);
     public void SetFloat(string name, float val);
     public void SetFloat(int nameID, float val);
     public void SetFloats(string name, float[] values);

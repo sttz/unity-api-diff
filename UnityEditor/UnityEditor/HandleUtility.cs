@@ -14,6 +14,7 @@ public sealed class HandleUtility
     static public float niceMouseDelta { get; }
     static public float niceMouseDeltaZoom { get; }
 
+    static public event PickGameObjectCallback pickGameObjectCustomPasses;
     static public event PlaceObjectDelegate placeObjectCustomPasses;
 
     static public void AddControl(int controlId, float distance);
@@ -28,6 +29,8 @@ public sealed class HandleUtility
     static public float DistancePointToLineSegment(Vector2 p, Vector2 a, Vector2 b);
     static public float DistanceToArc(Vector3 center, Vector3 normal, Vector3 from, float angle, float radius);
     static public float DistanceToCircle(Vector3 position, float radius);
+    static public float DistanceToCone(Vector3 position, Quaternion rotation, float size);
+    static public float DistanceToCube(Vector3 position, Quaternion rotation, float size);
     static public float DistanceToDisc(Vector3 center, Vector3 normal, float radius);
     static public float DistanceToLine(Vector3 p1, Vector3 p2);
     static public float DistanceToPolyLine(Vector3[] points);
@@ -53,6 +56,8 @@ public sealed class HandleUtility
     static public Vector3 WorldToGUIPointWithDepth(Vector3 world);
 
     public HandleUtility();
+
+    public delegate GameObject PickGameObjectCallback(Camera cam, int layers, Vector2 position, GameObject[] ignore, GameObject[] filter, out int materialIndex);
 
     public delegate bool PlaceObjectDelegate(Vector2 guiPosition, out Vector3 position, out Vector3 normal);
 

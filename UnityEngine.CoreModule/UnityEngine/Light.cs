@@ -56,6 +56,7 @@ public sealed class Light : Behaviour
     public bool useBoundingSphereOverride { get; set; }
     public bool useColorTemperature { get; set; }
     public bool useShadowMatrixOverride { get; set; }
+    public bool useViewFrustumForShadowCasterCull { get; set; }
 
     public Light();
 

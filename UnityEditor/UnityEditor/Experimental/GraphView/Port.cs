@@ -16,6 +16,7 @@ public class Port : UnityEditor.Experimental.GraphView.GraphElement
     protected UnityEditor.Experimental.GraphView.EdgeConnector m_EdgeConnector;
     protected UnityEditor.Experimental.GraphView.GraphView m_GraphView;
 
+    public bool allowMultiDrag { get; set; }
     public Capacity capacity { get; private set; }
     public bool collapsed { get; }
     public bool connected { get; }

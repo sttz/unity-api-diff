@@ -120,18 +120,20 @@ public class SceneView : UnityEditor.SearchableEditorWindow, UnityEditor.IHasCus
         public bool showFlares;
         public bool showFog;
         public bool showImageEffects;
-        public bool showMaterialUpdate;
         public bool showParticleSystems;
         public bool showSkybox;
         public bool showVisualEffectGraphs;
 
         public bool allEnabled { get; }
+        public bool alwaysRefresh { get; set; }
+        public bool alwaysRefreshEnabled { get; }
         public bool flaresEnabled { get; }
         public bool fogEnabled { get; }
         public bool fxEnabled { get; set; }
         public bool imageEffectsEnabled { get; }
         public bool materialUpdateEnabled { get; }
         public bool particleSystemsEnabled { get; }
+        public bool showMaterialUpdate { get; set; }
         public bool skyboxEnabled { get; }
         public bool visualEffectGraphsEnabled { get; }
 

@@ -12,6 +12,7 @@ public sealed class Handles
     static public Color color { get; set; }
     static public Matrix4x4 inverseMatrix { get; }
     static public bool lighting { get; set; }
+    static public float lineThickness { get; }
     static public Matrix4x4 matrix { get; set; }
     static public Color preselectionColor { get; }
     static public Color secondaryColor { get; }
@@ -51,6 +52,7 @@ public sealed class Handles
     static public void DrawDottedLines(Vector3[] points, int[] segmentIndices, float screenSpaceSize);
     static public void DrawGizmos(Camera camera);
     static public void DrawLine(Vector3 p1, Vector3 p2);
+    static public void DrawLine(Vector3 p1, Vector3 p2, float thickness);
     static public void DrawLines(Vector3[] lineSegments);
     static public void DrawLines(Vector3[] points, int[] segmentIndices);
     static public void DrawPolyLine(Vector3[] points);
@@ -63,8 +65,10 @@ public sealed class Handles
     static public void DrawTexture3DSlice(Texture texture, Vector3 slicePositions, FilterMode filterMode = 1, bool useColorRamp = false, Gradient customColorRamp = null);
     static public void DrawTexture3DVolume(Texture texture, float opacity = 1, float qualityModifier = 1, FilterMode filterMode = 1, bool useColorRamp = false, Gradient customColorRamp = null);
     static public void DrawWireArc(Vector3 center, Vector3 normal, Vector3 from, float angle, float radius);
+    static public void DrawWireArc(Vector3 center, Vector3 normal, Vector3 from, float angle, float radius, float thickness);
     static public void DrawWireCube(Vector3 center, Vector3 size);
     static public void DrawWireDisc(Vector3 center, Vector3 normal, float radius);
+    static public void DrawWireDisc(Vector3 center, Vector3 normal, float radius, float thickness);
     static public void EndGUI();
     static public Vector3 FreeMoveHandle(Vector3 position, Quaternion rotation, float size, Vector3 snap, CapFunction capFunction);
     static public Vector3 FreeMoveHandle(int controlID, Vector3 position, Quaternion rotation, float size, Vector3 snap, CapFunction capFunction);

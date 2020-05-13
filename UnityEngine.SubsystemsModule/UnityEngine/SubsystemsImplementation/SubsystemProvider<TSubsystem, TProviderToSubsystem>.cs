@@ -3,17 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UnityEngine
+namespace UnityEngine.SubsystemsImplementation
 {
 
-public abstract class Subsystem : ISubsystem, IRunning
+public abstract class SubsystemProvider<TSubsystem, TProviderToSubsystem> : SubsystemsImplementation.SubsystemProvider, IRunning
 {
     public bool running { get; }
 
-    protected Subsystem();
+    protected SubsystemProvider();
 
     public void Destroy();
-    protected void OnDestroy();
     public void Start();
     public void Stop();
 

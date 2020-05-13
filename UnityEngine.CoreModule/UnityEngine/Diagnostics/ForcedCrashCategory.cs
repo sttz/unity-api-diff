@@ -12,6 +12,7 @@ public enum ForcedCrashCategory
     FatalError = 1,
     Abort = 2,
     PureVirtualFunction = 3,
+    MonoAbort = 4,
 }
 
 }

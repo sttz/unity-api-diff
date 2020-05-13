@@ -10,6 +10,9 @@ public sealed class AssetDatabase
 {
     static public Action<string[]> onImportPackageItemsCompleted;
 
+    static public uint GlobalArtifactDependencyVersion { get; }
+    static public uint GlobalArtifactProcessedVersion { get; }
+
     static public event ImportPackageCallback importPackageCancelled;
     static public event ImportPackageCallback importPackageCompleted;
     static public event ImportPackageFailedCallback importPackageFailed;

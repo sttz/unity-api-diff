@@ -27,6 +27,7 @@ public class CommandBuffer : IDisposable
     public void Blit(Rendering.RenderTargetIdentifier source, Rendering.RenderTargetIdentifier dest, Material mat, int pass, int destDepthSlice);
     public void Blit(Rendering.RenderTargetIdentifier source, Rendering.RenderTargetIdentifier dest, Vector2 scale, Vector2 offset, int sourceDepthSlice, int destDepthSlice);
     public void BuildRayTracingAccelerationStructure(Experimental.Rendering.RayTracingAccelerationStructure accelerationStructure);
+    public void BuildRayTracingAccelerationStructure(Experimental.Rendering.RayTracingAccelerationStructure accelerationStructure, Vector3 relativeOrigin);
     public void Clear();
     public void ClearRandomWriteTargets();
     public void ClearRenderTarget(bool clearDepth, bool clearColor, Color backgroundColor);
@@ -93,6 +94,7 @@ public class CommandBuffer : IDisposable
     public void EnableShaderKeyword(string keyword);
     public void EndSample(string name);
     public void EndSample(Profiling.CustomSampler sampler);
+    public void GenerateMips(Rendering.RenderTargetIdentifier rt);
     public void GenerateMips(RenderTexture rt);
     public void GetTemporaryRT(int nameID, RenderTextureDescriptor desc);
     public void GetTemporaryRT(int nameID, RenderTextureDescriptor desc, FilterMode filter);
@@ -165,7 +167,10 @@ public class CommandBuffer : IDisposable
     public void SetComputeBufferParam(ComputeShader computeShader, int kernelIndex, string name, GraphicsBuffer buffer);
     public void SetComputeBufferParam(ComputeShader computeShader, int kernelIndex, int nameID, ComputeBuffer buffer);
     public void SetComputeBufferParam(ComputeShader computeShader, int kernelIndex, int nameID, GraphicsBuffer buffer);
+    public void SetComputeConstantBufferParam(ComputeShader computeShader, string name, ComputeBuffer buffer, int offset, int size);
+    public void SetComputeConstantBufferParam(ComputeShader computeShader, string name, GraphicsBuffer buffer, int offset, int size);
     public void SetComputeConstantBufferParam(ComputeShader computeShader, int nameID, ComputeBuffer buffer, int offset, int size);
+    public void SetComputeConstantBufferParam(ComputeShader computeShader, int nameID, GraphicsBuffer buffer, int offset, int size);
     public void SetComputeFloatParam(ComputeShader computeShader, string name, float val);
     public void SetComputeFloatParam(ComputeShader computeShader, int nameID, float val);
     public void SetComputeFloatParams(ComputeShader computeShader, string name, float[] values);
@@ -236,6 +241,10 @@ public class CommandBuffer : IDisposable
     public void SetRayTracingAccelerationStructure(Experimental.Rendering.RayTracingShader rayTracingShader, int nameID, Experimental.Rendering.RayTracingAccelerationStructure rayTracingAccelerationStructure);
     public void SetRayTracingBufferParam(Experimental.Rendering.RayTracingShader rayTracingShader, string name, ComputeBuffer buffer);
     public void SetRayTracingBufferParam(Experimental.Rendering.RayTracingShader rayTracingShader, int nameID, ComputeBuffer buffer);
+    public void SetRayTracingConstantBufferParam(Experimental.Rendering.RayTracingShader rayTracingShader, string name, ComputeBuffer buffer, int offset, int size);
+    public void SetRayTracingConstantBufferParam(Experimental.Rendering.RayTracingShader rayTracingShader, string name, GraphicsBuffer buffer, int offset, int size);
+    public void SetRayTracingConstantBufferParam(Experimental.Rendering.RayTracingShader rayTracingShader, int nameID, ComputeBuffer buffer, int offset, int size);
+    public void SetRayTracingConstantBufferParam(Experimental.Rendering.RayTracingShader rayTracingShader, int nameID, GraphicsBuffer buffer, int offset, int size);
     public void SetRayTracingFloatParam(Experimental.Rendering.RayTracingShader rayTracingShader, string name, float val);
     public void SetRayTracingFloatParam(Experimental.Rendering.RayTracingShader rayTracingShader, int nameID, float val);
     public void SetRayTracingFloatParams(Experimental.Rendering.RayTracingShader rayTracingShader, string name, float[] values);
