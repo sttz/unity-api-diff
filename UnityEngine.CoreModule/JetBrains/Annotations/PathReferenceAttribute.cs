@@ -6,9 +6,9 @@ using UnityEngine;
 namespace JetBrains.Annotations
 {
 
-public class PathReferenceAttribute : Attribute
+public sealed class PathReferenceAttribute : Attribute
 {
-    public string BasePath { get; private set; }
+    public string BasePath { get; }
 
     public PathReferenceAttribute();
     public PathReferenceAttribute(string basePath);

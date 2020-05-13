@@ -8,7 +8,7 @@ namespace JetBrains.Annotations
 
 public sealed class StringFormatMethodAttribute : Attribute
 {
-    public string FormatParameterName { get; private set; }
+    public string FormatParameterName { get; }
 
     public StringFormatMethodAttribute(string formatParameterName);
 

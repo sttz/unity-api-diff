@@ -83,6 +83,7 @@ public sealed class EditorGUI
     static public void DrawPreviewTexture(Rect position, Texture image, Material mat, ScaleMode scaleMode, float imageAspect);
     static public void DrawPreviewTexture(Rect position, Texture image, Material mat, ScaleMode scaleMode, float imageAspect, float mipLevel);
     static public void DrawPreviewTexture(Rect position, Texture image, Material mat, ScaleMode scaleMode, float imageAspect, float mipLevel, Rendering.ColorWriteMask colorWriteMask);
+    static public void DrawPreviewTexture(Rect position, Texture image, Material mat, ScaleMode scaleMode, float imageAspect, float mipLevel, Rendering.ColorWriteMask colorWriteMask, float exposure);
     static public void DrawRect(Rect rect, Color color);
     static public void DrawTextureAlpha(Rect position, Texture image);
     static public void DrawTextureAlpha(Rect position, Texture image, ScaleMode scaleMode);
@@ -93,6 +94,7 @@ public sealed class EditorGUI
     static public void DrawTextureTransparent(Rect position, Texture image, ScaleMode scaleMode, float imageAspect);
     static public void DrawTextureTransparent(Rect position, Texture image, ScaleMode scaleMode, float imageAspect, float mipLevel);
     static public void DrawTextureTransparent(Rect position, Texture image, ScaleMode scaleMode, float imageAspect, float mipLevel, Rendering.ColorWriteMask colorWriteMask);
+    static public void DrawTextureTransparent(Rect position, Texture image, ScaleMode scaleMode, float imageAspect, float mipLevel, Rendering.ColorWriteMask colorWriteMask, float exposure);
     static public bool DropdownButton(Rect position, GUIContent content, FocusType focusType);
     static public bool DropdownButton(Rect position, GUIContent content, FocusType focusType, GUIStyle style);
     static public void DropShadowLabel(Rect position, GUIContent content);
