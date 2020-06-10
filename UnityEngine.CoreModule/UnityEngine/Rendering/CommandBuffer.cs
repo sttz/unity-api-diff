@@ -236,6 +236,7 @@ public class CommandBuffer : IDisposable
     public void SetRayTracingAccelerationStructure(Experimental.Rendering.RayTracingShader rayTracingShader, int nameID, Experimental.Rendering.RayTracingAccelerationStructure rayTracingAccelerationStructure);
     public void SetRayTracingBufferParam(Experimental.Rendering.RayTracingShader rayTracingShader, string name, ComputeBuffer buffer);
     public void SetRayTracingBufferParam(Experimental.Rendering.RayTracingShader rayTracingShader, int nameID, ComputeBuffer buffer);
+    public void SetRayTracingConstantBufferParam(Experimental.Rendering.RayTracingShader rayTracingShader, int nameID, ComputeBuffer buffer, int offset, int size);
     public void SetRayTracingFloatParam(Experimental.Rendering.RayTracingShader rayTracingShader, string name, float val);
     public void SetRayTracingFloatParam(Experimental.Rendering.RayTracingShader rayTracingShader, int nameID, float val);
     public void SetRayTracingFloatParams(Experimental.Rendering.RayTracingShader rayTracingShader, string name, float[] values);
