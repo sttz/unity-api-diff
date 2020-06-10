@@ -24,9 +24,9 @@ class Program
             Environment.Exit(2);
         }
 
-        var editorPath = Path.Combine(path, "UnityEditor.dll");
-        if (!File.Exists(editorPath)) {
-            Console.WriteLine($"Could not find UnityEditor.dll assembly at path: {path}");
+        var editorPaths = Directory.GetFiles(path, "UnityEditor*.dll");
+        if (editorPaths.Length == 0) {
+            Console.WriteLine($"Could not find UnityEditor assemblies at path: {path}");
             PrintHelp();
             Environment.Exit(3);
         }
@@ -48,8 +48,10 @@ class Program
 
         Directory.CreateDirectory(outputPath);
 
-        Console.WriteLine("");
-        ApiWriter.WriteApi(editorPath, outputPath);
+        foreach (var assembly in editorPaths) {
+            Console.WriteLine($"");
+            ApiWriter.WriteApi(assembly, outputPath);
+        }
 
         foreach (var assembly in enginePaths) {
             Console.WriteLine($"");
