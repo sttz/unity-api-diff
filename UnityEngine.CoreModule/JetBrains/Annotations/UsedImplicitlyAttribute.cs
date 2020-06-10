@@ -8,8 +8,8 @@ namespace JetBrains.Annotations
 
 public sealed class UsedImplicitlyAttribute : Attribute
 {
-    public JetBrains.Annotations.ImplicitUseTargetFlags TargetFlags { get; private set; }
-    public JetBrains.Annotations.ImplicitUseKindFlags UseKindFlags { get; private set; }
+    public JetBrains.Annotations.ImplicitUseTargetFlags TargetFlags { get; }
+    public JetBrains.Annotations.ImplicitUseKindFlags UseKindFlags { get; }
 
     public UsedImplicitlyAttribute();
     public UsedImplicitlyAttribute(JetBrains.Annotations.ImplicitUseTargetFlags targetFlags);

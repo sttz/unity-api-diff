@@ -8,7 +8,7 @@ namespace JetBrains.Annotations
 
 public sealed class PublicAPIAttribute : Attribute
 {
-    public string Comment { get; private set; }
+    public string Comment { get; }
 
     public PublicAPIAttribute();
     public PublicAPIAttribute(string comment);

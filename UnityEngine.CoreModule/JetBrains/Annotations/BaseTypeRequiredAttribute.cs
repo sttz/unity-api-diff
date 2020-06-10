@@ -8,7 +8,7 @@ namespace JetBrains.Annotations
 
 public sealed class BaseTypeRequiredAttribute : Attribute
 {
-    public Type BaseType { get; private set; }
+    public Type BaseType { get; }
 
     public BaseTypeRequiredAttribute(Type baseType);
 

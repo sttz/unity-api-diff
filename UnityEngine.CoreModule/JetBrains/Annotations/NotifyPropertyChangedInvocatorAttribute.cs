@@ -8,7 +8,7 @@ namespace JetBrains.Annotations
 
 public sealed class NotifyPropertyChangedInvocatorAttribute : Attribute
 {
-    public string ParameterName { get; private set; }
+    public string ParameterName { get; }
 
     public NotifyPropertyChangedInvocatorAttribute();
     public NotifyPropertyChangedInvocatorAttribute(string parameterName);
