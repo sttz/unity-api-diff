@@ -12,10 +12,14 @@ public struct ScriptableRenderContext : IEquatable<Rendering.ScriptableRenderCon
 
     public void BeginRenderPass(int width, int height, int samples, Unity.Collections.NativeArray<Rendering.AttachmentDescriptor> attachments, int depthAttachmentIndex = -1);
     public Rendering.ScopedRenderPass BeginScopedRenderPass(int width, int height, int samples, Unity.Collections.NativeArray<Rendering.AttachmentDescriptor> attachments, int depthAttachmentIndex = -1);
-    public Rendering.ScopedSubPass BeginScopedSubPass(Unity.Collections.NativeArray<int> colors, bool isDepthReadOnly = false);
-    public Rendering.ScopedSubPass BeginScopedSubPass(Unity.Collections.NativeArray<int> colors, Unity.Collections.NativeArray<int> inputs, bool isDepthReadOnly = false);
-    public void BeginSubPass(Unity.Collections.NativeArray<int> colors, bool isDepthReadOnly = false);
-    public void BeginSubPass(Unity.Collections.NativeArray<int> colors, Unity.Collections.NativeArray<int> inputs, bool isDepthReadOnly = false);
+    public Rendering.ScopedSubPass BeginScopedSubPass(Unity.Collections.NativeArray<int> colors, bool isDepthStencilReadOnly = false);
+    public Rendering.ScopedSubPass BeginScopedSubPass(Unity.Collections.NativeArray<int> colors, Unity.Collections.NativeArray<int> inputs, bool isDepthStencilReadOnly = false);
+    public Rendering.ScopedSubPass BeginScopedSubPass(Unity.Collections.NativeArray<int> colors, bool isDepthReadOnly, bool isStencilReadOnly);
+    public Rendering.ScopedSubPass BeginScopedSubPass(Unity.Collections.NativeArray<int> colors, Unity.Collections.NativeArray<int> inputs, bool isDepthReadOnly, bool isStencilReadOnly);
+    public void BeginSubPass(Unity.Collections.NativeArray<int> colors, bool isDepthStencilReadOnly = false);
+    public void BeginSubPass(Unity.Collections.NativeArray<int> colors, Unity.Collections.NativeArray<int> inputs, bool isDepthStencilReadOnly = false);
+    public void BeginSubPass(Unity.Collections.NativeArray<int> colors, bool isDepthReadOnly, bool isStencilReadOnly);
+    public void BeginSubPass(Unity.Collections.NativeArray<int> colors, Unity.Collections.NativeArray<int> inputs, bool isDepthReadOnly, bool isStencilReadOnly);
     public Rendering.CullingResults Cull(Rendering.ScriptableCullingParameters parameters);
     public void DrawGizmos(Camera camera, Rendering.GizmoSubset gizmoSubset);
     public void DrawRenderers(Rendering.CullingResults cullingResults, Rendering.DrawingSettings drawingSettings, Rendering.FilteringSettings filteringSettings);
@@ -24,6 +28,7 @@ public struct ScriptableRenderContext : IEquatable<Rendering.ScriptableRenderCon
     public void DrawShadows(Rendering.ShadowDrawingSettings settings);
     public void DrawSkybox(Camera camera);
     public void DrawUIOverlay(Camera camera);
+    public void DrawWireOverlay(Camera camera);
     public void EndRenderPass();
     public void EndSubPass();
     public bool Equals(object obj);

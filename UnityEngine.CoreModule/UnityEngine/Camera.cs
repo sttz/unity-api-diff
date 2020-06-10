@@ -6,7 +6,7 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public class Camera : Behaviour
+public sealed class Camera : Behaviour
 {
     static public CameraCallback onPostRender;
     static public CameraCallback onPreCull;
@@ -89,6 +89,8 @@ public class Camera : Behaviour
     public bool usePhysicalProperties { get; set; }
     public Vector3 velocity { get; }
     public Matrix4x4 worldToCameraMatrix { get; set; }
+
+    public Camera();
 
     public void AddCommandBuffer(Rendering.CameraEvent evt, Rendering.CommandBuffer buffer);
     public void AddCommandBufferAsync(Rendering.CameraEvent evt, Rendering.CommandBuffer buffer, Rendering.ComputeQueueType queueType);

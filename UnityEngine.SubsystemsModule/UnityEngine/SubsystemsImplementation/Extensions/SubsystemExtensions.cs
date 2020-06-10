@@ -8,7 +8,7 @@ namespace UnityEngine.SubsystemsImplementation.Extensions
 
 public static class SubsystemExtensions
 {
-    static public TProvider GetProvider<TSubsystem, TDescriptor, TProvider, TProviderToSubsystem>(SubsystemsImplementation.SubsystemWithProvider<TSubsystem, TDescriptor, TProvider, TProviderToSubsystem> subsystem);
+    static public TProvider GetProvider<TSubsystem, TDescriptor, TProvider>(SubsystemsImplementation.SubsystemWithProvider<TSubsystem, TDescriptor, TProvider> subsystem);
 
 }
 

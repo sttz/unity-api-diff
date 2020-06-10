@@ -12,6 +12,7 @@ public sealed class LightProbeProxyVolume : Behaviour
 
     public BoundingBoxMode boundingBoxMode { get; set; }
     public Bounds boundsGlobal { get; }
+    public DataFormat dataFormat { get; set; }
     public int gridResolutionX { get; set; }
     public int gridResolutionY { get; set; }
     public int gridResolutionZ { get; set; }
@@ -32,6 +33,12 @@ public sealed class LightProbeProxyVolume : Behaviour
         AutomaticLocal = 0,
         AutomaticWorld = 1,
         Custom = 2,
+    }
+
+    public enum DataFormat
+    {
+        HalfFloat = 0,
+        Float = 1,
     }
 
     public enum ProbePositionMode

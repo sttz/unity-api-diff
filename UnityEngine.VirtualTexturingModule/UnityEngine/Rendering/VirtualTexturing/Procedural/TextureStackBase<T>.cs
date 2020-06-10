@@ -17,6 +17,7 @@ public class TextureStackBase<T> : IDisposable
     public void BindToMaterial(Material mat);
     public void BindToMaterialPropertyBlock(MaterialPropertyBlock mpb);
     public void Dispose();
+    public void EvictRegion(Rect r, int mipMap, int numMips);
     public void InvalidateRegion(Rect r, int mipMap, int numMips);
     public bool IsValid();
     public int PopRequests(Unity.Collections.NativeSlice<Rendering.VirtualTexturing.Procedural.TextureStackRequestHandle<T>> requestHandles);

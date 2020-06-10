@@ -11,6 +11,7 @@ public sealed class GraphicsSettings : Object
     static public Rendering.RenderPipelineAsset[] allConfiguredRenderPipelines { get; }
     static public Rendering.RenderPipelineAsset currentRenderPipeline { get; }
     static public Rendering.RenderPipelineAsset defaultRenderPipeline { get; set; }
+    static public bool disableBuiltinCustomRenderTextureUpdate { get; set; }
     static public bool lightsUseColorTemperature { get; set; }
     static public bool lightsUseLinearIntensity { get; set; }
     static public bool logWhenShaderIsCompiled { get; set; }

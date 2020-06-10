@@ -15,7 +15,7 @@ public struct CPUTextureStackRequestParameters
     public int x;
     public int y;
 
-    public void CopyPixelDataToLayer<T>(Unity.Collections.NativeArray<T> colorData, int layerIdx);
+    public void CopyPixelDataToLayer<T>(Unity.Collections.NativeArray<T> colorData, int layerIdx, Experimental.Rendering.GraphicsFormat format);
     public Rendering.VirtualTexturing.Procedural.CPUTextureStackRequestLayerParameters GetLayer(int index);
 
 }

@@ -20,6 +20,7 @@ public class SupportedRenderingFeatures
     public bool motionVectors { get; set; }
     public bool overridesEnvironmentLighting { get; set; }
     public bool overridesFog { get; set; }
+    public string overrideShadowmaskMessage { get; set; }
     public bool overridesLODBias { get; set; }
     public bool overridesMaximumLODLevel { get; set; }
     public bool overridesOtherLightingSettings { get; set; }
@@ -32,6 +33,7 @@ public class SupportedRenderingFeatures
     public bool rendererPriority { get; set; }
     public bool rendererProbes { get; set; }
     public bool rendersUIOverlay { get; set; }
+    public string shadowmaskMessage { get; }
     public bool terrainDetailUnsupported { get; set; }
 
     public SupportedRenderingFeatures();

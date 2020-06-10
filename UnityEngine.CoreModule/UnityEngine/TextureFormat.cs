@@ -81,6 +81,9 @@ public enum TextureFormat
     ASTC_HDR_8x8 = 69,
     ASTC_HDR_10x10 = 70,
     ASTC_HDR_12x12 = 71,
+    RG32 = 72,
+    RGB48 = 73,
+    RGBA64 = 74,
 }
 
 }

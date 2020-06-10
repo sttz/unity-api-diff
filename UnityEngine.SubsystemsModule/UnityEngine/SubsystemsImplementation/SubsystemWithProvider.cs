@@ -6,7 +6,7 @@ using UnityEngine;
 namespace UnityEngine.SubsystemsImplementation
 {
 
-public abstract class SubsystemWithProvider : ISubsystem, IRunning
+public abstract class SubsystemWithProvider : ISubsystem
 {
     public bool running { get; private set; }
 

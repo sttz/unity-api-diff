@@ -14,6 +14,7 @@ public struct RenderTargetBinding
     public Rendering.RenderBufferLoadAction depthLoadAction { get; set; }
     public Rendering.RenderTargetIdentifier depthRenderTarget { get; set; }
     public Rendering.RenderBufferStoreAction depthStoreAction { get; set; }
+    public Rendering.RenderTargetFlags flags { get; set; }
 
     public RenderTargetBinding(RenderTargetSetup setup);
     public RenderTargetBinding(Rendering.RenderTargetIdentifier colorRenderTarget, Rendering.RenderBufferLoadAction colorLoadAction, Rendering.RenderBufferStoreAction colorStoreAction, Rendering.RenderTargetIdentifier depthRenderTarget, Rendering.RenderBufferLoadAction depthLoadAction, Rendering.RenderBufferStoreAction depthStoreAction);

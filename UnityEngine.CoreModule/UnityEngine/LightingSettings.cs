@@ -35,6 +35,9 @@ public sealed class LightingSettings : Object
     public FilterType filterTypeAO { get; set; }
     public FilterType filterTypeDirect { get; set; }
     public FilterType filterTypeIndirect { get; set; }
+    public bool finalGather { get; set; }
+    public bool finalGatherFiltering { get; set; }
+    public float finalGatherRayCount { get; set; }
     public float indirectResolution { get; set; }
     public int indirectSampleCount { get; set; }
     public float indirectScale { get; set; }

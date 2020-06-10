@@ -18,6 +18,7 @@ public sealed class CustomRenderTexture : RenderTexture
     public Material material { get; set; }
     public int shaderPass { get; set; }
     public CustomRenderTextureUpdateMode updateMode { get; set; }
+    public float updatePeriod { get; set; }
     public CustomRenderTextureUpdateZoneSpace updateZoneSpace { get; set; }
     public bool wrapUpdateZones { get; set; }
 
@@ -28,6 +29,8 @@ public sealed class CustomRenderTexture : RenderTexture
     public CustomRenderTexture(int width, int height, RenderTextureFormat format, RenderTextureReadWrite readWrite);
 
     public void ClearUpdateZones();
+    public void EnsureDoubleBufferConsistency();
+    public RenderTexture GetDoubleBufferRenderTexture();
     public void GetUpdateZones(List<CustomRenderTextureUpdateZone> updateZones);
     public void Initialize();
     public void SetUpdateZones(CustomRenderTextureUpdateZone[] updateZones);
