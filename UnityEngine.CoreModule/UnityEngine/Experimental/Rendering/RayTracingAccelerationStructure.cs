@@ -12,6 +12,8 @@ public sealed class RayTracingAccelerationStructure : IDisposable
     public RayTracingAccelerationStructure(RASSettings settings);
 
     public void AddInstance(Renderer targetRenderer, bool[] subMeshMask = null, bool[] subMeshTransparencyFlags = null, bool enableTriangleCulling = true, bool frontTriangleCounterClockwise = false, uint mask = 255);
+    public void AddInstance(GraphicsBuffer aabbBuffer, uint numElements, Material material, bool isCutOff, bool enableTriangleCulling = true, bool frontTriangleCounterClockwise = false, uint mask = 255, bool reuseBounds = false);
+    public void AddInstance(GraphicsBuffer aabbBuffer, uint numElements, Material material, Matrix4x4 instanceTransform, bool isCutOff, bool enableTriangleCulling = true, bool frontTriangleCounterClockwise = false, uint mask = 255, bool reuseBounds = false);
     public void Build();
     public void Build(Vector3 relativeOrigin);
     public void Dispose();

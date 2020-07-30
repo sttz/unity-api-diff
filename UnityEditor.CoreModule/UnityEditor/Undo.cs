@@ -46,6 +46,7 @@ public class Undo
     static public void SetSnapshotTarget(Object[] objectsToUndo, string name);
     static public void SetSnapshotTarget(Object objectToUndo, string name);
     static public void SetTransformParent(Transform transform, Transform newParent, string name);
+    static public void SetTransformParent(Transform transform, Transform newParent, bool worldPositionStays, string name);
 
     public Undo();
 

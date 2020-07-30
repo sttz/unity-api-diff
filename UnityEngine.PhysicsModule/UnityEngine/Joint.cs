@@ -14,6 +14,7 @@ public class Joint : Component
     public float breakForce { get; set; }
     public float breakTorque { get; set; }
     public Vector3 connectedAnchor { get; set; }
+    public ArticulationBody connectedArticulationBody { get; set; }
     public Rigidbody connectedBody { get; set; }
     public float connectedMassScale { get; set; }
     public Vector3 currentForce { get; }

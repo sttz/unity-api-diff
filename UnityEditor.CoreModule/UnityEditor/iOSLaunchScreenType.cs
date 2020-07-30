@@ -13,6 +13,7 @@ public enum iOSLaunchScreenType
     CustomXib = 2,
     None = 3,
     ImageAndBackgroundConstant = 4,
+    CustomStoryboard = 5,
 }
 
 }

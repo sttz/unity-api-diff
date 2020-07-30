@@ -39,6 +39,7 @@ public enum BuildOptions
     EnableCodeCoverage = 67108864,
     EnableDeepProfilingSupport = 268435456,
     DetailedBuildReport = 536870912,
+    ShaderLivelinkSupport = 1073741824,
 }
 
 }

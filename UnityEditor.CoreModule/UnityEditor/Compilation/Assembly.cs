@@ -11,7 +11,7 @@ public class Assembly
     public string[] allReferences { get; }
     public UnityEditor.Compilation.Assembly[] assemblyReferences { get; internal set; }
     public string[] compiledAssemblyReferences { get; private set; }
-    public UnityEditor.Compilation.ScriptCompilerOptions compilerOptions { get; private set; }
+    public UnityEditor.Compilation.ScriptCompilerOptions compilerOptions { get; internal set; }
     public string[] defines { get; private set; }
     public UnityEditor.Compilation.AssemblyFlags flags { get; private set; }
     public string name { get; private set; }

@@ -6,7 +6,7 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public sealed class Random
+public static class Random
 {
     static public Vector2 insideUnitCircle { get; }
     static public Vector3 insideUnitSphere { get; }
@@ -25,10 +25,8 @@ public sealed class Random
     static public void InitState(int seed);
     static public int RandomRange(int min, int max);
     static public float RandomRange(float min, float max);
-    static public int Range(int min, int max);
-    static public float Range(float min, float max);
-
-    public Random();
+    static public int Range(int minInclusive, int maxExclusive);
+    static public float Range(float minInclusive, float maxInclusive);
 
     public struct State
     {

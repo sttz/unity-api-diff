@@ -11,10 +11,11 @@ public class ArticulationBody : Behaviour
     public Vector3 anchorPosition { get; set; }
     public Quaternion anchorRotation { get; set; }
     public float angularDamping { get; set; }
-    public Vector3 angularVelocity { get; }
+    public Vector3 angularVelocity { get; set; }
     public Vector3 centerOfMass { get; set; }
     public int dofCount { get; }
     public bool immovable { get; set; }
+    public int index { get; }
     public Vector3 inertiaTensor { get; set; }
     public Quaternion inertiaTensorRotation { get; set; }
     public bool isRoot { get; }
@@ -31,6 +32,8 @@ public class ArticulationBody : Behaviour
     public float mass { get; set; }
     public float maxAngularVelocity { get; set; }
     public float maxDepenetrationVelocity { get; set; }
+    public float maxJointVelocity { get; set; }
+    public float maxLinearVelocity { get; set; }
     public Vector3 parentAnchorPosition { get; set; }
     public Quaternion parentAnchorRotation { get; set; }
     public float sleepThreshold { get; set; }
@@ -40,7 +43,7 @@ public class ArticulationBody : Behaviour
     public ArticulationDofLock swingZLock { get; set; }
     public ArticulationDofLock twistLock { get; set; }
     public bool useGravity { get; set; }
-    public Vector3 velocity { get; }
+    public Vector3 velocity { get; set; }
     public Vector3 worldCenterOfMass { get; }
     public ArticulationDrive xDrive { get; set; }
     public ArticulationDrive yDrive { get; set; }
@@ -54,11 +57,25 @@ public class ArticulationBody : Behaviour
     public void AddRelativeTorque(Vector3 torque);
     public void AddTorque(Vector3 torque);
     public Vector3 GetClosestPoint(Vector3 point);
+    public int GetDenseJacobian(ArticulationJacobian jacobian);
+    public int GetDofStartIndices(List<int> dofStartIndices);
+    public int GetDriveTargets(List<float> targets);
+    public int GetDriveTargetVelocities(List<float> targetVelocities);
+    public int GetJointAccelerations(List<float> accelerations);
+    public int GetJointForces(List<float> forces);
+    public int GetJointPositions(List<float> positions);
+    public int GetJointVelocities(List<float> velocities);
     public Vector3 GetPointVelocity(Vector3 worldPoint);
     public Vector3 GetRelativePointVelocity(Vector3 relativePoint);
     public bool IsSleeping();
     public void ResetCenterOfMass();
     public void ResetInertiaTensor();
+    public void SetDriveTargets(List<float> targets);
+    public void SetDriveTargetVelocities(List<float> targetVelocities);
+    public void SetJointAccelerations(List<float> accelerations);
+    public void SetJointForces(List<float> forces);
+    public void SetJointPositions(List<float> positions);
+    public void SetJointVelocities(List<float> velocities);
     public void Sleep();
     public void TeleportRoot(Vector3 position, Quaternion rotation);
     public void WakeUp();

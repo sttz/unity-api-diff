@@ -59,6 +59,7 @@ public struct NativeArray<T> : IDisposable, IEnumerable<T>, IEnumerable, IEquata
     public struct ReadOnly<T>
     {
         public T this[int index] { get; }
+        public int Length { get; }
 
     }
 

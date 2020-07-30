@@ -14,6 +14,7 @@ public class GradientField : UIElements.BaseField<Gradient>
     static public string labelUssClassName;
     static public string ussClassName;
 
+    public ColorSpace colorSpace { get; set; }
     public Gradient value { get; set; }
 
     public GradientField();

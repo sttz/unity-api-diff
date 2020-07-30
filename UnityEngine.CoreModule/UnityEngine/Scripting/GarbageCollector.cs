@@ -14,12 +14,13 @@ public static class GarbageCollector
 
     static public event Action<Mode> GCModeChanged;
 
-    static public bool CollectIncremental(ulong nanoseconds);
+    static public bool CollectIncremental(ulong nanoseconds = 0);
 
     public enum Mode
     {
         Disabled = 0,
         Enabled = 1,
+        Manual = 2,
     }
 
 }

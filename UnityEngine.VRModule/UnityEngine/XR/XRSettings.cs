@@ -18,7 +18,6 @@ public static class XRSettings
     static public bool isDeviceActive { get; }
     static public string loadedDeviceName { get; }
     static public float occlusionMaskScale { get; set; }
-    static public float renderScale { get; set; }
     static public float renderViewportScale { get; set; }
     static public bool showDeviceView { get; set; }
     static public StereoRenderingMode stereoRenderingMode { get; }

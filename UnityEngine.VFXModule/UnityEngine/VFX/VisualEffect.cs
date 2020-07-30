@@ -8,6 +8,8 @@ namespace UnityEngine.VFX
 
 public class VisualEffect : Behaviour
 {
+    public Action<VFX.VFXOutputEventArgs> outputEventReceived;
+
     public int aliveParticleCount { get; }
     public bool culled { get; }
     public int initialEventID { get; set; }
@@ -36,9 +38,14 @@ public class VisualEffect : Behaviour
     public Matrix4x4 GetMatrix4x4(int nameID);
     public Mesh GetMesh(string name);
     public Mesh GetMesh(int nameID);
+    public void GetOutputEventNames(List<string> names);
     public VFX.VFXParticleSystemInfo GetParticleSystemInfo(string name);
     public VFX.VFXParticleSystemInfo GetParticleSystemInfo(int nameID);
     public void GetParticleSystemNames(List<string> names);
+    public VFX.VFXSpawnerState GetSpawnSystemInfo(string name);
+    public VFX.VFXSpawnerState GetSpawnSystemInfo(int nameID);
+    public void GetSpawnSystemInfo(int nameID, VFX.VFXSpawnerState spawnState);
+    public void GetSpawnSystemNames(List<string> names);
     public void GetSystemNames(List<string> names);
     public Texture GetTexture(string name);
     public Texture GetTexture(int nameID);

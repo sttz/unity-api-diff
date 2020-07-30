@@ -99,6 +99,7 @@ public sealed class PlayerSettings : Object
     static public Texture2D virtualRealitySplashScreen { get; set; }
     static public bool virtualRealitySupported { get; set; }
     static public bool visibleInBackground { get; set; }
+    static public bool vulkanEnableLateAcquireNextImage { get; set; }
     static public bool vulkanEnablePreTransform { get; set; }
     static public bool vulkanEnableSetSRGBWrite { get; set; }
     static public uint vulkanNumSwapchainBuffers { get; set; }
@@ -125,7 +126,6 @@ public sealed class PlayerSettings : Object
     static public UnityEditor.ApiCompatibilityLevel GetApiCompatibilityLevel(UnityEditor.BuildTargetGroup buildTargetGroup);
     static public string GetApplicationIdentifier(UnityEditor.BuildTargetGroup targetGroup);
     static public int GetArchitecture(UnityEditor.BuildTargetGroup targetGroup);
-    static public string[] GetAvailableVirtualRealitySDKs(UnityEditor.BuildTargetGroup targetGroup);
     static public UnityEditor.ScriptingImplementation GetDefaultScriptingBackend(UnityEditor.BuildTargetGroup targetGroup);
     static public Rendering.GraphicsDeviceType[] GetGraphicsAPIs(UnityEditor.BuildTarget platform);
     static public Texture2D[] GetIconsForTargetGroup(UnityEditor.BuildTargetGroup platform);
@@ -136,6 +136,7 @@ public sealed class PlayerSettings : Object
     static public bool GetIncrementalIl2CppBuild(UnityEditor.BuildTargetGroup targetGroup);
     static public UnityEditor.ManagedStrippingLevel GetManagedStrippingLevel(UnityEditor.BuildTargetGroup targetGroup);
     static public bool GetMobileMTRendering(UnityEditor.BuildTargetGroup targetGroup);
+    static public UnityEditor.NormalMapEncoding GetNormalMapEncoding(UnityEditor.BuildTargetGroup platform);
     static public UnityEditor.PlatformIcon[] GetPlatformIcons(UnityEditor.BuildTargetGroup platform, UnityEditor.PlatformIconKind kind);
     static public Object[] GetPreloadedAssets();
     static public bool GetPropertyBool(string name);
@@ -157,7 +158,6 @@ public sealed class PlayerSettings : Object
     static public UnityEditor.PlatformIconKind[] GetSupportedIconKindsForPlatform(UnityEditor.BuildTargetGroup platform);
     static public string GetTemplateCustomValue(string name);
     static public bool GetUseDefaultGraphicsAPIs(UnityEditor.BuildTarget platform);
-    static public string[] GetVirtualRealitySDKs(UnityEditor.BuildTargetGroup targetGroup);
     static public bool GetVirtualRealitySupported(UnityEditor.BuildTargetGroup targetGroup);
     static public bool GetVirtualTexturingSupportEnabled();
     static public bool GetWsaHolographicRemotingEnabled();
@@ -174,6 +174,7 @@ public sealed class PlayerSettings : Object
     static public void SetIncrementalIl2CppBuild(UnityEditor.BuildTargetGroup targetGroup, bool enabled);
     static public void SetManagedStrippingLevel(UnityEditor.BuildTargetGroup targetGroup, UnityEditor.ManagedStrippingLevel level);
     static public void SetMobileMTRendering(UnityEditor.BuildTargetGroup targetGroup, bool enable);
+    static public void SetNormalMapEncoding(UnityEditor.BuildTargetGroup platform, UnityEditor.NormalMapEncoding encoding);
     static public void SetPlatformIcons(UnityEditor.BuildTargetGroup platform, UnityEditor.PlatformIconKind kind, UnityEditor.PlatformIcon[] icons);
     static public void SetPreloadedAssets(Object[] assets);
     static public void SetPropertyBool(string name, bool value);
@@ -191,7 +192,6 @@ public sealed class PlayerSettings : Object
     static public void SetStackTraceLogType(LogType logType, StackTraceLogType stackTraceType);
     static public void SetTemplateCustomValue(string name, string value);
     static public void SetUseDefaultGraphicsAPIs(UnityEditor.BuildTarget platform, bool automatic);
-    static public void SetVirtualRealitySDKs(UnityEditor.BuildTargetGroup targetGroup, string[] sdks);
     static public void SetVirtualRealitySupported(UnityEditor.BuildTargetGroup targetGroup, bool value);
     static public void SetVirtualTexturingSupportEnabled(bool enabled);
     static public void SetWsaHolographicRemotingEnabled(bool enabled);
@@ -213,6 +213,9 @@ public sealed class PlayerSettings : Object
         static public string keystorePass { get; set; }
         static public bool licenseVerification { get; }
         static public float maxAspectRatio { get; set; }
+        static public bool minifyDebug { get; set; }
+        static public bool minifyRelease { get; set; }
+        static public bool minifyWithR8 { get; set; }
         static public UnityEditor.AndroidSdkVersions minSdkVersion { get; set; }
         static public UnityEditor.AndroidPreferredInstallLocation preferredInstallLocation { get; set; }
         static public bool renderOutsideSafeArea { get; set; }
@@ -512,6 +515,8 @@ public sealed class PlayerSettings : Object
         static public string NMETAOverrideFullPath { get; }
         static public string nsoDependencies { get; set; }
         static public int NVNDefaultPoolsGranularity { get; set; }
+        static public int NVNMaxPublicSamplerIDCount { get; set; }
+        static public int NVNMaxPublicTextureIDCount { get; set; }
         static public int NVNOtherPoolsGranularity { get; set; }
         static public int NVNShaderPoolsGranularity { get; set; }
         static public bool playerConnectionEnabled { get; set; }
@@ -544,6 +549,7 @@ public sealed class PlayerSettings : Object
         static public TouchScreenUsage touchScreenUsage { get; set; }
         static public int udpReceiveBufferSize { get; set; }
         static public int udpSendBufferSize { get; set; }
+        static public bool useNewStyleFilepaths { get; set; }
         static public int userAccountSaveDataJournalSize { get; set; }
         static public int userAccountSaveDataSize { get; set; }
         static public bool useSwitchCPUProfiler { get; set; }
@@ -650,36 +656,6 @@ public sealed class PlayerSettings : Object
         static public string targetOSVersionString { get; set; }
 
         public tvOS();
-
-    }
-
-    public static class VRCardboard
-    {
-        static public int depthFormat { get; set; }
-
-    }
-
-    public static class VRDaydream
-    {
-        static public Texture2D daydreamIcon { get; set; }
-        static public Texture2D daydreamIconBackground { get; set; }
-        static public int depthFormat { get; set; }
-        static public bool enableVideoSurface { get; set; }
-        static public bool enableVideoSurfaceProtectedMemory { get; set; }
-        static public UnityEditor.XR.Daydream.SupportedHeadTracking maximumSupportedHeadTracking { get; set; }
-        static public UnityEditor.XR.Daydream.SupportedHeadTracking minimumSupportedHeadTracking { get; set; }
-
-    }
-
-    public class VROculus
-    {
-        static public bool dashSupport { get; set; }
-        static public bool lowOverheadMode { get; set; }
-        static public bool protectedContext { get; set; }
-        static public bool sharedDepthBuffer { get; set; }
-        static public bool v2Signing { get; set; }
-
-        public VROculus();
 
     }
 

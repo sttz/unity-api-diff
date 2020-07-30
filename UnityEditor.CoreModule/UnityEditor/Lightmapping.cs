@@ -42,7 +42,10 @@ public static class Lightmapping
     static public void ClearDiskCache();
     static public void ClearLightingDataAsset();
     static public void ForceStop();
+    static public LightingSettings GetLightingSettingsForScene(SceneManagement.Scene scene);
     static public void GetTerrainGIChunks(Terrain terrain, int numChunksX, int numChunksY);
+    static public void SetLightingSettingsForScene(SceneManagement.Scene scene, LightingSettings lightingSettings);
+    static public void SetLightingSettingsForScenes(SceneManagement.Scene[] scenes, LightingSettings lightingSettings);
     static public void Tetrahedralize(Vector3[] positions, out int outIndices, out Vector3 outPositions);
     static public bool TryGetLightingSettings(out LightingSettings settings);
 

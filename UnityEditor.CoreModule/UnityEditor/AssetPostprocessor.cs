@@ -10,7 +10,7 @@ public class AssetPostprocessor
 {
     public UnityEditor.AssetImporter assetImporter { get; }
     public string assetPath { get; set; }
-    public UnityEditor.Experimental.AssetImporters.AssetImportContext context { get; internal set; }
+    public UnityEditor.AssetImporters.AssetImportContext context { get; internal set; }
     public Texture2D preview { get; set; }
 
     public AssetPostprocessor();

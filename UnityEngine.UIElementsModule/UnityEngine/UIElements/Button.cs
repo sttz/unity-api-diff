@@ -18,6 +18,8 @@ public class Button : UIElements.TextElement
     public Button();
     public Button(Action clickEvent);
 
+    protected void ExecuteDefaultActionAtTarget(UIElements.EventBase evt);
+
     public class UxmlFactory : UIElements.UxmlFactory<UIElements.Button, UxmlTraits>
     {
         public UxmlFactory();

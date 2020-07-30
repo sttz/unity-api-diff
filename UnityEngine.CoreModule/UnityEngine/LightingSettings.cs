@@ -46,6 +46,8 @@ public sealed class LightingSettings : Object
     public Lightmapper lightmapper { get; set; }
     public float lightmapResolution { get; set; }
     public float lightProbeSampleCountMultiplier { get; set; }
+    public int maxBounces { get; set; }
+    public int minBounces { get; set; }
     public MixedLightingMode mixedBakeMode { get; set; }
     public bool prioritizeView { get; set; }
     public bool realtimeEnvironmentLighting { get; set; }

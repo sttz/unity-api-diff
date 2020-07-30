@@ -12,6 +12,7 @@ public enum TrackingOriginModeFlags
     Device = 1,
     Floor = 2,
     TrackingReference = 4,
+    Unbounded = 8,
 }
 
 }

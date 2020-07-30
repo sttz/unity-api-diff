@@ -105,6 +105,8 @@ public sealed class Mesh : Object
     public void RecalculateNormals(Rendering.MeshUpdateFlags flags);
     public void RecalculateTangents();
     public void RecalculateTangents(Rendering.MeshUpdateFlags flags);
+    public void RecalculateUVDistributionMetric(int uvSetIndex, float uvAreaThreshold = 1E-09);
+    public void RecalculateUVDistributionMetrics(float uvAreaThreshold = 1E-09);
     public void SetBoneWeights(Unity.Collections.NativeArray<byte> bonesPerVertex, Unity.Collections.NativeArray<BoneWeight1> weights);
     public void SetColors(List<Color> inColors);
     public void SetColors(List<Color32> inColors);
@@ -198,6 +200,7 @@ public sealed class Mesh : Object
     public void SetVertexBufferData<T>(List<T> data, int dataStart, int meshBufferStart, int count, int stream = 0, Rendering.MeshUpdateFlags flags = 0);
     public void SetVertexBufferData<T>(T[] data, int dataStart, int meshBufferStart, int count, int stream = 0, Rendering.MeshUpdateFlags flags = 0);
     public void SetVertexBufferData<T>(Unity.Collections.NativeArray<T> data, int dataStart, int meshBufferStart, int count, int stream = 0, Rendering.MeshUpdateFlags flags = 0);
+    public void SetVertexBufferParams(int vertexCount, Unity.Collections.NativeArray<Rendering.VertexAttributeDescriptor> attributes);
     public void SetVertexBufferParams(int vertexCount, Rendering.VertexAttributeDescriptor[] attributes);
     public void SetVertices(List<Vector3> inVertices);
     public void SetVertices(Vector3[] inVertices);
@@ -235,6 +238,7 @@ public sealed class Mesh : Object
         public bool HasVertexAttribute(Rendering.VertexAttribute attr);
         public void SetIndexBufferParams(int indexCount, Rendering.IndexFormat format);
         public void SetSubMesh(int index, Rendering.SubMeshDescriptor desc, Rendering.MeshUpdateFlags flags = 0);
+        public void SetVertexBufferParams(int vertexCount, Unity.Collections.NativeArray<Rendering.VertexAttributeDescriptor> attributes);
         public void SetVertexBufferParams(int vertexCount, Rendering.VertexAttributeDescriptor[] attributes);
 
     }

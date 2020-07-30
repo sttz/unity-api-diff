@@ -15,7 +15,9 @@ public abstract class EditorTool : ScriptableObject
     protected EditorTool();
 
     public bool IsAvailable();
+    public void OnActivated();
     public void OnToolGUI(UnityEditor.EditorWindow window);
+    public void OnWillBeDeactivated();
 
 }
 

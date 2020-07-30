@@ -17,6 +17,8 @@ public static class JobsUtility
     static public int JobWorkerCount { get; set; }
     static public int JobWorkerMaximumCount { get; }
 
+    static public IntPtr CreateJobReflectionData(Type wrapperJobType, Type userJobType, object managedJobFunction0);
+    static public IntPtr CreateJobReflectionData(Type type, object managedJobFunction0, object managedJobFunction1 = null, object managedJobFunction2 = null);
     static public IntPtr CreateJobReflectionData(Type wrapperJobType, Type userJobType, Unity.Jobs.LowLevel.Unsafe.JobType jobType, object managedJobFunction0);
     static public IntPtr CreateJobReflectionData(Type type, Unity.Jobs.LowLevel.Unsafe.JobType jobType, object managedJobFunction0, object managedJobFunction1 = null, object managedJobFunction2 = null);
     static public void GetJobRange(Unity.Jobs.LowLevel.Unsafe.JobRanges ranges, int jobIndex, out int beginIndex, out int endIndex);
@@ -27,6 +29,7 @@ public static class JobsUtility
     static public Unity.Jobs.JobHandle ScheduleParallelFor(JobScheduleParameters parameters, int arrayLength, int innerloopBatchCount);
     static public Unity.Jobs.JobHandle ScheduleParallelForDeferArraySize(JobScheduleParameters parameters, int innerloopBatchCount, void listData, void listDataAtomicSafetyHandle);
     static public Unity.Jobs.JobHandle ScheduleParallelForTransform(JobScheduleParameters parameters, IntPtr transfromAccesssArray);
+    static public Unity.Jobs.JobHandle ScheduleParallelForTransformReadOnly(JobScheduleParameters parameters, IntPtr transfromAccesssArray, int innerloopBatchCount);
 
     public struct JobScheduleParameters
     {

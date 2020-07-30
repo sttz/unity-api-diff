@@ -142,6 +142,7 @@ public sealed class Camera : Behaviour
     public void SetStereoViewMatrix(StereoscopicEye eye, Matrix4x4 matrix);
     public void SetTargetBuffers(RenderBuffer colorBuffer, RenderBuffer depthBuffer);
     public void SetTargetBuffers(RenderBuffer[] colorBuffer, RenderBuffer depthBuffer);
+    public void SubmitRenderRequests(List<RenderRequest> renderRequests);
     public bool TryGetCullingParameters(out Rendering.ScriptableCullingParameters cullingParameters);
     public bool TryGetCullingParameters(bool stereoAware, out Rendering.ScriptableCullingParameters cullingParameters);
     public Ray ViewportPointToRay(Vector3 pos);
@@ -185,6 +186,26 @@ public sealed class Camera : Behaviour
         Left = 0,
         Right = 1,
         Mono = 2,
+    }
+
+    public struct RenderRequest
+    {
+        public bool isValid { get; }
+        public RenderRequestMode mode { get; }
+        public RenderTexture result { get; }
+
+        public RenderRequest(RenderRequestMode mode, RenderTexture rt);
+
+    }
+
+    public enum RenderRequestMode
+    {
+        None = 0,
+        ObjectId = 1,
+        Depth = 2,
+        Normals = 3,
+        WorldPosition = 4,
+        EntityId = 5,
     }
 
     public enum StereoscopicEye

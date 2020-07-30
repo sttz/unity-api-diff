@@ -11,6 +11,8 @@ public struct ArtifactKey
     public UnityEditor.GUID guid;
     public Type importerType;
 
+    public bool isValid { get; }
+
     public ArtifactKey(UnityEditor.GUID g);
     public ArtifactKey(UnityEditor.GUID guid, Type importerType);
 

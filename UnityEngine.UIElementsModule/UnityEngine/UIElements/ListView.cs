@@ -44,6 +44,8 @@ public class ListView : UIElements.BindableElement, ISerializationCallbackReceiv
 
     public void AddToSelection(int index);
     public void ClearSelection();
+    protected void ExecuteDefaultAction(UIElements.EventBase evt);
+    protected void ExecuteDefaultActionAtTarget(UIElements.EventBase evt);
     public void OnKeyDown(UIElements.KeyDownEvent evt);
     public void Refresh();
     public void RemoveFromSelection(int index);

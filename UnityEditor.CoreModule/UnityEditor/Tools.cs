@@ -19,6 +19,7 @@ public sealed class Tools : ScriptableObject
     static public UnityEditor.PivotRotation pivotRotation { get; set; }
     static public bool rectBlueprintMode { get; set; }
     static public UnityEditor.ViewTool viewTool { get; set; }
+    static public bool viewToolActive { get; }
     static public int visibleLayers { get; set; }
 
     public Tools();

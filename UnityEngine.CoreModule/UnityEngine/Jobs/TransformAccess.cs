@@ -8,6 +8,7 @@ namespace UnityEngine.Jobs
 
 public struct TransformAccess
 {
+    public bool isValid { get; }
     public Vector3 localPosition { get; set; }
     public Quaternion localRotation { get; set; }
     public Vector3 localScale { get; set; }

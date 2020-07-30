@@ -13,6 +13,8 @@ public class ScriptCompilerOptions
     public UnityEditor.Compilation.CodeOptimization CodeOptimization { get; set; }
     public bool EmitReferenceAssembly { get; set; }
     public string[] ResponseFiles { get; set; }
+    public string[] RoslynAnalyzerDllPaths { get; set; }
+    public string RoslynAnalyzerRulesetPath { get; set; }
 
     public ScriptCompilerOptions();
 

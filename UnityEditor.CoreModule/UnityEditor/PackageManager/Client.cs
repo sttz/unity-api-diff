@@ -18,6 +18,7 @@ public static class Client
     static public UnityEditor.PackageManager.Requests.PackRequest Pack(string packageFolder, string targetFolder);
     static public UnityEditor.PackageManager.Requests.RemoveRequest Remove(string packageName);
     static public UnityEditor.PackageManager.Requests.ResetToEditorDefaultsRequest ResetToEditorDefaults();
+    static public void Resolve();
     static public UnityEditor.PackageManager.Requests.SearchRequest Search(string packageIdOrName);
     static public UnityEditor.PackageManager.Requests.SearchRequest Search(string packageIdOrName, bool offlineMode);
     static public UnityEditor.PackageManager.Requests.SearchRequest SearchAll();

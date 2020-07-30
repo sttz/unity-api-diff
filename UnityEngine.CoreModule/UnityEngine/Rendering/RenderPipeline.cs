@@ -18,6 +18,7 @@ public abstract class RenderPipeline
     protected RenderPipeline();
 
     protected void Dispose(bool disposing);
+    protected void ProcessRenderRequests(Rendering.ScriptableRenderContext context, Camera camera, List<RenderRequest> renderRequests);
     protected void Render(Rendering.ScriptableRenderContext context, Camera[] cameras);
 
 }

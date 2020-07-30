@@ -39,7 +39,9 @@ public static class ProfilerDriver
     static public int[] GetAvailableProfilers();
     static public string GetConnectionIdentifier(int guid);
     static public void GetCounterValuesBatch(Profiling.ProfilerArea area, string name, int firstFrame, float scale, out float[] buffer, out float maxValue);
+    static public void GetCounterValuesBatch(string category, string name, int firstFrame, float scale, out float[] buffer, out float maxValue);
     static public string GetFormattedCounterValue(int frame, Profiling.ProfilerArea area, string name);
+    static public string GetFormattedCounterValue(int frame, string category, string name);
     static public string GetFormattedStatisticsValue(int frame, int identifier);
     static public UnityEditorInternal.GpuProfilingStatisticsAvailabilityStates GetGpuStatisticsAvailabilityState(int frame);
     static public void GetGpuStatisticsAvailabilityStates(int firstFrame, out UnityEditorInternal.GpuProfilingStatisticsAvailabilityStates[] buffer);

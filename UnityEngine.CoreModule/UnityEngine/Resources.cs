@@ -12,6 +12,8 @@ public sealed class Resources
     static public T[] FindObjectsOfTypeAll<T>();
     static public Object GetBuiltinResource(Type type, string path);
     static public T GetBuiltinResource<T>(string path);
+    static public Object InstanceIDToObject(int instanceID);
+    static public void InstanceIDToObjectList(Unity.Collections.NativeArray<int> instanceIDs, List<Object> objects);
     static public Object Load(string path);
     static public Object Load(string path, Type systemTypeInstance);
     static public T Load<T>(string path);

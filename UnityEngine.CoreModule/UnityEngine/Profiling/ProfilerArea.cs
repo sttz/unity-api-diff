@@ -21,6 +21,7 @@ public enum ProfilerArea
     UI = 10,
     UIDetails = 11,
     GlobalIllumination = 12,
+    VirtualTexturing = 13,
 }
 
 }

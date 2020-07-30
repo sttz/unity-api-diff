@@ -10,7 +10,7 @@ public abstract class EventBase : IDisposable
 {
     static protected long RegisterEventType();
 
-    public bool bubbles { get; }
+    public bool bubbles { get; protected set; }
     public UIElements.IEventHandler currentTarget { get; internal set; }
     public bool dispatch { get; internal set; }
     public long eventTypeId { get; }
@@ -23,7 +23,7 @@ public abstract class EventBase : IDisposable
     public UIElements.PropagationPhase propagationPhase { get; internal set; }
     public UIElements.IEventHandler target { get; set; }
     public long timestamp { get; private set; }
-    public bool tricklesDown { get; }
+    public bool tricklesDown { get; protected set; }
 
     protected EventBase();
 

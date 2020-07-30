@@ -153,6 +153,7 @@ public sealed class EditorGUI
     static public Gradient GradientField(Rect position, string label, Gradient gradient);
     static public Gradient GradientField(Rect position, GUIContent label, Gradient gradient);
     static public Gradient GradientField(Rect position, GUIContent label, Gradient gradient, bool hdr);
+    static public Gradient GradientField(Rect position, GUIContent label, Gradient gradient, bool hdr, ColorSpace colorSpace);
     static public void HandlePrefixLabel(Rect totalPosition, Rect labelPosition, GUIContent label);
     static public void HandlePrefixLabel(Rect totalPosition, Rect labelPosition, GUIContent label, int id);
     static public void HandlePrefixLabel(Rect totalPosition, Rect labelPosition, GUIContent label, int id, GUIStyle style);

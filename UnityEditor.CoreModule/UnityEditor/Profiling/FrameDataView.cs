@@ -31,6 +31,8 @@ public abstract class FrameDataView : IDisposable
     protected FrameDataView();
 
     public void Dispose();
+    public void GetAllCategories(List<UnityEditor.Profiling.ProfilerCategoryInfo> categoryInfoList);
+    public UnityEditor.Profiling.ProfilerCategoryInfo GetCategoryInfo(ushort id);
     public double GetCounterValueAsDouble(int markerId);
     public float GetCounterValueAsFloat(int markerId);
     public int GetCounterValueAsInt(int markerId);

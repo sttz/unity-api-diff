@@ -25,6 +25,7 @@ public struct ScriptableRenderContext : IEquatable<Rendering.ScriptableRenderCon
     public void DrawRenderers(Rendering.CullingResults cullingResults, Rendering.DrawingSettings drawingSettings, Rendering.FilteringSettings filteringSettings);
     public void DrawRenderers(Rendering.CullingResults cullingResults, Rendering.DrawingSettings drawingSettings, Rendering.FilteringSettings filteringSettings, Rendering.RenderStateBlock stateBlock);
     public void DrawRenderers(Rendering.CullingResults cullingResults, Rendering.DrawingSettings drawingSettings, Rendering.FilteringSettings filteringSettings, Unity.Collections.NativeArray<Rendering.ShaderTagId> renderTypes, Unity.Collections.NativeArray<Rendering.RenderStateBlock> stateBlocks);
+    public void DrawRenderers(Rendering.CullingResults cullingResults, Rendering.DrawingSettings drawingSettings, Rendering.FilteringSettings filteringSettings, Rendering.ShaderTagId tagName, bool isPassTagName, Unity.Collections.NativeArray<Rendering.ShaderTagId> tagValues, Unity.Collections.NativeArray<Rendering.RenderStateBlock> stateBlocks);
     public void DrawShadows(Rendering.ShadowDrawingSettings settings);
     public void DrawSkybox(Camera camera);
     public void DrawUIOverlay(Camera camera);

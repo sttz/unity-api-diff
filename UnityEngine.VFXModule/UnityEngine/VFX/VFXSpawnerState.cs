@@ -21,6 +21,8 @@ public sealed class VFXSpawnerState : IDisposable
     public float totalTime { get; set; }
     public VFX.VFXEventAttribute vfxEventAttribute { get; }
 
+    public VFXSpawnerState();
+
     public void Dispose();
 
 }

@@ -123,6 +123,13 @@ public sealed class ParticleSystem : Component
 
     }
 
+    public struct ColliderData
+    {
+        public Component GetCollider(int particleIndex, int colliderIndex);
+        public int GetColliderCount(int particleIndex);
+
+    }
+
     public struct CollisionEvent
     {
         public Component collider { get; }
@@ -153,13 +160,17 @@ public sealed class ParticleSystem : Component
         public bool multiplyColliderForceByCollisionAngle { get; set; }
         public bool multiplyColliderForceByParticleSize { get; set; }
         public bool multiplyColliderForceByParticleSpeed { get; set; }
+        public int planeCount { get; }
         public ParticleSystemCollisionQuality quality { get; set; }
         public float radiusScale { get; set; }
         public bool sendCollisionMessages { get; set; }
         public ParticleSystemCollisionType type { get; set; }
         public float voxelSize { get; set; }
 
+        public void AddPlane(Transform transform);
         public Transform GetPlane(int index);
+        public void RemovePlane(int index);
+        public void RemovePlane(Transform transform);
         public void SetPlane(int index, Transform transform);
 
     }
@@ -623,6 +634,7 @@ public sealed class ParticleSystem : Component
         public ParticleSystem GetSubEmitterSystem(int index);
         public ParticleSystemSubEmitterType GetSubEmitterType(int index);
         public void RemoveSubEmitter(int index);
+        public void RemoveSubEmitter(ParticleSystem subEmitter);
         public void SetSubEmitterEmitProbability(int index, float emitProbability);
         public void SetSubEmitterProperties(int index, ParticleSystemSubEmitterProperties properties);
         public void SetSubEmitterSystem(int index, ParticleSystem subEmitter);
@@ -692,6 +704,8 @@ public sealed class ParticleSystem : Component
 
     public struct TriggerModule
     {
+        public int colliderCount { get; }
+        public ParticleSystemColliderQueryMode colliderQueryMode { get; set; }
         public bool enabled { get; set; }
         public ParticleSystemOverlapAction enter { get; set; }
         public ParticleSystemOverlapAction exit { get; set; }
@@ -700,7 +714,10 @@ public sealed class ParticleSystem : Component
         public ParticleSystemOverlapAction outside { get; set; }
         public float radiusScale { get; set; }
 
+        public void AddCollider(Component collider);
         public Component GetCollider(int index);
+        public void RemoveCollider(Component collider);
+        public void RemoveCollider(int index);
         public void SetCollider(int index, Component collider);
 
     }
