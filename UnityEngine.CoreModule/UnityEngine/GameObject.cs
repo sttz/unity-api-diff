@@ -34,6 +34,7 @@ public sealed class GameObject : Object
     public Component rigidbody { get; }
     public Component rigidbody2D { get; }
     public SceneManagement.Scene scene { get; }
+    public ulong sceneCullingMask { get; }
     public string tag { get; set; }
     public Transform transform { get; }
 
