@@ -8,6 +8,7 @@ namespace UnityEditor
 
 public sealed class EditorSettings : Object
 {
+    static public bool assetNamingUsesSpace { get; set; }
     static public UnityEditor.AssetPipelineMode assetPipelineMode { get; }
     static public bool asyncShaderCompilation { get; set; }
     static public bool cacheServerEnableAuth { get; set; }
@@ -30,6 +31,8 @@ public sealed class EditorSettings : Object
     static public int etcTextureFastCompressor { get; set; }
     static public int etcTextureNormalCompressor { get; set; }
     static public string externalVersionControl { get; set; }
+    static public int gameObjectNamingDigits { get; set; }
+    static public NamingScheme gameObjectNamingScheme { get; set; }
     static public UnityEditor.LineEndingsMode lineEndingsForNewScripts { get; set; }
     static public UnityEditor.SceneAsset prefabRegularEnvironment { get; set; }
     static public UnityEditor.SceneAsset prefabUIEnvironment { get; set; }
@@ -47,6 +50,13 @@ public sealed class EditorSettings : Object
     static public bool useLegacyProbeSampleCount { get; set; }
     static public bool webSecurityEmulationEnabled { get; set; }
     static public string webSecurityEmulationHostUrl { get; set; }
+
+    public enum NamingScheme
+    {
+        SpaceParenthesis = 0,
+        Dot = 1,
+        Underscore = 2,
+    }
 
 }
 

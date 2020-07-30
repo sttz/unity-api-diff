@@ -8,11 +8,10 @@ namespace UnityEngine.SocialPlatforms.Impl
 
 public class UserProfile : SocialPlatforms.IUserProfile
 {
-    protected string m_gameID;
+    protected string m_ID;
     protected Texture2D m_Image;
     protected bool m_IsFriend;
     protected SocialPlatforms.UserState m_State;
-    protected string m_teamID;
     protected string m_UserName;
 
     public string gameId { get; }

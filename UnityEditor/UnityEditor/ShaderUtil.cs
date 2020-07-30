@@ -40,6 +40,7 @@ public sealed class ShaderUtil
     static public int GetShaderMessageCount(Shader s);
     static public UnityEditor.ShaderMessage[] GetShaderMessages(Shader s);
     static public Rendering.TextureDimension GetTexDim(Shader s, int propertyIdx);
+    static public bool HasProceduralInstancing(Shader s);
     static public bool IsPassCompiled(Material material, int pass);
     static public bool IsShaderPropertyHidden(Shader s, int propertyIdx);
     static public bool IsShaderPropertyNonModifiableTexureProperty(Shader s, int propertyIdx);

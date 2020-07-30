@@ -14,7 +14,10 @@ public class AssetImportContext
 
     public void AddObjectToAsset(string identifier, Object obj);
     public void AddObjectToAsset(string identifier, Object obj, Texture2D thumbnail);
+    public void DependsOnArtifact(UnityEditor.GUID guid);
+    public void DependsOnArtifact(string path);
     public void DependsOnCustomDependency(string dependency);
+    public void DependsOnSourceAsset(UnityEditor.GUID guid);
     public void DependsOnSourceAsset(string path);
     public void GetObjects(List<Object> objects);
     public string GetResultPath(string extension);

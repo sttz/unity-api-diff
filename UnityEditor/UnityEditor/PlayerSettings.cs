@@ -209,6 +209,9 @@ public sealed class PlayerSettings : Object
         static public string keystorePass { get; set; }
         static public bool licenseVerification { get; }
         static public float maxAspectRatio { get; set; }
+        static public bool minifyDebug { get; set; }
+        static public bool minifyRelease { get; set; }
+        static public bool minifyWithR8 { get; set; }
         static public UnityEditor.AndroidSdkVersions minSdkVersion { get; set; }
         static public UnityEditor.AndroidPreferredInstallLocation preferredInstallLocation { get; set; }
         static public bool renderOutsideSafeArea { get; set; }

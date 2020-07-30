@@ -8,6 +8,7 @@ namespace UnityEngine
 
 public class Collider : Component
 {
+    public ArticulationBody attachedArticulationBody { get; }
     public Rigidbody attachedRigidbody { get; }
     public Bounds bounds { get; }
     public float contactOffset { get; set; }

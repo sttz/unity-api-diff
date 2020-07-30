@@ -6,10 +6,10 @@ using UnityEngine;
 namespace UnityEngine.Rendering.VirtualTexturing
 {
 
-public struct VirtualTexturingGPUCacheSettings
+public struct GPUCacheSetting
 {
+    public Experimental.Rendering.GraphicsFormat format;
     public uint sizeInMegaBytes;
-    public Rendering.VirtualTexturing.VirtualTexturingGPUCacheSizeOverride[] sizeOverrides;
 
 }
 

@@ -44,6 +44,10 @@ public struct PreLateUpdate
     {
     }
 
+    public struct UIElementsUpdatePanels
+    {
+    }
+
     public struct UNetUpdate
     {
     }

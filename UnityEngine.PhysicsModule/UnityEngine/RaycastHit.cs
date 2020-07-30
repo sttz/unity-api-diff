@@ -8,6 +8,7 @@ namespace UnityEngine
 
 public struct RaycastHit
 {
+    public ArticulationBody articulationBody { get; }
     public Vector3 barycentricCoordinate { get; set; }
     public Collider collider { get; }
     public float distance { get; set; }

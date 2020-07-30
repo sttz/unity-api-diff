@@ -25,6 +25,7 @@ public static class Unsupported
     static public string GetBaseUnityDeveloperFolder();
     static public int GetLocalIdentifierInFile(int instanceID);
     static public ulong GetLocalIdentifierInFileForPersistentObject(Object obj);
+    static public Object GetRenderSettings();
     static public Object GetSerializedAssetInterfaceSingleton(string className);
     static public string[] GetSubmenus(string menuPath);
     static public string[] GetSubmenusCommands(string menuPath);
