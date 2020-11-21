@@ -40,6 +40,10 @@ public struct PreLateUpdate
     {
     }
 
+    public struct Physics2DLateUpdate
+    {
+    }
+
     public struct ScriptRunBehaviourLateUpdate
     {
     }

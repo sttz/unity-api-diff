@@ -8,10 +8,16 @@ namespace UnityEngine
 
 public static class ImageConversion
 {
+    static public bool EnableLegacyPngGammaRuntimeLoadBehavior { get; set; }
+
     static public byte[] EncodeArrayToEXR(Array array, Experimental.Rendering.GraphicsFormat format, uint width, uint height, uint rowBytes = 0, EXRFlags flags = 0);
     static public byte[] EncodeArrayToJPG(Array array, Experimental.Rendering.GraphicsFormat format, uint width, uint height, uint rowBytes = 0, int quality = 75);
     static public byte[] EncodeArrayToPNG(Array array, Experimental.Rendering.GraphicsFormat format, uint width, uint height, uint rowBytes = 0);
     static public byte[] EncodeArrayToTGA(Array array, Experimental.Rendering.GraphicsFormat format, uint width, uint height, uint rowBytes = 0);
+    static public Unity.Collections.NativeArray<byte> EncodeNativeArrayToEXR<T>(Unity.Collections.NativeArray<T> input, Experimental.Rendering.GraphicsFormat format, uint width, uint height, uint rowBytes = 0, EXRFlags flags = 0);
+    static public Unity.Collections.NativeArray<byte> EncodeNativeArrayToJPG<T>(Unity.Collections.NativeArray<T> input, Experimental.Rendering.GraphicsFormat format, uint width, uint height, uint rowBytes = 0, int quality = 75);
+    static public Unity.Collections.NativeArray<byte> EncodeNativeArrayToPNG<T>(Unity.Collections.NativeArray<T> input, Experimental.Rendering.GraphicsFormat format, uint width, uint height, uint rowBytes = 0);
+    static public Unity.Collections.NativeArray<byte> EncodeNativeArrayToTGA<T>(Unity.Collections.NativeArray<T> input, Experimental.Rendering.GraphicsFormat format, uint width, uint height, uint rowBytes = 0);
     static public byte[] EncodeToEXR(Texture2D tex);
     static public byte[] EncodeToEXR(Texture2D tex, EXRFlags flags);
     static public byte[] EncodeToJPG(Texture2D tex);

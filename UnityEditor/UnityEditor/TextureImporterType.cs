@@ -10,8 +10,8 @@ public enum TextureImporterType
 {
     Default = 0,
     Image = 0,
-    NormalMap = 1,
     Bump = 1,
+    NormalMap = 1,
     GUI = 2,
     Cubemap = 3,
     Reflection = 3,
@@ -22,6 +22,7 @@ public enum TextureImporterType
     Sprite = 8,
     HDRI = 9,
     SingleChannel = 10,
+    Shadowmask = 11,
 }
 
 }

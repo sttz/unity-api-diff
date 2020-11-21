@@ -24,6 +24,7 @@ public struct ScriptableRenderContext : IEquatable<Rendering.ScriptableRenderCon
     public void DrawShadows(Rendering.ShadowDrawingSettings settings);
     public void DrawSkybox(Camera camera);
     public void DrawUIOverlay(Camera camera);
+    public void DrawWireOverlay(Camera camera);
     public void EndRenderPass();
     public void EndSubPass();
     public bool Equals(object obj);

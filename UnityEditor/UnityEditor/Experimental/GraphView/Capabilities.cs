@@ -17,6 +17,8 @@ public enum Capabilities
     Ascendable = 64,
     Renamable = 128,
     Copiable = 256,
+    Groupable = 1024,
+    Stackable = 2048,
 }
 
 }

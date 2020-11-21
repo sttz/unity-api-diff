@@ -192,6 +192,7 @@ public sealed class Mesh : Object
     public void SetVertexBufferData<T>(List<T> data, int dataStart, int meshBufferStart, int count, int stream = 0, Rendering.MeshUpdateFlags flags = 0);
     public void SetVertexBufferData<T>(T[] data, int dataStart, int meshBufferStart, int count, int stream = 0, Rendering.MeshUpdateFlags flags = 0);
     public void SetVertexBufferData<T>(Unity.Collections.NativeArray<T> data, int dataStart, int meshBufferStart, int count, int stream = 0, Rendering.MeshUpdateFlags flags = 0);
+    public void SetVertexBufferParams(int vertexCount, Unity.Collections.NativeArray<Rendering.VertexAttributeDescriptor> attributes);
     public void SetVertexBufferParams(int vertexCount, Rendering.VertexAttributeDescriptor[] attributes);
     public void SetVertices(List<Vector3> inVertices);
     public void SetVertices(Vector3[] inVertices);
@@ -229,6 +230,7 @@ public sealed class Mesh : Object
         public bool HasVertexAttribute(Rendering.VertexAttribute attr);
         public void SetIndexBufferParams(int indexCount, Rendering.IndexFormat format);
         public void SetSubMesh(int index, Rendering.SubMeshDescriptor desc, Rendering.MeshUpdateFlags flags = 0);
+        public void SetVertexBufferParams(int vertexCount, Unity.Collections.NativeArray<Rendering.VertexAttributeDescriptor> attributes);
         public void SetVertexBufferParams(int vertexCount, Rendering.VertexAttributeDescriptor[] attributes);
 
     }

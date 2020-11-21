@@ -18,6 +18,7 @@ public class UserProfile : SocialPlatforms.IUserProfile
     public string id { get; }
     public Texture2D image { get; }
     public bool isFriend { get; }
+    public string legacyId { get; }
     public SocialPlatforms.UserState state { get; }
     public string userName { get; }
 
@@ -28,6 +29,7 @@ public class UserProfile : SocialPlatforms.IUserProfile
 
     public void SetImage(Texture2D image);
     public void SetIsFriend(bool value);
+    public void SetLegacyUserID(string id);
     public void SetState(SocialPlatforms.UserState state);
     public void SetUserGameID(string id);
     public void SetUserID(string id);

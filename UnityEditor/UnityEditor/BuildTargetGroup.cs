@@ -34,6 +34,7 @@ public enum BuildTargetGroup
     Switch = 27,
     Lumin = 28,
     Stadia = 29,
+    CloudRendering = 30,
 }
 
 }

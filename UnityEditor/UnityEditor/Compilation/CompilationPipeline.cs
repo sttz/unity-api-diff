@@ -29,6 +29,7 @@ public static class CompilationPipeline
     static public string[] GetPrecompiledAssemblyNames();
     static public string GetPrecompiledAssemblyPathFromAssemblyName(string assemblyName);
     static public string[] GetPrecompiledAssemblyPaths(PrecompiledAssemblySources precompiledAssemblySources);
+    static public string[] GetResponseFileDefinesFromAssemblyName(string assemblyName);
     static public string[] GetSystemAssemblyDirectories(UnityEditor.ApiCompatibilityLevel apiCompatibilityLevel);
     static public string GUIDToAssemblyDefinitionReferenceGUID(string guid);
     static public bool IsDefineConstraintsCompatible(string[] defines, string[] defineConstraints);
