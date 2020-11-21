@@ -8,7 +8,9 @@ namespace UnityEngine
 
 public struct Vector3Int : IEquatable<Vector3Int>, IFormattable
 {
+    static public Vector3Int back { get; }
     static public Vector3Int down { get; }
+    static public Vector3Int forward { get; }
     static public Vector3Int left { get; }
     static public Vector3Int one { get; }
     static public Vector3Int right { get; }

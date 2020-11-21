@@ -23,11 +23,14 @@ public abstract class GraphElement : UIElements.VisualElement, UnityEditor.Exper
     public bool IsAscendable();
     public bool IsCopiable();
     public bool IsDroppable();
+    public bool IsGroupable();
     public bool IsMovable();
     public bool IsRenamable();
     public bool IsResizable();
     public bool IsSelectable();
     public bool IsSelected(UIElements.VisualElement selectionContainer);
+    public bool IsSnappable();
+    public bool IsStackable();
     protected void OnCustomStyleResolved(UIElements.ICustomStyle style);
     public void OnSelected();
     public void OnUnselected();

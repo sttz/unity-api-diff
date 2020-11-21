@@ -31,9 +31,13 @@ public sealed class LineRenderer : Renderer
     public void BakeMesh(Mesh mesh, bool useTransform = false);
     public void BakeMesh(Mesh mesh, Camera camera, bool useTransform = false);
     public Vector3 GetPosition(int index);
+    public int GetPositions(out Unity.Collections.NativeArray<Vector3> positions);
+    public int GetPositions(out Unity.Collections.NativeSlice<Vector3> positions);
     public int GetPositions(out Vector3[] positions);
     public void SetColors(Color start, Color end);
     public void SetPosition(int index, Vector3 position);
+    public void SetPositions(Unity.Collections.NativeArray<Vector3> positions);
+    public void SetPositions(Unity.Collections.NativeSlice<Vector3> positions);
     public void SetPositions(Vector3[] positions);
     public void SetVertexCount(int count);
     public void SetWidth(float start, float end);

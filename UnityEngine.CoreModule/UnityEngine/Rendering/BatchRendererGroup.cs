@@ -10,8 +10,11 @@ public class BatchRendererGroup : IDisposable
 {
     public BatchRendererGroup(OnPerformCulling cullingCallback);
 
-    public int AddBatch(Mesh mesh, int subMeshIndex, Material material, int layer, Rendering.ShadowCastingMode castShadows, bool receiveShadows, bool invertCulling, Bounds bounds, int instanceCount, MaterialPropertyBlock customProps, GameObject associatedSceneObject, ulong sceneCullingMask = 9223372036854775808);
+    public int AddBatch(Mesh mesh, int subMeshIndex, Material material, int layer, Rendering.ShadowCastingMode castShadows, bool receiveShadows, bool invertCulling, Bounds bounds, int instanceCount, MaterialPropertyBlock customProps, GameObject associatedSceneObject);
+    public int AddBatch(Mesh mesh, int subMeshIndex, Material material, int layer, Rendering.ShadowCastingMode castShadows, bool receiveShadows, bool invertCulling, Bounds bounds, int instanceCount, MaterialPropertyBlock customProps, GameObject associatedSceneObject, ulong sceneCullingMask);
+    public int AddBatch(Mesh mesh, int subMeshIndex, Material material, int layer, Rendering.ShadowCastingMode castShadows, bool receiveShadows, bool invertCulling, Bounds bounds, int instanceCount, MaterialPropertyBlock customProps, GameObject associatedSceneObject, ulong sceneCullingMask, uint renderingLayerMask);
     public void Dispose();
+    public void EnableVisibleIndicesYArray(bool enabled);
     public Unity.Collections.NativeArray<Matrix4x4> GetBatchMatrices(int batchIndex);
     public Unity.Collections.NativeArray<Matrix4x4> GetBatchMatrixArray(int batchIndex, int propertyName);
     public Unity.Collections.NativeArray<Matrix4x4> GetBatchMatrixArray(int batchIndex, string propertyName);

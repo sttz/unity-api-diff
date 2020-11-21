@@ -53,6 +53,7 @@ public sealed class TerrainData : Object
     public void DirtyTextureRegion(string textureName, RectInt region, bool allowDelayedCPUSync);
     public float[0...,0...,0...] GetAlphamaps(int x, int y, int width, int height);
     public Texture2D GetAlphamapTexture(int index);
+    public Vector2Int[] GetClampedDetailPatches(float density);
     public int[0...,0...] GetDetailLayer(int xBase, int yBase, int width, int height, int layer);
     public float GetHeight(int x, int y);
     public float[0...,0...] GetHeights(int xBase, int yBase, int width, int height);

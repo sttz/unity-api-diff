@@ -12,9 +12,12 @@ public struct AudioProfilerClipInfo
     public int assetInstanceId;
     public int assetNameOffset;
     public int disposed;
+    public ulong instancePtr;
     public int internalLoadState;
     public int loadState;
     public int numChannelInstances;
+    public int numClones;
+    public int refCount;
 
 }
 

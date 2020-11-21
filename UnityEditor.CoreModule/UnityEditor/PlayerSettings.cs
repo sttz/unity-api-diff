@@ -86,6 +86,7 @@ public sealed class PlayerSettings : Object
     static public bool stripEngineCode { get; set; }
     static public UnityEditor.StrippingLevel strippingLevel { get; set; }
     static public bool stripUnusedMeshComponents { get; set; }
+    static public bool suppressCommonWarnings { get; set; }
     static public UnityEditor.TargetGlesGraphics targetGlesGraphics { get; set; }
     static public UnityEditor.TargetIOSGraphics targetIOSGraphics { get; set; }
     static public bool use32BitDisplayBuffer { get; set; }
@@ -122,6 +123,7 @@ public sealed class PlayerSettings : Object
     static public Texture2D xboxSplashScreen { get; }
     static public string xboxTitleId { get; set; }
 
+    static public string[] GetAdditionalCompilerArgumentsForGroup(UnityEditor.BuildTargetGroup targetGroup);
     static public string GetAdditionalIl2CppArgs();
     static public UnityEditor.ApiCompatibilityLevel GetApiCompatibilityLevel(UnityEditor.BuildTargetGroup buildTargetGroup);
     static public string GetApplicationIdentifier(UnityEditor.BuildTargetGroup targetGroup);
@@ -154,6 +156,7 @@ public sealed class PlayerSettings : Object
     static public UnityEditor.ScriptingImplementation GetScriptingBackend(UnityEditor.BuildTargetGroup targetGroup);
     static public string GetScriptingDefineSymbolsForGroup(UnityEditor.BuildTargetGroup targetGroup);
     static public void GetScriptingDefineSymbolsForGroup(UnityEditor.BuildTargetGroup targetGroup, out string defines);
+    static public UnityEditor.ShaderPrecisionModel GetShaderPrecisionModel();
     static public StackTraceLogType GetStackTraceLogType(LogType logType);
     static public UnityEditor.PlatformIconKind[] GetSupportedIconKindsForPlatform(UnityEditor.BuildTargetGroup platform);
     static public string GetTemplateCustomValue(string name);
@@ -162,6 +165,7 @@ public sealed class PlayerSettings : Object
     static public bool GetVirtualTexturingSupportEnabled();
     static public bool GetWsaHolographicRemotingEnabled();
     static public bool HasAspectRatio(UnityEditor.AspectRatio aspectRatio);
+    static public void SetAdditionalCompilerArgumentsForGroup(UnityEditor.BuildTargetGroup targetGroup, string[] additionalCompilerArguments);
     static public void SetAdditionalIl2CppArgs(string additionalArgs);
     static public void SetApiCompatibilityLevel(UnityEditor.BuildTargetGroup buildTargetGroup, UnityEditor.ApiCompatibilityLevel value);
     static public void SetApplicationIdentifier(UnityEditor.BuildTargetGroup targetGroup, string identifier);
@@ -189,6 +193,7 @@ public sealed class PlayerSettings : Object
     static public void SetScriptingBackend(UnityEditor.BuildTargetGroup targetGroup, UnityEditor.ScriptingImplementation backend);
     static public void SetScriptingDefineSymbolsForGroup(UnityEditor.BuildTargetGroup targetGroup, string defines);
     static public void SetScriptingDefineSymbolsForGroup(UnityEditor.BuildTargetGroup targetGroup, string[] defines);
+    static public void SetShaderPrecisionModel(UnityEditor.ShaderPrecisionModel model);
     static public void SetStackTraceLogType(LogType logType, StackTraceLogType stackTraceType);
     static public void SetTemplateCustomValue(string name, string value);
     static public void SetUseDefaultGraphicsAPIs(UnityEditor.BuildTarget platform, bool automatic);
@@ -331,13 +336,16 @@ public sealed class PlayerSettings : Object
         static public string BackgroundImagePath { get; set; }
         static public string BGMPath { get; set; }
         static public PS4AppCategory category { get; set; }
+        static public bool compatibilityPS5 { get; set; }
         static public string contentID { get; set; }
         static public bool contentSearchFeaturesUsed { get; set; }
         static public bool disableAutoHideSplash { get; set; }
         static public int downloadDataSize { get; set; }
         static public bool enableApplicationExit { get; set; }
         static public PS4EnterButtonAssignment enterButtonAssignment { get; set; }
+        static public string ExtraSceSysFile { get; set; }
         static public int garlicHeapSize { get; set; }
+        static public bool gpu800MHz { get; set; }
         static public string iconImagesFolder { get; set; }
         static public string[] includedModules { get; set; }
         static public string masterVersion { get; set; }

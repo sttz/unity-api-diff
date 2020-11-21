@@ -23,6 +23,7 @@ public struct ProfilerCategory
     static public Unity.Profiling.ProfilerCategory Render { get; }
     static public Unity.Profiling.ProfilerCategory Scripts { get; }
     static public Unity.Profiling.ProfilerCategory Video { get; }
+    static public Unity.Profiling.ProfilerCategory VirtualTexturing { get; }
     static public Unity.Profiling.ProfilerCategory Vr { get; }
 
     public Color32 Color { get; }

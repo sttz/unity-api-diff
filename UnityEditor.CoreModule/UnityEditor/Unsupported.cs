@@ -40,6 +40,7 @@ public static class Unsupported
     static public bool IsHiddenFile(string path);
     static public bool IsNativeCodeBuiltInReleaseMode();
     static public bool IsSourceBuild();
+    static public bool IsSourceBuild(bool checkHumanControllingUs);
     static public bool PasteComponentFromPasteboard(GameObject go);
     static public bool PasteComponentValuesFromPasteboard(Component component);
     static public void PasteGameObjectsFromPasteboard();

@@ -35,6 +35,7 @@ public sealed class ReflectionProbe : Behaviour
     public float nearClipPlane { get; set; }
     public RenderTexture realtimeTexture { get; set; }
     public Rendering.ReflectionProbeRefreshMode refreshMode { get; set; }
+    public bool renderDynamicObjects { get; set; }
     public int resolution { get; set; }
     public float shadowDistance { get; set; }
     public Vector3 size { get; set; }

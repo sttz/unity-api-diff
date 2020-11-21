@@ -35,6 +35,9 @@ public sealed class HandleUtility
     static public float DistanceToLine(Vector3 p1, Vector3 p2);
     static public float DistanceToPolyLine(Vector3[] points);
     static public float DistanceToRectangle(Vector3 position, Quaternion rotation, float size);
+    static public bool FindNearestVertex(Vector2 guiPoint, out Vector3 vertex);
+    static public bool FindNearestVertex(Vector2 guiPoint, Transform[] objectsToSearch, out Vector3 vertex);
+    static public bool FindNearestVertex(Vector2 guiPoint, Transform[] objectsToSearch, Transform[] objectsToIgnore, out Vector3 vertex);
     static public float GetHandleSize(Vector3 position);
     static public Vector2 GUIPointToScreenPixelCoordinate(Vector2 guiPoint);
     static public Ray GUIPointToWorldRay(Vector2 position);
@@ -42,6 +45,7 @@ public sealed class HandleUtility
     static public GameObject PickGameObject(Vector2 position, bool selectPrefabRoot);
     static public GameObject PickGameObject(Vector2 position, GameObject[] ignore, out int materialIndex);
     static public GameObject PickGameObject(Vector2 position, bool selectPrefabRoot, GameObject[] ignore);
+    static public GameObject PickGameObject(Vector2 position, bool selectPrefabRoot, GameObject[] ignore, GameObject[] filter);
     static public GameObject[] PickRectObjects(Rect rect);
     static public GameObject[] PickRectObjects(Rect rect, bool selectPrefabRootsOnly);
     static public bool PlaceObject(Vector2 guiPosition, out Vector3 position, out Vector3 normal);

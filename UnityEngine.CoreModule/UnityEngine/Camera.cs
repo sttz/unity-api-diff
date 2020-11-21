@@ -192,9 +192,11 @@ public sealed class Camera : Behaviour
     {
         public bool isValid { get; }
         public RenderRequestMode mode { get; }
+        public RenderRequestOutputSpace outputSpace { get; }
         public RenderTexture result { get; }
 
         public RenderRequest(RenderRequestMode mode, RenderTexture rt);
+        public RenderRequest(RenderRequestMode mode, RenderRequestOutputSpace space, RenderTexture rt);
 
     }
 
@@ -203,9 +205,31 @@ public sealed class Camera : Behaviour
         None = 0,
         ObjectId = 1,
         Depth = 2,
-        Normals = 3,
+        VertexNormal = 3,
         WorldPosition = 4,
         EntityId = 5,
+        BaseColor = 6,
+        SpecularColor = 7,
+        Metallic = 8,
+        Emission = 9,
+        Normal = 10,
+        Smoothness = 11,
+        Occlusion = 12,
+        DiffuseColor = 13,
+    }
+
+    public enum RenderRequestOutputSpace
+    {
+        ScreenSpace = -1,
+        UV0 = 0,
+        UV1 = 1,
+        UV2 = 2,
+        UV3 = 3,
+        UV4 = 4,
+        UV5 = 5,
+        UV6 = 6,
+        UV7 = 7,
+        UV8 = 8,
     }
 
     public enum StereoscopicEye

@@ -9,12 +9,18 @@ namespace Unity.Collections
 public struct NativeArray<T> : IDisposable, IEnumerable<T>, IEnumerable, IEquatable<Unity.Collections.NativeArray<T>>
 {
     static public void Copy(T[] src, Unity.Collections.NativeArray<T> dst);
+    static public void Copy(ReadOnly<T> src, T[] dst);
+    static public void Copy(ReadOnly<T> src, Unity.Collections.NativeArray<T> dst);
     static public void Copy(Unity.Collections.NativeArray<T> src, T[] dst);
     static public void Copy(Unity.Collections.NativeArray<T> src, Unity.Collections.NativeArray<T> dst);
     static public void Copy(T[] src, Unity.Collections.NativeArray<T> dst, int length);
+    static public void Copy(ReadOnly<T> src, T[] dst, int length);
+    static public void Copy(ReadOnly<T> src, Unity.Collections.NativeArray<T> dst, int length);
     static public void Copy(Unity.Collections.NativeArray<T> src, T[] dst, int length);
     static public void Copy(Unity.Collections.NativeArray<T> src, Unity.Collections.NativeArray<T> dst, int length);
     static public void Copy(T[] src, int srcIndex, Unity.Collections.NativeArray<T> dst, int dstIndex, int length);
+    static public void Copy(ReadOnly<T> src, int srcIndex, T[] dst, int dstIndex, int length);
+    static public void Copy(ReadOnly<T> src, int srcIndex, Unity.Collections.NativeArray<T> dst, int dstIndex, int length);
     static public void Copy(Unity.Collections.NativeArray<T> src, int srcIndex, T[] dst, int dstIndex, int length);
     static public void Copy(Unity.Collections.NativeArray<T> src, int srcIndex, Unity.Collections.NativeArray<T> dst, int dstIndex, int length);
 
@@ -60,6 +66,11 @@ public struct NativeArray<T> : IDisposable, IEnumerable<T>, IEnumerable, IEquata
     {
         public T this[int index] { get; }
         public int Length { get; }
+
+        public void CopyTo(T[] array);
+        public void CopyTo(Unity.Collections.NativeArray<T> array);
+        public ReadOnly<U> Reinterpret<U>();
+        public T[] ToArray();
 
     }
 

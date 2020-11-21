@@ -12,6 +12,7 @@ public interface IResolvedStyle
     public UIElements.Align alignItems { get; }
     public UIElements.Align alignSelf { get; }
     public Color backgroundColor { get; }
+    public UIElements.Background backgroundImage { get; }
     public Color borderBottomColor { get; }
     public float borderBottomLeftRadius { get; }
     public float borderBottomRightRadius { get; }

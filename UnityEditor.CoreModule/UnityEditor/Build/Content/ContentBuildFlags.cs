@@ -11,6 +11,7 @@ public enum ContentBuildFlags
     None = 0,
     DisableWriteTypeTree = 1,
     StripUnityVersion = 2,
+    DevelopmentBuild = 4,
 }
 
 }

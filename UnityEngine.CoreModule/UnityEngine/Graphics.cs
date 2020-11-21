@@ -15,6 +15,7 @@ public class Graphics
     static public string deviceName { get; }
     static public string deviceVendor { get; }
     static public string deviceVersion { get; }
+    static public Rendering.OpenGLESVersion minOpenGLESVersion { get; }
     static public bool preserveFramebufferAlpha { get; }
 
     static public void Blit(Texture source, RenderTexture dest);

@@ -10,6 +10,7 @@ public sealed class GraphicsSettings : Object
 {
     static public Rendering.RenderPipelineAsset[] allConfiguredRenderPipelines { get; }
     static public Rendering.RenderPipelineAsset currentRenderPipeline { get; }
+    static public uint defaultRenderingLayerMask { get; set; }
     static public Rendering.RenderPipelineAsset defaultRenderPipeline { get; set; }
     static public bool disableBuiltinCustomRenderTextureUpdate { get; set; }
     static public bool lightsUseColorTemperature { get; set; }
@@ -23,6 +24,7 @@ public sealed class GraphicsSettings : Object
     static public Rendering.VideoShadersIncludeMode videoShadersIncludeMode { get; set; }
 
     static public Shader GetCustomShader(Rendering.BuiltinShaderType type);
+    static public Object GetGraphicsSettings();
     static public Rendering.BuiltinShaderMode GetShaderMode(Rendering.BuiltinShaderType type);
     static public bool HasShaderDefine(Rendering.BuiltinShaderDefine defineHash);
     static public bool HasShaderDefine(Rendering.GraphicsTier tier, Rendering.BuiltinShaderDefine defineHash);

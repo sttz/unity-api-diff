@@ -16,6 +16,7 @@ public sealed class Selection
     static public Object activeObject { get; set; }
     static public Transform activeTransform { get; set; }
     static public string[] assetGUIDs { get; }
+    static public int count { get; }
     static public GameObject[] gameObjects { get; }
     static public int[] instanceIDs { get; set; }
     static public Object[] objects { get; set; }

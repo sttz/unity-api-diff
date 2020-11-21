@@ -14,10 +14,10 @@ public struct UIVertex
     public Vector3 normal;
     public Vector3 position;
     public Vector4 tangent;
-    public Vector2 uv0;
-    public Vector2 uv1;
-    public Vector2 uv2;
-    public Vector2 uv3;
+    public Vector4 uv0;
+    public Vector4 uv1;
+    public Vector4 uv2;
+    public Vector4 uv3;
 
 }
 

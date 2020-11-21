@@ -6,12 +6,14 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public class AssetBundleRequest : AsyncOperation
+public class AssetBundleRequest : ResourceRequest
 {
     public Object[] allAssets { get; }
     public Object asset { get; }
 
     public AssetBundleRequest();
+
+    protected Object GetResult();
 
 }
 

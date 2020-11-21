@@ -14,6 +14,7 @@ public struct BatchCullingContext
     public Rendering.LODParameters lodParameters;
     public float nearPlane;
     public Unity.Collections.NativeArray<int> visibleIndices;
+    public Unity.Collections.NativeArray<int> visibleIndicesY;
 
     public BatchCullingContext(Unity.Collections.NativeArray<Plane> inCullingPlanes, Unity.Collections.NativeArray<Rendering.BatchVisibility> inOutBatchVisibility, Unity.Collections.NativeArray<int> outVisibleIndices, Rendering.LODParameters inLodParameters);
     public BatchCullingContext(Unity.Collections.NativeArray<Plane> inCullingPlanes, Unity.Collections.NativeArray<Rendering.BatchVisibility> inOutBatchVisibility, Unity.Collections.NativeArray<int> outVisibleIndices, Rendering.LODParameters inLodParameters, Matrix4x4 inCullingMatrix, float inNearPlane);

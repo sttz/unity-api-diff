@@ -90,6 +90,7 @@ public class ReorderableList
         public void DrawHeader(Rect headerRect, UnityEditor.SerializedObject serializedObject, UnityEditor.SerializedProperty element, IList elementList);
         public void DrawHeaderBackground(Rect headerRect);
         public void DrawNoneElement(Rect rect, bool draggable);
+        public void DrawOverMaxMultiEditElement(Rect rect, int maxMultiEditElementCount, bool draggable);
 
     }
 

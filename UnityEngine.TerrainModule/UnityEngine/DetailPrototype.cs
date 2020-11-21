@@ -11,6 +11,7 @@ public sealed class DetailPrototype
     public float bendFactor { get; set; }
     public Color dryColor { get; set; }
     public Color healthyColor { get; set; }
+    public float holeEdgePadding { get; set; }
     public float maxHeight { get; set; }
     public float maxWidth { get; set; }
     public float minHeight { get; set; }
@@ -26,6 +27,8 @@ public sealed class DetailPrototype
 
     public bool Equals(object obj);
     public int GetHashCode();
+    public bool Validate();
+    public bool Validate(out string errorMessage);
 
 }
 

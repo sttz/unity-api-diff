@@ -12,6 +12,8 @@ public class ResourceRequest : AsyncOperation
 
     public ResourceRequest();
 
+    protected Object GetResult();
+
 }
 
 }

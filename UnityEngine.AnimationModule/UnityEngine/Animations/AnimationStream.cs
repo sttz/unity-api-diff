@@ -18,6 +18,7 @@ public struct AnimationStream
     public Vector3 velocity { get; set; }
 
     public Animations.AnimationHumanStream AsHuman();
+    public void CopyAnimationStreamMotion(Animations.AnimationStream animationStream);
     public Animations.AnimationStream GetInputStream(int index);
     public float GetInputWeight(int index);
 

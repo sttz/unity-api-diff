@@ -18,7 +18,7 @@ public class WheelCollider : Collider
     public float radius { get; set; }
     public float rpm { get; }
     public WheelFrictionCurve sidewaysFriction { get; set; }
-    public float sprungMass { get; }
+    public float sprungMass { get; set; }
     public float steerAngle { get; set; }
     public float suspensionDistance { get; set; }
     public bool suspensionExpansionLimited { get; set; }
@@ -30,6 +30,7 @@ public class WheelCollider : Collider
     public void ConfigureVehicleSubsteps(float speedThreshold, int stepsBelowThreshold, int stepsAboveThreshold);
     public bool GetGroundHit(out WheelHit hit);
     public void GetWorldPose(out Vector3 pos, out Quaternion quat);
+    public void ResetSprungMasses();
 
 }
 

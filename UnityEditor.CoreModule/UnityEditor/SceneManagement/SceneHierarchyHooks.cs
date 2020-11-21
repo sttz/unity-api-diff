@@ -11,6 +11,7 @@ public static class SceneHierarchyHooks
     static public Func<SubSceneInfo, string> provideSubSceneName;
     static public Func<SubSceneInfo[]> provideSubScenes;
 
+    static public event Action<UnityEditor.GenericMenu> addItemsToCreateMenu;
     static public event Action<UnityEditor.GenericMenu, GameObject> addItemsToGameObjectContextMenu;
     static public event Action<UnityEditor.GenericMenu, SceneManagement.Scene> addItemsToSceneHeaderContextMenu;
     static public event Action<UnityEditor.GenericMenu, SubSceneInfo> addItemsToSubSceneHeaderContextMenu;

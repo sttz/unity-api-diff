@@ -12,6 +12,7 @@ public sealed class SystemInfo
 
     static public float batteryLevel { get; }
     static public BatteryStatus batteryStatus { get; }
+    static public int constantBufferOffsetAlignment { get; }
     static public Rendering.CopyTextureSupport copyTextureSupport { get; }
     static public string deviceModel { get; }
     static public string deviceName { get; }
@@ -101,6 +102,7 @@ public sealed class SystemInfo
 
     static public Experimental.Rendering.GraphicsFormat GetCompatibleFormat(Experimental.Rendering.GraphicsFormat format, Experimental.Rendering.FormatUsage usage);
     static public Experimental.Rendering.GraphicsFormat GetGraphicsFormat(Experimental.Rendering.DefaultFormat format);
+    static public int GetRenderTextureSupportedMSAASampleCount(RenderTextureDescriptor desc);
     static public bool IsFormatSupported(Experimental.Rendering.GraphicsFormat format, Experimental.Rendering.FormatUsage usage);
     static public bool SupportsBlendingOnRenderTextureFormat(RenderTextureFormat format);
     static public bool SupportsRenderTextureFormat(RenderTextureFormat format);

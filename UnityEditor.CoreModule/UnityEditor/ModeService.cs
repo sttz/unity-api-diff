@@ -16,6 +16,8 @@ public static class ModeService
     static public event Action<ModeChangedArgs> modeChanged;
 
     static public void ChangeModeById(string modeId);
+    static public bool HasContextMenu(string menuId);
+    static public void PopupContextMenu(string menuId);
     static public void Update();
 
     public struct ModeChangedArgs

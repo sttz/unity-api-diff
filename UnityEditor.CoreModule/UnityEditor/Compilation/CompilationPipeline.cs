@@ -44,6 +44,7 @@ public static class CompilationPipeline
         UnityEngine = 2,
         UnityEditor = 4,
         SystemAssembly = 8,
+        UnityAssembly = 16,
     }
 
 }

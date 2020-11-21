@@ -19,6 +19,9 @@ public abstract class BaseSlider<TValueType> : UIElements.BaseField<TValueType>
     static public string ussClassName;
     static public string verticalVariantUssClassName;
 
+    static protected float GetClosestPowerOfTen(float positiveNumber);
+    static protected float RoundToMultipleOf(float value, float roundingValue);
+
     public UIElements.SliderDirection direction { get; set; }
     public TValueType highValue { get; set; }
     public TValueType lowValue { get; set; }

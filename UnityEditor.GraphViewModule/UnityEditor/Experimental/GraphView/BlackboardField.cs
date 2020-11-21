@@ -17,6 +17,7 @@ public class BlackboardField : UnityEditor.Experimental.GraphView.GraphElement
     public BlackboardField();
     public BlackboardField(Texture icon, string text, string typeText);
 
+    protected void BuildFieldContextualMenu(UIElements.ContextualMenuPopulateEvent evt);
     protected void ExecuteDefaultAction(UIElements.EventBase evt);
     public void OpenTextEditor();
 

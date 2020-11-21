@@ -35,6 +35,7 @@ public sealed class AssetDatabase
     static public void CanOpenForEdit(string[] assetOrMetaFilePaths, List<string> outNotEditablePaths, UnityEditor.StatusQueryOptions statusQueryOptions = 1);
     static public void ClearImporterOverride(string path);
     static public void ClearLabels(Object obj);
+    static public void CloseCacheServerConnection();
     static public bool Contains(int instanceID);
     static public bool Contains(Object obj);
     static public bool CopyAsset(string path, string newPath);
@@ -150,6 +151,7 @@ public sealed class AssetDatabase
     static public void RemoveObjectFromAsset(Object objectToRemove);
     static public void RemoveUnusedAssetBundleNames();
     static public string RenameAsset(string pathName, string newName);
+    static public void ResetCacheServerReconnectTimer();
     static public void SaveAssets();
     static public void SetImporterOverride<T>(string path);
     static public void SetLabels(Object obj, string[] labels);

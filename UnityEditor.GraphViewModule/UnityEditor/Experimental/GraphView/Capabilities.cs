@@ -18,6 +18,8 @@ public enum Capabilities
     Renamable = 128,
     Copiable = 256,
     Snappable = 512,
+    Groupable = 1024,
+    Stackable = 2048,
 }
 
 }

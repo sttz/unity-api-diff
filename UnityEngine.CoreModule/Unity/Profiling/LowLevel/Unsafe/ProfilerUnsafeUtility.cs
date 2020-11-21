@@ -25,6 +25,7 @@ public static class ProfilerUnsafeUtility
     static public ushort CategoryRender = 0;
     static public ushort CategoryScripts = 1;
     static public ushort CategoryVideo = 11;
+    static public ushort CategoryVirtualTexturing = 31;
     static public ushort CategoryVr = 22;
 
     static public long Timestamp { get; }

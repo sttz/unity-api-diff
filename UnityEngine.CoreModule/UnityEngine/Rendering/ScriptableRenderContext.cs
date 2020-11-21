@@ -8,6 +8,7 @@ namespace UnityEngine.Rendering
 
 public struct ScriptableRenderContext : IEquatable<Rendering.ScriptableRenderContext>
 {
+    static public void EmitGeometryForCamera(Camera camera);
     static public void EmitWorldGeometryForSceneView(Camera cullingCamera);
 
     public void BeginRenderPass(int width, int height, int samples, Unity.Collections.NativeArray<Rendering.AttachmentDescriptor> attachments, int depthAttachmentIndex = -1);

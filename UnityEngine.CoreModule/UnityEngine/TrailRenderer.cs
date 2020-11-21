@@ -31,13 +31,19 @@ public sealed class TrailRenderer : Renderer
     public TrailRenderer();
 
     public void AddPosition(Vector3 position);
+    public void AddPositions(out Unity.Collections.NativeArray<Vector3> positions);
+    public void AddPositions(out Unity.Collections.NativeSlice<Vector3> positions);
     public void AddPositions(Vector3[] positions);
     public void BakeMesh(Mesh mesh, bool useTransform = false);
     public void BakeMesh(Mesh mesh, Camera camera, bool useTransform = false);
     public void Clear();
     public Vector3 GetPosition(int index);
+    public int GetPositions(out Unity.Collections.NativeArray<Vector3> positions);
+    public int GetPositions(out Unity.Collections.NativeSlice<Vector3> positions);
     public int GetPositions(out Vector3[] positions);
     public void SetPosition(int index, Vector3 position);
+    public void SetPositions(Unity.Collections.NativeArray<Vector3> positions);
+    public void SetPositions(Unity.Collections.NativeSlice<Vector3> positions);
     public void SetPositions(Vector3[] positions);
 
 }

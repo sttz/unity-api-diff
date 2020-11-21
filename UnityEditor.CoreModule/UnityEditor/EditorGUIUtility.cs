@@ -67,6 +67,7 @@ public sealed class EditorGUIUtility : GUIUtility
     static public void RGBToHSV(Color rgbColor, out float H, out float S, out float V);
     static public string SerializeMainMenuToString();
     static public void SetIconSize(Vector2 size);
+    static public void SetMainWindowPosition(Rect position);
     static public void SetMenuLocalizationTestMode(bool onoff);
     static public void SetWantsMouseJumping(int wantz);
     static public void ShowObjectPicker<T>(Object obj, bool allowSceneObjects, string searchFilter, int controlID);

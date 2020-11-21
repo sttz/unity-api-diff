@@ -24,6 +24,7 @@ public sealed class HierarchyProperty : UnityEditor.IHierarchyProperty
     public int instanceID { get; }
     public bool isFolder { get; }
     public bool isMainRepresentation { get; }
+    public bool isSceneHeader { get; }
     public bool isValid { get; }
     public string name { get; }
     public Object pptrValue { get; }

@@ -155,6 +155,17 @@ public class CommandBuffer : IDisposable
     public void RequestAsyncReadbackIntoNativeArray<T>(Unity.Collections.NativeArray<T> output, Texture src, int mipIndex, int x, int width, int y, int height, int z, int depth, Action<Rendering.AsyncGPUReadbackRequest> callback);
     public void RequestAsyncReadbackIntoNativeArray<T>(Unity.Collections.NativeArray<T> output, Texture src, int mipIndex, int x, int width, int y, int height, int z, int depth, Experimental.Rendering.GraphicsFormat dstFormat, Action<Rendering.AsyncGPUReadbackRequest> callback);
     public void RequestAsyncReadbackIntoNativeArray<T>(Unity.Collections.NativeArray<T> output, Texture src, int mipIndex, int x, int width, int y, int height, int z, int depth, TextureFormat dstFormat, Action<Rendering.AsyncGPUReadbackRequest> callback);
+    public void RequestAsyncReadbackIntoNativeSlice<T>(Unity.Collections.NativeSlice<T> output, ComputeBuffer src, Action<Rendering.AsyncGPUReadbackRequest> callback);
+    public void RequestAsyncReadbackIntoNativeSlice<T>(Unity.Collections.NativeSlice<T> output, GraphicsBuffer src, Action<Rendering.AsyncGPUReadbackRequest> callback);
+    public void RequestAsyncReadbackIntoNativeSlice<T>(Unity.Collections.NativeSlice<T> output, Texture src, Action<Rendering.AsyncGPUReadbackRequest> callback);
+    public void RequestAsyncReadbackIntoNativeSlice<T>(Unity.Collections.NativeSlice<T> output, Texture src, int mipIndex, Action<Rendering.AsyncGPUReadbackRequest> callback);
+    public void RequestAsyncReadbackIntoNativeSlice<T>(Unity.Collections.NativeSlice<T> output, Texture src, int mipIndex, Experimental.Rendering.GraphicsFormat dstFormat, Action<Rendering.AsyncGPUReadbackRequest> callback);
+    public void RequestAsyncReadbackIntoNativeSlice<T>(Unity.Collections.NativeSlice<T> output, Texture src, int mipIndex, TextureFormat dstFormat, Action<Rendering.AsyncGPUReadbackRequest> callback);
+    public void RequestAsyncReadbackIntoNativeSlice<T>(Unity.Collections.NativeSlice<T> output, ComputeBuffer src, int size, int offset, Action<Rendering.AsyncGPUReadbackRequest> callback);
+    public void RequestAsyncReadbackIntoNativeSlice<T>(Unity.Collections.NativeSlice<T> output, GraphicsBuffer src, int size, int offset, Action<Rendering.AsyncGPUReadbackRequest> callback);
+    public void RequestAsyncReadbackIntoNativeSlice<T>(Unity.Collections.NativeSlice<T> output, Texture src, int mipIndex, int x, int width, int y, int height, int z, int depth, Action<Rendering.AsyncGPUReadbackRequest> callback);
+    public void RequestAsyncReadbackIntoNativeSlice<T>(Unity.Collections.NativeSlice<T> output, Texture src, int mipIndex, int x, int width, int y, int height, int z, int depth, Experimental.Rendering.GraphicsFormat dstFormat, Action<Rendering.AsyncGPUReadbackRequest> callback);
+    public void RequestAsyncReadbackIntoNativeSlice<T>(Unity.Collections.NativeSlice<T> output, Texture src, int mipIndex, int x, int width, int y, int height, int z, int depth, TextureFormat dstFormat, Action<Rendering.AsyncGPUReadbackRequest> callback);
     public void ResolveAntiAliasedSurface(RenderTexture rt, RenderTexture target = null);
     public void SetComputeBufferCounterValue(ComputeBuffer buffer, uint counterValue);
     public void SetComputeBufferData(ComputeBuffer buffer, Array data);

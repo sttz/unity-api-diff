@@ -57,6 +57,7 @@ public class EditorUtility
     static public bool IsDirty(int instanceID);
     static public bool IsDirty(Object target);
     static public bool IsPersistent(Object target);
+    static public bool IsRunningUnderCPUEmulation();
     static public bool LoadWindowLayout(string path);
     static public int NaturalCompare(string a, string b);
     static public string OpenFilePanel(string title, string directory, string extension);

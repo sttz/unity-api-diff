@@ -14,6 +14,8 @@ public struct PlayerLoopSystem
     public UpdateFunction updateDelegate;
     public IntPtr updateFunction;
 
+    public string ToString();
+
     public delegate void UpdateFunction();
 
 }
