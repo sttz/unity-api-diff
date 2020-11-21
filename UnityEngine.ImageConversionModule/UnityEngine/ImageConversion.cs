@@ -8,6 +8,8 @@ namespace UnityEngine
 
 public static class ImageConversion
 {
+    static public bool EnableLegacyPngGammaRuntimeLoadBehavior { get; set; }
+
     static public byte[] EncodeArrayToEXR(Array array, Experimental.Rendering.GraphicsFormat format, uint width, uint height, uint rowBytes = 0, EXRFlags flags = 0);
     static public byte[] EncodeArrayToJPG(Array array, Experimental.Rendering.GraphicsFormat format, uint width, uint height, uint rowBytes = 0, int quality = 75);
     static public byte[] EncodeArrayToPNG(Array array, Experimental.Rendering.GraphicsFormat format, uint width, uint height, uint rowBytes = 0);

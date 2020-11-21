@@ -21,6 +21,8 @@ public enum AndroidSdkVersions
     AndroidApiLevel26 = 26,
     AndroidApiLevel27 = 27,
     AndroidApiLevel28 = 28,
+    AndroidApiLevel29 = 29,
+    AndroidApiLevel30 = 30,
 }
 
 }

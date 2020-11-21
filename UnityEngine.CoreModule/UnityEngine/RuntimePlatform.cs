@@ -44,6 +44,7 @@ public enum RuntimePlatform
     Switch = 32,
     Lumin = 33,
     Stadia = 34,
+    CloudRendering = 35,
 }
 
 }

@@ -24,6 +24,7 @@ public class BuildPipeline
     static public string BuildStreamedSceneAssetBundle(string[] levels, string locationPath, UnityEditor.BuildTarget target, UnityEditor.BuildOptions options);
     static public string BuildStreamedSceneAssetBundle(string[] levels, string locationPath, UnityEditor.BuildTarget target, out uint crc, UnityEditor.BuildOptions options);
     static public UnityEditor.BuildTargetGroup GetBuildTargetGroup(UnityEditor.BuildTarget platform);
+    static public string GetBuildTargetName(UnityEditor.BuildTarget targetPlatform);
     static public bool GetCRCForAssetBundle(string targetPath, out uint crc);
     static public bool GetHashForAssetBundle(string targetPath, out Hash128 hash);
     static public string GetPlaybackEngineDirectory(UnityEditor.BuildTarget target, UnityEditor.BuildOptions options);

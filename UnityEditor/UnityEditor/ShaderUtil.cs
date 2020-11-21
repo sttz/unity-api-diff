@@ -18,6 +18,7 @@ public sealed class ShaderUtil
     static public void CompilePass(Material material, int pass, bool forceSync = false);
     static public Shader CreateShaderAsset(string source);
     static public Shader CreateShaderAsset(string source, bool compileInitialShaderVariants);
+    static public Shader CreateShaderAsset(UnityEditor.Experimental.AssetImporters.AssetImportContext context, string source, bool compileInitialShaderVariants);
     static public UnityEditor.ShaderInfo[] GetAllShaderInfo();
     static public int GetCallableShaderCount(Experimental.Rendering.RayTracingShader s);
     static public string GetCallableShaderName(Experimental.Rendering.RayTracingShader s, int shaderIndex);
@@ -40,6 +41,7 @@ public sealed class ShaderUtil
     static public int GetShaderMessageCount(Shader s);
     static public UnityEditor.ShaderMessage[] GetShaderMessages(Shader s);
     static public Rendering.TextureDimension GetTexDim(Shader s, int propertyIdx);
+    static public bool HasProceduralInstancing(Shader s);
     static public bool IsPassCompiled(Material material, int pass);
     static public bool IsShaderPropertyHidden(Shader s, int propertyIdx);
     static public bool IsShaderPropertyNonModifiableTexureProperty(Shader s, int propertyIdx);
@@ -49,6 +51,7 @@ public sealed class ShaderUtil
     static public bool ShaderHasError(Shader shader);
     static public void UpdateShaderAsset(Shader shader, string source);
     static public void UpdateShaderAsset(Shader shader, string source, bool compileInitialShaderVariants);
+    static public void UpdateShaderAsset(UnityEditor.Experimental.AssetImporters.AssetImportContext context, Shader shader, string source, bool compileInitialShaderVariants);
 
     public ShaderUtil();
 

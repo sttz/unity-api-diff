@@ -43,6 +43,7 @@ public enum BuildTarget
     Switch = 38,
     Lumin = 39,
     Stadia = 40,
+    CloudRendering = 41,
 }
 
 }

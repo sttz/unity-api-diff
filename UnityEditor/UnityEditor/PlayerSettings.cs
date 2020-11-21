@@ -97,6 +97,7 @@ public sealed class PlayerSettings : Object
     static public Texture2D virtualRealitySplashScreen { get; set; }
     static public bool virtualRealitySupported { get; set; }
     static public bool visibleInBackground { get; set; }
+    static public bool vulkanEnableLateAcquireNextImage { get; set; }
     static public bool vulkanEnableSetSRGBWrite { get; set; }
     static public uint vulkanNumSwapchainBuffers { get; set; }
     static public bool vulkanUseSWCommandBuffers { get; set; }
@@ -319,13 +320,16 @@ public sealed class PlayerSettings : Object
         static public string BackgroundImagePath { get; set; }
         static public string BGMPath { get; set; }
         static public PS4AppCategory category { get; set; }
+        static public bool compatibilityPS5 { get; set; }
         static public string contentID { get; set; }
         static public bool contentSearchFeaturesUsed { get; set; }
         static public bool disableAutoHideSplash { get; set; }
         static public int downloadDataSize { get; set; }
         static public bool enableApplicationExit { get; set; }
         static public PS4EnterButtonAssignment enterButtonAssignment { get; set; }
+        static public string ExtraSceSysFile { get; set; }
         static public int garlicHeapSize { get; set; }
+        static public bool gpu800MHz { get; set; }
         static public string iconImagesFolder { get; set; }
         static public string[] includedModules { get; set; }
         static public string masterVersion { get; set; }
@@ -501,6 +505,8 @@ public sealed class PlayerSettings : Object
         static public bool networkInterfaceManagerInitializeEnabled { get; set; }
         static public string nsoDependencies { get; set; }
         static public int NVNDefaultPoolsGranularity { get; set; }
+        static public int NVNMaxPublicSamplerIDCount { get; set; }
+        static public int NVNMaxPublicTextureIDCount { get; set; }
         static public int NVNOtherPoolsGranularity { get; set; }
         static public int NVNShaderPoolsGranularity { get; set; }
         static public bool playerConnectionEnabled { get; set; }

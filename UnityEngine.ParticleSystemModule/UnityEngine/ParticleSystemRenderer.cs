@@ -26,6 +26,7 @@ public sealed class ParticleSystemRenderer : Renderer
     public float shadowBias { get; set; }
     public float sortingFudge { get; set; }
     public ParticleSystemSortMode sortMode { get; set; }
+    public bool supportsMeshInstancing { get; }
     public Material trailMaterial { get; set; }
     public float velocityScale { get; set; }
 

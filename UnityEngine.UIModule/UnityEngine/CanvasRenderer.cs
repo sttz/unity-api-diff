@@ -18,6 +18,7 @@ public sealed class CanvasRenderer : Component
     static public void SplitUIVertexStreams(List<UIVertex> verts, List<Vector3> positions, List<Color32> colors, List<Vector2> uv0S, List<Vector2> uv1S, List<Vector2> uv2S, List<Vector2> uv3S, List<Vector3> normals, List<Vector4> tangents, List<int> indices);
 
     public int absoluteDepth { get; }
+    public Vector2 clippingSoftness { get; set; }
     public bool cull { get; set; }
     public bool cullTransparentMesh { get; set; }
     public bool hasMoved { get; }
