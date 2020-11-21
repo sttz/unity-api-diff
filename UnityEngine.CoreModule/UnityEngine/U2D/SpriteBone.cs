@@ -1,0 +1,21 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace UnityEngine.U2D
+{
+
+public struct SpriteBone
+{
+    public Color32 color { get; set; }
+    public string guid { get; set; }
+    public float length { get; set; }
+    public string name { get; set; }
+    public int parentId { get; set; }
+    public Vector3 position { get; set; }
+    public Quaternion rotation { get; set; }
+
+}
+
+}
