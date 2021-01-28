@@ -16,6 +16,7 @@ public class BuildPipeline
     static public bool BuildAssetBundleExplicitAssetNames(Object[] assets, string[] assetNames, string pathName, out uint crc, UnityEditor.BuildAssetBundleOptions assetBundleOptions, UnityEditor.BuildTarget targetPlatform);
     static public AssetBundleManifest BuildAssetBundles(string outputPath, UnityEditor.BuildAssetBundleOptions assetBundleOptions, UnityEditor.BuildTarget targetPlatform);
     static public AssetBundleManifest BuildAssetBundles(string outputPath, UnityEditor.AssetBundleBuild[] builds, UnityEditor.BuildAssetBundleOptions assetBundleOptions, UnityEditor.BuildTarget targetPlatform);
+    static public UnityEditor.CanAppendBuild BuildCanBeAppended(UnityEditor.BuildTarget target, string location);
     static public UnityEditor.Build.Reporting.BuildReport BuildPlayer(UnityEditor.BuildPlayerOptions buildPlayerOptions);
     static public UnityEditor.Build.Reporting.BuildReport BuildPlayer(string[] levels, string locationPathName, UnityEditor.BuildTarget target, UnityEditor.BuildOptions options);
     static public UnityEditor.Build.Reporting.BuildReport BuildPlayer(UnityEditor.EditorBuildSettingsScene[] levels, string locationPathName, UnityEditor.BuildTarget target, UnityEditor.BuildOptions options);

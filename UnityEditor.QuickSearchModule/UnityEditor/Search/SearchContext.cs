@@ -8,15 +8,15 @@ namespace UnityEditor.Search
 
 public class SearchContext : IDisposable
 {
-    public string actionId { get; private set; }
     public string filterId { get; private set; }
     public UnityEditor.EditorWindow focusedWindow { get; internal set; }
     public UnityEditor.Search.SearchFlags options { get; set; }
     public int progressId { get; set; }
-    public IEnumerable<UnityEditor.Search.SearchProvider> providers { get; private set; }
+    public IEnumerable<UnityEditor.Search.SearchProvider> providers { get; }
     public bool searchInProgress { get; }
     public string searchPhrase { get; }
     public string searchQuery { get; private set; }
+    public int searchQueryOffset { get; private set; }
     public string searchText { get; set; }
     public UnityEditor.Search.ISearchView searchView { get; internal set; }
     public string[] searchWords { get; private set; }
@@ -32,6 +32,8 @@ public class SearchContext : IDisposable
     public SearchContext(IEnumerable<UnityEditor.Search.SearchProvider> providers, string searchText);
     public SearchContext(IEnumerable<UnityEditor.Search.SearchProvider> providers, string searchText, UnityEditor.Search.SearchFlags options);
 
+    public void AddSearchQueryError(UnityEditor.Search.SearchQueryError error);
+    public void AddSearchQueryErrors(IEnumerable<UnityEditor.Search.SearchQueryError> errors);
     public void Dispose();
     protected void Dispose(bool disposing);
     public int GetHashCode();

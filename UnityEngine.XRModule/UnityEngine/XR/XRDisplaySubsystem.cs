@@ -34,6 +34,7 @@ public class XRDisplaySubsystem : IntegratedSubsystem<XR.XRDisplaySubsystemDescr
     public void GetRenderPass(int renderPassIndex, out XRRenderPass renderPass);
     public int GetRenderPassCount();
     public RenderTexture GetRenderTextureForRenderPass(int renderPass);
+    public void MarkTransformLateLatched(Transform transform, LateLatchNode nodeType);
     public void SetFocusPlane(Vector3 point, Vector3 normal, Vector3 velocity);
     public void SetMSAALevel(int level);
     public void SetPreferredMirrorBlitMode(int blitMode);
@@ -43,6 +44,13 @@ public class XRDisplaySubsystem : IntegratedSubsystem<XR.XRDisplaySubsystemDescr
     public bool TryGetDroppedFrameCount(out int droppedFrameCount);
     public bool TryGetFramePresentCount(out int framePresentCount);
     public bool TryGetMotionToPhoton(out float motionToPhoton);
+
+    public enum LateLatchNode
+    {
+        Head = 0,
+        LeftHand = 1,
+        RightHand = 2,
+    }
 
     public enum ReprojectionMode
     {

@@ -15,6 +15,7 @@ public class Query<TData, TPayload>
 
     public IEnumerable<TData> Apply(TPayload payload = null);
     public UnityEditor.Search.IQueryNode GetNodeAtPosition(int position);
+    public void Optimize(UnityEditor.Search.QueryGraphOptimizationOptions options);
     public void Optimize(bool propagateNotToLeaves, bool swapNotToRightHandSide);
 
 }

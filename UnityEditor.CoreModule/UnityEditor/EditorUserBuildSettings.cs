@@ -16,6 +16,7 @@ public class EditorUserBuildSettings : Object
     static public UnityEditor.MobileTextureSubtarget androidBuildSubtarget { get; set; }
     static public UnityEditor.AndroidBuildSystem androidBuildSystem { get; set; }
     static public UnityEditor.AndroidBuildType androidBuildType { get; set; }
+    static public UnityEditor.AndroidCreateSymbols androidCreateSymbols { get; set; }
     static public bool androidCreateSymbolsZip { get; set; }
     static public UnityEditor.AndroidMinification androidDebugMinification { get; set; }
     static public UnityEditor.AndroidETC2Fallback androidETC2Fallback { get; set; }

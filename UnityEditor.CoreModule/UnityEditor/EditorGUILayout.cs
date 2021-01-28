@@ -186,6 +186,8 @@ public sealed class EditorGUILayout
     static public int LayerField(int layer, GUIStyle style, GUILayoutOption[] options);
     static public int LayerField(string label, int layer, GUIStyle style, GUILayoutOption[] options);
     static public int LayerField(GUIContent label, int layer, GUIStyle style, GUILayoutOption[] options);
+    static public bool LinkButton(string label, GUILayoutOption[] options);
+    static public bool LinkButton(GUIContent label, GUILayoutOption[] options);
     static public long LongField(long value, GUILayoutOption[] options);
     static public long LongField(string label, long value, GUILayoutOption[] options);
     static public long LongField(GUIContent label, long value, GUILayoutOption[] options);

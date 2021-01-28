@@ -8,6 +8,7 @@ namespace UnityEditor.EditorTools
 
 public abstract class EditorTool : ScriptableObject
 {
+    public bool gridSnapEnabled { get; }
     public Object target { get; }
     public IEnumerable<Object> targets { get; }
     public GUIContent toolbarIcon { get; }

@@ -199,6 +199,8 @@ public sealed class EditorGUI
     static public int LayerField(Rect position, int layer, GUIStyle style);
     static public int LayerField(Rect position, string label, int layer, GUIStyle style);
     static public int LayerField(Rect position, GUIContent label, int layer, GUIStyle style);
+    static public bool LinkButton(Rect position, string label);
+    static public bool LinkButton(Rect position, GUIContent label);
     static public long LongField(Rect position, long value);
     static public long LongField(Rect position, string label, long value);
     static public long LongField(Rect position, GUIContent label, long value);

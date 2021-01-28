@@ -54,6 +54,8 @@ public sealed class Tilemap : GridLayout
     public Tilemaps.TileFlags GetTileFlags(Vector3Int position);
     public Tilemaps.TileBase[] GetTilesBlock(BoundsInt bounds);
     public Matrix4x4 GetTransformMatrix(Vector3Int position);
+    public int GetUsedSpritesCount();
+    public int GetUsedSpritesNonAlloc(Sprite[] usedSprites);
     public int GetUsedTilesCount();
     public int GetUsedTilesNonAlloc(Tilemaps.TileBase[] usedTiles);
     public bool HasEditorPreviewTile(Vector3Int position);

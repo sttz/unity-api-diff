@@ -11,6 +11,9 @@ public static class SearchService
     static public IEnumerable<UnityEditor.Search.SearchProvider> OrderedProviders { get; }
     static public List<UnityEditor.Search.SearchProvider> Providers { get; private set; }
 
+    static public UnityEditor.Search.SearchContext CreateContext(string searchText);
+    static public UnityEditor.Search.SearchContext CreateContext(UnityEditor.Search.SearchProvider provider, string searchText = "");
+    static public UnityEditor.Search.SearchContext CreateContext(string searchText, UnityEditor.Search.SearchFlags flags);
     static public UnityEditor.Search.SearchContext CreateContext(string providerId, string searchText = "", UnityEditor.Search.SearchFlags flags = 2);
     static public UnityEditor.Search.SearchContext CreateContext(IEnumerable<string> providerIds, string searchText = "", UnityEditor.Search.SearchFlags flags = 2);
     static public UnityEditor.Search.SearchContext CreateContext(IEnumerable<UnityEditor.Search.SearchProvider> providers, string searchText = "", UnityEditor.Search.SearchFlags flags = 2);
@@ -20,6 +23,11 @@ public static class SearchService
     static public void Refresh();
     static public void RefreshWindows();
     static public UnityEditor.Search.ISearchList Request(UnityEditor.Search.SearchContext context, UnityEditor.Search.SearchFlags options = 0);
+    static public UnityEditor.Search.ISearchList Request(string searchText, UnityEditor.Search.SearchFlags options = 0);
+    static public void Request(UnityEditor.Search.SearchContext context, Action<UnityEditor.Search.SearchContext, IList<UnityEditor.Search.SearchItem>> onSearchCompleted, UnityEditor.Search.SearchFlags options = 0);
+    static public void Request(string searchText, Action<UnityEditor.Search.SearchContext, IList<UnityEditor.Search.SearchItem>> onSearchCompleted, UnityEditor.Search.SearchFlags options = 0);
+    static public void Request(UnityEditor.Search.SearchContext context, Action<UnityEditor.Search.SearchContext, IEnumerable<UnityEditor.Search.SearchItem>> onIncomingItems, Action<UnityEditor.Search.SearchContext> onSearchCompleted, UnityEditor.Search.SearchFlags options = 0);
+    static public void Request(string searchText, Action<UnityEditor.Search.SearchContext, IEnumerable<UnityEditor.Search.SearchItem>> onIncomingItems, Action<UnityEditor.Search.SearchContext> onSearchCompleted, UnityEditor.Search.SearchFlags options = 0);
     static public void SetActive(string providerId, bool active = true);
     static public UnityEditor.Search.ISearchView ShowContextual(string[] providerIds);
     static public UnityEditor.Search.ISearchView ShowObjectPicker(Action<Object, bool> selectHandler, Action<Object> trackingHandler, string searchText, string typeName, Type filterType, float defaultWidth = 850, float defaultHeight = 539, UnityEditor.Search.SearchFlags flags = 1610612744);

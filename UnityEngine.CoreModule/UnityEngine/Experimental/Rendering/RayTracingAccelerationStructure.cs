@@ -19,8 +19,10 @@ public sealed class RayTracingAccelerationStructure : IDisposable
     public void Dispose();
     public ulong GetSize();
     public void Release();
+    public void RemoveInstance(Renderer targetRenderer);
     public void Update();
     public void Update(Vector3 relativeOrigin);
+    public void UpdateInstanceMask(Renderer renderer, uint mask);
     public void UpdateInstanceTransform(Renderer renderer);
 
     public enum ManagementMode

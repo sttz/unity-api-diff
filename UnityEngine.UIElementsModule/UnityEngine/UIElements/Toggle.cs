@@ -6,7 +6,7 @@ using UnityEngine;
 namespace UnityEngine.UIElements
 {
 
-public class Toggle : UIElements.BaseField<bool>
+public class Toggle : UIElements.BaseBoolField
 {
     static public string checkmarkUssClassName;
     static public string inputUssClassName;
@@ -15,13 +15,10 @@ public class Toggle : UIElements.BaseField<bool>
     static public string textUssClassName;
     static public string ussClassName;
 
-    public string text { get; set; }
-
     public Toggle();
     public Toggle(string label);
 
-    public void SetValueWithoutNotify(bool newValue);
-    protected void UpdateMixedValueContent();
+    protected void InitLabel();
 
     public class UxmlFactory : UIElements.UxmlFactory<UIElements.Toggle, UxmlTraits>
     {

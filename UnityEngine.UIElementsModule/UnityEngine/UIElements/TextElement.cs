@@ -11,11 +11,13 @@ public class TextElement : UIElements.BindableElement, UIElements.ITextElement, 
     static public string ussClassName;
 
     public bool displayTooltipWhenElided { get; set; }
+    public bool enableRichText { get; set; }
     public bool isElided { get; private set; }
     public string text { get; set; }
 
     public TextElement();
 
+    public void HandleEvent(UIElements.EventBase evt);
     public Vector2 MeasureTextSize(string textToMeasure, float width, MeasureMode widthMode, float height, MeasureMode heightMode);
 
     public class UxmlFactory : UIElements.UxmlFactory<UIElements.TextElement, UxmlTraits>

@@ -9,6 +9,7 @@ namespace UnityEngine
 public sealed class ParticleSystem : Component
 {
     static public void ResetPreMappedBufferMemory();
+    static public void SetMaximumPreMappedBufferCounts(int vertexBuffersCount, int indexBuffersCount);
 
     public bool automaticCullingEnabled { get; }
     public CollisionModule collision { get; }
@@ -350,6 +351,7 @@ public sealed class ParticleSystem : Component
         public ParticleSystemCullingMode cullingMode { get; set; }
         public Transform customSimulationSpace { get; set; }
         public float duration { get; set; }
+        public Vector3 emitterVelocity { get; set; }
         public ParticleSystemEmitterVelocityMode emitterVelocityMode { get; set; }
         public float flipRotation { get; set; }
         public MinMaxCurve gravityModifier { get; set; }

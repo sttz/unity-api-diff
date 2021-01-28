@@ -36,6 +36,7 @@ public static class CompilationPipeline
     static public bool IsDefineConstraintsCompatible(string[] defines, string[] defineConstraints);
     static public UnityEditor.Compilation.ResponseFileData ParseResponseFile(string relativePath, string projectDirectory, string[] systemReferenceDirectories);
     static public void RequestScriptCompilation();
+    static public void RequestScriptCompilation(UnityEditor.Compilation.RequestScriptCompilationOptions options);
 
     public enum PrecompiledAssemblySources
     {

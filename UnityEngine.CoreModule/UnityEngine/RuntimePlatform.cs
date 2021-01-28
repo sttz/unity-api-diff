@@ -47,6 +47,7 @@ public enum RuntimePlatform
     CloudRendering = 35,
     GameCoreScarlett = 36,
     GameCoreXboxOne = 37,
+    PS5 = 38,
 }
 
 }

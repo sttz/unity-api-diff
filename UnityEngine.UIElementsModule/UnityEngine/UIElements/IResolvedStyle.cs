@@ -37,6 +37,7 @@ public interface IResolvedStyle
     public float height { get; }
     public UIElements.Justify justifyContent { get; }
     public float left { get; }
+    public float letterSpacing { get; }
     public float marginBottom { get; }
     public float marginLeft { get; }
     public float marginRight { get; }
@@ -57,16 +58,21 @@ public interface IResolvedStyle
     public Color unityBackgroundImageTintColor { get; }
     public ScaleMode unityBackgroundScaleMode { get; }
     public Font unityFont { get; }
+    public UIElements.FontDefinition unityFontDefinition { get; }
     public FontStyle unityFontStyleAndWeight { get; }
+    public float unityParagraphSpacing { get; }
     public int unitySliceBottom { get; }
     public int unitySliceLeft { get; }
     public int unitySliceRight { get; }
     public int unitySliceTop { get; }
     public TextAnchor unityTextAlign { get; }
+    public Color unityTextOutlineColor { get; }
+    public float unityTextOutlineWidth { get; }
     public UIElements.TextOverflowPosition unityTextOverflowPosition { get; }
     public UIElements.Visibility visibility { get; }
     public UIElements.WhiteSpace whiteSpace { get; }
     public float width { get; }
+    public float wordSpacing { get; }
 
 }
 

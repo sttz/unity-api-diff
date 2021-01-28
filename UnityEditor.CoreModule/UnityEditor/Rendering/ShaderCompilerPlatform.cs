@@ -20,6 +20,8 @@ public enum ShaderCompilerPlatform
     Switch = 19,
     XboxOneD3D12 = 20,
     GameCore = 21,
+    PS5 = 23,
+    PS5NGGC = 24,
 }
 
 }

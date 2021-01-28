@@ -13,6 +13,7 @@ public class ArticulationBody : Behaviour
     public float angularDamping { get; set; }
     public Vector3 angularVelocity { get; set; }
     public Vector3 centerOfMass { get; set; }
+    public bool computeParentAnchor { get; set; }
     public int dofCount { get; }
     public bool immovable { get; set; }
     public int index { get; }
@@ -77,6 +78,7 @@ public class ArticulationBody : Behaviour
     public void SetJointPositions(List<float> positions);
     public void SetJointVelocities(List<float> velocities);
     public void Sleep();
+    public void SnapAnchorToClosestContact();
     public void TeleportRoot(Vector3 position, Quaternion rotation);
     public void WakeUp();
 

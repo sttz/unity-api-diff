@@ -9,6 +9,8 @@ namespace UnityEditor.Profiling
 public abstract class FrameDataView : IDisposable
 {
     static public int invalidMarkerId = -1;
+    static public ulong invalidThreadId = 0;
+    static public int invalidThreadIndex = -1;
 
     protected IntPtr m_Ptr;
 

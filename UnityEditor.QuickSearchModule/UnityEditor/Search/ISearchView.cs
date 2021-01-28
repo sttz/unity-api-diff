@@ -22,7 +22,7 @@ public interface ISearchView : IDisposable
     public void Close();
     public void ExecuteAction(UnityEditor.Search.SearchAction action, UnityEditor.Search.SearchItem[] items, bool endSearch = true);
     public void Focus();
-    public void Refresh();
+    public void Refresh(UnityEditor.Search.RefreshFlags reason = 1);
     public void Repaint();
     public void SelectSearch();
     public void SetSearchText(string searchText, UnityEditor.Search.TextCursorPlacement moveCursor = 1);

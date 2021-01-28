@@ -6,7 +6,7 @@ using UnityEngine;
 namespace UnityEngine
 {
 
-public sealed class HelpURLAttribute : Attribute
+public class HelpURLAttribute : Attribute
 {
     public string URL { get; }
 

@@ -18,7 +18,7 @@ public static class SearchUtils
     static public string GetObjectPath(Object obj);
     static public string GetTransformPath(Transform tform);
     static public bool MatchSearchGroups(UnityEditor.Search.SearchContext context, string content, bool ignoreCase = false);
-    static public void SelectMultipleItems(IEnumerable<UnityEditor.Search.SearchItem> items, bool focusProjectBrowser = false);
+    static public void SelectMultipleItems(IEnumerable<UnityEditor.Search.SearchItem> items, bool focusProjectBrowser = false, bool pingSelection = true);
     static public string[] SplitCamelCase(string source);
     static public IEnumerable<string> SplitEntryComponents(string entry, char[] entrySeparators);
     static public IEnumerable<string> SplitFileEntryComponents(string path, char[] entrySeparators);

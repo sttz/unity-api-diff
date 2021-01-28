@@ -8,7 +8,6 @@ namespace UnityEditor.Search
 
 public abstract class ObjectIndexer : UnityEditor.Search.SearchIndexer
 {
-    public void Build();
     public IEnumerable<string> GetEntryComponents(string entry, int documentIndex);
     public void IndexDocument(string id, bool checkIfDocumentExists);
     public void IndexNumber(int documentIndex, string name, double number);
@@ -18,7 +17,7 @@ public abstract class ObjectIndexer : UnityEditor.Search.SearchIndexer
     public void IndexWord(int documentIndex, string word, bool exact = false, int scoreModifier = 0);
     public void IndexWord(int documentIndex, string word, int maxVariations, bool exact, int scoreModifier = 0);
     public void IndexWordComponents(int documentIndex, string word);
-    public IEnumerable<UnityEditor.Search.SearchResult> Search(string searchQuery, int maxScore = 2147483647, int patternMatchLimit = 2999);
+    public IEnumerable<UnityEditor.Search.SearchResult> Search(string searchQuery, UnityEditor.Search.SearchContext context, UnityEditor.Search.SearchProvider provider, int maxScore = 2147483647, int patternMatchLimit = 2999);
     public bool SkipEntry(string path, bool checkRoots = false);
 
 }

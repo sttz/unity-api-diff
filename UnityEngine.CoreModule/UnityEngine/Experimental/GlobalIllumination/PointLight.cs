@@ -13,6 +13,7 @@ public struct PointLight
     public Experimental.GlobalIllumination.LinearColor indirectColor;
     public int instanceID;
     public Experimental.GlobalIllumination.LightMode mode;
+    public Quaternion orientation;
     public Vector3 position;
     public float range;
     public bool shadow;

@@ -19,7 +19,6 @@ public class SearchProvider
     public bool isExplicitProvider;
     public Action onDisable;
     public Action onEnable;
-    public Func<UnityEditor.Search.SearchSelection, Rect, bool> openContextual;
     public int priority;
     public bool showDetails;
     public UnityEditor.Search.ShowDetailsOptions showDetailsOptions;

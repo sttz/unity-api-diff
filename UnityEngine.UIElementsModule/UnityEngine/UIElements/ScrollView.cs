@@ -23,6 +23,7 @@ public class ScrollView : UIElements.VisualElement
     public float elasticity { get; set; }
     public float horizontalPageSize { get; set; }
     public UIElements.Scroller horizontalScroller { get; private set; }
+    public UIElements.ScrollerVisibility horizontalScrollerVisibility { get; set; }
     public float scrollDecelerationRate { get; set; }
     public Vector2 scrollOffset { get; set; }
     public bool showHorizontal { get; set; }
@@ -30,6 +31,7 @@ public class ScrollView : UIElements.VisualElement
     public TouchScrollBehavior touchScrollBehavior { get; set; }
     public float verticalPageSize { get; set; }
     public UIElements.Scroller verticalScroller { get; private set; }
+    public UIElements.ScrollerVisibility verticalScrollerVisibility { get; set; }
 
     public ScrollView();
     public ScrollView(UIElements.ScrollViewMode scrollViewMode);

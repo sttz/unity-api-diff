@@ -176,7 +176,15 @@ public struct PostLateUpdate
     {
     }
 
+    public struct XRPostLateUpdate
+    {
+    }
+
     public struct XRPostPresent
+    {
+    }
+
+    public struct XRPreEndFrame
     {
     }
 

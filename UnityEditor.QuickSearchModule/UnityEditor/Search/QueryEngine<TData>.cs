@@ -12,6 +12,7 @@ public class QueryEngine<TData>
     public Func<TData, IEnumerable<string>> searchDataCallback { get; }
     public bool searchDataOverridesStringComparison { get; }
     public StringComparison searchDataStringComparison { get; }
+    public Func<string, bool, StringComparison, string, bool> searchWordMatcher { get; }
     public bool skipIncompleteFilters { get; set; }
     public bool skipUnknownFilters { get; set; }
     public bool validateFilters { get; set; }
@@ -35,7 +36,8 @@ public class QueryEngine<TData>
     public void AddOperatorHandler<TFilterVariable, TFilterConstant>(string op, Func<TFilterVariable, TFilterConstant, bool> handler);
     public void AddOperatorHandler<TFilterVariable, TFilterConstant>(string op, Func<TFilterVariable, TFilterConstant, StringComparison, bool> handler);
     public void AddTypeParser<TFilterConstant>(Func<string, UnityEditor.Search.ParseResult<TFilterConstant>> parser);
-    public UnityEditor.Search.Query<TData> Parse(string text);
+    public UnityEditor.Search.Query<TData> Parse(string text, bool useFastYieldingQueryHandler = false);
+    public UnityEditor.Search.Query<TData, TPayload> Parse<TQueryHandler, TPayload>(string text, UnityEditor.Search.IQueryHandlerFactory<TData, TQueryHandler, TPayload> queryHandlerFactory);
     public void RemoveFilter(string token);
     public void SetDefaultFilter(Func<TData, string, string, string, bool> handler);
     public void SetDefaultParamFilter(Func<TData, string, string, string, string, bool> handler);
@@ -45,6 +47,7 @@ public class QueryEngine<TData>
     public void SetSearchDataCallback(Func<TData, IEnumerable<string>> getSearchDataCallback);
     public void SetSearchDataCallback(Func<TData, IEnumerable<string>> getSearchDataCallback, StringComparison stringComparison);
     public void SetSearchDataCallback(Func<TData, IEnumerable<string>> getSearchDataCallback, Func<string, string> searchWordTransformerCallback, StringComparison stringComparison);
+    public void SetSearchWordMatcher(Func<string, bool, StringComparison, string, bool> wordMatcher);
 
 }
 

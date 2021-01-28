@@ -16,6 +16,7 @@ public enum SearchFlags
     WantsMore = 8,
     Debug = 16,
     NoIndexing = 32,
+    ShowErrorsWithResults = 16777216,
     SaveFilters = 33554432,
     ReuseExistingWindow = 67108864,
     Multiselect = 134217728,

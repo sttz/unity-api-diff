@@ -10,7 +10,7 @@ public sealed class EditorGUIUtility : GUIUtility
 {
     static public FocusType native;
 
-    static public float currentViewWidth { get; }
+    static public float currentViewWidth { get; internal set; }
     static public bool editingTextField { get; set; }
     static public float fieldWidth { get; set; }
     static public bool hierarchyMode { get; set; }

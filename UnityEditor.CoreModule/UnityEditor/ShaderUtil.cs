@@ -25,6 +25,9 @@ public sealed class ShaderUtil
     static public int GetCallableShaderParamSize(Experimental.Rendering.RayTracingShader s, int shaderIndex);
     static public int GetComputeShaderMessageCount(ComputeShader s);
     static public UnityEditor.ShaderMessage[] GetComputeShaderMessages(ComputeShader s);
+    static public string GetCurrentCustomEditor(Shader shader);
+    static public string GetCustomEditorForRenderPipeline(Shader shader, string renderPipelineType);
+    static public string GetCustomEditorForRenderPipeline(Shader shader, Type renderPipelineType);
     static public int GetMissShaderCount(Experimental.Rendering.RayTracingShader s);
     static public string GetMissShaderName(Experimental.Rendering.RayTracingShader s, int shaderIndex);
     static public int GetMissShaderRayPayloadSize(Experimental.Rendering.RayTracingShader s, int shaderIndex);
@@ -40,6 +43,7 @@ public sealed class ShaderUtil
     static public UnityEditor.ShaderData GetShaderData(Shader shader);
     static public int GetShaderMessageCount(Shader s);
     static public UnityEditor.ShaderMessage[] GetShaderMessages(Shader s);
+    static public UnityEditor.ShaderMessage[] GetShaderMessages(Shader s, UnityEditor.Rendering.ShaderCompilerPlatform platform);
     static public Rendering.TextureDimension GetTexDim(Shader s, int propertyIdx);
     static public bool HasProceduralInstancing(Shader s);
     static public bool IsPassCompiled(Material material, int pass);

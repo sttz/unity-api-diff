@@ -9,8 +9,9 @@ namespace UnityEditor.Search
 public enum DisplayMode
 {
     None = 0,
-    List = 1,
-    Grid = 2,
+    List = 32,
+    Grid = 96,
+    Limit = 128,
 }
 
 }

@@ -28,6 +28,7 @@ public static class ProfilerDriver
     static public uint usedHeapSize { get; }
 
     static public event Action<int, int> NewProfilerFrameRecorded;
+    static public event Action profileCleared;
     static public event Action profileLoaded;
 
     static public void BeginInstrumentFunction(string fullName);

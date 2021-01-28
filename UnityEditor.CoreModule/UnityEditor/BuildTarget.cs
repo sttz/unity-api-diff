@@ -46,6 +46,7 @@ public enum BuildTarget
     CloudRendering = 41,
     GameCoreScarlett = 42,
     GameCoreXboxOne = 43,
+    PS5 = 44,
 }
 
 }

@@ -85,6 +85,7 @@ public static class SystemInfo
     static public bool supportsSetConstantBuffer { get; }
     static public bool supportsShadows { get; }
     static public bool supportsSparseTextures { get; }
+    static public bool supportsStoreAndResolveAction { get; }
     static public bool supportsTessellationShaders { get; }
     static public int supportsTextureWrapMirrorOnce { get; }
     static public bool supportsVibration { get; }

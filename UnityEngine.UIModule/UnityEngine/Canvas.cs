@@ -17,6 +17,7 @@ public sealed class Canvas : Behaviour
 
     public AdditionalCanvasShaderChannels additionalShaderChannels { get; set; }
     public int cachedSortingLayerValue { get; }
+    public Vector2 displaySize { get; }
     public bool isRootCanvas { get; }
     public float normalizedSortingGridSize { get; set; }
     public bool overridePixelPerfect { get; set; }

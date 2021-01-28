@@ -92,6 +92,7 @@ public sealed class SystemInfo
     static public bool supportsShadows { get; }
     static public bool supportsSparseTextures { get; }
     static public int supportsStencil { get; }
+    static public bool supportsStoreAndResolveAction { get; }
     static public bool supportsTessellationShaders { get; }
     static public int supportsTextureWrapMirrorOnce { get; }
     static public bool supportsVertexPrograms { get; }

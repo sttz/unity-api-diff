@@ -8,6 +8,8 @@ namespace UnityEditor.Profiling
 
 public class RawFrameDataView : UnityEditor.Profiling.FrameDataView
 {
+    static public int invalidSampleIndex = -1;
+
     public bool Equals(object obj);
     public void GetFlowEvents(List<FlowEvent> outFlowEvents);
     public int GetHashCode();

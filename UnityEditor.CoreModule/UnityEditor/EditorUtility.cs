@@ -12,6 +12,8 @@ public class EditorUtility
     static public bool scriptCompilationFailed { get; }
 
     static public bool BuildResourceFile(Object[] selection, string pathName);
+    static public void ClearDefaultParentObject();
+    static public void ClearDefaultParentObject(SceneManagement.Scene scene);
     static public void ClearDirty(Object target);
     static public void ClearProgressBar();
     static public Object[] CollectDeepHierarchy(Object[] roots);
@@ -63,6 +65,7 @@ public class EditorUtility
     static public string OpenFilePanel(string title, string directory, string extension);
     static public string OpenFilePanelWithFilters(string title, string directory, string[] filters);
     static public string OpenFolderPanel(string title, string folder, string defaultName);
+    static public void OpenPropertyEditor(Object obj);
     static public void OpenWithDefaultApp(string fileName);
     static public bool ReconnectToLastPrefab(GameObject go);
     static public GameObject ReplacePrefab(GameObject go, Object targetPrefab);
@@ -77,6 +80,7 @@ public class EditorUtility
     static public void SetCameraAnimateMaterials(Camera camera, bool animate);
     static public void SetCameraAnimateMaterialsTime(Camera camera, float time);
     static public void SetCustomDiffTool(string path, string twoWayDiff, string threeWayDiff, string mergeCommand, bool forceEnableCustomTool = false);
+    static public void SetDefaultParentObject(GameObject defaultParentObject);
     static public void SetDialogOptOutDecision(UnityEditor.DialogOptOutDecisionType dialogOptOutDecisionType, string dialogOptOutDecisionStorageKey, bool optOutDecision);
     static public void SetDirty(Object target);
     static public void SetObjectEnabled(Object target, bool enabled);
