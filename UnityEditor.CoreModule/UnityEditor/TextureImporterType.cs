@@ -23,6 +23,7 @@ public enum TextureImporterType
     HDRI = 9,
     SingleChannel = 10,
     Shadowmask = 11,
+    DirectionalLightmap = 12,
 }
 
 }

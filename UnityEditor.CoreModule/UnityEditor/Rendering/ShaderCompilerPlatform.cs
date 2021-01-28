@@ -19,6 +19,7 @@ public enum ShaderCompilerPlatform
     Vulkan = 18,
     Switch = 19,
     XboxOneD3D12 = 20,
+    GameCore = 21,
 }
 
 }

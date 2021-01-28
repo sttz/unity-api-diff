@@ -18,6 +18,7 @@ public static class ContentBuildInterface
     static public UnityEditor.Build.Content.SceneDependencyInfo CalculatePlayerDependenciesForScene(string scenePath, UnityEditor.Build.Content.BuildSettings settings, UnityEditor.Build.Content.BuildUsageTagSet usageSet);
     static public UnityEditor.Build.Content.SceneDependencyInfo CalculatePlayerDependenciesForScene(string scenePath, UnityEditor.Build.Content.BuildSettings settings, UnityEditor.Build.Content.BuildUsageTagSet usageSet, UnityEditor.Build.Content.BuildUsageCache usageCache);
     static public UnityEditor.Build.Content.SceneDependencyInfo CalculatePlayerDependenciesForScene(string scenePath, UnityEditor.Build.Content.BuildSettings settings, UnityEditor.Build.Content.BuildUsageTagSet usageSet, UnityEditor.Build.Content.BuildUsageCache usageCache, UnityEditor.Build.Content.DependencyType mode);
+    static public Hash128 CalculatePlayerSerializationHashForType(Type type, UnityEditor.Build.Player.TypeDB typeDB);
     static public UnityEditor.AssetBundleBuild[] GenerateAssetBundleBuilds();
     static public UnityEditor.Build.Content.BuildUsageTagGlobal GetGlobalUsageFromGraphicsSettings();
     static public UnityEditor.Build.Content.ObjectIdentifier[] GetPlayerAssetRepresentations(UnityEditor.GUID asset, UnityEditor.BuildTarget target);
@@ -33,6 +34,7 @@ public static class ContentBuildInterface
     static public UnityEditor.Build.Content.ObjectIdentifier[] GetPlayerObjectIdentifiersInSerializedFile(string filePath, UnityEditor.BuildTarget target);
     static public Type GetTypeForObject(UnityEditor.Build.Content.ObjectIdentifier objectID);
     static public Type[] GetTypeForObjects(UnityEditor.Build.Content.ObjectIdentifier[] objectIDs);
+    static public Type[] GetTypesForObject(UnityEditor.Build.Content.ObjectIdentifier objectID);
     static public bool ObjectIsSupportedInBuild(Object targetObject);
     static public UnityEditor.Build.Content.SceneDependencyInfo PrepareScene(string scenePath, UnityEditor.Build.Content.BuildSettings settings, UnityEditor.Build.Content.BuildUsageTagSet usageSet, string outputFolder);
     static public UnityEditor.Build.Content.SceneDependencyInfo PrepareScene(string scenePath, UnityEditor.Build.Content.BuildSettings settings, UnityEditor.Build.Content.BuildUsageTagSet usageSet, UnityEditor.Build.Content.BuildUsageCache usageCache, string outputFolder);

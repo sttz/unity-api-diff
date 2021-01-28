@@ -44,6 +44,8 @@ public enum BuildTarget
     Lumin = 39,
     Stadia = 40,
     CloudRendering = 41,
+    GameCoreScarlett = 42,
+    GameCoreXboxOne = 43,
 }
 
 }

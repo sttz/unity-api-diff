@@ -35,6 +35,8 @@ public enum BuildTargetGroup
     Lumin = 28,
     Stadia = 29,
     CloudRendering = 30,
+    GameCoreScarlett = 31,
+    GameCoreXboxOne = 32,
 }
 
 }

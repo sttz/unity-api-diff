@@ -45,6 +45,8 @@ public enum RuntimePlatform
     Lumin = 33,
     Stadia = 34,
     CloudRendering = 35,
+    GameCoreScarlett = 36,
+    GameCoreXboxOne = 37,
 }
 
 }

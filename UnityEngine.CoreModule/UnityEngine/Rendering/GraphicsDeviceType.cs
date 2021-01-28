@@ -27,6 +27,8 @@ public enum GraphicsDeviceType
     Vulkan = 21,
     Switch = 22,
     XboxOneD3D12 = 23,
+    GameCoreXboxOne = 24,
+    GameCoreScarlett = 25,
 }
 
 }
