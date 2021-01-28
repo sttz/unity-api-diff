@@ -80,6 +80,7 @@ public sealed class SystemInfo
     static public bool supportsMultisampleAutoResolve { get; }
     static public bool supportsMultisampled2DArrayTextures { get; }
     static public int supportsMultisampledTextures { get; }
+    static public bool supportsMultiview { get; }
     static public bool supportsRawShadowDepthSampling { get; }
     static public bool supportsRayTracing { get; }
     static public bool supportsRenderTargetArrayIndexFromVertexShader { get; }
