@@ -21,6 +21,7 @@ public sealed class PlayerSettings : Object
     static public string aotOptions { get; set; }
     static public UnityEditor.ApiCompatibilityLevel apiCompatibilityLevel { get; set; }
     static public string applicationIdentifier { get; set; }
+    static public bool assemblyVersionValidation { get; set; }
     static public bool bakeCollisionMeshes { get; set; }
     static public string bundleIdentifier { get; set; }
     static public string bundleVersion { get; set; }
@@ -936,6 +937,7 @@ public sealed class PlayerSettings : Object
         static public bool EnablePIXSampling { get; set; }
         static public bool EnableTypeOptimization { get; set; }
         static public bool EnableVariableGPU { get; set; }
+        static public bool EnhancedXboxCompatibilityMode { get; set; }
         static public string GameOsOverridePath { get; set; }
         static public bool IsContentPackage { get; set; }
         static public int monoLoggingLevel { get; set; }

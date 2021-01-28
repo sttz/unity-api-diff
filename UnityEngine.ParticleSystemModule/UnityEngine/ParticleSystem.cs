@@ -9,6 +9,7 @@ namespace UnityEngine
 public sealed class ParticleSystem : Component
 {
     static public void ResetPreMappedBufferMemory();
+    static public void SetMaximumPreMappedBufferCounts(int vertexBuffersCount, int indexBuffersCount);
 
     public bool automaticCullingEnabled { get; }
     public CollisionModule collision { get; }
